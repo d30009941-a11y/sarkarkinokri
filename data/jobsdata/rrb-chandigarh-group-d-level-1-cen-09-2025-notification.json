@@ -1,0 +1,89 @@
+{
+  "rrb-chandigarh-group-d-level-1-cen-09-2025-notification": {
+    "overview": {
+      "post_name": "RRB Level-1 (Group D) Recruitment 2025",
+      "recruitment_body": "Railway Recruitment Board (RRB)",
+      "notification_number": "CEN 09/2025"
+    },
+
+    "important_dates": {
+      "Application Start Date": "31 January 2026",
+      "Last Date to Apply": "01 March 2026",
+      "Last Date Fee Payment": "03 March 2026",
+      "Correction Window": "05–14 March 2026",
+      "CBT Exam Date": "To Be Announced"
+    },
+
+    "application_fee": {
+      "General / OBC / EWS": "₹500 (₹400 refundable after CBT)",
+      "SC / ST / PwBD / Female / ExSM": "₹250 (Fully refundable after CBT)",
+      "Payment Mode": "Online (Debit Card / Credit Card / Net Banking / UPI)"
+    },
+
+    "age_limit": {
+      "Minimum Age": "18 Years",
+      "Maximum Age": "36 Years",
+      "Age Relaxation": "As per Government of India Rules for SC/ST/OBC/PwBD/ExSM"
+    },
+
+    "educational_qualification": {
+      "Minimum Qualification": "10th Pass OR ITI OR Equivalent from recognized board",
+      "Technical Posts": "Relevant Trade Certificate where applicable"
+    },
+
+    "vacancy_details": {
+      "table": [
+        { "RRB": "Ahmedabad", "UR": 189, "OBC": 122, "SC": 67, "ST": 34, "EWS": 45, "Total": 457 },
+        { "RRB": "Ajmer", "UR": 152, "OBC": 98, "SC": 55, "ST": 28, "EWS": 36, "Total": 369 },
+        { "RRB": "Allahabad", "UR": 241, "OBC": 156, "SC": 89, "ST": 44, "EWS": 58, "Total": 588 },
+        { "RRB": "Bengaluru", "UR": 175, "OBC": 110, "SC": 62, "ST": 31, "EWS": 42, "Total": 420 },
+        { "RRB": "Bhopal", "UR": 138, "OBC": 87, "SC": 49, "ST": 25, "EWS": 33, "Total": 332 },
+        { "RRB": "Bhubaneswar", "UR": 128, "OBC": 80, "SC": 45, "ST": 23, "EWS": 30, "Total": 306 },
+        { "RRB": "Chandigarh", "UR": 97, "OBC": 61, "SC": 34, "ST": 17, "EWS": 23, "Total": 232 },
+        { "RRB": "Chennai", "UR": 204, "OBC": 132, "SC": 74, "ST": 37, "EWS": 49, "Total": 496 },
+        { "RRB": "Gorakhpur", "UR": 166, "OBC": 107, "SC": 60, "ST": 30, "EWS": 40, "Total": 403 },
+        { "RRB": "Guwahati", "UR": 84, "OBC": 52, "SC": 29, "ST": 15, "EWS": 20, "Total": 200 },
+        { "RRB": "Kolkata", "UR": 233, "OBC": 149, "SC": 83, "ST": 41, "EWS": 56, "Total": 562 },
+        { "RRB": "Mumbai", "UR": 278, "OBC": 179, "SC": 100, "ST": 50, "EWS": 67, "Total": 674 },
+        { "RRB": "Patna", "UR": 142, "OBC": 92, "SC": 52, "ST": 26, "EWS": 34, "Total": 346 },
+        { "RRB": "Ranchi", "UR": 109, "OBC": 70, "SC": 39, "ST": 19, "EWS": 26, "Total": 263 },
+        { "RRB": "Secunderabad", "UR": 196, "OBC": 125, "SC": 70, "ST": 35, "EWS": 47, "Total": 473 }
+      ]
+    },
+
+    "selection_process": [
+      "Computer Based Test (CBT)",
+      "Physical Efficiency Test (PET)",
+      "Document Verification",
+      "Medical Examination"
+    ],
+
+    "pet_standards": {
+      "Male Candidates": "Lift & Carry 35kg for 100 meters in 2 minutes and Run 1000 meters in 4 min 15 sec",
+      "Female Candidates": "Lift & Carry 20kg for 100 meters in 2 minutes and Run 1000 meters in 5 min 40 sec"
+    },
+
+    "medical_standards": {
+      "Standard Required": "A-3 / B-1 / B-2 / C-1 depending on post",
+      "Vision Requirement": "As per Railway Medical Manual"
+    },
+
+    "important_instructions": [
+      "Apply only through official RRB website.",
+      "Multiple applications will be rejected.",
+      "Carry Aadhaar for CBT.",
+      "Refund of fee applicable only after appearing in CBT."
+    ],
+
+    "important_links": {
+      "links": {
+        "Apply Online": "https://rrbapply.gov.in",
+        "Download Notification": "https://rrbapply.gov.in/notif.pdf",
+        "View Mock Test": "https://rrbapply.gov.in/mock",
+        "Download Admit Card": "#",
+        "View Result": "#",
+        "Answer Key": "#"
+      }
+    }
+  }
+}

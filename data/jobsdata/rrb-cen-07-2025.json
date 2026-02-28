@@ -1,0 +1,117 @@
+{
+  "rrb-cen-07-2025": {
+    "overview": {
+      "post_name": "RRB NTPC Under Graduate Level Recruitment 2025",
+      "recruitment_body": "Railway Recruitment Board (RRB)",
+      "notification_number": "CEN 07/2025"
+    },
+
+    "important_dates": {
+      "Application Start Date": "01 September 2025",
+      "Last Date to Apply": "30 September 2025",
+      "Last Date Fee Payment": "02 October 2025",
+      "Correction Window": "05–10 October 2025",
+      "CBT 1 Exam Date": "To Be Announced"
+    },
+
+    "application_fee": {
+      "General / OBC / EWS": "₹500 (₹400 refundable after CBT 1)",
+      "SC / ST / PwBD / Female / ExSM / Minorities": "₹250 (Fully refundable after CBT 1)",
+      "Payment Mode": "Online (Debit Card / Credit Card / Net Banking / UPI)"
+    },
+
+    "age_limit": {
+      "Minimum Age": "18 Years",
+      "Maximum Age": "33 Years",
+      "Age Relaxation": "As per Government rules for SC/ST/OBC/PwBD/ExSM"
+    },
+
+    "educational_qualification": {
+      "Junior Clerk cum Typist": "12th Pass or equivalent + Typing proficiency",
+      "Accounts Clerk cum Typist": "12th Pass or equivalent + Typing proficiency",
+      "Commercial cum Ticket Clerk": "12th Pass or equivalent",
+      "Trains Clerk": "12th Pass or equivalent"
+    },
+
+    "vacancy_details": {
+      "table": [
+        { "RRB": "Ahmedabad", "UR": 92, "OBC": 60, "SC": 34, "ST": 17, "EWS": 23, "Total": 226 },
+        { "RRB": "Ajmer", "UR": 74, "OBC": 49, "SC": 27, "ST": 14, "EWS": 18, "Total": 182 },
+        { "RRB": "Allahabad", "UR": 135, "OBC": 88, "SC": 49, "ST": 24, "EWS": 33, "Total": 329 },
+        { "RRB": "Bengaluru", "UR": 81, "OBC": 53, "SC": 30, "ST": 15, "EWS": 20, "Total": 199 },
+        { "RRB": "Bhopal", "UR": 69, "OBC": 45, "SC": 25, "ST": 13, "EWS": 17, "Total": 169 },
+        { "RRB": "Bhubaneswar", "UR": 63, "OBC": 41, "SC": 23, "ST": 11, "EWS": 15, "Total": 153 },
+        { "RRB": "Chandigarh", "UR": 46, "OBC": 30, "SC": 17, "ST": 8, "EWS": 11, "Total": 112 },
+        { "RRB": "Chennai", "UR": 118, "OBC": 77, "SC": 43, "ST": 21, "EWS": 29, "Total": 288 },
+        { "RRB": "Gorakhpur", "UR": 84, "OBC": 55, "SC": 31, "ST": 15, "EWS": 21, "Total": 206 },
+        { "RRB": "Guwahati", "UR": 37, "OBC": 24, "SC": 13, "ST": 7, "EWS": 9, "Total": 90 },
+        { "RRB": "Kolkata", "UR": 126, "OBC": 82, "SC": 46, "ST": 23, "EWS": 31, "Total": 308 },
+        { "RRB": "Mumbai", "UR": 149, "OBC": 97, "SC": 54, "ST": 27, "EWS": 37, "Total": 364 },
+        { "RRB": "Patna", "UR": 72, "OBC": 47, "SC": 26, "ST": 13, "EWS": 18, "Total": 176 },
+        { "RRB": "Ranchi", "UR": 55, "OBC": 36, "SC": 20, "ST": 10, "EWS": 14, "Total": 135 },
+        { "RRB": "Secunderabad", "UR": 104, "OBC": 68, "SC": 38, "ST": 19, "EWS": 26, "Total": 255 }
+      ]
+    },
+
+    "selection_process": [
+      "CBT 1 (Screening Test)",
+      "CBT 2 (Main Examination)",
+      "Typing Skill Test (for Clerk Posts)",
+      "Document Verification",
+      "Medical Examination"
+    ],
+
+    "syllabus_mathematics": [
+      "Number System",
+      "Simplification",
+      "Ratio & Proportion",
+      "Profit & Loss",
+      "Time & Work",
+      "Time & Distance",
+      "Mensuration",
+      "Basic Algebra",
+      "Data Interpretation"
+    ],
+
+    "syllabus_reasoning": [
+      "Analogies",
+      "Coding-Decoding",
+      "Blood Relations",
+      "Puzzle",
+      "Seating Arrangement",
+      "Syllogism",
+      "Statement & Conclusion"
+    ],
+
+    "syllabus_general_awareness": [
+      "Indian History",
+      "Indian Polity",
+      "Geography",
+      "General Science",
+      "Current Affairs",
+      "Indian Economy"
+    ],
+
+    "medical_standards": {
+      "Medical Category": "B-1 / B-2 / C-1 depending on post",
+      "Final Fitness": "Subject to Railway Medical Board approval"
+    },
+
+    "important_instructions": [
+      "Apply to only one RRB.",
+      "Negative marking of 1/3rd mark in CBT.",
+      "Typing test qualifying in nature.",
+      "Final merit based on CBT 2 marks."
+    ],
+
+    ""important_links": {
+      "links": {
+        "Apply Online": "https://rrbapply.gov.in",
+        "Download Notification": "https://rrbapply.gov.in/notif.pdf",
+        "View Mock Test": "https://rrbapply.gov.in/mock",
+        "Download Admit Card": "#",
+        "View Result": "#",
+        "Answer Key": "#"
+      }
+    }
+  }

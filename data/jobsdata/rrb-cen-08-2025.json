@@ -1,0 +1,84 @@
+{
+  "rrb-cen-08-2025": {
+    "overview": {
+      "post_name": "RRB Isolated & Ministerial Categories Recruitment 2025",
+      "recruitment_body": "Railway Recruitment Board (RRB)",
+      "notification_number": "CEN 08/2025"
+    },
+
+    "important_dates": {
+      "Application Start Date": "29 January 2026",
+      "Last Date to Apply": "28 February 2026",
+      "Last Date Fee Payment": "02 March 2026",
+      "Correction Window": "05–12 March 2026",
+      "CBT Exam Date": "To Be Announced"
+    },
+
+    "application_fee": {
+      "General / OBC / EWS": "₹500 (₹400 refundable after CBT)",
+      "SC / ST / PwBD / Female / ExSM / Minorities": "₹250 (Fully refundable after CBT)",
+      "Payment Mode": "Online (Debit Card / Credit Card / Net Banking / UPI)"
+    },
+
+    "age_limit": {
+      "Minimum Age": "18 Years",
+      "Maximum Age": "48 Years (Varies by Post)",
+      "Age Relaxation": "As per Government Rules for Reserved Categories"
+    },
+
+    "educational_qualification": {
+      "Chief Law Assistant": "Degree in Law (LLB)",
+      "Junior Translator": "Master’s Degree in Hindi/English with Translation Diploma",
+      "Staff & Welfare Inspector": "Graduate with Labour Welfare / Social Welfare qualification",
+      "PTI / Librarian": "Relevant Degree / Diploma in respective field",
+      "Other Posts": "Post-specific qualification as per notification"
+    },
+
+    "vacancy_details": {
+      "table": [
+        { "RRB": "Ahmedabad", "UR": 22, "OBC": 14, "SC": 8, "ST": 4, "EWS": 5, "Total": 53 },
+        { "RRB": "Ajmer", "UR": 18, "OBC": 12, "SC": 7, "ST": 3, "EWS": 4, "Total": 44 },
+        { "RRB": "Allahabad", "UR": 35, "OBC": 23, "SC": 13, "ST": 6, "EWS": 8, "Total": 85 },
+        { "RRB": "Bengaluru", "UR": 20, "OBC": 13, "SC": 7, "ST": 4, "EWS": 5, "Total": 49 },
+        { "RRB": "Bhopal", "UR": 17, "OBC": 11, "SC": 6, "ST": 3, "EWS": 4, "Total": 41 },
+        { "RRB": "Bhubaneswar", "UR": 15, "OBC": 10, "SC": 6, "ST": 3, "EWS": 3, "Total": 37 },
+        { "RRB": "Chandigarh", "UR": 12, "OBC": 8, "SC": 5, "ST": 2, "EWS": 3, "Total": 30 },
+        { "RRB": "Chennai", "UR": 28, "OBC": 18, "SC": 10, "ST": 5, "EWS": 6, "Total": 67 },
+        { "RRB": "Gorakhpur", "UR": 19, "OBC": 12, "SC": 7, "ST": 3, "EWS": 4, "Total": 45 },
+        { "RRB": "Guwahati", "UR": 9, "OBC": 6, "SC": 3, "ST": 2, "EWS": 2, "Total": 22 },
+        { "RRB": "Kolkata", "UR": 30, "OBC": 20, "SC": 11, "ST": 5, "EWS": 7, "Total": 73 },
+        { "RRB": "Mumbai", "UR": 38, "OBC": 25, "SC": 14, "ST": 7, "EWS": 9, "Total": 93 },
+        { "RRB": "Patna", "UR": 16, "OBC": 10, "SC": 6, "ST": 3, "EWS": 4, "Total": 39 },
+        { "RRB": "Ranchi", "UR": 13, "OBC": 8, "SC": 5, "ST": 2, "EWS": 3, "Total": 31 },
+        { "RRB": "Secunderabad", "UR": 24, "OBC": 16, "SC": 9, "ST": 4, "EWS": 6, "Total": 59 }
+      ]
+    },
+
+    "selection_process": [
+      "Computer Based Test (CBT)",
+      "Skill Test / Translation Test (where applicable)",
+      "Document Verification",
+      "Medical Examination"
+    ],
+
+    "medical_standards": {
+      "Medical Classification": "As per post requirement (A-2 / A-3 / B-1 / B-2 / C-1)",
+      "Final Fitness": "Subject to Railway Medical Board approval"
+    },
+
+    "important_instructions": [
+      "Candidates must apply for only one RRB.",
+      "Post preference once submitted cannot be changed.",
+      "Skill test qualifying in nature where applicable.",
+      "Verify eligibility before applying."
+    ],
+
+    "important_links": {
+      "links": {
+        "Apply Online": "https://www.rrbcdg.gov.in/",
+        "Official Notification PDF": "CEN-08-2025-Notification.pdf",
+        "Official Website": "https://indianrailways.gov.in/"
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "ssc-ctgd-2026": {
+    "overview": {
+      "post_name": "SSC Constable (GD) Recruitment 2026",
+      "recruitment_body": "Staff Selection Commission (SSC)",
+      "notification_number": "Constable GD 2026"
+    },
+
+    "important_dates": {
+      "Application Start Date": "31 December 2025",
+      "Last Date to Apply": "30 January 2026",
+      "Last Date Fee Payment": "31 January 2026",
+      "Correction Window": "05–07 February 2026",
+      "CBT Exam Date": "To Be Announced"
+    },
+
+    "application_fee": {
+      "General / OBC / EWS": "₹100",
+      "SC / ST / Female / ExSM": "Exempted",
+      "Payment Mode": "Online (Debit Card / Credit Card / Net Banking / UPI)"
+    },
+
+    "age_limit": {
+      "Minimum Age": "18 Years",
+      "Maximum Age": "23 Years",
+      "Age Relaxation": "SC/ST: 5 Years, OBC: 3 Years, ExSM: As per rules"
+    },
+
+    "educational_qualification": {
+      "Minimum Qualification": "10th Pass (Matriculation) from recognized board",
+      "Driving Posts (if applicable)": "Valid Driving License required"
+    },
+
+    "vacancy_details": {
+      "table": [
+        { "Force": "BSF", "UR": 2150, "OBC": 1420, "SC": 790, "ST": 390, "EWS": 530, "Total": 5280 },
+        { "Force": "CISF", "UR": 1750, "OBC": 1130, "SC": 630, "ST": 310, "EWS": 420, "Total": 4240 },
+        { "Force": "CRPF", "UR": 2850, "OBC": 1880, "SC": 1050, "ST": 520, "EWS": 710, "Total": 7010 },
+        { "Force": "SSB", "UR": 980, "OBC": 650, "SC": 360, "ST": 180, "EWS": 250, "Total": 2420 },
+        { "Force": "ITBP", "UR": 740, "OBC": 490, "SC": 270, "ST": 130, "EWS": 190, "Total": 1820 },
+        { "Force": "AR", "UR": 420, "OBC": 270, "SC": 150, "ST": 75, "EWS": 110, "Total": 1025 },
+        { "Force": "SSF", "UR": 160, "OBC": 110, "SC": 60, "ST": 30, "EWS": 40, "Total": 400 }
+      ]
+    },
+
+    "selection_process": [
+      "Computer Based Examination (CBE)",
+      "Physical Efficiency Test (PET)",
+      "Physical Standard Test (PST)",
+      "Medical Examination",
+      "Document Verification"
+    ],
+
+    "syllabus_mathematics": [
+      "Number System",
+      "Decimals and Fractions",
+      "Ratio & Proportion",
+      "Percentage",
+      "Profit & Loss",
+      "Time & Work",
+      "Time & Distance",
+      "Mensuration"
+    ],
+
+    "syllabus_reasoning": [
+      "Analogies",
+      "Coding-Decoding",
+      "Blood Relations",
+      "Direction Test",
+      "Series",
+      "Non-Verbal Reasoning"
+    ],
+
+    "syllabus_general_awareness": [
+      "Indian History",
+      "Indian Polity",
+      "Geography",
+      "General Science",
+      "Current Affairs",
+      "Sports"
+    ],
+
+    "pet_standards": {
+      "Male Candidates": "5 km run in 24 minutes",
+      "Female Candidates": "1.6 km run in 8.5 minutes"
+    },
+
+    "medical_standards": {
+      "Height (Male)": "170 cm (Relaxation for reserved categories)",
+      "Height (Female)": "157 cm (Relaxation for reserved categories)",
+      "Chest (Male)": "80 cm (5 cm expansion)"
+    },
+
+    "important_instructions": [
+      "Apply only through SSC official website.",
+      "Negative marking of 0.25 marks per wrong answer.",
+      "PET/PST qualifying in nature.",
+      "Final merit based on CBT performance."
+    ],
+
+    "important_links": {
+      "links": {
+        "Apply Online": "https://ssc.nic.in/",
+        "Official Notification PDF": "SSC-Constable-GD-2026-Notification.pdf",
+        "Official Website": "https://ssc.nic.in/"
+      }
+    }
+  }
+}
