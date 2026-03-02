@@ -153,7 +153,7 @@
         detailedBtnWrapperTop.className = 'detailed-btn-wrapper';
         const detailedInfoURL = `${jobId}.html`; 
         detailedBtnWrapperTop.innerHTML = `
-            <a href="${detailedInfoURL}" class="btn-detailed detailed-info-btn">CLICK HERE FOR DETAILED INFORMATION</a>
+            <a href="#" class="btn-detailed detailed-info-btn">CLICK HERE FOR DETAILED INFORMATION</a>
         `;
         content.appendChild(detailedBtnWrapperTop);
 
@@ -206,7 +206,7 @@
         const detailedBtnWrapperMid = document.createElement('div');
         detailedBtnWrapperMid.className = 'detailed-btn-wrapper';
         detailedBtnWrapperMid.innerHTML = `
-            <a href="${detailedInfoURL}" class="btn-detailed detailed-info-btn">CLICK HERE FOR DETAILED INFORMATION</a>
+            <a href="#" class="btn-detailed detailed-info-btn">CLICK HERE FOR DETAILED INFORMATION</a>
         `;
         content.appendChild(detailedBtnWrapperMid);
 
@@ -232,21 +232,28 @@
             content.appendChild(actionSec);
         }
 
-        // --- BACKGROUND LOGIC FOR BOTH BUTTONS ---
+        // --- SOLIDIFIED CLICK LOGIC FOR BOTH BUTTONS ---
         const detailedBtnEls = document.querySelectorAll('.detailed-info-btn');
         
         fetch(detailedInfoURL, { method: 'HEAD' })
             .then(res => {
                 if (res.ok) {
-                    detailedBtnEls.forEach(btn => btn.classList.add('btn-flash'));
+                    // HTML Available: Flash and Link to HTML
+                    detailedBtnEls.forEach(btn => {
+                        btn.classList.add('btn-flash');
+                        btn.href = detailedInfoURL; // Link to HTML
+                    });
+                } else {
+                    throw new Error("Not Available");
                 }
             })
             .catch(() => {
+                // HTML Not Available: No flash, Link to Download Notification
                 detailedBtnEls.forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         e.preventDefault();
                         const downBtn = document.querySelector('.btn-download-ref');
-                        if (downBtn) downBtn.scrollIntoView({ behavior: 'smooth' });
+                        if (downBtn) downBtn.click(); // Trigger the actual download link
                     });
                 });
             });
