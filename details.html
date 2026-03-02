@@ -94,22 +94,38 @@
 <body>
 
 <div class="container">
-    <div id="loader"><div class="spinner"></div><p>Fetching details...</p></div>
+    <div id="loader"><div class="spinner"></div><p>Checking priority...</p></div>
     <div id="main-content" style="display: none;"></div>
 </div>
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     const jobId = urlParams.get('id');
+    const detailedInfoURL = `${jobId}.html`;
 
+    // --- IMMEDIATE REDIRECT LOGIC ---
     if (jobId) {
-        fetch(`data/jobsdata/${jobId}.json`)
+        fetch(detailedInfoURL, { method: 'HEAD' })
+            .then(res => {
+                if (res.ok) {
+                    // HTML Available: Redirect instantly
+                    window.location.replace(detailedInfoURL);
+                } else {
+                    // HTML Not Available: Load JSON data
+                    loadJsonData(jobId);
+                }
+            })
+            .catch(() => loadJsonData(jobId));
+    }
+
+    function loadJsonData(id) {
+        fetch(`data/jobsdata/${id}.json`)
             .then(res => { if (!res.ok) throw new Error("404"); return res.json(); })
             .then(json => {
-                const dataKey = json[jobId] ? jobId : Object.keys(json)[0];
+                const dataKey = json[id] ? id : Object.keys(json)[0];
                 renderEngine(json[dataKey]);
             })
-            .catch(() => loadFallback(jobId));
+            .catch(() => loadFallback(id));
     }
 
     async function loadFallback(id) {
@@ -151,7 +167,6 @@
         // --- FIRST DETAILED BUTTON (TOP) ---
         const detailedBtnWrapperTop = document.createElement('div');
         detailedBtnWrapperTop.className = 'detailed-btn-wrapper';
-        const detailedInfoURL = `${jobId}.html`; 
         detailedBtnWrapperTop.innerHTML = `
             <a href="#" class="btn-detailed detailed-info-btn">CLICK HERE FOR DETAILED INFORMATION</a>
         `;
