@@ -1,10 +1,9 @@
 {
   "rrb-cen-08-2026": {
     "overview": {
-      "post_name": "RRB Isolated & Ministerial Categories Recruitment 2026",
+      "post_name": "Recruitment for Various Posts of Isolated Categories",
       "recruitment_body": "Railway Recruitment Boards (RRBs)",
-      "notification_number": "CEN 08/2026",
-      "description": "Recruitment for Various Posts of Isolated Categories"
+      "notification_number": "CEN 08/2026"
     },
     "important_dates": {
       "Indicative Notice": "2025-12-20",
@@ -13,10 +12,29 @@
       "Fee Payment Deadline": "2026-01-31",
       "Modification Window": "2026-02-01 to 2026-02-10"
     },
+    "application_fee": {
+      "General/OBC/EWS": "₹500 (₹400 refundable)",
+      "SC/ST/Female/ExSM": "₹250 (Full refund)"
+    },
     "vacancy_table": [
-      { "Post": "Chief Law Assistant", "Level": "7", "Pay": "44900", "Total": "22" },
-      { "Post": "Junior Translator (Hindi)", "Level": "6", "Pay": "35400", "Total": "202" },
-      { "Post": "Staff and Welfare Inspector", "Level": "6", "Pay": "35400", "Total": "24" }
+      {
+        "Post Name": "Chief Law Assistant",
+        "Level": "7",
+        "Pay Scale": "44,900",
+        "Total": "22"
+      },
+      {
+        "Post Name": "Junior Translator (Hindi)",
+        "Level": "6",
+        "Pay Scale": "35,400",
+        "Total": "202"
+      },
+      {
+        "Post Name": "Staff and Welfare Inspector",
+        "Level": "6",
+        "Pay Scale": "35,400",
+        "Total": "24"
+      }
     ],
     "recruitment_process": {
       "Stages": [
@@ -24,14 +42,7 @@
         "Translation Test (Qualifying)",
         "Document Verification (DV)",
         "Medical Examination"
-      ],
-      "exam_details": {
-        "negative_marking": "1/3rd of marks"
-      }
-    },
-    "application_fee": {
-      "General/OBC/EWS": "₹500 (₹400 refundable)",
-      "SC/ST/Female/ExSM": "₹250 (Full refund)"
+      ]
     }
   }
 }
