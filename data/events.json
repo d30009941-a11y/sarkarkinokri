@@ -1,16 +1,65 @@
+ 
 {
   "data": [
     {
-      "id": "rrb-cen-08-2025-notif",
-      "master": "rrb-cen-08-2025",
-      "lifecycle": "notification",
-      "phase": "",
+      "id": "rrb-cen-08-2026",
       "type": "Recruitment",
-      "status": "active",
-      "url": "details.html?id=rrb-cen-08-2025",
-      "opening_date": "29/01/2026",
-      "closing_date": "29/01/2026",
-      "last_updated": "2026-03-06"
+      "status": "Active",
+      "date": "2026-03-07",
+      "master": "RRB-CEN-08-2026-TECHNICAL-POSTS",
+      "latest_jobs": [
+        {
+          "title": "RRB CEN 08/2026 Various Technical Posts"
+        }
+      ]
+    },
+    {
+      "id": "ssc-cgl-2025-fres",
+      "type": "Result",
+      "status": "Active",
+      "date": "2026-03-07",
+      "master": "SSC-CGL-2025-FINAL-MERIT-LIST",
+      "latest_jobs": [
+        {
+          "title": "SSC CGL 2025 Tier-II Final Merit List"
+        }
+      ]
+    },
+    {
+      "id": "upsc-nda-i-2026",
+      "type": "Recruitment",
+      "status": "Active",
+      "date": "2026-03-07",
+      "master": "UPSC-NDA-NA-I-EXAM-2026",
+      "latest_jobs": [
+        {
+          "title": "UPSC NDA & NA (I) Exam 2026"
+        }
+      ]
+    },
+    {
+      "id": "rrb-alp-cen-01-2024",
+      "type": "Admit Card",
+      "status": "Active",
+      "date": "2026-03-07",
+      "master": "RRB-ALP-CEN-01-2024-CBT-2",
+      "latest_jobs": [
+        {
+          "title": "RRB Assistant Loco Pilot (ALP) CBT-2"
+        }
+      ]
+    },
+    {
+      "id": "uppsc-ro-aro-2024",
+      "type": "Answer Key",
+      "status": "Active",
+      "date": "2026-03-07",
+      "master": "UPPSC-RO-ARO-RE-EXAM-2024-KEY",
+      "latest_jobs": [
+        {
+          "title": "UPPSC RO/ARO Re-Exam 2024 Preliminary Answer Key"
+        }
+      ]
     }
   ]
 }
