@@ -1,36 +1,56 @@
 {
   "data": [
     {
-      "id": "rrb-cen-08-2026",
+      "id": "ssc-cgl-2025-answerkey-t1",
+      "master_id": "ssc-cgl-2025",
+      "phase": "Tier-1",
+      "title": "SSC CGL 2025 Tier-1 Provisional Answer Key",
+      "type": "Answer Key",
+      "status": "Active",
+      "opening_date": "2026-03-08",
+      "closing_date": "2026-03-15",
+      "updated_at": "2026-03-08T15:30:00Z",
+      "dynamic_indicator": "Objection Window Open",
+      "url": "https://ssc.gov.in/answer-key-t1"
+    },
+    {
+      "id": "ssc-cgl-2025-admit-t1",
+      "master_id": "ssc-cgl-2025",
+      "phase": "Tier-1",
+      "title": "SSC CGL 2025 Tier-1 Admit Card / Status",
+      "type": "Admit Card",
+      "status": "Inactive",
+      "opening_date": "2026-02-20",
+      "closing_date": "2026-03-05",
+      "updated_at": "2026-02-20T10:00:00Z",
+      "dynamic_indicator": "Exam Completed",
+      "url": "#"
+    },
+    {
+      "id": "ssc-cgl-2025-detailed",
+      "master_id": "ssc-cgl-2025",
+      "phase": "Common",
+      "title": "SSC CGL 2025 Detailed Notification",
       "type": "Recruitment",
       "status": "Active",
-      "date": "2026-03-08",
-      "master": "RRB-CEN-08-2026-TECHNICAL-POSTS",
-      "latest_jobs": [{ "title": "RRB CEN 08/2026 Technical Posts" }]
+      "opening_date": "2026-02-01",
+      "closing_date": "2026-03-01",
+      "updated_at": "2026-02-01T10:00:00Z",
+      "dynamic_indicator": "Application Closed",
+      "url": "https://ssc.gov.in/cgl-notif.pdf"
     },
     {
-      "id": "ssc-cgl-2025-fres",
-      "type": "result",
-      "status": "Active",
-      "date": "2026-03-08",
-      "master": "SSC-CGL-2025-FINAL-MERIT-LIST",
-      "latest_jobs": [{ "title": "SSC CGL 2025 Result" }]
-    },
-    {
-      "id": "rrb-alp-cen-01-2024",
-      "type": "admit card",
-      "status": "Active",
-      "date": "2026-03-08",
-      "master": "RRB-ALP-ADMIT-CARD-CBT-2",
-      "latest_jobs": [{ "title": "RRB ALP Admit Card" }]
-    },
-    {
-      "id": "uppsc-ro-aro-2024",
-      "type": "answer key",
-      "status": "Active",
-      "date": "2026-03-08",
-      "master": "UPPSC-RO-ARO-ANSWER-KEY",
-      "latest_jobs": [{ "title": "UPPSC Answer Key" }]
+      "id": "ssc-cgl-2025-short",
+      "master_id": "ssc-cgl-2025",
+      "phase": "Common",
+      "title": "SSC CGL 2025 Short Notice",
+      "type": "Recruitment",
+      "status": "Inactive",
+      "opening_date": "2026-01-15",
+      "closing_date": null,
+      "updated_at": "2026-01-15T09:00:00Z",
+      "dynamic_indicator": "Superseded by Detailed Notice",
+      "url": "#"
     }
   ]
 }
