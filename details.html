@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title id="page-title">Job Details</title>
-
-<meta id="meta-desc" name="description" content="Latest government job notification, eligibility, vacancy details and application process.">
-
-<link rel="canonical" id="canonical-url" href="">
-
-<style>
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title id="page-title">Job Details</title><meta id="meta-desc" name="description" content="Latest government job recruitment notification, eligibility, vacancy and application process."><link rel="canonical" id="canonical-url" href=""><style>
 
 body{
 font-family:Arial, sans-serif;
@@ -66,47 +55,36 @@ text-decoration:none;
 text-decoration:underline;
 }
 
-</style>
+</style></head><body><div class="container" id="app">
+Loading details...
+</div><script>
 
-</head>
-
-<body>
-
-<div class="container" id="app">
-Loading job details...
-</div>
-
-<script>
-
-/* --------------------------
-GET MASTER ID
--------------------------- */
+/* -------------------------
+GET PARAMETERS
+------------------------- */
 
 const params = new URLSearchParams(window.location.search);
+
 const masterId = params.get("id");
+const childSlug = params.get("slug");
 
 if(!masterId){
-document.getElementById("app").innerHTML="Invalid Job ID";
+document.getElementById("app").innerHTML="Invalid ID";
 }
 
-/* --------------------------
-TIER 2 : JOBS JSON
-Scalable for 100k jobs
--------------------------- */
+/* -------------------------
+TIER 2
+jobsdata lookup
+------------------------- */
 
-async function loadJobs(){
+async function loadJobsdata(){
 
 try{
 
-/* scalable system
-multiple json shards allowed */
-
-const shard = masterId.substring(0,3);
-
-const res = await fetch("/data/jobs/"+shard+".json");
+const res = await fetch("data/jobsdata/jobsdata.json");
 
 if(!res.ok){
-loadEvents();
+loadEvent();
 return;
 }
 
@@ -117,23 +95,26 @@ renderJob(data[masterId]);
 return;
 }
 
-loadEvents();
+loadEvent();
 
 }catch(e){
-loadEvents();
-}
+
+loadEvent();
 
 }
 
-/* --------------------------
-TIER 3 : EVENTS
--------------------------- */
+}
 
-async function loadEvents(){
+/* -------------------------
+TIER 3
+events lookup
+------------------------- */
+
+async function loadEvent(){
 
 try{
 
-const res = await fetch("/data/events.json");
+const res = await fetch("data/events/event.json");
 
 if(!res.ok){
 showNotFound();
@@ -142,14 +123,19 @@ return;
 
 const events = await res.json();
 
-const event = events.data.find(e=>e.id===masterId);
-
-if(!event){
+if(!childSlug){
 showNotFound();
 return;
 }
 
+const event = events.data.find(e => e.slug === childSlug);
+
+if(event){
 renderEvent(event,events.meta);
+return;
+}
+
+showNotFound();
 
 }catch(e){
 
@@ -159,27 +145,24 @@ showNotFound();
 
 }
 
-/* --------------------------
+/* -------------------------
 RENDER JOB
--------------------------- */
+------------------------- */
 
 function renderJob(job){
 
-/* SEO */
-
-document.title = job.overview.post_name + " Recruitment";
+document.title = job.overview.post_name;
 
 document.getElementById("meta-desc").content =
-job.overview.post_name + " recruitment notification, eligibility, vacancy, salary and application process.";
+job.overview.post_name + " recruitment notification eligibility vacancy details and application process.";
 
-document.getElementById("canonical-url").href =
-window.location.href;
-
-/* PAGE */
+document.getElementById("canonical-url").href = window.location.href;
 
 let html="";
 
 html+=`<h1>${job.overview.post_name}</h1>`;
+
+/* overview */
 
 html+=`
 <div class="section">
@@ -191,7 +174,9 @@ html+=`
 </table>
 </div>`;
 
-/* IMPORTANT DATES */
+/* dates */
+
+if(job.important_dates){
 
 html+=`
 <div class="section">
@@ -202,18 +187,11 @@ html+=`
 </table>
 </div>`;
 
-/* FEES */
+}
 
-html+=`
-<div class="section">
-<h2>Application Fee</h2>
-<table>
-<tr><td>General</td><td>${job.application_fee.general}</td></tr>
-<tr><td>SC/ST</td><td>${job.application_fee.scst}</td></tr>
-</table>
-</div>`;
+/* vacancy */
 
-/* VACANCY */
+if(job.vacancy_details){
 
 html+=`
 <div class="section">
@@ -226,46 +204,43 @@ html+=`
 </tr>`;
 
 job.vacancy_details.table.forEach(v=>{
+
 html+=`
 <tr>
 <td>${v.post}</td>
 <td>${v.posts}</td>
 <td>${v.qualification}</td>
 </tr>`;
+
 });
 
 html+=`</table></div>`;
 
-/* SELECTION */
+}
 
-html+=`
-<div class="section">
-<h2>Selection Process</h2>
-<ul>`;
+/* links */
 
-job.selection_process.forEach(s=>{
-html+=`<li>${s}</li>`;
-});
-
-html+=`</ul></div>`;
-
-/* LINKS */
+if(job.important_links){
 
 html+=`
 <div class="section links">
 <h2>Important Links</h2>`;
 
 Object.keys(job.important_links).forEach(k=>{
+
 html+=`<a href="${job.important_links[k]}" target="_blank">${k}</a>`;
+
 });
 
 html+=`</div>`;
 
+}
+
 document.getElementById("app").innerHTML=html;
 
-/* --------------------------
-SCHEMA.ORG JOBPOSTING
--------------------------- */
+/* -------------------------
+SCHEMA ORG
+------------------------- */
 
 const schema = {
 
@@ -276,11 +251,9 @@ const schema = {
 
 "description":job.overview.post_name + " recruitment notification.",
 
-"datePosted":job.important_dates.start,
+"datePosted":job.important_dates ? job.important_dates.start : "",
 
-"validThrough":job.important_dates.last,
-
-"employmentType":"FULL_TIME",
+"validThrough":job.important_dates ? job.important_dates.last : "",
 
 "hiringOrganization":{
 "@type":"Organization",
@@ -297,63 +270,60 @@ const schema = {
 
 };
 
-const script=document.createElement("script");
-script.type="application/ld+json";
-script.text=JSON.stringify(schema);
+const s=document.createElement("script");
+s.type="application/ld+json";
+s.text=JSON.stringify(schema);
 
-document.head.appendChild(script);
+document.head.appendChild(s);
 
 }
 
-/* --------------------------
-EVENT PAGE
--------------------------- */
+/* -------------------------
+RENDER EVENT
+------------------------- */
 
 function renderEvent(event,meta){
 
 document.title = event.title;
 
 document.getElementById("meta-desc").content =
-meta.seo_message;
+meta ? meta.seo_message : "Latest recruitment update.";
 
-let html=`
+let html="";
 
-<h1>${event.title}</h1>
+html+=`<h1>${event.title}</h1>`;
 
-<div class="section">
-<p>${meta.seo_message}</p>
-</div>
+if(meta){
+html+=`<p>${meta.seo_message}</p>`;
+}
 
+html+=`
 <div class="section">
 <a href="${event.url}" target="_blank">
 Visit Official Website
 </a>
 </div>
-
 `;
 
 document.getElementById("app").innerHTML=html;
 
 }
 
-/* --------------------------
+/* -------------------------
 NOT FOUND
--------------------------- */
+------------------------- */
 
 function showNotFound(){
 
-document.getElementById("app").innerHTML=
-"Job information not available.";
+document.getElementById("app").innerHTML="No information available.";
 
 }
 
-/* --------------------------
+/* -------------------------
 START
--------------------------- */
+------------------------- */
 
-loadJobs();
+loadJobsdata();
 
-</script>
-
-</body>
+</script></body>
 </html>
