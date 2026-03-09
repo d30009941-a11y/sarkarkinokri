@@ -1,329 +1,163 @@
-<!DOCTYPE html><html lang="en">
-<head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title id="page-title">Job Details</title><meta id="meta-desc" name="description" content="Latest government job recruitment notification, eligibility, vacancy and application process."><link rel="canonical" id="canonical-url" href=""><style>
-
-body{
-font-family:Arial, sans-serif;
-background:#f4f6f8;
-margin:0;
-padding:0;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-background:#fff;
-padding:20px;
-margin-top:20px;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-}
-
-h1{
-font-size:24px;
-margin-bottom:10px;
-}
-
-.section{
-margin-top:25px;
-}
-
-.section h2{
-font-size:18px;
-border-bottom:2px solid #eee;
-padding-bottom:6px;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:10px;
-}
-
-table td, table th{
-border:1px solid #ddd;
-padding:8px;
-}
-
-.links a{
-display:block;
-margin:6px 0;
-color:#1a73e8;
-text-decoration:none;
-}
-
-.links a:hover{
-text-decoration:underline;
-}
-
-</style></head><body><div class="container" id="app">
-Loading details...
-</div><script>
-
-/* -------------------------
-GET PARAMETERS
-------------------------- */
-
-const params = new URLSearchParams(window.location.search);
-
-const masterId = params.get("id");
-const childSlug = params.get("slug");
-
-if(!masterId){
-document.getElementById("app").innerHTML="Invalid ID";
-}
-
-/* -------------------------
-TIER 2
-jobsdata lookup
-------------------------- */
-
-async function loadJobsdata(){
-
-try{
-
-const res = await fetch("data/jobsdata/jobsdata.json");
-
-if(!res.ok){
-loadEvent();
-return;
-}
-
-const data = await res.json();
-
-if(data[masterId]){
-renderJob(data[masterId]);
-return;
-}
-
-loadEvent();
-
-}catch(e){
-
-loadEvent();
-
-}
-
-}
-
-/* -------------------------
-TIER 3
-events lookup
-------------------------- */
-
-async function loadEvent(){
-
-try{
-
-const res = await fetch("data/events/event.json");
-
-if(!res.ok){
-showNotFound();
-return;
-}
-
-const events = await res.json();
-
-if(!childSlug){
-showNotFound();
-return;
-}
-
-const event = events.data.find(e => e.slug === childSlug);
-
-if(event){
-renderEvent(event,events.meta);
-return;
-}
-
-showNotFound();
-
-}catch(e){
-
-showNotFound();
-
-}
-
-}
-
-/* -------------------------
-RENDER JOB
-------------------------- */
-
-function renderJob(job){
-
-document.title = job.overview.post_name;
-
-document.getElementById("meta-desc").content =
-job.overview.post_name + " recruitment notification eligibility vacancy details and application process.";
-
-document.getElementById("canonical-url").href = window.location.href;
-
-let html="";
-
-html+=`<h1>${job.overview.post_name}</h1>`;
-
-/* overview */
-
-html+=`
-<div class="section">
-<h2>Overview</h2>
-<table>
-<tr><td>Department</td><td>${job.overview.department}</td></tr>
-<tr><td>Total Posts</td><td>${job.overview.total_posts}</td></tr>
-<tr><td>Apply Mode</td><td>${job.overview.apply_mode}</td></tr>
-</table>
-</div>`;
-
-/* dates */
-
-if(job.important_dates){
-
-html+=`
-<div class="section">
-<h2>Important Dates</h2>
-<table>
-<tr><td>Application Start</td><td>${job.important_dates.start}</td></tr>
-<tr><td>Last Date</td><td>${job.important_dates.last}</td></tr>
-</table>
-</div>`;
-
-}
-
-/* vacancy */
-
-if(job.vacancy_details){
-
-html+=`
-<div class="section">
-<h2>Vacancy Details</h2>
-<table>
-<tr>
-<th>Post</th>
-<th>Posts</th>
-<th>Qualification</th>
-</tr>`;
-
-job.vacancy_details.table.forEach(v=>{
-
-html+=`
-<tr>
-<td>${v.post}</td>
-<td>${v.posts}</td>
-<td>${v.qualification}</td>
-</tr>`;
-
-});
-
-html+=`</table></div>`;
-
-}
-
-/* links */
-
-if(job.important_links){
-
-html+=`
-<div class="section links">
-<h2>Important Links</h2>`;
-
-Object.keys(job.important_links).forEach(k=>{
-
-html+=`<a href="${job.important_links[k]}" target="_blank">${k}</a>`;
-
-});
-
-html+=`</div>`;
-
-}
-
-document.getElementById("app").innerHTML=html;
-
-/* -------------------------
-SCHEMA ORG
-------------------------- */
-
-const schema = {
-
-"@context":"https://schema.org",
-"@type":"JobPosting",
-
-"title":job.overview.post_name,
-
-"description":job.overview.post_name + " recruitment notification.",
-
-"datePosted":job.important_dates ? job.important_dates.start : "",
-
-"validThrough":job.important_dates ? job.important_dates.last : "",
-
-"hiringOrganization":{
-"@type":"Organization",
-"name":job.overview.department
-},
-
-"jobLocation":{
-"@type":"Place",
-"address":{
-"@type":"PostalAddress",
-"addressCountry":"IN"
-}
-}
-
-};
-
-const s=document.createElement("script");
-s.type="application/ld+json";
-s.text=JSON.stringify(schema);
-
-document.head.appendChild(s);
-
-}
-
-/* -------------------------
-RENDER EVENT
-------------------------- */
-
-function renderEvent(event,meta){
-
-document.title = event.title;
-
-document.getElementById("meta-desc").content =
-meta ? meta.seo_message : "Latest recruitment update.";
-
-let html="";
-
-html+=`<h1>${event.title}</h1>`;
-
-if(meta){
-html+=`<p>${meta.seo_message}</p>`;
-}
-
-html+=`
-<div class="section">
-<a href="${event.url}" target="_blank">
-Visit Official Website
-</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details | SarkarKinokri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="detailstyle.css">
+</head>
+<body>
+<div class="container">
+    <div id="loader"><div class="spinner"></div><p>Checking priority...</p></div>
+    <div id="main-content" style="display: none;"></div>
 </div>
-`;
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const jobId = urlParams.get('id');
+    const detailedInfoURL = `${jobId}.html`;
 
-document.getElementById("app").innerHTML=html;
+    if (jobId) {
+        fetch(detailedInfoURL, { method: 'HEAD' })
+            .then(res => {
+                if (res.ok) window.location.replace(detailedInfoURL);
+                else loadJsonData(jobId);
+            })
+            .catch(() => loadJsonData(jobId));
+    }
 
-}
+    function loadJsonData(id) {
+        fetch(`data/jobsdata/${id}.json`)
+            .then(res => { if (!res.ok) throw new Error("404"); return res.json(); })
+            .then(json => {
+                const dataKey = json[id] ? id : Object.keys(json)[0];
+                renderEngine(json[dataKey]);
+            })
+            .catch(() => loadFallback(id));
+    }
 
-/* -------------------------
-NOT FOUND
-------------------------- */
+    async function loadFallback(id) {
+        try {
+            const res = await fetch('data/events.json');
+            const master = await res.json();
+            const job = master.data.find(e => e.id === id);
+            if (job) renderFallbackPage(job);
+            else showError("Job not found.");
+        } catch (e) { showError("Error fetching data."); }
+    }
 
-function showNotFound(){
+    function renderEngine(data) {
+        document.getElementById('loader').style.display = 'none';
+        const content = document.getElementById('main-content');
+        content.style.display = 'block';
+        let adHTML = data.advertisement?.enabled ? `<div id="ad-slot" style="display:block;">${data.advertisement.content}</div>` : "";
+        content.innerHTML = adHTML;
 
-document.getElementById("app").innerHTML="No information available.";
+        const header = document.createElement('div');
+        header.className = 'job-header';
+        header.innerHTML = `<h1>${data.overview.post_name || data.overview.category}</h1>
+            <div class="meta-pills">
+                <span class="pill"><i class="fas fa-university"></i> ${data.overview.recruitment_body}</span>
+                <span class="pill"><i class="fas fa-file-alt"></i> ${data.overview.notification_number || data.overview.notification}</span>
+            </div>`;
+        content.appendChild(header);
 
-}
+        const btnHTML = `<div class="detailed-btn-wrapper"><a href="#" class="btn-detailed detailed-info-btn">CLICK HERE FOR DETAILED INFORMATION</a></div>`;
+        content.insertAdjacentHTML('beforeend', btnHTML);
 
-/* -------------------------
-START
-------------------------- */
+        const dashboard = document.createElement('div');
+        dashboard.className = 'info-dashboard';
+        dashboard.innerHTML = `<div class="section-box">
+                <div class="section-title"><i class="fas fa-calendar-alt"></i> Important Dates</div>
+                <div class="generic-grid">
+                    ${Object.entries(data.important_dates).map(([k, v]) => `<div class="grid-card"><label>${k}</label><span>${v}</span></div>`).join('')}
+                </div>
+            </div>
+            <div class="section-box">
+                <div class="section-title"><i class="fas fa-rupee-sign"></i> Application Fee</div>
+                <div class="generic-grid">
+                    ${Object.entries(data.application_fee).map(([k, v]) => `<div class="grid-card"><label>${k}</label><span>${v}</span></div>`).join('')}
+                </div>
+            </div>`;
+        content.appendChild(dashboard);
 
-loadJobsdata();
+        const skip = ['overview', 'important_dates', 'application_fee', 'important_links', 'vacancy_details', 'advertisement'];
+        Object.entries(data).forEach(([key, value]) => {
+            if (skip.includes(key)) return;
+            const sec = document.createElement('div');
+            sec.className = 'section-box';
+            sec.style.marginTop = '20px';
+            const title = key.replace(/_/g, ' ').toUpperCase();
+            let secHTML = `<div class="section-title">${title}</div>`;
+            if (Array.isArray(value)) secHTML += `<ul>${value.map(item => `<li>${item}</li>`).join('')}</ul>`;
+            else if (typeof value === 'object') secHTML += `<div class="generic-grid">${Object.entries(value).map(([k, v]) => `<div class="grid-card"><label>${k}</label><span>${v}</span></div>`).join('')}</div>`;
+            else secHTML += `<p>${value}</p>`;
+            sec.innerHTML = secHTML;
+            content.appendChild(sec);
+        });
 
-</script></body>
+        if (data.vacancy_details) content.insertAdjacentHTML('beforeend', renderTable(data.vacancy_details, "📊 Vacancy Breakdown"));
+        content.insertAdjacentHTML('beforeend', btnHTML);
+
+        if (data.important_links?.links) {
+            const actionSec = document.createElement('div');
+            actionSec.className = 'section-box';
+            actionSec.style.marginTop = '20px';
+            let actionHTML = `<div class="section-title"><i class="fas fa-link"></i> Quick Actions</div><div class="link-grid">`;
+            Object.entries(data.important_links.links).forEach(([label, url]) => {
+                const isActive = url && url !== '#' && url !== '' && url !== 'null';
+                let btnClass = isActive ? `btn btn-action-active` : 'btn btn-inactive';
+                if(label.toLowerCase().includes("download notification")) btnClass += ' btn-download-ref';
+                actionHTML += `<a href="${isActive ? url : '#'}" target="_blank" class="${btnClass}">${label}</a>`;
+            });
+            actionHTML += `</div>`;
+            actionSec.innerHTML = actionHTML;
+            content.appendChild(actionSec);
+        }
+
+        const detailedBtnEls = document.querySelectorAll('.detailed-info-btn');
+        fetch(detailedInfoURL, { method: 'HEAD' })
+            .then(res => {
+                if (res.ok) {
+                    detailedBtnEls.forEach(btn => {
+                        btn.classList.add('btn-flash');
+                        btn.href = detailedInfoURL;
+                    });
+                } else throw new Error("Not Available");
+            })
+            .catch(() => {
+                detailedBtnEls.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const downBtn = document.querySelector('.btn-download-ref');
+                        if (downBtn) downBtn.click();
+                    });
+                });
+            });
+    }
+
+    function renderTable(data, title) {
+        const tableData = data.table || data.vacancy_table || data.rows || data;
+        if (!Array.isArray(tableData) || tableData.length === 0) return '';
+        const headers = Object.keys(tableData[0]);
+        return `<div class="section-box" style="margin-top:20px;">
+                <div class="section-title"><i class="fas fa-users"></i> ${title}</div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr>${headers.map(h => `<th>${h}</th>`).join('')}</tr></thead>
+                        <tbody>${tableData.map(row => `<tr>${headers.map(h => `<td>${row[h]}</td>`).join('')}</tr>`).join('')}</tbody>
+                    </table>
+                </div>
+            </div>`;
+    }
+
+    function renderFallbackPage(job) {
+        document.getElementById('loader').style.display = 'none';
+        const content = document.getElementById('main-content');
+        content.style.display = 'block';
+        content.innerHTML = `<div class="job-header"><h1>${job.master.replace(/-/g, ' ').toUpperCase()}</h1><div class="meta-pills"><span class="pill">Status: ${job.status}</span></div></div><div class="section-box"><a href="${job.url}" class="btn btn-action-active" target="_blank">Visit Official Website</a></div>`;
+    }
+    function showError(msg) { document.getElementById('loader').innerHTML = `<p style="color:red;">${msg}</p>`; }
+</script>
+</body>
 </html>
