@@ -1,423 +1,359 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Job Details</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="detailstyle.css"></head><body><div class="container"><div id="loader">
-<div class="spinner"></div>
-<p>Loading Job Details...</p>
-</div><div id="main-content" style="display:none;"></div></div><script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-/* =============================
-   GET JOB ID FROM URL
-============================= */
+<title id="page-title">Job Details</title>
 
-const urlParams = new URLSearchParams(window.location.search);
-const jobId = urlParams.get('id');
-const detailedInfoURL = `${jobId}.html`;
+<meta id="meta-desc" name="description" content="Latest government job notification, eligibility, vacancy details and application process.">
 
-/* =============================
-   STATIC HTML PRIORITY
-============================= */
+<link rel="canonical" id="canonical-url" href="">
 
-if(jobId){
+<style>
 
-fetch(detailedInfoURL,{method:'HEAD'})
-.then(res=>{
-if(res.ok) window.location.replace(detailedInfoURL);
-else loadJsonData(jobId);
-})
-.catch(()=>loadJsonData(jobId));
-
+body{
+font-family:Arial, sans-serif;
+background:#f4f6f8;
+margin:0;
+padding:0;
 }
 
-/* =============================
-   UNIVERSAL JOB LOADER
-============================= */
+.container{
+max-width:900px;
+margin:auto;
+background:#fff;
+padding:20px;
+margin-top:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
 
-async function loadJsonData(id){
+h1{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.section{
+margin-top:25px;
+}
+
+.section h2{
+font-size:18px;
+border-bottom:2px solid #eee;
+padding-bottom:6px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+table td, table th{
+border:1px solid #ddd;
+padding:8px;
+}
+
+.links a{
+display:block;
+margin:6px 0;
+color:#1a73e8;
+text-decoration:none;
+}
+
+.links a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="app">
+Loading job details...
+</div>
+
+<script>
+
+/* --------------------------
+GET MASTER ID
+-------------------------- */
+
+const params = new URLSearchParams(window.location.search);
+const masterId = params.get("id");
+
+if(!masterId){
+document.getElementById("app").innerHTML="Invalid Job ID";
+}
+
+/* --------------------------
+TIER 2 : JOBS JSON
+Scalable for 100k jobs
+-------------------------- */
+
+async function loadJobs(){
 
 try{
 
-/* 1️⃣ TRY MASTER JSON */
+/* scalable system
+multiple json shards allowed */
 
-const masterRes = await fetch('data/jobsdata.json');
+const shard = masterId.substring(0,3);
 
-if(masterRes.ok){
+const res = await fetch("/data/jobs/"+shard+".json");
 
-const masterData = await masterRes.json();
-
-/* OBJECT STRUCTURE */
-
-if(masterData[id]){
-renderEngine(masterData[id]);
+if(!res.ok){
+loadEvents();
 return;
 }
-
-/* ARRAY STRUCTURE */
-
-if(Array.isArray(masterData)){
-const job = masterData.find(j => j.id === id || j.master === id);
-if(job){
-renderEngine(job);
-return;
-}
-}
-
-}
-
-/* 2️⃣ TRY MULTI FILE INDEX */
-
-const indexRes = await fetch('data/jobs-index.json');
-
-if(indexRes.ok){
-
-const files = await indexRes.json();
-
-for(const file of files){
-
-const res = await fetch(`data/jobsdata/${file}`);
-
-if(!res.ok) continue;
 
 const data = await res.json();
 
-/* OBJECT */
-
-if(data[id]){
-renderEngine(data[id]);
+if(data[masterId]){
+renderJob(data[masterId]);
 return;
 }
 
-/* ARRAY */
-
-if(Array.isArray(data)){
-const job = data.find(j => j.id === id || j.master === id);
-if(job){
-renderEngine(job);
-return;
-}
-}
-
-}
-
-}
-
-/* 3️⃣ FALLBACK */
-
-loadFallback(id);
+loadEvents();
 
 }catch(e){
-
-console.error("Job load error",e);
-loadFallback(id);
-
+loadEvents();
 }
 
 }
 
-/* =============================
-   RENDER ENGINE
-============================= */
+/* --------------------------
+TIER 3 : EVENTS
+-------------------------- */
 
-function renderEngine(data){
-
-document.getElementById('loader').style.display='none';
-
-const content=document.getElementById('main-content');
-content.style.display='block';
-
-/* HEADER */
-
-const header=document.createElement('div');
-header.className='job-header';
-
-header.innerHTML=`
-
-<h1>${data.overview.post_name || data.overview.category}</h1>
-
-<div class="meta-pills">
-<span class="pill"><i class="fas fa-university"></i> ${data.overview.recruitment_body}</span>
-<span class="pill"><i class="fas fa-file-alt"></i> ${data.overview.notification_number}</span>
-</div>
-
-`;
-
-content.appendChild(header);
-
-/* IMPORTANT DATES */
-
-if(data.important_dates){
-
-const sec=document.createElement('div');
-sec.className='section-box';
-
-sec.innerHTML=`
-
-<div class="section-title">
-<i class="fas fa-calendar-alt"></i> Important Dates
-</div>
-
-<div class="generic-grid">
-
-${Object.entries(data.important_dates).map(([k,v])=>
-`<div class="grid-card"><label>${k}</label><span>${v}</span></div>`
-).join('')}
-
-</div>
-`;
-
-content.appendChild(sec);
-
-}
-
-/* APPLICATION FEE */
-
-if(data.application_fee){
-
-const sec=document.createElement('div');
-sec.className='section-box';
-
-sec.innerHTML=`
-
-<div class="section-title">
-<i class="fas fa-rupee-sign"></i> Application Fee
-</div>
-
-<div class="generic-grid">
-
-${Object.entries(data.application_fee).map(([k,v])=>
-`<div class="grid-card"><label>${k}</label><span>${v}</span></div>`
-).join('')}
-
-</div>
-`;
-
-content.appendChild(sec);
-
-}
-
-/* GENERIC SECTIONS */
-
-const skip=[
-'overview',
-'important_dates',
-'application_fee',
-'important_links',
-'vacancy_details'
-];
-
-Object.entries(data).forEach(([key,value])=>{
-
-if(skip.includes(key)) return;
-
-const sec=document.createElement('div');
-sec.className='section-box';
-
-const title=key.replace(/_/g,' ').toUpperCase();
-
-let html=`<div class="section-title">${title}</div>`;
-
-if(Array.isArray(value)){
-
-html+=`<ul>${value.map(v=>`<li>${v}</li>`).join('')}</ul>`;
-
-}
-
-else if(typeof value==='object'){
-
-html+=`
-
-<div class="generic-grid">
-
-${Object.entries(value).map(([k,v])=>
-`<div class="grid-card"><label>${k}</label><span>${v}</span></div>`
-).join('')}
-
-</div>
-
-`;
-
-}
-
-sec.innerHTML=html;
-content.appendChild(sec);
-
-});
-
-/* VACANCY TABLE */
-
-if(data.vacancy_details){
-
-content.insertAdjacentHTML(
-'beforeend',
-renderTable(data.vacancy_details,"Vacancy Details")
-);
-
-}
-
-/* QUICK ACTIONS */
-
-renderQuickActions(jobId,data);
-
-}
-
-/* =============================
-   EVENTS LIFECYCLE ENGINE
-============================= */
-
-async function renderQuickActions(jobId,data){
+async function loadEvents(){
 
 try{
 
-const res=await fetch('data/events.json');
-const eventsJSON=await res.json();
+const res = await fetch("/data/events.json");
 
-const events=(eventsJSON.data||[]).filter(e=>e.id===jobId);
-
-if(events.length===0) return;
-
-const sec=document.createElement('div');
-sec.className='section-box';
-
-let html=`
-
-<div class="section-title">
-<i class="fas fa-link"></i> Quick Actions
-</div>
-
-<div class="link-grid">
-`;
-
-events.forEach(ev=>{
-
-let label=ev.title || ev.type;
-let url=ev.url || "";
-
-let status="";
-let btnClass="btn";
-
-if(url){
-
-btnClass+=" btn-action-active";
-
-}else{
-
-btnClass+=" btn-inactive";
-
-switch(ev.type){
-
-case "apply":
-status=" (Coming Soon)";
-break;
-
-case "admitcard":
-status=" (Coming Soon)";
-break;
-
-case "answerkey":
-status=" (Awaited)";
-break;
-
-case "result":
-status=" (Awaited)";
-break;
-
+if(!res.ok){
+showNotFound();
+return;
 }
 
+const events = await res.json();
+
+const event = events.data.find(e=>e.id===masterId);
+
+if(!event){
+showNotFound();
+return;
 }
 
-html+=`
-<a href="${url||'#'}" class="${btnClass}" target="_blank">
-${label}${status}
-</a>
-`;
-
-});
-
-/* OFFICIAL WEBSITE FROM JOBDATA */
-
-if(data?.important_links?.links?.["Official Website"]){
-
-html+=`
-<a href="${data.important_links.links["Official Website"]}"
-class="btn btn-action-active"
-target="_blank">
-Official Website
-</a>
-`;
-
-}
-
-html+=`</div>`;
-
-sec.innerHTML=html;
-document.getElementById('main-content').appendChild(sec);
+renderEvent(event,events.meta);
 
 }catch(e){
 
-console.error("Events load error",e);
+showNotFound();
 
 }
 
 }
 
-/* =============================
-   TABLE RENDERER
-============================= */
+/* --------------------------
+RENDER JOB
+-------------------------- */
 
-function renderTable(data,title){
+function renderJob(job){
 
-const tableData=data.table || data.rows || data;
+/* SEO */
 
-if(!Array.isArray(tableData)) return "";
+document.title = job.overview.post_name + " Recruitment";
 
-const headers=Object.keys(tableData[0]);
+document.getElementById("meta-desc").content =
+job.overview.post_name + " recruitment notification, eligibility, vacancy, salary and application process.";
 
-return`
+document.getElementById("canonical-url").href =
+window.location.href;
 
-<div class="section-box">
+/* PAGE */
 
-<div class="section-title">
-<i class="fas fa-users"></i> ${title}
-</div>
+let html="";
 
-<div class="table-wrapper">
+html+=`<h1>${job.overview.post_name}</h1>`;
 
+html+=`
+<div class="section">
+<h2>Overview</h2>
 <table>
-
-<thead>
-<tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr>
-</thead>
-
-<tbody>
-
-${tableData.map(row=>
-`<tr>${headers.map(h=>`<td>${row[h]}</td>`).join('')}</tr>`
-).join('')}
-
-</tbody>
-
+<tr><td>Department</td><td>${job.overview.department}</td></tr>
+<tr><td>Total Posts</td><td>${job.overview.total_posts}</td></tr>
+<tr><td>Apply Mode</td><td>${job.overview.apply_mode}</td></tr>
 </table>
+</div>`;
 
+/* IMPORTANT DATES */
+
+html+=`
+<div class="section">
+<h2>Important Dates</h2>
+<table>
+<tr><td>Application Start</td><td>${job.important_dates.start}</td></tr>
+<tr><td>Last Date</td><td>${job.important_dates.last}</td></tr>
+</table>
+</div>`;
+
+/* FEES */
+
+html+=`
+<div class="section">
+<h2>Application Fee</h2>
+<table>
+<tr><td>General</td><td>${job.application_fee.general}</td></tr>
+<tr><td>SC/ST</td><td>${job.application_fee.scst}</td></tr>
+</table>
+</div>`;
+
+/* VACANCY */
+
+html+=`
+<div class="section">
+<h2>Vacancy Details</h2>
+<table>
+<tr>
+<th>Post</th>
+<th>Posts</th>
+<th>Qualification</th>
+</tr>`;
+
+job.vacancy_details.table.forEach(v=>{
+html+=`
+<tr>
+<td>${v.post}</td>
+<td>${v.posts}</td>
+<td>${v.qualification}</td>
+</tr>`;
+});
+
+html+=`</table></div>`;
+
+/* SELECTION */
+
+html+=`
+<div class="section">
+<h2>Selection Process</h2>
+<ul>`;
+
+job.selection_process.forEach(s=>{
+html+=`<li>${s}</li>`;
+});
+
+html+=`</ul></div>`;
+
+/* LINKS */
+
+html+=`
+<div class="section links">
+<h2>Important Links</h2>`;
+
+Object.keys(job.important_links).forEach(k=>{
+html+=`<a href="${job.important_links[k]}" target="_blank">${k}</a>`;
+});
+
+html+=`</div>`;
+
+document.getElementById("app").innerHTML=html;
+
+/* --------------------------
+SCHEMA.ORG JOBPOSTING
+-------------------------- */
+
+const schema = {
+
+"@context":"https://schema.org",
+"@type":"JobPosting",
+
+"title":job.overview.post_name,
+
+"description":job.overview.post_name + " recruitment notification.",
+
+"datePosted":job.important_dates.start,
+
+"validThrough":job.important_dates.last,
+
+"employmentType":"FULL_TIME",
+
+"hiringOrganization":{
+"@type":"Organization",
+"name":job.overview.department
+},
+
+"jobLocation":{
+"@type":"Place",
+"address":{
+"@type":"PostalAddress",
+"addressCountry":"IN"
+}
+}
+
+};
+
+const script=document.createElement("script");
+script.type="application/ld+json";
+script.text=JSON.stringify(schema);
+
+document.head.appendChild(script);
+
+}
+
+/* --------------------------
+EVENT PAGE
+-------------------------- */
+
+function renderEvent(event,meta){
+
+document.title = event.title;
+
+document.getElementById("meta-desc").content =
+meta.seo_message;
+
+let html=`
+
+<h1>${event.title}</h1>
+
+<div class="section">
+<p>${meta.seo_message}</p>
 </div>
 
+<div class="section">
+<a href="${event.url}" target="_blank">
+Visit Official Website
+</a>
 </div>
 
 `;
 
-}
-
-/* =============================
-   FALLBACK
-============================= */
-
-function loadFallback(id){
-
-document.getElementById('loader').innerHTML=
-`<p style="color:red;">Job not found</p>`;
+document.getElementById("app").innerHTML=html;
 
 }
 
-</script></body>
+/* --------------------------
+NOT FOUND
+-------------------------- */
+
+function showNotFound(){
+
+document.getElementById("app").innerHTML=
+"Job information not available.";
+
+}
+
+/* --------------------------
+START
+-------------------------- */
+
+loadJobs();
+
+</script>
+
+</body>
 </html>
