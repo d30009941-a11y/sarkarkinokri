@@ -1,95 +1,96 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SarkarKinokri | Latest Govt Jobs, Results & Admit Card 2026</title>
-<meta name="description" content="SarkarKinokri provides real-time updates for Sarkari Result, Latest Jobs, Admit Cards, Answer Keys and Interview Notices.">
 
-<!-- Default CSS -->
-<link rel="stylesheet" href="css/style.css" id="theme-style">
+<title>SarkarKinokri | Latest Govt Jobs</title>
+
+<link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
 
 <header class="header">
-    <h1>SarkarKinokri</h1>
+<h1>SarkarKinokri</h1>
 </header>
 
+
 <section class="hero-section">
-    <h2 class="hero-title">YOUR GATEWAY TO GOVERNMENT SUCCESS</h2>
-    <p class="hero-subtitle">Verified Alerts, Real-time Updates, Simplified</p>
-    <div class="hero-search">
-        <input type="text" id="searchInput" placeholder="Search Jobs..." class="hero-input">
-        <input type="text" placeholder="Location / Dept" class="hero-input">
-        <button class="hero-btn" onclick="heroSearch()">Search</button>
-    </div>
-    <div class="hero-trust">
-        <div>🛡️ 100% Verified Jobs</div>
-        <div>🚀 Instant Alerts</div>
-    </div>
+<h2>YOUR GATEWAY TO GOVERNMENT SUCCESS</h2>
 </section>
+
 
 <div class="sticky-tabs">
-    <a href="#">Home</a>
-    <a href="#recruitment">Recruitment</a>
-    <a href="#board">Latest</a>
-    <a href="#resources">Resources</a>
-    <a href="#allportals">All Portals</a>
+<a href="#">Home</a>
+<a href="#board">Latest</a>
+<a href="#daily">Daily Updates</a>
+<a href="#resources">Resources</a>
 </div>
 
-<section id="recruitment" class="recruitment-section">
-    <h2>Recruitment Portal</h2>
-    <div class="recruit-grid">
-        <div style="margin-bottom: 20px;">
-            <h3 style="margin-bottom:10px;">General Recruitment</h3>
-            <div class="direct-links" id="list-recruitment"></div>
-        </div>
-        <div style="display:flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-            <div class="recruit-box" id="box-police">
-                <button class="recruit-btn-main dropdown-indicator">Police Jobs</button>
-                <div class="dropdown-content" id="list-police"></div>
-            </div>
-            <div class="recruit-box" id="box-teaching">
-                <button class="recruit-btn-main dropdown-indicator">Teaching Jobs</button>
-                <div class="dropdown-content" id="list-teaching"></div>
-            </div>
-            <div class="recruit-box" id="box-state">
-                <button class="recruit-btn-main dropdown-indicator">State Govt Jobs</button>
-                <div class="dropdown-content" id="list-state"><a href="#">Coming Soon</a></div>
-            </div>
-        </div>
-    </div>
+
+<!-- DAILY UPDATE -->
+<section id="daily">
+
+<h2>Daily Updates</h2>
+
+<div class="card">
+<ul id="list-daily"></ul>
+</div>
+
 </section>
+
+
+
+<!-- MAIN BOARD -->
 
 <main id="board" class="board">
-    <div class="card"><h3 class="red">Latest Jobs</h3><ul id="list-jobs" class="list"></ul></div>
-    <div class="card"><h3 class="yellow">Admit Card</h3><ul id="list-admit" class="list"></ul></div>
-    <div class="card"><h3 class="orange">Answer Key</h3><ul id="list-answer" class="list"></ul></div>
-    <div class="card"><h3 class="green">Results</h3><ul id="list-result" class="list"></ul></div>
-    <div class="card"><h3 class="blue">Interview / Skill Test</h3><ul id="list-interview" class="list"></ul></div>
-    <div class="card"><h3 class="purple">Document Verification</h3><ul id="list-dv" class="list"></ul></div>
+
+<div class="card">
+<h3>Latest Jobs</h3>
+<ul id="list-jobs"></ul>
+</div>
+
+<div class="card">
+<h3>Admit Card</h3>
+<ul id="list-admit"></ul>
+</div>
+
+<div class="card">
+<h3>Answer Key</h3>
+<ul id="list-answer"></ul>
+</div>
+
+<div class="card">
+<h3>Results</h3>
+<ul id="list-result"></ul>
+</div>
+
+<div class="card">
+<h3>Interview</h3>
+<ul id="list-interview"></ul>
+</div>
+
+<div class="card">
+<h3>Document Verification</h3>
+<ul id="list-dv"></ul>
+</div>
+
 </main>
 
-<section id="resources" class="resources">
-    <h2>Important Resources</h2>
-    <div id="resource-grid" class="resource-grid"></div>
+
+<section id="resources">
+
+<h2>Important Resources</h2>
+
+<div id="resource-grid"></div>
+
 </section>
 
-<section id="allportals" class="all-portals">
-    <h2 style="text-align:center;">All Official & Government Portals</h2>
-    <div id="all-portal-grid" class="portal-grid"></div>
-</section>
 
-<section id="disclaimer" class="info-section" style="background:#fff1f2; border-color:#fecaca;">
-    <h2>Disclaimer</h2>
-    <p class="seo-quote">"Your responsibility is to verify official notifications; we provide information for educational purposes only."</p>
-    <p>SarkarKinokri is not affiliated with any government organization. Please verify details on official websites.</p>
-</section>
-
-<!-- JS -->
 <script src="js/main.js"></script>
 
-<script src="js/debug.js"></script>
 </body>
 </html>
