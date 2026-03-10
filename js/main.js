@@ -2,67 +2,77 @@ async function loadPortal(){
 
 try{
 
-const manifestResponse = await fetch('data/index.json');
-const manifest = await manifestResponse.json();
+const res = await fetch("data/index.json");
+
+const manifest = await res.json();
 
 
 
 /* EVENTS */
 
-const eventPaths = manifest.events.map(p => `data/${p}`);
+const eventPaths = manifest.events.map(p=>"data/"+p);
 
 const eventFiles = await Promise.allSettled(
-eventPaths.map(url => fetch(url).then(r => r.json()))
+
+eventPaths.map(url=>fetch(url).then(r=>r.json()))
+
 );
 
 const events = eventFiles
-.filter(r => r.status==="fulfilled")
-.flatMap(r => r.value);
+
+.filter(r=>r.status==="fulfilled")
+
+.flatMap(r=>Array.isArray(r.value)?r.value:[r.value]);
 
 
 
-/* JOB DATA */
+/* JOBS */
 
-const jobPaths = manifest.jobsdata.map(p => `data/${p}`);
+const jobPaths = manifest.jobsdata.map(p=>"data/"+p);
 
 const jobFiles = await Promise.allSettled(
-jobPaths.map(url => fetch(url).then(r => r.json()))
+
+jobPaths.map(url=>fetch(url).then(r=>r.json()))
+
 );
 
 const jobs = jobFiles
-.filter(r => r.status==="fulfilled")
-.flatMap(r => r.value);
+
+.filter(r=>r.status==="fulfilled")
+
+.flatMap(r=>Array.isArray(r.value)?r.value:[r.value]);
 
 
 
 /* IMPORTANT LINKS */
 
-const linkResponse = await fetch(`data/${manifest.importantlinks}`);
-const importantLinks = await linkResponse.json();
+const linkRes = await fetch("data/"+manifest.importantlinks);
+
+const links = await linkRes.json();
 
 
 
 /* DAILY POSTS */
 
-const dailyFiles = await fetchDailyPosts();
+const daily = await loadDaily();
 
 
 
-/* POPULATE UI */
+/* UI POPULATE */
 
 populateJobs(jobs);
 
 populateEvents(events);
 
-populateLinks(importantLinks);
+populateLinks(links);
 
-populateDaily(dailyFiles);
+populateDaily(daily);
 
 
 
 }catch(e){
 
-console.error("Portal Error",e);
+console.error("Portal error",e);
 
 }
 
@@ -70,27 +80,27 @@ console.error("Portal Error",e);
 
 
 
-/* DAILY POST LOADER */
+/* DAILY LOADER */
 
-async function fetchDailyPosts(){
+async function loadDaily(){
 
 try{
-
-const folder = "data/dailypost/";
 
 const today = new Date();
 
 const dd = String(today.getDate()).padStart(2,'0');
+
 const mm = String(today.getMonth()+1).padStart(2,'0');
+
 const yyyy = today.getFullYear();
 
-const file = `${folder}${dd}-${mm}-${yyyy}-post.json`;
+const file = `data/dailypost/${dd}-${mm}-${yyyy}-post.json`;
 
-const res = await fetch(file);
+const r = await fetch(file);
 
-if(!res.ok) return [];
+if(!r.ok) return [];
 
-return await res.json();
+return await r.json();
 
 }catch{
 
@@ -102,18 +112,24 @@ return [];
 
 
 
-/* UI FUNCTIONS */
-
 
 function populateJobs(jobs){
 
 const ul = document.getElementById("list-jobs");
 
+if(!ul) return;
+
 jobs.slice(0,20).forEach(job=>{
 
 const li = document.createElement("li");
 
-li.innerHTML = `<a href="${job.url}" target="_blank">${job.title}</a>`;
+li.innerHTML =
+
+`<a href="${job.url}" target="_blank">
+
+${job.title || job.id}
+
+</a>`;
 
 ul.appendChild(li);
 
@@ -123,15 +139,20 @@ ul.appendChild(li);
 
 
 
+
 function populateEvents(events){
 
 events.forEach(e=>{
 
-if(e.type==="Admit Card") addItem("list-admit",e);
-if(e.type==="Answer Key") addItem("list-answer",e);
-if(e.type==="Result") addItem("list-result",e);
-if(e.type==="Interview") addItem("list-interview",e);
-if(e.type==="Document Verification") addItem("list-dv",e);
+if(e.type==="Admit Card") add("list-admit",e);
+
+if(e.type==="Answer Key") add("list-answer",e);
+
+if(e.type==="Result") add("list-result",e);
+
+if(e.type==="Interview") add("list-interview",e);
+
+if(e.type==="Document Verification") add("list-dv",e);
 
 });
 
@@ -141,13 +162,17 @@ if(e.type==="Document Verification") addItem("list-dv",e);
 
 function populateLinks(data){
 
-const grid = document.getElementById("resource-grid");
+const grid=document.getElementById("resource-grid");
+
+if(!grid) return;
 
 data.forEach(cat=>{
 
-const div = document.createElement("div");
+const box=document.createElement("div");
 
-div.innerHTML=`<h3>${cat.category}</h3>`;
+box.className="resource-box";
+
+box.innerHTML=`<h4>${cat.category}</h4>`;
 
 cat.links.forEach(l=>{
 
@@ -155,15 +180,15 @@ const a=document.createElement("a");
 
 a.href=l.url;
 
-a.textContent=l.title;
-
 a.target="_blank";
 
-div.appendChild(a);
+a.textContent=l.title;
+
+box.appendChild(a);
 
 });
 
-grid.appendChild(div);
+grid.appendChild(box);
 
 });
 
@@ -171,15 +196,24 @@ grid.appendChild(div);
 
 
 
+
 function populateDaily(posts){
 
 const ul=document.getElementById("list-daily");
+
+if(!ul) return;
 
 posts.forEach(p=>{
 
 const li=document.createElement("li");
 
-li.innerHTML=`<a href="${p.url}" target="_blank">${p.title}</a>`;
+li.innerHTML=
+
+`<a href="${p.url}" target="_blank">
+
+${p.title || p.id}
+
+</a>`;
 
 ul.appendChild(li);
 
@@ -189,13 +223,22 @@ ul.appendChild(li);
 
 
 
-function addItem(id,data){
+
+function add(id,data){
 
 const ul=document.getElementById(id);
 
+if(!ul) return;
+
 const li=document.createElement("li");
 
-li.innerHTML=`<a href="${data.url}" target="_blank">${data.title}</a>`;
+li.innerHTML=
+
+`<a href="${data.url}" target="_blank">
+
+${data.title || data.id}
+
+</a>`;
 
 ul.appendChild(li);
 
