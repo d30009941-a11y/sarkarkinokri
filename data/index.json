@@ -1,0 +1,28 @@
+{
+    "events": [
+        "data/events/Mslug_1.json",
+        "data/events/Mslug_2.json",
+        "data/events/Mslug_3.json",
+        "data/events/Mslug_4.json",
+        "data/events/Mslug_5.json",
+        "data/events/Mslug_6.json",
+        "data/events/Mslug_7.json",
+        "data/events/Mslug_8.json",
+        "data/events/Mslug_9.json",
+        "data/events/Mslug_10.json"
+    ],
+    "jobsdata": [
+        "data/jobsdata/jobsdata_1.json",
+        "data/jobsdata/jobsdata_2.json",
+        "data/jobsdata/jobsdata_3.json",
+        "data/jobsdata/jobsdata_4.json",
+        "data/jobsdata/jobsdata_5.json",
+        "data/jobsdata/jobsdata_6.json",
+        "data/jobsdata/jobsdata_7.json",
+        "data/jobsdata/jobsdata_8.json",
+        "data/jobsdata/jobsdata_9.json",
+        "data/jobsdata/jobsdata_10.json"
+    ],
+    "importantlinks": "data/importantlinks.json",
+    "staticportals": "data/staticportals.json"
+}
