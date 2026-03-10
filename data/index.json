@@ -1,0 +1,36 @@
+{
+    "data": [
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events1.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/mainboard.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events2.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/full_scraped_data.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/importantlinks.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/staticportals.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/rrb-cen-08-2026.json"
+    ],
+    "jobsdata": [
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_1.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_2.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_3.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_4.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_5.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_6.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_7.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_8.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_9.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/jobsdata/jobsdata_10.json"
+    ],
+    "events": [
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_1.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_2.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_3.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_4.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_5.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_6.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_7.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_8.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_9.json",
+        "/data/data/com.termux/files/home/storage/shared/sarkarkinokri/data/events/Mslug_10.json"
+    ]
+}
