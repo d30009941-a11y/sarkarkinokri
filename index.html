@@ -1,95 +1,82 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SarkarKinokri</title>
 
-<link rel="stylesheet" href="css/1.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
 
 </head>
-
 <body>
 
-<header>
-<h1>SarkarKinokri</h1>
+<!-- HEADER -->
+<header class="header">
+  <h1>SarkarKinokri</h1>
 </header>
 
-
-<!-- Latest Jobs -->
-
-<section>
-
-<h2>Latest Jobs</h2>
-
-<ul id="latestjobs">
-<li>Loading...</li>
-</ul>
-
+<!-- HERO SECTION -->
+<section class="hero-section">
+  <h2 class="hero-title">Latest Government Jobs & Updates</h2>
+  <p class="hero-subtitle">All important recruitment notifications, admit cards, results and more in one place</p>
+  <div class="hero-search">
+    <input type="text" class="hero-input" placeholder="Search Jobs / Exams / Updates">
+    <button class="hero-btn">Search</button>
+  </div>
 </section>
 
-
-<!-- Jobs Data Table -->
-
-<section>
-
-<h2>Jobs Data</h2>
-
-<table border="1">
-
-<thead>
-
-<tr>
-<th>Job</th>
-<th>Apply</th>
-<th>Admit</th>
-<th>Result</th>
-</tr>
-
-</thead>
-
-<tbody id="jobsdata">
-
-<tr>
-<td colspan="4">Loading...</td>
-</tr>
-
-</tbody>
-
-</table>
-
+<!-- LATEST JOBS -->
+<section class="recruitment-section">
+  <h2>Latest Jobs</h2>
+  <ul id="latestjobs" class="list">
+    <li>Loading...</li>
+  </ul>
 </section>
 
-
-<!-- Important Links -->
-
-<section>
-
-<h2>Important Links</h2>
-
-<ul id="importantlinks">
-<li>Loading...</li>
-</ul>
-
+<!-- JOBS TABLE -->
+<section class="resources">
+  <h2>Jobs Data</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Job</th>
+        <th>Apply</th>
+        <th>Admit</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody id="jobsdata">
+      <tr><td colspan="4">Loading...</td></tr>
+    </tbody>
+  </table>
 </section>
 
-
-<!-- Static Portals -->
-
-<section>
-
-<h2>All Portals</h2>
-
-<ul id="staticportals">
-<li>Loading...</li>
-</ul>
-
+<!-- DAILY POSTS -->
+<section class="resources">
+  <h2>Daily Posts</h2>
+  <div id="dailyposts" class="portal-grid">
+    <p>Loading...</p>
+  </div>
 </section>
 
+<!-- IMPORTANT LINKS -->
+<section class="resources">
+  <h2>Important Links</h2>
+  <div id="importantlinks" class="portal-grid">
+    <p>Loading...</p>
+  </div>
+</section>
 
-<script src="js/js1.js"></script>
+<!-- STATIC PORTALS -->
+<section class="resources">
+  <h2>All Portals</h2>
+  <div id="staticportals" class="portal-grid">
+    <p>Loading...</p>
+  </div>
+</section>
 
+<!-- JS -->
+<script src="js/main.js"></script>
 </body>
 </html>
