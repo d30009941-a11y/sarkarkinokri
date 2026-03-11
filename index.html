@@ -4,79 +4,95 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SarkarKinokri</title>
-
-<!-- CSS -->
 <link rel="stylesheet" href="css/style.css">
-
 </head>
+
 <body>
 
-<!-- HEADER -->
+<!-- ==========================
+     HEADER
+========================== -->
 <header class="header">
-  <h1>SarkarKinokri</h1>
+    <h1>SarkarKinokri</h1>
 </header>
 
-<!-- HERO SECTION -->
+<!-- ==========================
+     HERO SECTION
+========================== -->
 <section class="hero-section">
-  <h2 class="hero-title">Latest Government Jobs & Updates</h2>
-  <p class="hero-subtitle">All important recruitment notifications, admit cards, results and more in one place</p>
-  <div class="hero-search">
-    <input type="text" class="hero-input" placeholder="Search Jobs / Exams / Updates">
-    <button class="hero-btn">Search</button>
-  </div>
+    <div class="hero-title">Latest Government Jobs & Updates 2026</div>
+    <div class="hero-subtitle">All Recruitments, Admit Cards, Results, and Resources in One Place</div>
+    <div class="hero-search">
+        <input type="text" class="hero-input" placeholder="Search Jobs, Exams...">
+        <button class="hero-btn">Search</button>
+    </div>
+    <div class="hero-trust">
+        <span>Trusted by Thousands</span>
+        <span>Updated Daily</span>
+        <span>Official Sources</span>
+    </div>
 </section>
 
-<!-- LATEST JOBS -->
+<!-- ==========================
+     LATEST JOBS
+========================== -->
 <section class="recruitment-section">
-  <h2>Latest Jobs</h2>
-  <ul id="latestjobs" class="list">
-    <li>Loading...</li>
-  </ul>
+    <h2>Latest Jobs</h2>
+    <ul id="latestjobs" class="list">
+        <li>Loading...</li>
+    </ul>
 </section>
 
-<!-- JOBS TABLE -->
+<!-- ==========================
+     JOBS DATA TABLE
+========================== -->
+<section class="recruitment-section">
+    <h2>Jobs Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Job</th>
+                <th>Apply</th>
+                <th>Admit</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody id="jobsdata">
+            <tr>
+                <td colspan="4">Loading...</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- ==========================
+     DAILY POSTS (HORIZONTAL SCROLL)
+========================== -->
 <section class="resources">
-  <h2>Jobs Data</h2>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Job</th>
-        <th>Apply</th>
-        <th>Admit</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody id="jobsdata">
-      <tr><td colspan="4">Loading...</td></tr>
-    </tbody>
-  </table>
+    <h2>Daily Updates</h2>
+    <div id="dailyposts">Loading...</div>
 </section>
 
-<!-- DAILY POSTS -->
+<!-- ==========================
+     IMPORTANT LINKS
+========================== -->
 <section class="resources">
-  <h2>Daily Posts</h2>
-  <div id="dailyposts" class="portal-grid">
-    <p>Loading...</p>
-  </div>
+    <h2>Important Links</h2>
+    <ul id="importantlinks" class="list">
+        <li>Loading...</li>
+    </ul>
 </section>
 
-<!-- IMPORTANT LINKS -->
-<section class="resources">
-  <h2>Important Links</h2>
-  <div id="importantlinks" class="portal-grid">
-    <p>Loading...</p>
-  </div>
+<!-- ==========================
+     STATIC PORTALS
+========================== -->
+<section class="all-portals">
+    <h2>All Portals</h2>
+    <ul id="staticportals" class="list">
+        <li>Loading...</li>
+    </ul>
 </section>
 
-<!-- STATIC PORTALS -->
-<section class="resources">
-  <h2>All Portals</h2>
-  <div id="staticportals" class="portal-grid">
-    <p>Loading...</p>
-  </div>
-</section>
-
-<!-- JS -->
 <script src="js/main.js"></script>
 </body>
 </html>
