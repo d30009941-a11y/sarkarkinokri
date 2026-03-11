@@ -6,49 +6,48 @@
 <title>SarkarKinokri</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<!-- ==========================
-     HEADER
-========================== -->
+<!-- ===== HEADER ===== -->
 <header class="header">
     <h1>SarkarKinokri</h1>
 </header>
 
-<!-- ==========================
-     HERO SECTION
-========================== -->
+<!-- ===== HERO SECTION ===== -->
 <section class="hero-section">
-    <div class="hero-title">Latest Government Jobs & Updates 2026</div>
-    <div class="hero-subtitle">All Recruitments, Admit Cards, Results, and Resources in One Place</div>
+    <h2 class="hero-title">Sarkari Jobs & Results 2026-27</h2>
+    <p class="hero-subtitle">All Government Jobs, Admit Cards, Results & Notifications</p>
     <div class="hero-search">
-        <input type="text" class="hero-input" placeholder="Search Jobs, Exams...">
+        <input class="hero-input" type="text" placeholder="Search Job, Exam, Notification..." />
         <button class="hero-btn">Search</button>
     </div>
     <div class="hero-trust">
-        <span>Trusted by Thousands</span>
+        <span>Trusted by 500k+ users</span>
         <span>Updated Daily</span>
-        <span>Official Sources</span>
     </div>
 </section>
 
-<!-- ==========================
-     LATEST JOBS
-========================== -->
-<section class="recruitment-section">
+<!-- ===== STICKY TABS ===== -->
+<nav class="sticky-tabs">
+    <a href="#latestjobs">Latest Jobs</a>
+    <a href="#jobsdata">Jobs Data</a>
+    <a href="#dailyposts">Daily Posts</a>
+    <a href="#importantlinks">Important Links</a>
+    <a href="#staticportals">Portals</a>
+</nav>
+
+<!-- ===== LATEST JOBS ===== -->
+<section class="recruitment-section" id="latestjobs-section">
     <h2>Latest Jobs</h2>
     <ul id="latestjobs" class="list">
         <li>Loading...</li>
     </ul>
 </section>
 
-<!-- ==========================
-     JOBS DATA TABLE
-========================== -->
-<section class="recruitment-section">
+<!-- ===== JOBS DATA TABLE ===== -->
+<section class="recruitment-section" id="jobsdata-section">
     <h2>Jobs Data</h2>
-    <table border="1">
+    <table border="1" width="100%">
         <thead>
             <tr>
                 <th>Job</th>
@@ -58,41 +57,34 @@
             </tr>
         </thead>
         <tbody id="jobsdata">
-            <tr>
-                <td colspan="4">Loading...</td>
-            </tr>
+            <tr><td colspan="4">Loading...</td></tr>
         </tbody>
     </table>
 </section>
 
-<!-- ==========================
-     DAILY POSTS (HORIZONTAL SCROLL)
-========================== -->
-<section class="resources">
-    <h2>Daily Updates</h2>
-    <div id="dailyposts">Loading...</div>
+<!-- ===== DAILY POSTS ===== -->
+<section class="resources" id="dailyposts-section">
+    <h2>Daily Posts</h2>
+    <div id="dailyposts"></div>
 </section>
 
-<!-- ==========================
-     IMPORTANT LINKS
-========================== -->
-<section class="resources">
+<!-- ===== IMPORTANT LINKS ===== -->
+<section class="resources" id="importantlinks-section">
     <h2>Important Links</h2>
     <ul id="importantlinks" class="list">
         <li>Loading...</li>
     </ul>
 </section>
 
-<!-- ==========================
-     STATIC PORTALS
-========================== -->
-<section class="all-portals">
+<!-- ===== STATIC PORTALS ===== -->
+<section class="all-portals" id="staticportals-section">
     <h2>All Portals</h2>
-    <ul id="staticportals" class="list">
+    <ul id="staticportals" class="portal-grid">
         <li>Loading...</li>
     </ul>
 </section>
 
+<!-- ===== MAIN JS ===== -->
 <script src="js/main.js"></script>
 </body>
 </html>
