@@ -1,0 +1,26 @@
+{
+  "master_id": "uppsc-psc-2026",
+  "title": "UPPSC PSC 2026 Recruitment",
+  "status": "Live",
+  "category": "State Jobs",
+  "events": [
+    {
+      "child_id": "uppsc-psc-2026-notification",
+      "label": "Notification Released",
+      "stage": "notification",
+      "is_active": true,
+      "start_date": "2026-03-10",
+      "end_date": "2026-03-30",
+      "url": "details.html?id=uppsc-psc-2026"
+    },
+    {
+      "child_id": "uppsc-psc-2026-apply",
+      "label": "Apply Online",
+      "stage": "apply",
+      "is_active": true,
+      "start_date": "2026-03-10",
+      "end_date": "2026-03-30",
+      "url": "https://uppsc.up.nic.in"
+    }
+  ]
+}
