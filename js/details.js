@@ -7,6 +7,7 @@
     return;
   }
 
+  // 1. PATH FIX: 'data/index.json' (No leading slash)
   try { await Loader.init('data/index.json'); } catch (e) { return; }
 
   const params = new URLSearchParams(window.location.search);
@@ -20,23 +21,31 @@
   let eventsData = await Loader.fetchByMaster(masterId, "events");
   let dailyPosts = (await Loader.fetchByMaster(masterId, "dailypost") || []).filter(p => p.master_id === masterId);
 
+  // FIX: Loader already returns JSON objects. Extra parsing can break it.
   if (typeof jobsData === "string") { try { jobsData = JSON.parse(jobsData); } catch(e) { jobsData = null; } }
   if (typeof eventsData === "string") { try { eventsData = JSON.parse(eventsData); } catch(e) { eventsData = null; } }
 
   let core = eventsData || {};
+  
+  // LOGIC FIX: Check if jobsData exists and extract the correct entry
   if (jobsData) {
-    let entry = Array.isArray(jobsData) ? jobsData.find(j => j.master_id === masterId) : (jobsData[masterId] || Object.values(jobsData)[0]);
+    // Agar jobsdata direct object hai ya array, use handle karne ka stable tarika
+    let entry = jobsData;
+    if (Array.isArray(jobsData)) {
+        entry = jobsData.find(j => j.master_id === masterId) || jobsData[0];
+    }
     core = { ...entry, ...core };
   }
 
   // Final validation
   if (!core.title && !core.job_title && !core.organization) {
+    console.error("Data missing for ID:", masterId);
     loaderEl.innerHTML = `<p style="color:red; font-weight:bold;">No data found for: ${masterId}</p>`;
     return;
   }
 
   /* ===============================
-     2. HEADER & META PILLS
+     2. HEADER & META PILLS (Symmetry kept)
   =============================== */
   function renderHeader() {
     const title = core.title || core.job_title || "Recruitment Details";
@@ -82,7 +91,7 @@
   }
 
   /* ===============================
-     4. IMPORTANT LINKS (TABLE STYLE)
+     4. IMPORTANT LINKS
   =============================== */
   function renderLinks() {
     if (!core.events || !core.events.length) return;
