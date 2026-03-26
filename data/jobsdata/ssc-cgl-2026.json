@@ -1,0 +1,124 @@
+[
+  {
+    "master_id": "ssc-cgl-2026",
+    "slug": "ssc-cgl-recruitment-2026",
+    "organization": "Staff Selection Commission (SSC)",
+    "exam_name": "Combined Graduate Level Examination 2026",
+    "notification_number": "F. No. 3-1/2026-P&P-I",
+    
+    "recruitment_summary": "Comprehensive recruitment drive for Group B and Group C Gazetted and Non-Gazetted posts across various Indian Ministries. Selection involves a multi-tier Computer Based Examination followed by Data Entry Speed Test.",
+
+    "overview": {
+      "Organization": "Staff Selection Commission (SSC)",
+      "Exam Name": "CGL 2026",
+      "Total Vacancies": "15,400+",
+      "Job Location": "All India",
+      "Selection Process": "Tier-I (Qualifying) & Tier-II (Merit)"
+    },
+
+    "important_dates": {
+      "Notification_Release": "22-03-2026",
+      "Online_Application_Start": "22-03-2026",
+      "Online_Application_End": "22-04-2026",
+      "Tier_1_Exam_Date": "June-July 2026",
+      "Tier_2_Exam_Date": "To be notified"
+    },
+
+    "vacancy_details": [
+      {
+        "Post_Group": "Group B Gazetted",
+        "Total_Posts": "850",
+        "Category_Breakup": {
+          "UR": 350, "OBC": 230, "SC": 120, "ST": 60, "EWS": 90
+        },
+        "Pay_Level": "Level-8 (₹47,600 to ₹1,51,100)"
+      },
+      {
+        "Post_Group": "Group B Non-Gazetted",
+        "Total_Posts": "5400",
+        "Category_Breakup": {
+          "UR": 2200, "OBC": 1500, "SC": 800, "ST": 400, "EWS": 500
+        },
+        "Pay_Level": "Level-7 (₹44,900 to ₹1,42,400)"
+      },
+      {
+        "Post_Group": "Group C",
+        "Total_Posts": "9150",
+        "Category_Breakup": {
+          "UR": 4000, "OBC": 2500, "SC": 1400, "ST": 750, "EWS": 500
+        },
+        "Pay_Level": "Level-4 (₹25,500 to ₹81,100)"
+      }
+    ],
+
+    "eligibility_criteria": {
+      "nationality": "Citizen of India, Subject of Nepal, or Subject of Bhutan",
+      "age_limit": {
+        "Minimum_Age": "18 Years",
+        "Maximum_Age": "32 Years (Post-dependent)",
+        "Relaxation_Rules": {
+          "SC_ST": "5 Years",
+          "OBC": "3 Years",
+          "PwD_Unreserved": "10 Years",
+          "Ex_Servicemen": "3 Years"
+        }
+      },
+      "education": "Bachelor's Degree from a recognized University or equivalent. Final year students can apply provided they acquire the degree by the cutoff date."
+    },
+
+    "application_fee": {
+      "General_OBC_EWS": "₹100",
+      "Women_SC_ST_PwD_ESM": "Exempted (NIL)",
+      "Payment_Methods": {
+        "Online": "Net Banking, Visa, Mastercard, Maestro, RuPay, UPI",
+        "Offline": "SBI Challan"
+      }
+    },
+
+    "selection_process": [
+      "Tier-I: Computer Based Examination (Objective Multiple Choice)",
+      "Tier-II: Computer Based Examination (Paper-I, Paper-II & Paper-III)",
+      "Section-III: Data Entry Speed Test (DEST) Module",
+      "Document Verification (DV) by User Departments"
+    ],
+
+    "exam_pattern": [
+      {
+        "Section": "Tier-I",
+        "Subjects_Details": {
+          "Qns": 100,
+          "Marks": 200,
+          "Negative_Marking": "0.50 per wrong answer"
+        },
+        "Time_Limit": "60 Minutes"
+      },
+      {
+        "Section": "Tier-II Paper-I",
+        "Subjects_Details": {
+          "Session_1": "Maths & Reasoning (60 Qns)",
+          "Session_2": "English & GA (70 Qns)",
+          "Session_3": "Computer Knowledge (20 Qns)"
+        },
+        "Time_Limit": "2 Hours 15 Minutes"
+      }
+    ],
+
+    "syllabus": {
+      "Tier_1": {
+        "Reasoning": "Analogy, Series, Coding-Decoding",
+        "General_Awareness": "History, Geography, Current Affairs",
+        "Quantitative": "Algebra, Geometry, Trigonometry",
+        "English": "Grammar, Comprehension"
+      },
+      "Tier_2_Core": "Mathematical Abilities, Reasoning, English, General Awareness, Computer Knowledge"
+    },
+
+    "how_to_apply": [
+      "Step 1: Visit ssc.gov.in and click on 'Register Now' for OTR.",
+      "Step 2: Log in with Registration Number and Password.",
+      "Step 3: Fill in Personal, Educational and Contact details.",
+      "Step 4: Upload Photo (Live capture) and Signature.",
+      "Step 5: Pay fee and take printout of the application form."
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "master_id": "rrb-cen-09-2025",
+
+    "title": "RRB Group D Level 1 Recruitment 2025",
+
+    "overview": {
+      "post_name": "RRB Level-1 (Group D)",
+      "recruitment_body": "Railway Recruitment Board",
+      "notification_number": "CEN 09/2025"
+    },
+
+    "description": "Railway Recruitment Board invites applications for Level-1 (Group D) posts across India. Huge vacancy with CBT + PET selection process.",
+
+    "important_dates": {
+      "Application Start": "31 Jan 2026",
+      "Last Date": "01 Mar 2026",
+      "Fee Payment": "03 Mar 2026",
+      "Correction Window": "05–14 Mar 2026",
+      "Exam Date": "Soon"
+    },
+
+    "application_fee": {
+      "General / OBC / EWS": "₹500",
+      "SC / ST / Female": "₹250",
+      "Mode": "Online"
+    },
+
+    "age_limit": {
+      "Minimum": "18 Years",
+      "Maximum": "36 Years",
+      "Relaxation": "As per rules"
+    },
+
+    "educational_qualification": {
+      "Minimum": "10th / ITI Pass",
+      "Technical": "Relevant Trade Required"
+    },
+
+    "vacancies": [
+      { "Zone": "Ahmedabad", "Total": 457 },
+      { "Zone": "Ajmer", "Total": 369 },
+      { "Zone": "Allahabad", "Total": 588 },
+      { "Zone": "Mumbai", "Total": 674 },
+      { "Zone": "Patna", "Total": 346 }
+    ],
+
+    "selection_process": [
+      "CBT",
+      "PET",
+      "Document Verification",
+      "Medical Test"
+    ],
+
+    "important_links": {
+      "Apply Online": "https://rrbapply.gov.in",
+      "Notification": "https://rrbapply.gov.in/notif.pdf",
+      "Official Site": "https://indianrailways.gov.in"
+    }
+  }
+]
