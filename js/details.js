@@ -7,7 +7,7 @@
     return;
   }
 
-  try { await Loader.init('data/index.json'); } catch (e) { return; }
+  try { await Loader.init('/data/index.json'); } catch (e) { return; }
 
   const params = new URLSearchParams(window.location.search);
   const masterId = params.get("id"); 
@@ -29,13 +29,14 @@
     core = { ...entry, ...core };
   }
 
+  // Final fallback for title
   if (!core.title) {
     const fb = eventsData?.events?.[0] || dailyPosts[0] || {};
     core.title = fb.label || fb.title || "Official Notification";
   }
 
   /* ===============================
-     2. RENDER ORCHESTRATION
+     2. UI EXECUTION (Ordered)
   =============================== */
   loaderEl.style.display = "none";
   mainEl.style.display = "block";
@@ -43,6 +44,7 @@
 
   renderHeader(core);
   
+  // High-Priority Summary
   if (core.recruitment_summary) {
       const sum = document.createElement("div");
       sum.className = "section-box summary-box";
@@ -52,11 +54,12 @@
 
   renderDynamic(core);
 
+  // BOTTOM PLACEMENT: Updates & Links
   if (dailyPosts.length) renderDailyPosts(dailyPosts);
   if (eventsData?.events) renderPhasedButtons(eventsData.events);
 
   /* ===============================
-     3. RENDER COMPONENTS
+     3. RECURSIVE RENDERERS
   =============================== */
   function renderHeader(data) {
     const div = document.createElement("div");
@@ -74,6 +77,7 @@
 
   function renderDynamic(data) {
     const skip = ["overview", "title", "slug", "master_id", "header_scope", "notice_type", "notice_no", "events", "links", "status", "recruitment_summary"];
+    
     if (data.overview) renderGrid(data.overview, "📊 Quick Highlights");
 
     Object.entries(data).forEach(([key, value]) => {
@@ -81,8 +85,12 @@
       const title = key.replace(/_/g, ' ').toUpperCase();
 
       if (Array.isArray(value)) {
-        if (typeof value[0] === 'string') { renderList(value, `📝 ${title}`); } 
-        else { renderTable(value, `📋 ${title}`); }
+        // FIX: Check if it's a list of strings (like How to Apply) or a table of objects (like Vacancies)
+        if (typeof value[0] === 'string') {
+          renderList(value, `📝 ${title}`);
+        } else {
+          renderTable(value, `📋 ${title}`);
+        }
       } else if (typeof value === "object") {
         renderGrid(value, `⚙️ ${title}`);
       } else {
@@ -97,17 +105,23 @@
   function renderList(arr, title) {
     const sec = document.createElement("div");
     sec.className = "section-box";
-    sec.innerHTML = `<div class="section-title">${title}</div><ul class="clean-list">${arr.map(item => `<li>${item}</li>`).join("")}</ul>`;
+    sec.innerHTML = `
+      <div class="section-title">${title}</div>
+      <ul class="clean-list">
+        ${arr.map(item => `<li>${item}</li>`).join("")}
+      </ul>`;
     mainEl.appendChild(sec);
   }
 
   function renderGrid(obj, title) {
     const sec = document.createElement("div");
     sec.className = "section-box";
-    sec.innerHTML = `<div class="section-title">${title}</div><div class="generic-grid">${Object.entries(obj).map(([k,v]) => {
+    sec.innerHTML = `<div class="section-title">${title}</div><div class="generic-grid">
+      ${Object.entries(obj).map(([k,v]) => {
         let val = typeof v === 'object' ? JSON.stringify(v) : v;
         return `<div class="grid-card"><label>${k.replace(/_/g,' ')}</label><span>${val}</span></div>`
-      }).join("")}</div>`;
+      }).join("")}
+    </div>`;
     mainEl.appendChild(sec);
   }
 
@@ -115,13 +129,21 @@
     const raw = Array.isArray(data) ? data : (data.table || data.rows || []);
     if (!raw.length) return;
     const cols = [...new Set(raw.flatMap(row => Object.keys(row)))];
+    
     const sec = document.createElement("div");
     sec.className = "section-box";
-    sec.innerHTML = `<div class="section-title">${title}</div><div class="table-wrapper"><table><thead><tr>${cols.map(c => `<th>${c.toUpperCase()}</th>`).join("")}</tr></thead><tbody>${raw.map(row => `<tr>${cols.map(c => {
+    sec.innerHTML = `<div class="section-title">${title}</div><div class="table-wrapper"><table>
+      <thead><tr>${cols.map(c => `<th>${c.toUpperCase()}</th>`).join("")}</tr></thead>
+      <tbody>
+        ${raw.map(row => `<tr>${cols.map(c => {
           let cell = row[c] ?? "-";
-          if (typeof cell === 'object' && cell !== null) { cell = `<div class=\"nested-cell-card\">${Object.entries(cell).map(([nk, nv]) => `<div><b>${nk}:</b> ${nv}</div>`).join(\"\")}</div>`; }
+          if (typeof cell === 'object' && cell !== null) {
+            cell = `<div class="nested-cell-card">${Object.entries(cell).map(([nk, nv]) => `<div><b>${nk}:</b> ${nv}</div>`).join("")}</div>`;
+          }
           return `<td>${cell}</td>`;
-        }).join("")}</tr>`).join("")}</tbody></table></div>`;
+        }).join("")}</tr>`).join("")}
+      </tbody>
+    </table></div>`;
     mainEl.appendChild(sec);
   }
 
