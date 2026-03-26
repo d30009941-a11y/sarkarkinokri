@@ -7,10 +7,15 @@ window.Loader = {
 
     async init(manifestPath) {
         try {
-            // FIX: Remove leading slash for GitHub Pages compatibility
-            const cleanManifestPath = manifestPath.startsWith('/') ? manifestPath.substring(1) : manifestPath;
-            const res = await fetch(cleanManifestPath);
-            if (!res.ok) throw new Error("Manifest load failed");
+            // Sirf yahan manifest path ko handle karne ke liye fallback rakha hai
+            const paths = [manifestPath, manifestPath.replace(/^\/+/, '')];
+            let res;
+            for (const p of paths) {
+                res = await fetch(p);
+                if (res.ok) break;
+            }
+            
+            if (!res || !res.ok) throw new Error("Manifest load failed");
             this.indexManifest = await res.json();
             console.log("✅ Loader initialized");
         } catch (err) {
@@ -55,20 +60,40 @@ window.Loader = {
         return this._fetchJSON(entry.file);
     },
 
+    // AAPKA ORIGINAL LOOP LOGIC - NO CHANGES
     async _fetchJSON(path) {
-        // FIX: Force relative path for sub-folder support
-        const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+        const paths = [
+            path,
+            path.replace(/^\/+/, ''),
+            `/${path}`
+        ];
 
-        try {
-            const res = await fetch(cleanPath);
-            if (!res.ok) return null;
+        for (const p of paths) {
+            try {
+                const res = await fetch(p);
 
-            const text = await res.text();
-            if (!text.trim().startsWith("{") && !text.trim().startsWith("[")) return null;
+                if (!res.ok) {
+                    console.warn(`❌ Fetch failed:`, p);
+                    continue;
+                }
 
-            return JSON.parse(text);
-        } catch (err) {
-            return null;
+                const text = await res.text();
+
+                if (!text.trim().startsWith("{") && !text.trim().startsWith("[")) {
+                    console.warn("❌ Invalid JSON:", p);
+                    continue;
+                }
+
+                const json = JSON.parse(text);
+                console.log(`✅ Loaded JSON:`, p);
+                return json;
+
+            } catch (err) {
+                console.warn(`⚠️ Error fetching JSON:`, p);
+            }
         }
+
+        console.error(`❌ ALL FETCH FAILED → ${path}`);
+        return null;
     }
 };
