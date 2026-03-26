@@ -1,1 +1,290 @@
-a
+/* SarkarKinokri Master Stylesheet v4.0 (2026 Edition)
+   Optimized for: Performance, Mobile-First Hierarchy, & Ad-Space Harmony
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root {
+    /* Brand Colors */
+    --sbi-blue: #004a8f;
+    --sbi-grad: linear-gradient(135deg, #004a8f 0%, #002d57 100%);
+    --accent-red: #ff3e3e;
+    --accent-yellow: #ffcc00;
+    --strategy-emerald: #10b981;
+    
+    /* UI Surface Colors */
+    --bg-light: #f4f7f9;
+    --glass-white: rgba(255, 255, 255, 0.95);
+    --border-light: #e0e6ed;
+    --text-main: #2c3e50;
+    --text-muted: #64748b;
+    
+    /* Shadows & Transitions */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. GLOBAL RESET & BASE */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 2. HEADER & STICKY NAVIGATION */
+.header {
+    background: var(--sbi-grad);
+    color: white;
+    padding: clamp(20px, 5vw, 40px);
+    text-align: center;
+    border-bottom: 5px solid var(--accent-yellow);
+}
+
+.header h1 { margin: 0; font-weight: 800; letter-spacing: -1px; font-size: 2rem; }
+
+.sticky-tabs {
+    position: sticky;
+    top: 0;
+    background: var(--glass-white);
+    backdrop-filter: blur(12px);
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 2px solid var(--sbi-blue);
+    z-index: 1000;
+    scrollbar-width: none;
+    box-shadow: var(--shadow-sm);
+}
+
+.sticky-tabs::-webkit-scrollbar { display: none; }
+
+.sticky-tabs a {
+    padding: 18px 25px;
+    text-decoration: none;
+    color: var(--sbi-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: var(--transition);
+}
+
+.sticky-tabs a:hover { background: rgba(0, 74, 143, 0.05); }
+
+/* 3. MAIN CONTAINER ENGINE */
+.container {
+    width: 95%;
+    max-width: 1100px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+    .container { padding: 45px; margin: 40px auto; }
+    .sticky-tabs { justify-content: center; }
+}
+
+/* 4. TYPOGRAPHY & SECTION HEADS */
+.red-title {
+    color: var(--text-main);
+    border-left: 8px solid var(--accent-red);
+    padding-left: 15px;
+    margin-bottom: 30px;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+}
+
+.section-head {
+    background: var(--sbi-blue);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    margin-top: 40px;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+/* 5. DATA TABLES (MOBILE OPTIMIZED) */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 25px 0;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    min-width: 500px; /* Forces scroll on mobile instead of squishing */
+}
+
+th {
+    background: #f8faff;
+    color: var(--sbi-blue);
+    font-weight: 700;
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+}
+
+tr:hover { background: #fcfdfe; }
+
+/* 6. HOME PAGE COMPONENTS (GRID & SEARCH) */
+.path-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px; 
+}
+
+.path-card { 
+    background: #fff; 
+    border: 1px solid var(--border-light); 
+    padding: 30px; 
+    border-top: 8px solid var(--sbi-blue); 
+    border-radius: 16px; 
+    transition: var(--transition); 
+}
+
+.path-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+    border-top-color: var(--accent-red);
+}
+
+.hero-search-box { 
+    background: linear-gradient(to right, #f8faff, #ffffff);
+    padding: 40px 20px; 
+    border-radius: 20px; 
+    border: 2px solid var(--border-light); 
+    margin: 30px 0; 
+}
+
+.search-input-group { 
+    display: flex; 
+    gap: 10px; 
+    max-width: 650px; 
+    margin: 20px auto; 
+    box-shadow: var(--shadow-sm);
+}
+
+.search-input-group input { 
+    flex: 1; 
+    padding: 16px 20px; 
+    border-radius: 12px; 
+    border: 2px solid var(--border-light); 
+    font-size: 16px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-input-group input:focus { border-color: var(--sbi-blue); box-shadow: 0 0 0 4px rgba(0, 74, 143, 0.1); }
+
+/* 7. AD BOXES (CLEAN PLACEHOLDERS) */
+.ad-box {
+    margin: 30px 0;
+    min-height: 100px;
+    background: #fdfdfd;
+    border: 1px dashed #ccd6e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+.ad-box::after { content: "Advertisement"; color: #adb5bd; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+
+/* 8. FLOATING ACTION BUTTONS */
+.floating-actions {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;
+}
+
+.vibrant-btn {
+    padding: 14px 24px;
+    font-size: 13px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vibrant-btn:hover { transform: scale(1.05) translateY(-2px); filter: brightness(1.1); }
+
+.btn-blueprint { background: linear-gradient(45deg, #00c6ff, #0072ff); }
+.btn-ongoing { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+
+/* 9. FOOTER SYSTEM */
+.site-footer { 
+    background: #1a202c; 
+    color: #e2e8f0; 
+    padding: 60px 20px 30px; 
+    margin-top: 80px; 
+    border-top: 6px solid var(--accent-red); 
+}
+
+.footer-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 40px; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+.footer-item h4 { 
+    border-bottom: 3px solid var(--accent-red); 
+    display: inline-block; 
+    margin-bottom: 20px; 
+    color: #fff;
+    padding-bottom: 5px;
+}
+
+.footer-item a { color: #cbd5e0; text-decoration: none; transition: 0.2s; }
+.footer-item a:hover { color: white; padding-left: 5px; }
+
+.footer-disclaimer { 
+    font-size: 12px; 
+    color: #718096; 
+    border-top: 1px solid #2d3748; 
+    margin-top: 40px; 
+    padding-top: 25px; 
+    text-align: center; 
+}
+
+/* 10. ANIMATIONS */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-card, .path-card {
+    animation: fadeInUp 0.5s ease backwards;
+}
