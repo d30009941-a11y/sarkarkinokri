@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking & Insurance Exams Portal | SarkarKinokri</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/loader.css">
+    <style>
+        :root { --bank-blue: #003366; --bank-gold: #c5a059; --accent-red: #d32f2f; }
+        .red-title { color: var(--accent-red); border-bottom: 3px solid var(--bank-blue); padding-bottom: 10px; margin-bottom: 25px; }
+        .section-head { background: var(--bank-blue); color: white; padding: 12px; border-left: 8px solid var(--bank-gold); margin-top: 40px; text-transform: uppercase; font-weight: bold;}
+        .path-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 25px; }
+        .path-card { background: #fff; padding: 30px; border-radius: 12px; border-top: 6px solid var(--bank-blue); box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; position: relative; }
+        .path-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+        .salary-strip { background: #eef2f7; padding: 12px; border-radius: 6px; margin: 15px 0; font-size: 14px; font-weight: bold; color: var(--bank-blue); display: flex; justify-content: space-between; border: 1px solid #d1d9e6; }
+        .feature-tag { background: var(--bank-gold); color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; position: absolute; top: -14px; right: 20px; font-weight: 900; }
+        
+        /* Popup & Footer UI */
+        #popup-ad-container { position: fixed; bottom: 30px; left: 30px; width: 320px; background: white; box-shadow: 0 10px 40px rgba(0,0,0,0.3); z-index: 999; border-radius: 12px; display: none; border: 2px solid var(--bank-blue); }
+        #popup-close { position: absolute; top: -10px; right: -10px; background: #000; color: #fff; border-radius: 50%; width: 28px; height: 28px; text-align: center; line-height: 28px; cursor: pointer; font-weight: bold; }
+        .footer-legal { background: #1a1a1a; color: #bbb; padding: 60px 20px; margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .vibrant-btn { display: inline-block; background: linear-gradient(45deg, #003366, #0056b3); color: white; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div id="popup-ad-container">
+        <div id="popup-close">×</div>
+        <div id="popup-content" style="padding:20px; text-align:center;">
+            <h4 style="margin-top:0; color:var(--bank-blue);">Target SBI PO 2026?</h4>
+            <div id="ad-popup-slot"></div> <p style="font-size:13px;">Get the "Research-Backed" DI Strategy PDF for free.</p>
+            <button class="vibrant-btn" style="width:100%;">DOWNLOAD PDF</button>
+        </div>
+    </div>
+
+    <header class="header"><h1>SarkarKinokri</h1></header>
+    <nav class="sticky-tabs" id="main-nav"></nav>
+
+    <main class="container">
+        <h1 class="red-title">Banking & Insurance Recruitment: The Mega-Portal</h1>
+        <p>In the <b>12th Bipartite Wage Era</b>, banking is no longer just a job; it's a premium executive career. This portal provides a 360-degree view of the selection process, from <b>Calculation-Speed Clerical Blueprints</b> to <b>Analytical Grade B Strategy</b>. Every topic here is vetted by research trusted by over 5 lakh aspirants.</p>
+
+        <div class="ad-box" id="ad-home-top"></div>
+
+        <h2 class="section-head">CHOOSE YOUR SPECIALIZED PATH</h2>
+        <div class="path-grid">
+            <div class="path-card">
+                <span class="feature-tag">LOCAL ROOTS</span>
+                <h3>IBPS RRB (Regional Banks)</h3>
+                <p>Designed for those who want a work-life balance in their home state. Features a Prelims with no English language requirement.</p>
+                <div class="salary-strip"><span>Officer: ₹78K+</span><span>Asst: ₹45K+</span></div>
+                <a href="ibpsrrb.html" class="vibrant-btn">Syllabus & LPT Details →</a>
+            </div>
+
+            <div class="path-card">
+                <span class="feature-tag">TECH-SAVVY</span>
+                <h3>IBPS & SBI PO/Clerk</h3>
+                <p>The core of Indian Banking (SBI, PNB, BOB). High-intensity career with global exposure and heavy DI focus.</p>
+                <div class="salary-strip"><span>PO: ₹86K+</span><span>Clerk: ₹52K+</span></div>
+                <a href="ibpsbank.html" class="vibrant-btn">Pattern & Descriptives →</a>
+            </div>
+
+            <div class="path-card">
+                <span class="feature-tag">POLICY ELITE</span>
+                <h3>Regulatory (RBI/NABARD)</h3>
+                <p>The 'Ivy League'. Work on Monetary Policy or Rural Development at a national scale. Metropolitan postings only.</p>
+                <div class="salary-strip"><span>Grade B: ₹1.4L+</span><span>Asst: ₹62K+</span></div>
+                <a href="regulatory.html" class="vibrant-btn">Phase II Expert Strategy →</a>
+            </div>
+        </div>
+
+        <h2 class="section-head">2026 COMPETITION ANALYSIS</h2>
+        <p>Success in 2026 requires more than just hard work. You need to understand the <b>Weighted Difficulty Index</b> of various sections across exams:</p>
+        
+        
+        <div class="table-wrapper">
+            <table class="info-table-home">
+                <thead>
+                    <tr><th>Parameter</th><th>Clerical Cadre</th><th>Officer Cadre (PO)</th><th>Regulatory (Grade B)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><b>Selection Stage</b></td><td>Prelims + Mains</td><td>Prelims + Mains + Interview</td><td>Phase I + II + Interview</td></tr>
+                    <tr><td><b>Core Competency</b></td><td>Simplification Speed</td><td>Data Interpretation</td><td>Descriptive Economics</td></tr>
+                    <tr><td><b>Career Speed</b></td><td>Moderate</td><td>Fast (Scale I to IV in 10 yrs)</td><td>Ultra Fast (Global Postings)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="ad-box" id="ad-home-mid"></div>
+
+        <h2 class="section-head">PREMIUM ASPIRANT TIMELINE</h2>
+        <div class="calendar-box">
+            <h3>📅  Master Recruitment Cycle</h3>
+            <ul style="font-size: 15px; line-height: 2.5; list-style: none; padding-left: 0;">
+                <li>🚀 <b>June:</b> IBPS RRB CRP XV Notification (PO/Clerk)</li>
+                <li>🔥 <b>July:</b> SBI Clerk Junior Associates Recruitment</li>
+                <li>📚 <b>August:</b> IBPS CRP XVI Clerk (Nationalised Banks)</li>
+                <li>🎯 <b>September:</b> IBPS PO & SBI PO Mega Notification</li>
+                <li>🏛️ <b>October:</b> RBI Grade B & NABARD Specialist Cycles</li>
+            </ul>
+        </div>
+
+        <div class="ad-box" id="ad-home-bottom"></div>
+    </main>
+
+    <footer class="footer-legal">
+        <div class="footer-grid">
+            <div>
+                <h3 style="color:var(--bank-gold);">About SarkarKinokri</h3>
+                <p>Empowering aspirants with fast, accurate, and verified government job updates across India. We provide real-time updates on recruitment, admit cards, and results from trusted sources—all in one place.</p>
+            </div>
+            <div>
+                <h3 style="color:var(--bank-gold);">Contact Us</h3>
+                <p>📧 Email: sarkarkinokrilelo@gmail.com<br>📞 Mobile: 7021188701<br>📍 HQ: New Delhi, India</p>
+            </div>
+        </div>
+        <div style="text-align:center; padding-top:40px; border-top:1px solid #333; margin-top:40px;">
+            <p style="font-size:12px;">SarkarKinokri is an independent informational platform. We are not affiliated with any government organization.</p>
+        </div>
+    </footer>
+
+    <div class="floating-actions">
+        <a href="blueprint.html" class="vibrant-btn">📘 HOW TO CRACK IBPS EXAM IN 90-DAY STRATEGY</a>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
