@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Recruitment Hub 2026 | SarkarKinokri Mentor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* HERO & NAV */
+        .hero-section {
+            background: linear-gradient(rgba(0,45,87,0.9), rgba(0,45,87,0.8)), url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=800');
+            background-size: cover; padding: 40px 15px; text-align: center; color: white; min-height: 160px; display: flex; flex-direction: column; justify-content: center;
+        }
+
+        .sticky-tabs {
+            position: sticky; top: 0; background: #fff; display: flex; overflow-x: auto; border-bottom: 3px solid var(--accent-orange); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); scrollbar-width: none;
+        }
+        .sticky-tabs::-webkit-scrollbar { display: none; }
+        .sticky-tabs a { padding: 15px 20px; text-decoration: none; color: var(--rail-blue); font-weight: 700; white-space: nowrap; font-size: 13px; }
+
+        /* HYPERLINKED CARDS */
+        .pillar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin: 20px 0 100px 0; }
+        
+        .pillar-card { 
+            background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #eee; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; flex-direction: column; 
+            cursor: pointer; transition: 0.3s; position: relative;
+        }
+        
+        /* Hover Effect like your SSC Cards */
+        .pillar-card:hover { transform: translateY(-5px); border-color: var(--rail-blue); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .pillar-card h3 { color: var(--rail-blue); margin-top: 0; border-bottom: 2px solid #f9f9f9; padding-bottom: 10px; }
+        
+        .mentor-text { font-size: 14px; line-height: 1.7; color: #444; margin-bottom: 20px; flex-grow: 1; }
+
+        /* ACTION AREA */
+        .card-btn-group { display: flex; gap: 10px; margin-top: auto; position: relative; z-index: 2; }
+        .btn-card { flex: 1; padding: 12px; font-size: 12px; font-weight: bold; text-align: center; text-decoration: none; border-radius: 6px; transition: 0.3s; }
+        
+        .btn-main { background: var(--rail-blue); color: white; } 
+        .btn-syllabus { background: #f8f9fa; color: #333; border: 1px solid #ddd; }
+        
+        /* Prevent Syllabus click from triggering the card click */
+        .btn-syllabus:hover { background: #eee; }
+
+        /* BOTTOM DOCK */
+        .bottom-dock {
+            position: fixed; bottom: 0; left: 0; width: 100%; background: #1a1a1a; display: flex; z-index: 3000; border-top: 3px solid var(--accent-orange);
+        }
+        .dock-tab { flex: 1; padding: 18px 5px; text-align: center; color: white; text-decoration: none; font-size: 11px; font-weight: 800; border-right: 1px solid #333; }
+        .flicker-red { background: #d32f2f; }
+    </style>
+</head>
+<body>
+    <header class="header"><h1>SarkarKinokri Railway</h1></header>
+
+    <nav class="sticky-tabs" id="main-nav"></nav>
+
+    <section class="hero-section">
+        <h2>Railway Master Gateway 2026</h2>
+        <p>Expert Mentor-led Entry Paths & Blueprints</p>
+    </section>
+
+    <main class="container">
+        <div class="pillar-grid">
+            
+            <div class="pillar-card" onclick="window.location.href='ntpc.html'">
+                <h3>🎓 RRB NTPC</h3>
+                <p class="mentor-text">For administrative stability, NTPC is the king. Degree holders should master the Station Master Aptitude, while 12th-pass students must prioritize typing speed. Accuracy in GA is your primary weapon here.</p>
+                <div class="card-btn-group">
+                    <span class="btn-card btn-main">FULL DETAILS →</span>
+                    <a href="../syllabus/ntpc.html" class="btn-card btn-syllabus" onclick="event.stopPropagation();">SYLLABUS</a>
+                </div>
+            </div>
+
+            <div class="pillar-card" onclick="window.location.href='alp.html'">
+                <h3>🚂 RRB ALP</h3>
+                <p class="mentor-text">ALP requires strict A-1 medical fitness. My advice: Clear your Part B Technical Trade paper first. Don't ignore trade-specific numericals; they make or break your entry into the Psycho test stage.</p>
+                <div class="card-btn-group">
+                    <span class="btn-card btn-main">FULL DETAILS →</span>
+                    <a href="../syllabus/alp.html" class="btn-card btn-syllabus" onclick="event.stopPropagation();">SYLLABUS</a>
+                </div>
+            </div>
+
+            <div class="pillar-card" onclick="window.location.href='technician.html'">
+                <h3>🛠️ RRB Technician</h3>
+                <p class="mentor-text">Technicians drive the S&T and Electrical wings. Note the Grade I vs Grade III differences. ITI/Diploma holders should focus on trade-specific science to secure a merit spot in the final list.</p>
+                <div class="card-btn-group">
+                    <span class="btn-card btn-main">FULL DETAILS →</span>
+                    <a href="../syllabus/technician.html" class="btn-card btn-syllabus" onclick="event.stopPropagation();">SYLLABUS</a>
+                </div>
+            </div>
+
+            <div class="pillar-card" onclick="window.location.href='je.html'">
+                <h3>📐 RRB JE</h3>
+                <p class="mentor-text">For engineers, the JE post is a golden gateway. CBT-1 is a screening race, but CBT-2 is a technical battle. Master your core branch concepts and practice with virtual calculators early.</p>
+                <div class="card-btn-group">
+                    <span class="btn-card btn-main">FULL DETAILS →</span>
+                    <a href="../syllabus/je.html" class="btn-card btn-syllabus" onclick="event.stopPropagation();">SYLLABUS</a>
+                </div>
+            </div>
+
+            <div class="pillar-card" onclick="window.location.href='groupd.html'">
+                <h3>⚡ RRC Group D</h3>
+                <p class="mentor-text">Group D is massive but physically demanding. Don't wait for CBT results to start running. Carrying 35kg for 100m requires grit. Ensure your ITI eligibility is verified before you commit.</p>
+                <div class="card-btn-group">
+                    <span class="btn-card btn-main">FULL DETAILS →</span>
+                    <a href="../syllabus/groupd.html" class="btn-card btn-syllabus" onclick="event.stopPropagation();">SYLLABUS</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <div class="library-map" style="background:#f4f7f9; padding:25px; margin-top:30px; border-top:4px solid #002d57; margin-bottom: 80px;">
+        <h3 style="font-size:18px; color:#002d57; margin-bottom:15px; border-bottom:1px solid #ddd;">📚 Railway Library Directory</h3>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; font-size:14px;">
+            <div>
+                <strong style="color:#d32f2f;">Selection Manuals</strong>
+                <ul style="list-style:none; padding:0; margin-top:5px;">
+                    <li><a href="medical.html" style="text-decoration:none; color:#333;">⚕️ Medical Standards</a></li>
+                    <li><a href="salary.html" style="text-decoration:none; color:#333;">💰 Salary Matrix</a></li>
+                    <li><a href="syllabas.html" style="text-decoration:none; color:#333;">📖 Full Syllabus</a></li>
+                </ul>
+            </div>
+            <div>
+                <strong style="color:#2e7d32;">Exam Hubs</strong>
+                <ul style="list-style:none; padding:0; margin-top:5px;">
+                    <li><a href="ntpc.html" style="text-decoration:none; color:#333;">🚆 NTPC Posts</a></li>
+                    <li><a href="alp.html" style="text-decoration:none; color:#333;">🛠️ ALP/Tech</a></li>
+                    <li><a href="groupd.html" style="text-decoration:none; color:#333;">👷 Group D</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-dock">
+        <a href="javascript:void(0)" onclick="MeshRouter.navigate('live-railway')" class="dock-tab flicker-red">🔥 ONGOING JOBS</a>
+        <a href="../syllabus/index.html" class="dock-tab">📚 FULL SYLLABUS</a>
+        <a href="strategy.html" class="dock-tab">⚡ 90-DAY STRATEGY</a>
+    </div>
+
+    <script>
+        // Railway-specific Nav Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.getElementById('main-nav');
+            const links = [
+                {name: "Home", url: "index.html"},
+                {name: "NTPC", url: "ntpc.html"},
+                {name: "ALP", url: "alp.html"},
+                {name: "Technician", url: "technician.html"},
+                {name: "Group D", url: "groupd.html"},
+                {name: "JE", url: "je.html"}
+            ];
+            const currentFile = window.location.pathname.split("/").pop() || "index.html";
+            nav.innerHTML = links.map(l => {
+                const activeStyle = currentFile === l.url ? 'style="background:var(--rail-blue); color:white;"' : '';
+                return `<a href="${l.url}" ${activeStyle}>${l.name}</a>`;
+            }).join('');
+        });
+    </script>
+    <script src="
