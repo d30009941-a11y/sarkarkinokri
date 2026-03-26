@@ -37,7 +37,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 25vh; /* Default Desktop */
+    min-height: 35vh; /* Default Desktop */
 }
 
 @media (max-width: 600px) {
