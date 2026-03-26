@@ -7,9 +7,7 @@ window.Loader = {
 
     async init(manifestPath) {
         try {
-            // FIX: Remove leading slash for GitHub Pages compatibility
-            const cleanPath = manifestPath.startsWith('/') ? manifestPath.substring(1) : manifestPath;
-            const res = await fetch(cleanPath);
+            const res = await fetch(manifestPath);
             if (!res.ok) throw new Error("Manifest load failed");
             this.indexManifest = await res.json();
             console.log("✅ Loader initialized");
@@ -36,6 +34,7 @@ window.Loader = {
         );
 
         if (!entry) {
+            // Special case for daily posts: find any entries of type dailypost with matching master_id
             if(type === "dailypost") {
                 const postsEntries = this.indexManifest.entries.filter(e => e.type === "dailypost");
                 if(postsEntries.length) {
@@ -56,13 +55,10 @@ window.Loader = {
     },
 
     async _fetchJSON(path) {
-        // FIX: Ensure path is relative to the repository subfolder
-        const cleanPath = path.startsWith('/') ? path.substring(1) : path;
-        
         const paths = [
-            cleanPath,           // "data/..."
-            `./${cleanPath}`,    // "./data/..."
-            path                 // original fallback
+            path,
+            path.replace(/^\/+/, ''),
+            `/${path}`
         ];
 
         for (const p of paths) {
