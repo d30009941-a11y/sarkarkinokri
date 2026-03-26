@@ -1,0 +1,19 @@
+.ticker-badge {
+  padding: 2px 6px;
+  margin-right: 6px;
+  font-size: 11px;
+  border-radius: 4px;
+  color: white;
+}
+
+.ticker-badge.green { background: #16a34a; }
+.ticker-badge.blue { background: #2563eb; }
+.ticker-badge.orange { background: #f97316; }
+.ticker-badge.yellow { background: #eab308; color:black; }
+.ticker-badge.gray { background: #6b7280; }
+
+.ticker-urgent {
+  color: red;
+  font-weight: bold;
+  margin-left: 6px;
+}

@@ -1,0 +1,133 @@
+/* =========================
+   GLOBAL RESET + THEME (VIBRANT)
+========================= */
+:root{
+  --primary:#4f46e5;       /* Deep Indigo/Purple */
+  --primary-dark:#312e81;  /* Deep Midnight Blue */
+  --accent:#10b981;        /* Solid Emerald */
+  --danger:#dc2626;        /* Solid Red */
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0e7ff, #f1f5f9); /* Deep Blue-White Gradient */
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container { max-width: 1100px; margin: auto; padding: 20px; }
+
+/* HEADER (VIBRANT GLASS EFFECT) */
+.job-header {
+  background: linear-gradient(135deg, #312e81, #4f46e5); /* Deep Purple to Indigo */
+  color: white;
+  padding: 35px 28px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(49, 46, 129, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.job-header h1 { margin: 0; font-size: clamp(20px, 5vw, 28px); font-weight: 800; }
+
+/* META PILLS */
+.meta-pills { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px; }
+.pill {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+/* SECTION BOX */
+.section-box {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 25px;
+  border-left: 6px solid var(--primary); /* Deep Purple Border */
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.summary-box {
+  background: #f5f3ff; /* Very Light Purple */
+  border-left-color: var(--primary);
+}
+
+.section-title {
+  font-weight: 900;
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* GRID SYSTEM */
+.generic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.grid-card {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  transition: 0.2s;
+}
+.grid-card label { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+.grid-card span { font-weight: 800; font-size: 15px; color: var(--text); }
+
+/* TABLE (DEEP NESTING SUPPORT) */
+.table-wrapper { overflow-x: auto; border-radius: 10px; border: 1px solid #e2e8f0; }
+table { width: 100%; border-collapse: collapse; }
+th { background: var(--primary); color: white; padding: 14px; font-size: 13px; text-align: left; }
+td { padding: 14px; border-bottom: 1px solid #f1f5f9; font-size: 14px; vertical-align: top; }
+
+/* Nested Cell Card */
+.nested-cell-card {
+  background: #f1f5f9;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  border: 1px solid #e2e8f0;
+}
+.nested-cell-card b { color: var(--primary); }
+
+/* BUTTONS */
+.link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+.btn { display: block; padding: 14px; border-radius: 10px; text-align: center; font-weight: 800; text-decoration: none; transition: 0.2s; }
+.btn-active { background: var(--primary); color: white; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); }
+.btn-inactive { background: #e2e8f0; color: #94a3b8; pointer-events: none; opacity: 0.7; }
+
+/* BADGES */
+.badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 900; text-transform: uppercase; }
+.badge.active { background: #dcfce7; color: #059669; }
+.badge.expired { background: #fee2e2; color: var(--danger); }
+
+/* CLEAN LIST (Fix for "How to Apply") */
+.clean-list { padding-left: 0; list-style: none; }
+.clean-list li {
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  gap: 10px;
+}
+.clean-list li::before { content: "✔"; color: var(--primary); font-weight: bold; }
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(15px);}
+  to{opacity:1; transform:translateY(0);}
+}
