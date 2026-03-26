@@ -1,136 +1,120 @@
 [
-  {
-    "category": "Syllabus",
-    "links": [
-      {
-        "title": "SSC Syllabus (Official)",
-        "url": "https://ssc.gov.in/candidate-portal/syllabus"
-      },
-      {
-        "title": "UPSC Syllabus (Official)",
-        "url": "https://www.upsc.gov.in/examinations/syllabus"
-      },
-      {
-        "title": "IBPS Syllabus (Official)",
-        "url": "https://www.ibps.in/common-recruitment-process/"
-      },
-      {
-        "title": "Railway NTPC Syllabus",
-        "url": "https://www.rrbcdg.gov.in/syllabus.php"
-      },
-      {
-        "title": "UGC NET Syllabus",
-        "url": "https://www.ugcnetonline.in/syllabus-new.php"
-      },
-      {
-        "title": "GATE 2026 Syllabus",
-        "url": "https://gate2026.iitg.ac.in/exam-papers-and-syllabus.html"
-      },
-      {
-        "title": "CTET Syllabus (Official)",
-        "url": "https://ctet.nic.in/syllabus/"
-      },
-      {
-        "title": "NEET UG Syllabus (Official)",
-        "url": "https://exams.nta.ac.in/NEET/"
-      }
-    ]
-  },
-  {
-    "category": "Admission Forms",
-    "links": [
-      {
-        "title": "RRB NTPC Admission Form",
-        "url": "https://www.rrbapply.gov.in/"
-      },
-      {
-        "title": "SBI Clerk Online Form",
-        "url": "https://www.sbi.co.in/careers/clerk"
-      },
-      {
-        "title": "IBPS PO Online Form",
-        "url": "https://www.ibps.in/po"
-      },
-      {
-        "title": "UPSC OTR Registration",
-        "url": "https://upsconline.nic.in/upsc/OTRP/"
-      }
-    ]
-  },
-  {
-    "category": "Document Verification",
-    "links": [
-      {
-        "title": "RRB DV Portal",
-        "url": "https://indianrailways.gov.in/dv"
-      },
-      {
-        "title": "SSC DV Guidelines",
-        "url": "https://ssc.nic.in/dv"
-      }
-    ]
-  },
-  {
-    "category": "University Results",
-    "links": [
-      {
-        "title": "IISc Bangalore Student Portal",
-        "url": "https://admissions.iisc.ac.in/"
-      },
-      {
-        "title": "JNU Results & Admissions",
-        "url": "https://jnuee.jnu.ac.in/"
-      },
-      {
-        "title": "BHU Student Portal",
-        "url": "https://bhu2.ucanapply.com/student/"
-      },
-      {
-        "title": "JMI Examination Results",
-        "url": "https://jmicoe.in/"
-      },
-      {
-        "title": "DU Examination Portal",
-        "url": "https://exam.du.ac.in/"
-      },
-      {
-        "title": "AMU Controller of Exams",
-        "url": "https://www.amucontrollerexams.com/"
-      },
-      {
-        "title": "UoH Admission & Results",
-        "url": "https://acad.uohyd.ac.in/"
-      },
-      {
-        "title": "IGNOU Term End Results",
-        "url": "https://termendresult.ignou.ac.in/TermEndResult/TermEndResults.htm"
-      }
-    ]
-  },
-  {
-    "category": "Certificate Verification",
-    "links": [
-      {
-        "title": "NCTE Certificate Verification",
-        "url": "https://ncte.gov.in/website/CertificateVerification.aspx"
-      },
-      {
-        "title": "CBET Certificate Verification",
-        "url": "https://ctet.nic.in/"
-      }
-    ]
-  },
-  {
-    "category": "Other Fixed",
-    "links": [
-      {
-        "title": "Digital Locker",
-        "url": "https://www.digilocker.gov.in/"
-      },
-      {
-        "title": "NCS Career Portal",
-        "url": "https://www.ncs.gov.in/"
-      }
-    ]
-  }
+{
+"category": "Syllabus",
+"type": "education",
+"priority": "high",
+"links": [
+
+{"title": "SSC CGL Syllabus", "url": "/resources/syllabus/ssc-cgl.html"},
+{"title": "SSC CHSL Syllabus", "url": "/resources/syllabus/ssc-chsl.html"},
+{"title": "SSC MTS Syllabus", "url": "/resources/syllabus/ssc-mts.html"},
+{"title": "SSC JE Syllabus", "url": "/resources/syllabus/ssc-je.html"},
+{"title": "SSC Selection Post Syllabus", "url": "/resources/syllabus/ssc-selection-post.html"},
+
+{"title": "RRB NTPC Syllabus", "url": "/resources/syllabus/rrb-ntpc.html"},
+{"title": "RRB Group D Syllabus", "url": "/resources/syllabus/rrb-groupd.html"},
+{"title": "RRB ALP Syllabus", "url": "/resources/syllabus/rrb-alp.html"},
+{"title": "RRB JE Syllabus", "url": "/resources/syllabus/rrb-je.html"},
+
+{"title": "SBI Clerk Syllabus", "url": "/resources/syllabus/sbi-clerk.html"},
+{"title": "SBI PO Syllabus", "url": "/resources/syllabus/sbi-po.html"},
+{"title": "IBPS Clerk Syllabus", "url": "/resources/syllabus/ibps-clerk.html"},
+{"title": "IBPS PO Syllabus", "url": "/resources/syllabus/ibps-po.html"},
+{"title": "IBPS SO Syllabus", "url": "/resources/syllabus/ibps-so.html"},
+{"title": "RRB Clerk Syllabus", "url": "/resources/syllabus/rrb-clerk.html"},
+{"title": "RRB PO Syllabus", "url": "/resources/syllabus/rrb-po.html"},
+
+{"title": "Insurance AO Syllabus", "url": "/resources/syllabus/insurance-ao.html"},
+{"title": "Insurance Assistant Syllabus", "url": "/resources/syllabus/insurance-assistant.html"},
+
+{"title": "CTET Syllabus", "url": "/resources/syllabus/ctet.html"},
+{"title": "NDA Syllabus", "url": "/resources/syllabus/nda.html"},
+
+{"title": "NEET UG Syllabus (Official)", "url": "https://exams.nta.ac.in/NEET/"},
+{"title": "GATE Syllabus (Official)", "url": "https://gate2026.iitg.ac.in/exam-papers-and-syllabus.html"}
+
+]
+},
+
+{
+"category": "Exam Pattern",
+"type": "education",
+"priority": "high",
+"links": [
+{"title": "SSC Exam Pattern", "url": "#"},
+{"title": "RRB Exam Pattern", "url": "#"},
+{"title": "Bank Exam Pattern", "url": "#"},
+{"title": "Insurance Exam Pattern", "url": "#"},
+{"title": "Defense Exam Pattern", "url": "#"},
+{"title": "Teaching Exam Pattern", "url": "#"}
+]
+},
+
+{
+"category": "How To Apply",
+"type": "education",
+"priority": "high",
+"links": [
+{"title": "SSC Application Process", "url": "#"},
+{"title": "RRB Application Process", "url": "#"},
+{"title": "Bank Application Process", "url": "#"},
+{"title": "Insurance Application Process", "url": "#"},
+{"title": "Defense Application Process", "url": "#"},
+{"title": "Teaching Application Process", "url": "#"}
+]
+},
+
+{
+"category": "Previous Papers",
+"type": "education",
+"links": [
+{"title": "SSC Previous Papers", "url": "#"},
+{"title": "RRB Previous Papers", "url": "#"},
+{"title": "Bank Previous Papers", "url": "#"},
+{"title": "Insurance Previous Papers", "url": "#"},
+{"title": "Defense Previous Papers", "url": "#"}
+]
+},
+
+{
+"category": "Admit Card",
+"type": "education",
+"links": [
+{"title": "SSC Admit Card", "url": "#"},
+{"title": "RRB Admit Card", "url": "#"},
+{"title": "Bank Admit Card", "url": "#"},
+{"title": "Insurance Admit Card", "url": "#"}
+]
+},
+
+{
+"category": "Result",
+"type": "education",
+"links": [
+{"title": "SSC Result", "url": "#"},
+{"title": "RRB Result", "url": "#"},
+{"title": "Bank Result", "url": "#"},
+{"title": "Insurance Result", "url": "#"}
+]
+},
+
+{
+"category": "Cutoff",
+"type": "education",
+"links": [
+{"title": "SSC Cutoff", "url": "#"},
+{"title": "RRB Cutoff", "url": "#"},
+{"title": "Bank Cutoff", "url": "#"}
+]
+},
+
+{
+"category": "Answer Key",
+"type": "education",
+"links": [
+{"title": "SSC Answer Key", "url": "#"},
+{"title": "RRB Answer Key", "url": "#"},
+{"title": "Bank Answer Key", "url": "#"}
+]
+}
 ]

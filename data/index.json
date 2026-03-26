@@ -1,28 +1,111 @@
 {
-    "events": [
-        "events/Mslug_1.json",
-        "events/Mslug_2.json",
-        "events/Mslug_3.json",
-        "events/Mslug_4.json",
-        "events/Mslug_5.json",
-        "events/Mslug_6.json",
-        "events/Mslug_7.json",
-        "events/Mslug_8.json",
-        "events/Mslug_9.json",
-        "events/Mslug_10.json"
-    ],
-    "jobsdata": [
-        "jobsdata/jobsdata_1.json",
-        "jobsdata/jobsdata_2.json",
-        "jobsdata/jobsdata_3.json",
-        "jobsdata/jobsdata_4.json",
-        "jobsdata/jobsdata_5.json",
-        "jobsdata/jobsdata_6.json",
-        "jobsdata/jobsdata_7.json",
-        "jobsdata/jobsdata_8.json",
-        "jobsdata/jobsdata_9.json",
-        "jobsdata/jobsdata_10.json"
-    ],
-    "importantlinks": "importantlinks.json",
-    "staticportals": "staticportals.json"
+  "entries": [
+    {
+      "master_id": "rrb-cen-05-2026",
+      "type": "events",
+      "file": "data/events/rrb-cen-05-2026.json",
+      "description": "RRB CEN 05/2026 events timeline"
+    },
+    {
+      "master_id": "rrb-cen-09-2025",
+      "type": "jobsdata",
+      "file": "data/jobsdata/rrb-cen-09-2025.json",
+      "description": "RRB CEN 09/2025 full recruitment data"
+    },
+    {
+      "master_id": "rrb-cen-09-2025",
+      "type": "events",
+      "file": "data/events/rrb-cen-09-2025.json",
+      "description": "RRB CEN 09/2025 events timeline"
+    },
+    {
+      "master_id": "rrb-cen-09-2025",
+      "type": "dailypost",
+      "file": "data/dailyposts/rrb-cen-09-2025.json",
+      "description": "Daily posts for RRB CEN 09/2025"
+    },
+    {
+      "master_id": "ssc-cgl-2026",
+      "type": "events",
+      "file": "data/events/ssc-cgl-2026.json",
+      "description": "SSC CGL 2026 events timeline"
+    },
+    {
+      "master_id": "ssc-cgl-2026",
+      "type": "dailypost",
+      "file": "data/dailyposts/21-03-26.json",
+      "description": "Daily posts for SSC CGL 2026"
+    },
+    {
+      "master_id": "uppsc-psc-2026",
+      "type": "jobsdata",
+      "file": "data/jobsdata/uppsc-psc-2026.json",
+      "description": "UPPSC PSC 2026 full recruitment data"
+    },
+    {
+      "master_id": "uppsc-psc-2026",
+      "type": "events",
+      "file": "data/events/uppsc-psc-2026.json",
+      "description": "UPPSC PSC 2026 events timeline"
+    },
+    {
+      "master_id": "uppsc-psc-2026",
+      "type": "dailypost",
+      "file": "data/dailyposts/21-03-26.json",
+      "description": "Daily posts for UPPSC PSC 2026"
+    },
+    {
+      "master_id": "ssc-cgl-2026",
+      "type": "jobsdata",
+      "file": "data/jobsdata/ssc-cgl-2026.json",
+      "description": "The SSC CGL 2026 is conducted to recruit Group B and C officers across various Ministries and Departments."
+    },
+    {
+      "master_id": "ib-acio-2026",
+      "type": "events",
+      "file": "data/events/ib-acio-2026.json",
+      "description": "IB ACIO 2026 events timeline"
+    },
+    {
+      "master_id": "ib-acio-2026",
+      "type": "dailypost",
+      "file": "data/dailyposts/21-03-26.json",
+      "description": "Daily posts for IB ACIO 2026"
+    },
+    {
+      "master_id": "rbi-assistant-2026",
+      "type": "jobsdata",
+      "file": "data/jobsdata/rbi-assistant-2026.json",
+      "description": "RBI Assistant 2026 full recruitment data"
+    },
+    {
+      "master_id": "rbi-assistant-2026",
+      "type": "events",
+      "file": "data/events/rbi-assistant-2026.json",
+      "description": "RBI Assistant 2026 events timeline"
+    },
+    {
+      "master_id": "rbi-assistant-2026",
+      "type": "dailypost",
+      "file": "data/dailyposts/21-03-26.json",
+      "description": "Daily posts for RBI Assistant 2026"
+    },
+    {
+      "master_id": "bihar-police-asi-2026",
+      "type": "events",
+      "file": "data/events/bihar-police-asi-2026.json",
+      "description": "Bihar Police 2026 events timeline"
+    },
+    {
+      "master_id": "bihar-police-2026",
+      "type": "dailypost",
+      "file": "data/dailyposts/21-03-26.json",
+      "description": "Daily posts for Bihar Police 2026"
+    },
+    {
+      "type": "static",
+      "label": "Important Links",
+      "file": "data/importantlinks.json"
+    }
+  ]
 }
