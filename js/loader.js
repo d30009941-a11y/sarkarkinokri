@@ -1,17 +1,15 @@
 /**
- * Loader.js — ULTRA STABLE UNIVERSAL LOADER (BASE FIXED)
+ * Loader.js — ULTRA STABLE UNIVERSAL LOADER (with daily post filtering)
  */
-
-const BASE = window.location.pathname.includes("sarkarkinokri")
-  ? "/sarkarkinokri/"
-  : "/";
 
 window.Loader = {
     indexManifest: null,
 
-    async init(manifestPath = "data/index.json") {
+    async init(manifestPath) {
         try {
-            const res = await fetch(BASE + manifestPath.replace(/^\/+/, ''));
+            // Fix: Ensure manifestPath is treated as relative
+            const cleanPath = manifestPath.startsWith('/') ? `.${manifestPath}` : manifestPath;
+            const res = await fetch(cleanPath);
             if (!res.ok) throw new Error("Manifest load failed");
             this.indexManifest = await res.json();
             console.log("✅ Loader initialized");
@@ -58,32 +56,41 @@ window.Loader = {
     },
 
     async _fetchJSON(path) {
-        const clean = path.replace(/^\/+/, '');
-
+        // Fix: Force relative pathing for GitHub Pages subdirectories
+        const cleanPath = path.startsWith('/') ? `.${path}` : `./${path}`;
+        
         const paths = [
-            BASE + clean,
-            clean,
-            "/" + clean
+            cleanPath,
+            path.replace(/^\/+/, ''),
+            path
         ];
 
         for (const p of paths) {
             try {
                 const res = await fetch(p);
 
-                if (!res.ok) continue;
+                if (!res.ok) {
+                    console.warn(`❌ Fetch failed:`, p);
+                    continue;
+                }
 
                 const text = await res.text();
 
-                if (!text.trim().startsWith("{") && !text.trim().startsWith("[")) continue;
+                if (!text.trim().startsWith("{") && !text.trim().startsWith("[")) {
+                    console.warn("❌ Invalid JSON:", p);
+                    continue;
+                }
 
                 const json = JSON.parse(text);
-                console.log("✅ Loaded JSON:", p);
+                console.log(`✅ Loaded JSON:`, p);
                 return json;
 
-            } catch (err) {}
+            } catch (err) {
+                console.warn(`⚠️ Error fetching JSON:`, p);
+            }
         }
 
-        console.error("❌ ALL FETCH FAILED →", path);
+        console.error(`❌ ALL FETCH FAILED → ${path}`);
         return null;
     }
 };
