@@ -1,0 +1,33 @@
+{
+  "master_id": "rbi-assistant-2026",
+  "title": "RBI Assistant 2026 Recruitment",
+  "status": "Live",
+  "official_site": "https://rbi.org.in",
+  "category": "Banking",
+  "events": [
+    {
+      "child_id": "rbi-assistant-2026-notification",
+      "label": "Detailed Notification",
+      "stage": "notification",
+      "is_active": true,
+      "url": "details.html?id=rbi-assistant-2026",
+      "official_event_url": "https://rbi.org.in/assistant-notification-2026.pdf",
+      "start_date": "2026-03-10",
+      "end_date": "2026-03-30"
+    },
+    {
+      "child_id": "rbi-assistant-2026-apply",
+      "label": "Apply Online",
+      "stage": "apply",
+      "is_active": true,
+      "url": "https://rbi.org.in/apply-assistant-2026",
+      "start_date": "2026-03-10",
+      "end_date": "2026-03-30"
+    }
+  ],
+  "meta": {
+    "source": "Official RBI Website",
+    "last_updated": "2026-03-17T11:00:00+05:30",
+    "priority": "High"
+  }
+}

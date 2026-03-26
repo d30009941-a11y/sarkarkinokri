@@ -1,0 +1,26 @@
+{
+  "master_id": "ib-acio-2026",
+  "title": "IB ACIO 2026 Recruitment",
+  "status": "Live",
+  "category": "Central Govt",
+  "events": [
+    {
+      "child_id": "ib-acio-2026-notification",
+      "label": "Notification Released",
+      "stage": "notification",
+      "is_active": true,
+      "start_date": "2026-03-12",
+      "end_date": "2026-03-28",
+      "url": "details.html?id=ib-acio-2026"
+    },
+    {
+      "child_id": "ib-acio-2026-apply",
+      "label": "Apply Online",
+      "stage": "apply",
+      "is_active": true,
+      "start_date": "2026-03-12",
+      "end_date": "2026-03-28",
+      "url": "https://www.mha.gov.in"
+    }
+  ]
+}

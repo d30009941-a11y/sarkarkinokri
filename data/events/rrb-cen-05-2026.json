@@ -1,0 +1,39 @@
+{
+  "master_id": "rrb-cen-05-2026",
+  "header_scope": [
+    "Government of India",
+    "Ministry of Railways",
+    "Railway Recruitment Boards"
+  ],
+  "notice_type": "CEN No.",
+  "notice_no": "05/2026",
+  "title": "Recruitment of Technical Supervisors & Paramedical Categories",
+  "description": "This recruitment drive aims to fill various Technical Supervisor and Paramedical positions across different Zonal Railways and Production Units.",
+  "status": "Live",
+  "category": "Railways",
+  "events": [
+    {
+      "child_id": "rrb-cen-05-2026-apply",
+      "label": "RRB CEN 05/2026: Click here to Apply Online",
+      "stage": "apply",
+      "is_active": true,
+      "start_date": "2026-03-20",
+      "end_date": "2026-04-20",
+      "official_event_url": "https://www.rrbapply.gov.in"
+    },
+    {
+      "child_id": "rrb-cen-05-2026-notification",
+      "label": "RRB CEN 05/2026: Detailed Notification",
+      "stage": "notification",
+      "is_active": true,
+      "start_date": "2026-03-20",
+      "end_date": "2026-04-20",
+      "official_event_url": "https://indianrailways.gov.in/cen-05-2026.pdf"
+    }
+  ],
+  "meta": {
+    "source": "Official Railway Recruitment Board",
+    "last_updated": "2026-03-22T08:00:00+05:30",
+    "priority": "High"
+  }
+}

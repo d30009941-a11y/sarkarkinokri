@@ -1,0 +1,62 @@
+{
+  "master_id": "rrb-cen-09-2025",
+  "title": "RRB CEN 09/2025 Recruitment",
+  "status": "Live",
+  "official_site": "https://indianrailways.gov.in",
+  "category": "Railways",
+
+  "events": [
+
+    {
+      "child_id": "rrb-cen-09-2025-notification",
+      "label": "Detailed Notification",
+      "stage": "notification",
+      "is_active": true,
+      "url": "details.html?id=rrb-cen-09-2025",
+      "official_event_url": "https://indianrailways.gov.in/rrb-cen-09-2025.pdf",
+      "start_date": "2026-03-01",
+      "end_date": "2026-03-31"
+    },
+
+    {
+      "child_id": "rrb-cen-09-2025-apply",
+      "label": "Apply Online",
+      "stage": "apply",
+      "is_active": true,
+      "url": "https://indianrailways.gov.in/apply",
+      "start_date": "2026-03-01",
+      "end_date": "2026-03-31"
+    },
+
+    {
+      "child_id": "rrb-cen-09-2025-admit",
+      "label": "Admit Card",
+      "stage": "admit",
+      "is_active": false,
+      "url": null
+    },
+
+    {
+      "child_id": "rrb-cen-09-2025-answer",
+      "label": "Answer Key",
+      "stage": "answer",
+      "is_active": false,
+      "url": null
+    },
+
+    {
+      "child_id": "rrb-cen-09-2025-result",
+      "label": "Result",
+      "stage": "result",
+      "is_active": false,
+      "url": null
+    }
+
+  ],
+
+  "meta": {
+    "source": "Official Website",
+    "last_updated": "2026-03-12T10:00:00+05:30",
+    "priority": "High"
+  }
+}
