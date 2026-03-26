@@ -1,0 +1,143 @@
+{
+  "exam_name": "SBI PO (Probationary Officer)",
+  "year": "2026",
+  "category_name": "Banking Recruitment",
+  "nav_redirect_id": "bank",
+  "master_id": "sbi-po",
+  "total_vacancy_projected": "2500+ (Expected)",
+    
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF PO RECRUITMENT",
+    "hub_url": "/sbi/sbipo.html"
+  },
+  "exam_phases": [
+    {
+      "phase": "Phase I: Prelims",
+      "duration": "60 Minutes",
+      "total_qs": "100",
+      "negative": "0.25"
+    },
+    {
+      "phase": "Phase II: Mains + Descriptive",
+      "duration": "3.5 Hours",
+      "total_qs": "155 + 2",
+      "negative": "0.25"
+    },
+    {
+      "phase": "Phase III: Psychometric + GE & Interview",
+      "duration": "Variable",
+      "total_qs": "50 Marks Total",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "58", "difficulty": "Moderate-Tough", "key_shift": "Reasoning tough" },
+    { "year": "2024", "cutoff_avg": "57", "difficulty": "Moderate", "key_shift": "DI lengthy" },
+    { "year": "2023", "cutoff_avg": "59", "difficulty": "Moderate", "key_shift": "English RC heavy" },
+    { "year": "2022", "cutoff_avg": "56", "difficulty": "Moderate", "key_shift": "Balanced" },
+    { "year": "2021", "cutoff_avg": "60", "difficulty": "Moderate", "key_shift": "Puzzle high" }
+  ],
+  "subjects": [
+    {
+      "name": "English Language (Prelims)",
+      "total_qs": "30",
+      "analysis": "RC dominates. Sentence rearrangement and error detection are high-scoring areas.",
+      "topics": [
+        { "name": "Reading Comprehension", "weight": "8-10", "priority": "High", "sub_topics": "Tone & Theme" },
+        { "name": "Cloze Test", "weight": "5-6", "priority": "High", "sub_topics": "Contextual Vocabulary" },
+        { "name": "Error Detection", "weight": "4-5", "priority": "High", "sub_topics": "Grammar Rules" },
+        { "name": "Para Jumble", "weight": "3-4", "priority": "Medium", "sub_topics": "Sentence Pairing" },
+        { "name": "Fillers & Phrase Replacement", "weight": "3-4", "priority": "Medium", "sub_topics": "Vocabulary" }
+      ]
+    },
+    {
+      "name": "Quantitative Aptitude (Prelims)",
+      "total_qs": "35",
+      "analysis": "Arithmetic heavy. Quadratic equations and Data Interpretation are mandatory for clearing cutoffs.",
+      "topics": [
+        { "name": "Data Interpretation", "weight": "10-15", "priority": "High", "sub_topics": "Table/Line/Bar" },
+        { "name": "Number Series", "weight": "5", "priority": "High", "sub_topics": "Missing/Wrong Pattern" },
+        { "name": "Quadratic Equations", "weight": "5", "priority": "High", "sub_topics": "Factor Comparison" },
+        { "name": "Simplification/Approximation", "weight": "5", "priority": "High", "sub_topics": "BODMAS" },
+        { "name": "Arithmetic Word Problems", "weight": "10", "priority": "Medium", "sub_topics": "Percentage, P&L, SI-CI" }
+      ]
+    },
+    {
+      "name": "Reasoning Ability (Prelims)",
+      "total_qs": "35",
+      "analysis": "Puzzle heavy. Efficiency in circular and linear seating is essential for the 20-minute sectional limit.",
+      "topics": [
+        { "name": "Puzzles", "weight": "10-12", "priority": "High", "sub_topics": "Floor/Box/Variables" },
+        { "name": "Seating Arrangement", "weight": "8-10", "priority": "High", "sub_topics": "Circular/Linear/Square" },
+        { "name": "Syllogism", "weight": "3-5", "priority": "Medium", "sub_topics": "Only a Few Logic" },
+        { "name": "Coding Decoding", "weight": "3-5", "priority": "Medium", "sub_topics": "Chinese/Letter" },
+        { "name": "Inequality & Blood Relations", "weight": "5-7", "priority": "Medium", "sub_topics": "Coded Logic" }
+      ]
+    },
+    {
+      "name": "Reasoning & Computer Aptitude (Mains)",
+      "total_qs": "40",
+      "analysis": "High level puzzles and critical reasoning dominate. Computer aptitude focuses on logic-based binary/flowcharts.",
+      "topics": [
+        { "name": "Complex Puzzles", "weight": "15-18", "priority": "High", "sub_topics": "Multiple Variables" },
+        { "name": "Logical Reasoning", "weight": "8-10", "priority": "High", "sub_topics": "Statement/Assumptions" },
+        { "name": "Machine Input Output", "weight": "4-5", "priority": "Medium", "sub_topics": "Step Logic" },
+        { "name": "Computer Aptitude", "weight": "4-5", "priority": "Medium", "sub_topics": "Flowcharts/Binary" }
+      ]
+    },
+    {
+      "name": "Data Analysis & Interpretation (Mains)",
+      "total_qs": "30",
+      "analysis": "Advanced DI heavy. Questions are mostly arithmetic-based caselets and probability-based DI.",
+      "topics": [
+        { "name": "Caselet & Logical DI", "weight": "12-15", "priority": "High", "sub_topics": "Mixed Charts" },
+        { "name": "Data Sufficiency", "weight": "5-6", "priority": "High", "sub_topics": "3-Statement Logic" },
+        { "name": "Quantity Comparison", "weight": "5-8", "priority": "High", "sub_topics": "Arithmetic Application" },
+        { "name": "Probability & P&C", "weight": "2-4", "priority": "Medium", "sub_topics": "Basic to Advanced" }
+      ]
+    },
+    {
+      "name": "General Awareness (Mains)",
+      "total_qs": "50",
+      "analysis": "Deep focus on Banking, Financial Awareness, and Economy. Merit is decided here.",
+      "topics": [
+        { "name": "Banking & Financial Awareness", "weight": "15-20", "priority": "High", "sub_topics": "RBI, PCA, Monetory Policy" },
+        { "name": "Current Affairs", "weight": "20-25", "priority": "High", "sub_topics": "Past 6-8 Months" },
+        { "name": "Static Economy GK", "weight": "5-8", "priority": "Medium", "sub_topics": "Budget/Surveys" }
+      ]
+    },
+    {
+      "name": "Descriptive English (Mains)",
+      "total_qs": "2",
+      "analysis": "Evaluation of typing speed and formal writing skills. Compulsory for merit.",
+      "topics": [
+        { "name": "Essay Writing", "weight": "1", "priority": "High", "sub_topics": "Banking/Social Issues" },
+        { "name": "Letter Writing", "weight": "1", "priority": "High", "sub_topics": "Formal/Informal" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Prelims Strategy",
+      "content": "Focus on high-weightage topics like Puzzles and DI first. Sectional timing (20 mins) means you must pick the right questions to attempt.",
+      "stat_box": "Target Score: 70+"
+    },
+    {
+      "title": "Mains Strategy",
+      "content": "GA + Data Analysis focus is mandatory. General Awareness is the biggest score booster; start preparing 6 months in advance.",
+      "stat_box": "GA Marks: 60"
+    },
+    {
+      "title": "Phase III Strategy",
+      "content": "Banking awareness and current economic issues are vital for the Interview. Practice mock GEs for group dynamics.",
+      "stat_box": "Final Selection"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is there an interview in SBI PO?", "a": "Yes, Phase III includes a Psychometric Test, Group Exercise, and Personal Interview." },
+    { "q": "Is the Descriptive test compulsory?", "a": "Yes, it is conducted online immediately after the objective Mains and is mandatory for merit calculation." },
+    { "q": "What is the negative marking?", "a": "There is a 1/4th (0.25) negative marking for every wrong answer in Phase I and Phase II." },
+    { "q": "How is the final merit list calculated?", "a": "The final merit is based on marks obtained in Mains (Phase II) and Phase III. Prelims marks are not added." },
+    { "q": "What is the Psychometric Test?", "a": "It is a personality assessment test used to profile candidates before the interview; it has no specific marks but is reviewed by the panel." }
+  ]
+}

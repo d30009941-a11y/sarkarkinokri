@@ -1,0 +1,137 @@
+{
+  "exam_name": "IBPS PO (CRP Probationary Officer)",
+  "year": "2026",
+  "category_name": "Banking Recruitment",
+  "nav_redirect_id": "bank",
+  "master_id": "ibps-po",
+  "total_vacancy_projected": "4500+ (Expected)",
+  
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF PO RECRUITMENT",
+    "hub_url": "/ibps/ibpsbank.html"
+  },
+  "exam_phases": [
+    {
+      "phase": "Phase I: Prelims (CBT)",
+      "duration": "60 Minutes",
+      "total_qs": "100",
+      "negative": "0.25",
+      "marks": "100"
+    },
+    {
+      "phase": "Phase II: Mains + Descriptive (CBT)",
+      "duration": "180 Minutes + 30 Minutes",
+      "total_qs": "155 + 2",
+      "negative": "0.25",
+      "marks": "225"
+    },
+    {
+      "phase": "Phase III: Personal Interview & GE",
+      "duration": "15-20 Minutes",
+      "total_qs": "Face-to-Face",
+      "negative": "No",
+      "marks": "100"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "59", "difficulty": "Moderate", "key_shift": "GA heavy" },
+    { "year": "2024", "cutoff_avg": "57", "difficulty": "Moderate", "key_shift": "DI complex" },
+    { "year": "2023", "cutoff_avg": "60", "difficulty": "Moderate", "key_shift": "Puzzle tricky" },
+    { "year": "2022", "cutoff_avg": "56", "difficulty": "Moderate", "key_shift": "Balanced" },
+    { "year": "2021", "cutoff_avg": "58", "difficulty": "Moderate", "key_shift": "Reasoning heavy" }
+  ],
+  "subjects": [
+    {
+      "name": "English Language (Prelims & Mains)",
+      "total_qs": "30 (Pre) / 35 (Mains)",
+      "analysis": "Reading Comprehension (RC) dominates. High-level inference and contextual vocabulary are essential for PO-level difficulty.",
+      "topics": [
+        { "name": "Reading Comprehension", "weight": "8-12", "priority": "High", "sub_topics": "Inference, Title-based, Fact-check" },
+        { "name": "Cloze Test", "weight": "5-7", "priority": "High", "sub_topics": "Grammar, Contextual usage" },
+        { "name": "Error Detection", "weight": "5-6", "priority": "High", "sub_topics": "New Pattern, Phrase Replacement" },
+        { "name": "Fillers", "weight": "3-5", "priority": "Medium", "sub_topics": "Double/Triple Fillers" },
+        { "name": "Para Jumble", "weight": "5", "priority": "Medium", "sub_topics": "Coherent Paragraph Construction" },
+        { "name": "Connectors & Starters", "weight": "3-4", "priority": "High", "sub_topics": "Sentence synthesis" },
+        { "name": "Vocabulary Match", "weight": "2-3", "priority": "Low", "sub_topics": "Synonym/Antonym" }
+      ]
+    },
+    {
+      "name": "Quantitative Aptitude / Data Analysis",
+      "total_qs": "35 (Pre) / 35 (Mains)",
+      "analysis": "Transition from calculation-heavy Prelims to concept-heavy Data Analysis in Mains. Arithmetic remains the backbone.",
+      "topics": [
+        { "name": "Data Interpretation (DI)", "weight": "12-15", "priority": "High", "sub_topics": "Missing DI, Radar Graph, Caselets" },
+        { "name": "Number Series", "weight": "5", "priority": "High", "sub_topics": "Wrong Number Pattern" },
+        { "name": "Simplification/Approximation", "weight": "5", "priority": "High", "sub_topics": "Speed Math, BODMAS" },
+        { "name": "Arithmetic Word Problems", "weight": "10-12", "priority": "High", "sub_topics": "SI-CI, Partnership, TSD" },
+        { "name": "Quadratic Equations", "weight": "5", "priority": "Medium", "sub_topics": "Coded Inequality" },
+        { "name": "Data Sufficiency", "weight": "3-5", "priority": "High", "sub_topics": "2 & 3 Statement Logic" },
+        { "name": "Quantity Comparison", "weight": "3-4", "priority": "Medium", "sub_topics": "Q1 vs Q2 Comparison" }
+      ]
+    },
+    {
+      "name": "Reasoning & Computer Aptitude",
+      "total_qs": "35 (Pre) / 45 (Mains)",
+      "analysis": "Puzzle-centric with a focus on logical flow. Mains level introduces high-level critical reasoning and coded logic.",
+      "topics": [
+        { "name": "Puzzles & Seating", "weight": "15-20", "priority": "High", "sub_topics": "Uncertain, Blood Relation Hybrid" },
+        { "name": "Syllogism", "weight": "3-5", "priority": "High", "sub_topics": "Reverse, Only a Few logic" },
+        { "name": "Coding-Decoding", "weight": "5", "priority": "Medium", "sub_topics": "Coded Direction/Binary" },
+        { "name": "Logical/Critical Reasoning", "weight": "8-10", "priority": "High", "sub_topics": "Statement-Assumption, Cause-Effect" },
+        { "name": "Machine Input-Output", "weight": "5", "priority": "Medium", "sub_topics": "Pattern-shifting logic" },
+        { "name": "Inequality", "weight": "3-5", "priority": "Medium", "sub_topics": "Coded Inequalities" },
+        { "name": "Computer Aptitude", "weight": "2-4", "priority": "Low", "sub_topics": "Hardware/Software logic gates" }
+      ]
+    },
+    {
+      "name": "General & Banking Awareness (Mains)",
+      "total_qs": "40",
+      "analysis": "Focus on the last 6 months of current affairs with a deep dive into RBI circulars and financial terminology.",
+      "topics": [
+        { "name": "Current Affairs", "weight": "20-25", "priority": "High", "sub_topics": "Past 6-8 Months, Appointments, Awards" },
+        { "name": "Banking Awareness", "weight": "10-12", "priority": "High", "sub_topics": "NPA, Monetary Policy, Basel III" },
+        { "name": "Static GK", "weight": "5-6", "priority": "Medium", "sub_topics": "HQs, Dams, Wildlife Sanctuaries" },
+        { "name": "Economy Awareness", "weight": "3-5", "priority": "Medium", "sub_topics": "Union Budget, GST, GDP Forecasts" }
+      ]
+    },
+    {
+      "name": "Descriptive Test (Mains Only)",
+      "total_qs": "2",
+      "analysis": "Online typing test assessing professional writing and formal communication.",
+      "topics": [
+        { "name": "Essay Writing", "weight": "1", "priority": "High", "sub_topics": "Current Socio-Economic issues" },
+        { "name": "Letter Writing", "weight": "1", "priority": "High", "sub_topics": "Formal/Informal Banking Letters" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Prelims Strategy: The Filter Phase",
+      "content": "Accuracy is more important than raw attempts. Clear the sectional cutoffs first by picking easy arithmetic and direct puzzles. Speed Math is your best friend.",
+      "stat_box": "Target Score: 65+"
+    },
+    {
+      "title": "Mains Strategy: The Merit Phase",
+      "content": "General Awareness and Data Interpretation are the highest weightage sections. You must start GA preparation 6 months prior to the exam date for a safe score.",
+      "stat_box": "High Weightage Sections"
+    },
+    {
+      "title": "Interview & Personality",
+      "content": "Banking awareness and current affairs are strictly required. Work on body language and your personal introduction to score in the 80+ range in the interview.",
+      "stat_box": "Final Stage Prep"
+    },
+    {
+      "title": "Descriptive Writing Practice",
+      "content": "Use a standard keyboard for typing practice. Focus on word limits and error-free grammar to qualify comfortably.",
+      "stat_box": "Typing Mandatory"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is there an interview in IBPS PO?", "a": "Yes, a personal interview is the final stage of the selection process after clearing Mains." },
+    { "q": "What is the negative marking policy?", "a": "A penalty of 0.25 marks is deducted for every incorrect response in both objective phases." },
+    { "q": "How is the final merit list calculated?", "a": "The final result is based on the combined score of Phase II (Mains) and Phase III (Interview) in an 80:20 ratio." },
+    { "q": "Is the Descriptive Test compulsory?", "a": "Yes, it is a mandatory qualifying section held immediately after the objective Mains exam." },
+    { "q": "Are there sectional cutoffs?", "a": "Yes, candidates must score above the minimum qualifying marks in each individual section as well as the overall total." },
+    { "q": "Is GA important for the interview?", "a": "Very important. Most interview questions revolve around banking policies, economic trends, and current affairs." }
+  ]
+}

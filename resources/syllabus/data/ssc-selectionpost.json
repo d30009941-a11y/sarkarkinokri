@@ -1,0 +1,124 @@
+{
+  "exam_name": "SSC Selection Post Phase XIV",
+  "year": "2026",
+  "category_name": "SSC Recruitment",
+  "nav_redirect_id": "ssc",
+  "master_id": "ssc-selectionpost",
+  "total_vacancy_projected": "2500+ (Across 300+ unique post categories)",
+    
+  "redirect_buttons": {
+    "hub_label": "PHASE XIV SELECTION GUIDE",
+    "hub_url": "/ssc/sscselection.html"
+  },
+  "exam_phases": [
+    {
+      "phase": "Phase I: Computer Based Test (CBT)",
+      "duration": "60 Minutes (80m for Scribe)",
+      "total_qs": "100",
+      "negative": "0.50",
+      "marks": "200"
+    },
+    {
+      "phase": "Phase II: Skill Test",
+      "duration": "Post-Dependent",
+      "total_qs": "Qualifying Only",
+      "negative": "Mistake % based",
+      "marks": "N/A (Qualifying)"
+    },
+    {
+      "phase": "Phase III: Document Verification (DV)",
+      "duration": "Regional Office Schedule",
+      "total_qs": "Scrutiny of EQ",
+      "negative": "Strict Rejection",
+      "marks": "Final Merit clearing"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2026", "cutoff_avg": "TBD", "difficulty": "Level-based", "key_shift": "Notification expected March 31" },
+    { "year": "2025", "cutoff_avg": "135-165", "difficulty": "Moderate", "key_shift": "Increased focus on Scientific Research GK" },
+    { "year": "2024", "cutoff_avg": "128-158", "difficulty": "Moderate", "key_shift": "Tricky geometry in Grad level" },
+    { "year": "2023", "cutoff_avg": "130-160", "difficulty": "Easy-Moderate", "key_shift": "Standard SSC pattern" },
+    { "year": "2022", "cutoff_avg": "125-155", "difficulty": "Moderate", "key_shift": "Static GK heavy" }
+  ],
+  "subjects": [
+    {
+      "name": "General Intelligence (Reasoning)",
+      "total_qs": "25",
+      "analysis": "Identical structure across levels but higher abstraction in Graduation level. Non-verbal reasoning is key for Matriculation posts.",
+      "topics": [
+        { "name": "Analogy & Classification", "weight": "4-5", "priority": "High", "sub_topics": "Semantic, Figural, Symbolic" },
+        { "name": "Series", "weight": "3-4", "priority": "High", "sub_topics": "Number, Alphanumeric, Figural" },
+        { "name": "Coding-Decoding", "weight": "2-3", "priority": "High", "sub_topics": "By Letter Shifting, By Opposites" },
+        { "name": "Venn Diagrams", "weight": "1-2", "priority": "Medium", "sub_topics": "Logic-based overlaps" },
+        { "name": "Blood Relation & Direction", "weight": "2-3", "priority": "Medium", "sub_topics": "Coded (Grad Level)" },
+        { "name": "Paper Folding/Cutting", "weight": "1-2", "priority": "Low", "sub_topics": "Image visualization" }
+      ]
+    },
+    {
+      "name": "Quantitative Aptitude",
+      "total_qs": "25",
+      "analysis": "Matriculation level is 100% Arithmetic. Higher Secondary and Graduation levels include Advanced Maths (Algebra, Geometry, Trig).",
+      "topics": [
+        { "name": "Number Systems", "weight": "2-3", "priority": "High", "sub_topics": "LCM/HCF, Fractions, Decimals" },
+        { "name": "Arithmetic Sprint", "weight": "12-15", "priority": "High", "sub_topics": "Ratio, %, Profit/Loss, Time & Work" },
+        { "name": "Algebra (HS/Grad)", "weight": "2-3", "priority": "Medium", "sub_topics": "Basic Identities, Surds" },
+        { "name": "Geometry (HS/Grad)", "weight": "3-4", "priority": "High", "sub_topics": "Triangles, Circles, Tangents" },
+        { "name": "Trigonometry (Grad)", "weight": "2", "priority": "Low", "sub_topics": "Heights & Distances" },
+        { "name": "Mensuration", "weight": "2-3", "priority": "Medium", "sub_topics": "2D/3D Standard Figures" }
+      ]
+    },
+    {
+      "name": "General Awareness",
+      "total_qs": "25",
+      "analysis": "Broad spectrum covering environment, daily observations, and scientific research. Highly unpredictable.",
+      "topics": [
+        { "name": "Current Affairs", "weight": "5-8", "priority": "High", "sub_topics": "Last 6-8 months, National news" },
+        { "name": "History & Culture", "weight": "4-5", "priority": "High", "sub_topics": "Indian Freedom Struggle, Art forms" },
+        { "name": "General Science", "weight": "5-6", "priority": "High", "sub_topics": "Physics, Bio, Chem (10th Std)" },
+        { "name": "Geography", "weight": "2-3", "priority": "Medium", "sub_topics": "Indian & Neighboring countries" },
+        { "name": "Polity", "weight": "2-3", "priority": "Medium", "sub_topics": "Constitution, Local Governance" }
+      ]
+    },
+    {
+      "name": "English Language",
+      "total_qs": "25",
+      "analysis": "Tests basic knowledge and comprehension. Cloze test and sentence improvement are the scoring sections.",
+      "topics": [
+        { "name": "Error Spotting", "weight": "3-5", "priority": "High", "sub_topics": "Subject-Verb, Tense, Articles" },
+        { "name": "Vocabulary", "weight": "8-10", "priority": "High", "sub_topics": "Synonyms, Antonyms, One Word" },
+        { "name": "Cloze Test", "weight": "5", "priority": "High", "sub_topics": "Contextual fillers" },
+        { "name": "Reading Comprehension", "weight": "5", "priority": "Medium", "sub_topics": "Fact-based (HS/Grad)" },
+        { "name": "Idioms & Phrases", "weight": "2-3", "priority": "Low", "sub_topics": "Common usage" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Level-Wise Strategy",
+      "content": "Graduates should apply for Matric and HS posts too. You will have to appear for 3 separate exams, giving you 3 chances at a job with one preparation.",
+      "stat_box": "Separate Exam for each Level"
+    },
+    {
+      "title": "Document Scrutiny Warning",
+      "content": "Unlike CGL/CHSL, you must send physical hard copies of your documents to Regional Offices after clearing CBT. 25% rejections happen due to late speed-posts.",
+      "stat_box": "Hard Copy Submission"
+    },
+    {
+      "title": "Essential Qualification (EQ)",
+      "content": "Selection Posts are niche. Ensure your Degree/Experience exactly matches the 'Post Code' requirements before applying to avoid rejection at the final stage.",
+      "stat_box": "Check EQ Carefully"
+    },
+    {
+      "title": "Salary Snapshot 2026",
+      "content": "With the latest DA (58%) and 7th CPC revisions, Level 1 in-hand is ~₹26k, while Level 7 (Graduation) can exceed ₹72k in metro cities.",
+      "stat_box": "Level 1 to Level 7"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Can I apply for multiple post codes?", "a": "Yes, but you must pay separate fees for each. If they belong to the same level, you give one exam; if different levels, separate exams." },
+    { "q": "Is there an interview in Selection Post?", "a": "No, there is no interview for any Selection Post (Matric, HS, or Graduation)." },
+    { "q": "What is the age limit?", "a": "Generally 18-30 years, but it varies by post code. Check the official PDF for specific relaxations." },
+    { "q": "What is the total time for the exam?", "a": "You get 60 minutes to attempt 100 questions. Speed is critical as there is no sectional timing." },
+    { "q": "Is work experience required?", "a": "Only for specific 'Technical' or 'Scientific' posts. General posts like MTS or LDC do not require experience." }
+  ]
+}

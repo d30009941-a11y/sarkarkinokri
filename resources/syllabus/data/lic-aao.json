@@ -1,0 +1,136 @@
+{
+  "exam_name": "LIC AAO (Assistant Administrative Officer)",
+  "year": "2026",
+  "category_name": "Insurance Recruitment",
+  "nav_redirect_id": "insurance",
+  "master_id": "lic-aao",
+  "total_vacancy_projected": "300 - 500 (Generalist & Specialist)",
+  "exam_phases": [
+    {
+      "phase": "Phase I: Preliminary Exam (CBT)",
+      "duration": "60 Minutes (Sectional Timing: 20m Each)",
+      "total_qs": "100 (English is Qualifying only)",
+      "negative": "0.25",
+      "marks": "70 (English marks not added to merit)"
+    },
+    {
+      "phase": "Phase II: Main Examination (Objective + Descriptive)",
+      "duration": "120 Minutes + 30 Minutes",
+      "total_qs": "120 + 2",
+      "negative": "0.25",
+      "marks": "300 + 25"
+    },
+    {
+      "phase": "Phase III: Personal Interview",
+      "duration": "20-30 Minutes",
+      "total_qs": "Panel Interview",
+      "negative": "No",
+      "marks": "60"
+    },
+    {
+      "phase": "Phase IV: Pre-Recruitment Medical Exam",
+      "duration": "Variable",
+      "total_qs": "Fitness Check",
+      "negative": "NA",
+      "marks": "Qualifying"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "56-58 (Prelims)", "difficulty": "Moderate", "key_shift": "Insurance awareness tricky" },
+    { "year": "2024", "cutoff_avg": "54-56 (Prelims)", "difficulty": "Moderate", "key_shift": "Math calculative" },
+    { "year": "2023", "cutoff_avg": "53-55 (Prelims)", "difficulty": "Easy-Moderate", "key_shift": "Reasoning puzzles high" },
+    { "year": "2022", "cutoff_avg": "58 (Prelims)", "difficulty": "Moderate", "key_shift": "Balanced" },
+    { "year": "2021", "cutoff_avg": "No Exam", "difficulty": "NA", "key_shift": "Recruitment cycle gap" }
+  ],
+  "subjects": [
+    {
+      "name": "Reasoning Ability (Prelims & Mains)",
+      "total_qs": "35 (Pre) / 30 (Mains)",
+      "analysis": "High level of abstraction. Prelims focuses on speed, while Mains introduces complex data-driven puzzles.",
+      "topics": [
+        { "name": "Puzzles & Seating Arrangement", "weight": "15-20", "priority": "High", "sub_topics": "Linear, Circular, Square, Floor-Flat" },
+        { "name": "Syllogism & Inequality", "weight": "5-8", "priority": "High", "sub_topics": "Only a Few, Coded Inequality" },
+        { "name": "Coding-Decoding", "weight": "3-5", "priority": "Medium", "sub_topics": "New Pattern, Coded" },
+        { "name": "Blood Relation & Direction", "weight": "4-5", "priority": "Medium", "sub_topics": "Coded Family Tree, Distance-Direction" },
+        { "name": "Logical Reasoning (Mains)", "weight": "8-10", "priority": "High", "sub_topics": "Statement-Conclusion, Strong-Weak Arguments" },
+        { "name": "Input-Output (Mains)", "weight": "5", "priority": "Medium", "sub_topics": "Step Rearrangement" },
+        { "name": "Data Sufficiency", "weight": "3-4", "priority": "Low", "sub_topics": "3-Statement Logic" }
+      ]
+    },
+    {
+      "name": "Quantitative Aptitude / Data Interpretation",
+      "total_qs": "35 (Pre) / 30 (Mains)",
+      "analysis": "LIC Prelims involves speed math; Mains is almost entirely Data Interpretation and Analysis.",
+      "topics": [
+        { "name": "Data Interpretation (DI)", "weight": "15-20", "priority": "High", "sub_topics": "Mixed Graphs, Caselets, Missing DI" },
+        { "name": "Number Series", "weight": "5", "priority": "High", "sub_topics": "Wrong & Missing Number Patterns" },
+        { "name": "Arithmetic Word Problems", "weight": "10", "priority": "High", "sub_topics": "Partnership, P&L, SI-CI, Time & Work" },
+        { "name": "Simplification/Approximation", "weight": "5", "priority": "High", "sub_topics": "BODMAS, Percentages" },
+        { "name": "Quadratic Equations", "weight": "5", "priority": "Medium", "sub_topics": "Variable Comparison" },
+        { "name": "Data Sufficiency", "weight": "3-5", "priority": "Medium", "sub_topics": "Arithmetic Application" },
+        { "name": "Probability & Mensuration", "weight": "2-3", "priority": "Low", "sub_topics": "Basic Geometry" }
+      ]
+    },
+    {
+      "name": "Insurance & Financial Market Awareness (Mains)",
+      "total_qs": "30",
+      "analysis": "The most critical section for LIC AAO. Covers the history of insurance, IRDAI regulations, and current financial trends.",
+      "topics": [
+        { "name": "Insurance History & Terms", "weight": "10-12", "priority": "High", "sub_topics": "Principles of Insurance, Annuity, Mortality" },
+        { "name": "IRDAI & Regulatory Bodies", "weight": "5-8", "priority": "High", "sub_topics": "Acts, Clauses, Ombtudsman" },
+        { "name": "Financial Market Updates", "weight": "8-10", "priority": "High", "sub_topics": "Money Market, Capital Market, SEBI" },
+        { "name": "LIC Specific Knowledge", "weight": "5", "priority": "Medium", "sub_topics": "Plans, Schemes, Motto, History" }
+      ]
+    },
+    {
+      "name": "General Knowledge & Current Affairs (Mains)",
+      "total_qs": "30",
+      "analysis": "Broad focus on national and international events. 6-8 months of coverage recommended.",
+      "topics": [
+        { "name": "Current Affairs", "weight": "20-22", "priority": "High", "sub_topics": "Appointments, Awards, Sports, MoUs" },
+        { "name": "Static GK", "weight": "5-8", "priority": "Medium", "sub_topics": "Dams, Parks, Currencies, HQs" },
+        { "name": "Economy News", "weight": "3-5", "priority": "Medium", "sub_topics": "GDP, Inflation, Budget Highlights" }
+      ]
+    },
+    {
+      "name": "English Language & Descriptive",
+      "total_qs": "30 (Pre) / 2 (Mains)",
+      "analysis": "Prelims English is qualifying only (Marks not added to total). Mains Descriptive is mandatory.",
+      "topics": [
+        { "name": "Essay Writing", "weight": "1", "priority": "High", "sub_topics": "Insurance/Economic Issues" },
+        { "name": "Letter Writing", "weight": "1", "priority": "High", "sub_topics": "Formal/Informal" },
+        { "name": "Reading Comprehension (Pre)", "weight": "8-10", "priority": "High", "sub_topics": "Grammar, Fillers" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Prelims Strategy: The Qualifying Hurdle",
+      "content": "English marks are NOT added to your score. Focus 100% on Reasoning and Quant to maximize your total out of 70 marks.",
+      "stat_box": "English: Qualifying Only"
+    },
+    {
+      "title": "Mains Strategy: Specialized Focus",
+      "content": "The Insurance Awareness section is the game-changer. Unlike Banking GA, this requires technical knowledge of insurance principles and IRDAI guidelines.",
+      "stat_box": "Target Score: 200+"
+    },
+    {
+      "title": "Negative Marking Caution",
+      "content": "With a 0.25 penalty, blind guessing in the Insurance section can be fatal. Ensure accuracy in technical terminology.",
+      "stat_box": "Penalty: 1/4th"
+    },
+    {
+      "title": "Interview & Documentation",
+      "content": "LIC looks for professional ethics and communication. Be prepared to discuss current LIC policies and why you want to join the insurance sector.",
+      "stat_box": "Interview Marks: 60"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Are English marks added to the final merit?", "a": "No, in Prelims, the English section is only for qualifying purposes. Your merit rank is decided based on Reasoning and Quant in Prelims, and the Mains score." },
+    { "q": "Is there a negative marking in LIC AAO?", "a": "Yes, there is a negative marking of 0.25 marks for every incorrect answer in both Prelims and Mains." },
+    { "q": "What is the minimum qualifying mark for the Interview?", "a": "Generally, it is 30 marks for Unreserved and 27 for SC/ST, but it varies by the official notification." },
+    { "q": "What is the service bond for LIC AAO?", "a": "Candidates must serve for a minimum of 4 years (including probation). Failure to do so results in a penalty (approx. ₹5,00,000)." },
+    { "q": "What is the probation period?", "a": "The probation period is 1 year, which can be extended up to 2 years based on performance." },
+    { "q": "Can I apply for multiple specialist posts?", "a": "No, a candidate can apply for only one post (Generalist or a specific Specialist post)." }
+  ]
+}

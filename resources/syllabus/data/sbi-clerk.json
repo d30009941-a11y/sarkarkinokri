@@ -1,0 +1,133 @@
+{
+  "exam_name": "SBI Clerk (Junior Associates)",
+  "year": "2026",
+  "category_name": "Banking Recruitment",
+  "nav_redirect_id": "bank",
+  "master_id": "sbi-clerk",
+  "total_vacancy_projected": "9000+ (Expected)",
+      
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF CLERK RECRUITMENT",
+    "hub_url": "/ibps/index.html"
+  },
+  "exam_phases": [
+    {
+      "phase": "Phase I: Prelims",
+      "duration": "60 Minutes",
+      "total_qs": "100",
+      "negative": "0.25"
+    },
+    {
+      "phase": "Phase II: Mains",
+      "duration": "2 Hours 40 Minutes",
+      "total_qs": "190",
+      "negative": "0.25"
+    },
+    {
+      "phase": "Language Proficiency Test (LPT)",
+      "duration": "Qualifying",
+      "total_qs": "NA",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "73", "difficulty": "Moderate", "key_shift": "Reasoning lengthy" },
+    { "year": "2024", "cutoff_avg": "72", "difficulty": "Moderate", "key_shift": "Puzzle heavy" },
+    { "year": "2023", "cutoff_avg": "70", "difficulty": "Moderate", "key_shift": "Math calculative" },
+    { "year": "2022", "cutoff_avg": "69", "difficulty": "Easy-Moderate", "key_shift": "Balanced" },
+    { "year": "2021", "cutoff_avg": "71", "difficulty": "Moderate", "key_shift": "GA tough" }
+  ],
+  "subjects": [
+    {
+      "name": "English Language (Prelims & Mains)",
+      "total_qs": "30",
+      "analysis": "Reading comprehension is dominant. Focus on contextual vocabulary and grammar application.",
+      "topics": [
+        { "name": "Reading Comprehension", "weight": "8-10", "priority": "High", "sub_topics": "Passage" },
+        { "name": "Cloze Test", "weight": "5-6", "priority": "High", "sub_topics": "Paragraph" },
+        { "name": "Error Detection", "weight": "4-5", "priority": "High", "sub_topics": "Grammar" },
+        { "name": "Para Jumble", "weight": "3-4", "priority": "Medium", "sub_topics": "Sentence" },
+        { "name": "Fillers & Match the Column", "weight": "3-4", "priority": "Medium", "sub_topics": "Vocabulary" }
+      ]
+    },
+    {
+      "name": "Numerical Ability (Prelims)",
+      "total_qs": "35",
+      "analysis": "Speed and accuracy in arithmetic are key to clearing the Prelims cutoff.",
+      "topics": [
+        { "name": "Simplification/Approximation", "weight": "5-10", "priority": "High", "sub_topics": "BODMAS" },
+        { "name": "Number Series", "weight": "4-5", "priority": "High", "sub_topics": "Missing/Wrong" },
+        { "name": "Quadratic Equations", "weight": "3-5", "priority": "Medium", "sub_topics": "Comparison" },
+        { "name": "DI", "weight": "8-10", "priority": "High", "sub_topics": "Tables/Charts" },
+        { "name": "Arithmetic Word Problems", "weight": "10-12", "priority": "High", "sub_topics": "Percentage, P&L, SI-CI" }
+      ]
+    },
+    {
+      "name": "Reasoning Ability (Prelims)",
+      "total_qs": "35",
+      "analysis": "Puzzle and seating arrangement heavy. Efficiency in logical puzzles is mandatory.",
+      "topics": [
+        { "name": "Puzzles", "weight": "10-12", "priority": "High", "sub_topics": "Floor/Box/Days" },
+        { "name": "Seating Arrangement", "weight": "8-10", "priority": "High", "sub_topics": "Circular/Linear" },
+        { "name": "Syllogism", "weight": "3-4", "priority": "Medium", "sub_topics": "Only a Few" },
+        { "name": "Coding Decoding", "weight": "3-4", "priority": "Medium", "sub_topics": "Chinese/Letter" },
+        { "name": "Inequality & Direction", "weight": "4-5", "priority": "Medium", "sub_topics": "Logic" }
+      ]
+    },
+    {
+      "name": "General & Financial Awareness (Mains)",
+      "total_qs": "50",
+      "analysis": "Banking awareness heavy. This section is the primary score booster for final merit.",
+      "topics": [
+        { "name": "Banking & Financial Awareness", "weight": "15-20", "priority": "High", "sub_topics": "RBI, Terms, History" },
+        { "name": "Current Affairs", "weight": "20-25", "priority": "High", "sub_topics": "Last 6 Months" },
+        { "name": "Static GK", "weight": "5-8", "priority": "Medium", "sub_topics": "Parks, Dams, HQs" }
+      ]
+    },
+    {
+      "name": "Reasoning Ability & Computer Aptitude (Mains)",
+      "total_qs": "50",
+      "analysis": "High-level complex puzzles and machine input-output are tested here.",
+      "topics": [
+        { "name": "Complex Puzzles", "weight": "15-18", "priority": "High", "sub_topics": "Multi-variable" },
+        { "name": "Logical/Critical Reasoning", "weight": "5-8", "priority": "High", "sub_topics": "Statement-Course of Action" },
+        { "name": "Machine Input Output", "weight": "4-5", "priority": "Medium", "sub_topics": "Step Logic" },
+        { "name": "Computer Aptitude", "weight": "3-5", "priority": "Low", "sub_topics": "Binary/Flowchart" }
+      ]
+    },
+    {
+      "name": "Quantitative Aptitude (Mains)",
+      "total_qs": "50",
+      "analysis": "Data Interpretation (DI) based arithmetic is the core focus of the Mains paper.",
+      "topics": [
+        { "name": "Advanced DI", "weight": "18-22", "priority": "High", "sub_topics": "Caselets/Radar" },
+        { "name": "Data Sufficiency", "weight": "4-6", "priority": "Medium", "sub_topics": "2-3 Statements" },
+        { "name": "Arithmetic Application", "weight": "10-15", "priority": "High", "sub_topics": "Probability/P&C" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Prelims Strategy",
+      "content": "Focus on Puzzles and DI for the cutoff. Speed and accuracy must be balanced as there are sectional timings.",
+      "stat_box": "Target Score: 80+"
+    },
+    {
+      "title": "Mains Strategy",
+      "content": "GA preparation for the last 6 months is mandatory. Focus on the Banking and Finance sub-sectors deeply.",
+      "stat_box": "GA Weightage: 50 Marks"
+    },
+    {
+      "title": "Mock Plan",
+      "content": "Attempt 20 prelims and 15 mains full-length mocks to master the sectional time pressure.",
+      "stat_box": "Total Mocks: 35+"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is there an interview for SBI Clerk?", "a": "No, there is no interview for the Junior Associate (Clerk) post." },
+    { "q": "Are Prelims marks added to the final merit?", "a": "No, Prelims is qualifying; only Mains marks are considered for the final merit list." },
+    { "q": "What is the negative marking?", "a": "There is a 1/4th (0.25) negative marking for each wrong answer in both phases." },
+    { "q": "Is the Language Proficiency Test (LPT) mandatory?", "a": "Yes, if you haven't studied the local language in 10th/12th, you must qualify the LPT." },
+    { "q": "Which section is most important for Mains?", "a": "General Awareness is highly scoring and carries 50 marks, making it critical for selection." }
+  ]
+}

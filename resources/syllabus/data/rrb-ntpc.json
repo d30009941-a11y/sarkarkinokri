@@ -1,0 +1,144 @@
+{
+  "exam_name": "RRB NTPC",
+  "year": "2026",
+  "cen_number": "CEN 05/2026",
+  "category_name": "Railway Recruitment",
+  "nav_redirect_id": "railways",
+  "master_id": "rrb-ntpc",
+  "total_vacancy_projected": "11558+ (Expected)",
+      "redirect_buttons": {
+  "hub_label": "DETAILED INFO OF NTPC RECRUITMENT",
+    "hub_url": "/railways/ntpc.html"
+  },
+  "syllabus_variants": [
+    {
+      "type": "Graduate Level",
+      "applies_to": [
+        "Station Master",
+        "Goods Guard",
+        "Commercial Apprentice",
+        "Traffic Assistant"
+      ],
+      "note": "Same CBT-1 and CBT-2 syllabus for all graduate posts"
+    },
+    {
+      "type": "Undergraduate Level",
+      "applies_to": [
+        "Junior Clerk",
+        "Accounts Clerk",
+        "Junior Time Keeper",
+        "Trains Clerk"
+      ],
+      "note": "Same CBT-1 and CBT-2 syllabus for all undergraduate posts"
+    }
+  ],
+  "exam_phases": [
+    {
+      "phase": "CBT-1",
+      "duration": "90 Minutes",
+      "total_qs": "100",
+      "negative": "1/3"
+    },
+    {
+      "phase": "CBT-2",
+      "duration": "90 Minutes",
+      "total_qs": "120",
+      "negative": "1/3"
+    },
+    {
+      "phase": "Typing/Skill Test",
+      "duration": "Post Based",
+      "total_qs": "Qualifying",
+      "negative": "No"
+    },
+    {
+      "phase": "Document Verification",
+      "duration": "Final Stage",
+      "total_qs": "NA",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    {"year": "2024", "cutoff_avg": "72", "difficulty": "Moderate", "key_shift": "More GA Current Affairs"},
+    {"year": "2023", "cutoff_avg": "70", "difficulty": "Moderate", "key_shift": "Reasoning Puzzle Increase"},
+    {"year": "2022", "cutoff_avg": "68", "difficulty": "Easy-Moderate", "key_shift": "Math Simplification"},
+    {"year": "2021", "cutoff_avg": "74", "difficulty": "Moderate-Hard", "key_shift": "Static GK heavy"},
+    {"year": "2019", "cutoff_avg": "71", "difficulty": "Moderate", "key_shift": "Balanced paper"}
+  ],
+  "subjects": [
+    {
+      "name": "Mathematics",
+      "total_qs": "30-35",
+      "analysis": "Mathematics section in RRB NTPC focuses on speed calculation and arithmetic accuracy. Most questions are formula based and repetitive from previous year papers. Candidates scoring 25+ in this section gain major advantage in CBT-1.",
+      "topics": [
+        {"name": "Number System", "weight": "3-4", "priority": "High", "sub_topics": "LCM, HCF, Divisibility, Remainder"},
+        {"name": "Simplification", "weight": "4-5", "priority": "High", "sub_topics": "BODMAS, Approximation, Surds"},
+        {"name": "Percentage", "weight": "2-3", "priority": "High", "sub_topics": "Basic percentage, Increase decrease"},
+        {"name": "Ratio and Proportion", "weight": "2-3", "priority": "High", "sub_topics": "Direct and inverse ratio"},
+        {"name": "Average", "weight": "1-2", "priority": "Medium", "sub_topics": "Weighted average"},
+        {"name": "Profit and Loss", "weight": "2-3", "priority": "High", "sub_topics": "Discount, Marked price"},
+        {"name": "Simple Interest", "weight": "1-2", "priority": "Medium", "sub_topics": "Interest formulas"},
+        {"name": "Compound Interest", "weight": "1-2", "priority": "Medium", "sub_topics": "Yearly compounding"},
+        {"name": "Time and Work", "weight": "2-3", "priority": "High", "sub_topics": "Efficiency, Pipes"},
+        {"name": "Time Speed Distance", "weight": "2-3", "priority": "High", "sub_topics": "Train problems, Boats"},
+        {"name": "Mensuration", "weight": "1-2", "priority": "Medium", "sub_topics": "Area, Volume"},
+        {"name": "Data Interpretation", "weight": "2-3", "priority": "High", "sub_topics": "Bar graph, Pie chart"}
+      ]
+    },
+    {
+      "name": "General Intelligence & Reasoning",
+      "total_qs": "30-35",
+      "analysis": "Reasoning section is scoring and less calculation heavy. Puzzle and analytical reasoning have increased in recent exams. Accuracy above 90% required for safe score.",
+      "topics": [
+        {"name": "Coding Decoding", "weight": "2-3", "priority": "High", "sub_topics": "Letter shifting"},
+        {"name": "Analogy", "weight": "2-3", "priority": "High", "sub_topics": "Word analogy"},
+        {"name": "Classification", "weight": "2-3", "priority": "Medium", "sub_topics": "Odd one out"},
+        {"name": "Series", "weight": "3-4", "priority": "High", "sub_topics": "Number series"},
+        {"name": "Blood Relation", "weight": "1-2", "priority": "Medium", "sub_topics": "Family tree"},
+        {"name": "Direction", "weight": "1-2", "priority": "Medium", "sub_topics": "Distance calculation"},
+        {"name": "Puzzle", "weight": "3-4", "priority": "High", "sub_topics": "Linear seating"},
+        {"name": "Venn Diagram", "weight": "1-2", "priority": "Medium", "sub_topics": "Logical sets"},
+        {"name": "Syllogism", "weight": "2-3", "priority": "High", "sub_topics": "Statement conclusion"}
+      ]
+    },
+    {
+      "name": "General Awareness",
+      "total_qs": "40",
+      "analysis": "General Awareness section decides final cutoff. Current affairs from last 6-8 months dominate the paper. Static GK from Railways, History, Polity and Geography frequently appear. Candidates should focus on revision and factual learning.",
+      "topics": [
+        {"name": "Current Affairs", "weight": "10-12", "priority": "High", "sub_topics": "National, International, Awards"},
+        {"name": "History", "weight": "3-4", "priority": "Medium", "sub_topics": "Ancient, Medieval, Modern"},
+        {"name": "Geography", "weight": "2-3", "priority": "Medium", "sub_topics": "India Geography"},
+        {"name": "Polity", "weight": "2-3", "priority": "High", "sub_topics": "Constitution basics"},
+        {"name": "Economy", "weight": "2-3", "priority": "Medium", "sub_topics": "Budget, Banking"},
+        {"name": "Science", "weight": "3-4", "priority": "High", "sub_topics": "Physics, Chemistry basics"},
+        {"name": "Railway GK", "weight": "1-2", "priority": "Medium", "sub_topics": "Zones, Headquarters"},
+        {"name": "Static GK", "weight": "3-4", "priority": "Medium", "sub_topics": "Important days"}
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "90 Day Preparation Strategy",
+      "content": "First 30 days focus on mathematics basics and reasoning accuracy. Next 30 days concentrate on General Awareness current affairs and revision. Last 30 days should include mock tests and time management practice.",
+      "stat_box": "Target Score: 80+ in CBT-1"
+    },
+    {
+      "title": "Section Wise Attempt Strategy",
+      "content": "Attempt reasoning first to build confidence. Move to mathematics next. Solve General Awareness at the end. Avoid guessing questions.",
+      "stat_box": "Ideal Attempt: 85 Questions"
+    },
+    {
+      "title": "Mock Test Strategy",
+      "content": "Take at least 15 full length mock tests. Analyze mistakes and revise weak areas. Maintain error notebook.",
+      "stat_box": "Mocks Required: 15+"
+    }
+  ],
+  "frequently_asked_questions": [
+    {"q": "Is RRB NTPC syllabus same for all posts?", "a": "Yes CBT-1 syllabus is same for graduate and undergraduate posts."},
+    {"q": "Is there negative marking in RRB NTPC?", "a": "Yes 1/3 negative marking is applied."},
+    {"q": "How many questions in CBT-1?", "a": "100 questions are asked."},
+    {"q": "Which section is most scoring?", "a": "Reasoning is generally most scoring."},
+    {"q": "Is calculator allowed?", "a": "No calculator is not allowed."}
+  ]
+}

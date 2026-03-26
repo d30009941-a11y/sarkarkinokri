@@ -1,0 +1,158 @@
+{
+  "exam_name": "SSC CHSL",
+  "year": "2026",
+  "category_name": "SSC Recruitment",
+  "nav_redirect_id": "ssc",
+  "master_id": "ssc-chsl",
+  "total_vacancy_projected": "4500+ (Expected)",
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF CHSL RECRUITMENT",
+    "hub_url": "/ssc/sscchsl.html"
+  },  
+  "exam_phases": [
+    {
+      "phase": "Tier 1",
+      "duration": "60 Minutes",
+      "total_qs": "100",
+      "negative": "0.50"
+    },
+    {
+      "phase": "Tier 2",
+      "duration": "Objective + Skill Test",
+      "total_qs": "Multiple Sections",
+      "negative": "1.00 (Section-wise)"
+    },
+    {
+      "phase": "Document Verification",
+      "duration": "Final Stage",
+      "total_qs": "NA",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2024", "cutoff_avg": "148", "difficulty": "Easy-Moderate", "key_shift": "English heavy" },
+    { "year": "2023", "cutoff_avg": "145", "difficulty": "Easy", "key_shift": "Math basic" },
+    { "year": "2022", "cutoff_avg": "140", "difficulty": "Moderate", "key_shift": "Reasoning" },
+    { "year": "2021", "cutoff_avg": "143", "difficulty": "Easy-Moderate", "key_shift": "Balanced" },
+    { "year": "2020", "cutoff_avg": "147", "difficulty": "Easy", "key_shift": "English" }
+  ],
+  "subjects": [
+    {
+      "name": "Quantitative Aptitude (Tier 1)",
+      "total_qs": "25",
+      "analysis": "Basic arithmetic questions dominate this section for Tier 1 qualification.",
+      "topics": [
+        { "name": "Percentage", "weight": "3-4", "priority": "High", "sub_topics": "Basics" },
+        { "name": "Ratio & Proportion", "weight": "2-3", "priority": "High", "sub_topics": "Direct" },
+        { "name": "Average", "weight": "2-3", "priority": "Medium", "sub_topics": "Mean" },
+        { "name": "Profit & Loss", "weight": "2-3", "priority": "High", "sub_topics": "Discount" },
+        { "name": "Time & Work", "weight": "2-3", "priority": "High", "sub_topics": "Efficiency" },
+        { "name": "Mensuration", "weight": "2-3", "priority": "Medium", "sub_topics": "Area" }
+      ]
+    },
+    {
+      "name": "Reasoning (Tier 1)",
+      "total_qs": "25",
+      "analysis": "Easy to moderate reasoning focusing on logic and speed.",
+      "topics": [
+        { "name": "Series", "weight": "3-4", "priority": "High", "sub_topics": "Number" },
+        { "name": "Analogy", "weight": "2-3", "priority": "Medium", "sub_topics": "Word" },
+        { "name": "Coding", "weight": "2-3", "priority": "Medium", "sub_topics": "Letter" },
+        { "name": "Puzzle", "weight": "3-4", "priority": "High", "sub_topics": "Seating" },
+        { "name": "Direction", "weight": "2-3", "priority": "Medium", "sub_topics": "Distance" },
+        { "name": "Syllogism", "weight": "2-3", "priority": "High", "sub_topics": "Logic" }
+      ]
+    },
+    {
+      "name": "English Language (Tier 1)",
+      "total_qs": "25",
+      "analysis": "Grammar and vocabulary are the core scoring areas.",
+      "topics": [
+        { "name": "Error Detection", "weight": "3-4", "priority": "High", "sub_topics": "Grammar" },
+        { "name": "Fill in blanks", "weight": "2-3", "priority": "Medium", "sub_topics": "Vocabulary" },
+        { "name": "Synonym Antonym", "weight": "2-3", "priority": "Medium", "sub_topics": "Words" },
+        { "name": "Reading Comprehension", "weight": "4-5", "priority": "High", "sub_topics": "Passage" },
+        { "name": "Cloze Test", "weight": "3-4", "priority": "High", "sub_topics": "Paragraph" }
+      ]
+    },
+    {
+      "name": "General Awareness (Tier 1)",
+      "total_qs": "25",
+      "analysis": "Static GK heavy section requiring broad knowledge.",
+      "topics": [
+        { "name": "History", "weight": "3-4", "priority": "Medium", "sub_topics": "Modern" },
+        { "name": "Geography", "weight": "3-4", "priority": "Medium", "sub_topics": "India" },
+        { "name": "Polity", "weight": "3-4", "priority": "High", "sub_topics": "Constitution" },
+        { "name": "Economy", "weight": "2-3", "priority": "Medium", "sub_topics": "Budget" },
+        { "name": "Science", "weight": "4-5", "priority": "High", "sub_topics": "Physics" },
+        { "name": "Current Affairs", "weight": "3-4", "priority": "Medium", "sub_topics": "National" }
+      ]
+    },
+    {
+      "name": "Mathematical Abilities (Tier 2)",
+      "total_qs": "30",
+      "analysis": "Advanced arithmetic and quantitative techniques for Tier 2.",
+      "topics": [
+        { "name": "Algebra", "weight": "6-8", "priority": "High", "sub_topics": "Equations" },
+        { "name": "Geometry", "weight": "5-6", "priority": "Medium", "sub_topics": "Triangle" },
+        { "name": "Mensuration", "weight": "5-6", "priority": "Medium", "sub_topics": "Volume" },
+        { "name": "DI", "weight": "8-10", "priority": "High", "sub_topics": "Charts" }
+      ]
+    },
+    {
+      "name": "Reasoning & General Intelligence (Tier 2)",
+      "total_qs": "30",
+      "analysis": "Moderate difficulty reasoning with focus on decision making.",
+      "topics": [
+        { "name": "Puzzle", "weight": "6-8", "priority": "High", "sub_topics": "Seating" },
+        { "name": "Series", "weight": "4-5", "priority": "High", "sub_topics": "Number" },
+        { "name": "Coding", "weight": "3-4", "priority": "Medium", "sub_topics": "Letter" },
+        { "name": "Critical Reasoning", "weight": "3-4", "priority": "High", "sub_topics": "Statement/Assump" }
+      ]
+    },
+    {
+      "name": "Computer Knowledge (Tier 2 Qualifying)",
+      "total_qs": "15",
+      "analysis": "Mandatory qualifying section introduced in the new pattern.",
+      "topics": [
+        { "name": "Computer Basics", "weight": "4-5", "priority": "High", "sub_topics": "CPU/Input/Output" },
+        { "name": "MS Office", "weight": "5-6", "priority": "High", "sub_topics": "Word, Excel" },
+        { "name": "Internet", "weight": "3-4", "priority": "Medium", "sub_topics": "Browsing/E-mail" }
+      ]
+    },
+    {
+      "name": "Skill Test / Typing Module",
+      "total_qs": "Qualifying",
+      "analysis": "Mandatory typing speed verification for final selection.",
+      "topics": [
+        { "name": "Typing Speed English", "weight": "Qualifying", "priority": "High", "sub_topics": "35 WPM" },
+        { "name": "Typing Speed Hindi", "weight": "Qualifying", "priority": "High", "sub_topics": "30 WPM" },
+        { "name": "Accuracy", "weight": "Qualifying", "priority": "High", "sub_topics": "Low Error Rate" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Tier 1 Strategy",
+      "content": "Attempt English and reasoning first to bank points quickly. Speed is more critical than depth in Tier 1.",
+      "stat_box": "Target Score: 155+"
+    },
+    {
+      "title": "Tier 2 Strategy",
+      "content": "Focus on arithmetic and reasoning accuracy. Remember that Tier 2 now follows the CGL-style objective pattern.",
+      "stat_box": "Section 1 Weightage High"
+    },
+    {
+      "title": "Typing Preparation",
+      "content": "Start practicing typing daily early on. Don't wait for Tier 2 results as typing is mandatory for most posts.",
+      "stat_box": "Typing Mandatory"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is essay or letter writing in CHSL?", "a": "No, descriptive writing (essay/letter) has been removed in the new pattern." },
+    { "q": "Is typing test compulsory for all posts?", "a": "Yes, typing/skill test is mandatory for LDC/JSA and DEO posts." },
+    { "q": "What is the typing speed required?", "a": "35 WPM in English or 30 WPM in Hindi." },
+    { "q": "Is Tier 2 objective or subjective?", "a": "Tier 2 is now objective (Multiple Choice Questions) followed by a skill test." },
+    { "q": "Is there negative marking?", "a": "Yes, there is negative marking in the objective sections of both Tier 1 and Tier 2." }
+  ]
+}

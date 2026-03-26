@@ -1,0 +1,168 @@
+{
+  "exam_name": "SSC CGL",
+  "year": "2026",
+  "category_name": "SSC Recruitment",
+  "nav_redirect_id": "ssc",
+  "master_id": "ssc-cgl",
+  "total_vacancy_projected": "7500+ (Expected)",
+  "exam_phases": [
+    {
+      "phase": "Tier 1",
+      "duration": "60 Minutes",
+      "total_qs": "100",
+      "negative": "0.50"
+    },
+    {
+      "phase": "Tier 2 (Session I)",
+      "duration": "2 Hours 15 Mins",
+      "total_qs": "150",
+      "negative": "1.00"
+    },
+    {
+      "phase": "Tier 2 (Session II)",
+      "duration": "15 Minutes",
+      "total_qs": "Data Entry",
+      "negative": "NA"
+    },
+    {
+      "phase": "Document Verification",
+      "duration": "Final Stage",
+      "total_qs": "NA",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2024", "cutoff_avg": "138", "difficulty": "Moderate", "key_shift": "Math difficult" },
+    { "year": "2023", "cutoff_avg": "135", "difficulty": "Moderate", "key_shift": "Reasoning easy" },
+    { "year": "2022", "cutoff_avg": "130", "difficulty": "Moderate", "key_shift": "GS static" },
+    { "year": "2021", "cutoff_avg": "132", "difficulty": "Moderate", "key_shift": "Balanced" },
+    { "year": "2020", "cutoff_avg": "134", "difficulty": "Moderate", "key_shift": "Math calculative" }
+  ],
+  "subjects": [
+    {
+      "name": "Quantitative Aptitude (Tier 1)",
+      "total_qs": "25",
+      "analysis": "Arithmetic and algebra dominate this section.",
+      "topics": [
+        { "name": "Percentage", "weight": "3-4", "priority": "High", "sub_topics": "Basics" },
+        { "name": "Ratio & Proportion", "weight": "2-3", "priority": "High", "sub_topics": "Direct" },
+        { "name": "Time & Work", "weight": "2-3", "priority": "High", "sub_topics": "Efficiency" },
+        { "name": "Profit & Loss", "weight": "2-3", "priority": "High", "sub_topics": "Discount" },
+        { "name": "Algebra", "weight": "2-3", "priority": "Medium", "sub_topics": "Equations" },
+        { "name": "Mensuration", "weight": "2-3", "priority": "Medium", "sub_topics": "Area" },
+        { "name": "DI", "weight": "4-5", "priority": "High", "sub_topics": "Charts" }
+      ]
+    },
+    {
+      "name": "Reasoning (Tier 1)",
+      "total_qs": "25",
+      "analysis": "Moderate level reasoning focusing on logical patterns.",
+      "topics": [
+        { "name": "Series", "weight": "3-4", "priority": "High", "sub_topics": "Number" },
+        { "name": "Analogy", "weight": "2-3", "priority": "Medium", "sub_topics": "Word" },
+        { "name": "Coding", "weight": "2-3", "priority": "Medium", "sub_topics": "Letter" },
+        { "name": "Puzzle", "weight": "4-5", "priority": "High", "sub_topics": "Seating" },
+        { "name": "Direction", "weight": "2-3", "priority": "Medium", "sub_topics": "Distance" },
+        { "name": "Syllogism", "weight": "2-3", "priority": "High", "sub_topics": "Logic" }
+      ]
+    },
+    {
+      "name": "English (Tier 1)",
+      "total_qs": "25",
+      "analysis": "Grammar and vocabulary heavy section.",
+      "topics": [
+        { "name": "Error Detection", "weight": "3-4", "priority": "High", "sub_topics": "Grammar" },
+        { "name": "Fill in blanks", "weight": "2-3", "priority": "Medium", "sub_topics": "Vocabulary" },
+        { "name": "Synonym Antonym", "weight": "2-3", "priority": "Medium", "sub_topics": "Words" },
+        { "name": "Reading Comprehension", "weight": "5-6", "priority": "High", "sub_topics": "Passage" },
+        { "name": "Cloze Test", "weight": "3-4", "priority": "High", "sub_topics": "Paragraph" }
+      ]
+    },
+    {
+      "name": "General Awareness (Tier 1)",
+      "total_qs": "25",
+      "analysis": "Static GK and current affairs are important for Tier 1 qualification.",
+      "topics": [
+        { "name": "History", "weight": "3-4", "priority": "Medium", "sub_topics": "Modern" },
+        { "name": "Geography", "weight": "3-4", "priority": "Medium", "sub_topics": "India" },
+        { "name": "Polity", "weight": "3-4", "priority": "High", "sub_topics": "Constitution" },
+        { "name": "Economy", "weight": "2-3", "priority": "Medium", "sub_topics": "Budget" },
+        { "name": "Science", "weight": "4-5", "priority": "High", "sub_topics": "Physics" },
+        { "name": "Current Affairs", "weight": "3-4", "priority": "Medium", "sub_topics": "National" }
+      ]
+    },
+    {
+      "name": "Mathematical Abilities (Tier 2 - Section I)",
+      "total_qs": "30",
+      "analysis": "Advanced arithmetic, algebra, and geometry for Tier 2 examination.",
+      "topics": [
+        { "name": "Algebra", "weight": "8-10", "priority": "High", "sub_topics": "Equations" },
+        { "name": "Trigonometry", "weight": "6-8", "priority": "High", "sub_topics": "Identities" },
+        { "name": "Geometry", "weight": "6-8", "priority": "High", "sub_topics": "Triangle" },
+        { "name": "Mensuration", "weight": "6-8", "priority": "Medium", "sub_topics": "Volume" },
+        { "name": "DI", "weight": "10-12", "priority": "High", "sub_topics": "Charts" }
+      ]
+    },
+    {
+      "name": "Reasoning & General Intelligence (Tier 2 - Section I)",
+      "total_qs": "30",
+      "analysis": "High-level logical reasoning and critical thinking.",
+      "topics": [
+        { "name": "Critical Reasoning", "weight": "5-7", "priority": "High", "sub_topics": "Assumptions/Conclusion" },
+        { "name": "Puzzles & Seating", "weight": "6-8", "priority": "High", "sub_topics": "Circular/Linear" },
+        { "name": "Data Sufficiency", "weight": "3-5", "priority": "Medium", "sub_topics": "Math-based logic" },
+        { "name": "Blood Relations", "weight": "2-3", "priority": "Medium", "sub_topics": "Coded" }
+      ]
+    },
+    {
+      "name": "English Language (Tier 2 - Section II)",
+      "total_qs": "45",
+      "analysis": "High level English paper with deep focus on comprehension.",
+      "topics": [
+        { "name": "Reading Comprehension", "weight": "10-12", "priority": "High", "sub_topics": "Passage" },
+        { "name": "Vocabulary", "weight": "8-10", "priority": "Medium", "sub_topics": "Synonym" },
+        { "name": "Grammar", "weight": "8-10", "priority": "High", "sub_topics": "Rules" },
+        { "name": "Para Jumble", "weight": "5-6", "priority": "Medium", "sub_topics": "Sentence" }
+      ]
+    },
+    {
+      "name": "Computer Knowledge (Tier 2 - Section III)",
+      "total_qs": "20",
+      "analysis": "Mandatory qualifying section for all CGL posts.",
+      "topics": [
+        { "name": "Computer Basics", "weight": "5-6", "priority": "High", "sub_topics": "Hardware, RAM/ROM" },
+        { "name": "Software & MS Office", "weight": "7-8", "priority": "High", "sub_topics": "Word, Excel, PPT" },
+        { "name": "Internet & Security", "weight": "4-5", "priority": "Medium", "sub_topics": "Browsing, Malware" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Tier 1 Strategy",
+      "content": "Attempt reasoning and English first for quick scoring to build confidence. Keep Quantitative for the end.",
+      "stat_box": "Target Score: 150+"
+    },
+    {
+      "title": "Tier 2 Strategy",
+      "content": "Focus heavily on mathematics and DI. Since each question is worth 3 marks, accuracy is paramount.",
+      "stat_box": "3 Marks Per Question"
+    },
+    {
+      "title": "Computer & Typing",
+      "content": "Do not ignore the Computer section. Even if you score high in Math, failing Computer will disqualify you.",
+      "stat_box": "Qualifying Only"
+    },
+    {
+      "title": "Mock Plan",
+      "content": "Attempt 15 mocks for Tier 1 and 10 for Tier 2 to ensure time management.",
+      "stat_box": "Total Mocks: 25+"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is SSC CGL Tier 1 qualifying?", "a": "Yes, Tier 1 is qualifying in nature; marks are not added to the final merit." },
+    { "q": "Negative marking in Tier 2?", "a": "Yes, there is 1 mark negative for every wrong answer (1/3rd of total marks)." },
+    { "q": "Is descriptive paper present?", "a": "No, it has been completely removed from the current pattern." },
+    { "q": "Is Computer Knowledge compulsory?", "a": "Yes, it is a mandatory qualifying section for all posts." },
+    { "q": "Is math tough in Tier 2?", "a": "It ranges from moderate to difficult with an emphasis on Advanced Math." }
+  ]
+}

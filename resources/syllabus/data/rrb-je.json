@@ -1,0 +1,159 @@
+{
+  "exam_name": "RRB JE",
+  "year": "2026",
+  "cen_number": "CEN 03/2026",
+  "category_name": "Railway Recruitment",
+  "nav_redirect_id": "railways",
+  "master_id": "rrb-je",
+  "total_vacancy_projected": "7951+ (Expected)",
+    "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF RRB JE RECRUITMENT",
+    "hub_url": "/railways/je.html"
+  },
+  "exam_phases": [
+    {
+      "phase": "CBT-1",
+      "duration": "90 Minutes",
+      "total_qs": "100",
+      "negative": "1/3"
+    },
+    {
+      "phase": "CBT-2",
+      "duration": "120 Minutes",
+      "total_qs": "150",
+      "negative": "1/3"
+    },
+    {
+      "phase": "Document Verification",
+      "duration": "Final Stage",
+      "total_qs": "NA",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2024", "cutoff_avg": "62", "difficulty": "Moderate", "key_shift": "Technical heavy" },
+    { "year": "2023", "cutoff_avg": "60", "difficulty": "Moderate", "key_shift": "Math easier" },
+    { "year": "2022", "cutoff_avg": "58", "difficulty": "Moderate", "key_shift": "Technical conceptual" },
+    { "year": "2021", "cutoff_avg": "63", "difficulty": "Moderate-Hard", "key_shift": "Reasoning tricky" },
+    { "year": "2019", "cutoff_avg": "59", "difficulty": "Moderate", "key_shift": "Balanced paper" }
+  ],
+  "subjects": [
+    {
+      "name": "Mathematics",
+      "total_qs": "30",
+      "analysis": "Basic engineering level arithmetic questions.",
+      "topics": [
+        { "name": "Number System", "weight": "3-4", "priority": "High", "sub_topics": "LCM HCF" },
+        { "name": "Percentage", "weight": "2-3", "priority": "High", "sub_topics": "Basics" },
+        { "name": "Ratio", "weight": "2-3", "priority": "Medium", "sub_topics": "Proportion" },
+        { "name": "Average", "weight": "1-2", "priority": "Medium", "sub_topics": "Weighted" },
+        { "name": "Time Work", "weight": "2-3", "priority": "High", "sub_topics": "Efficiency" },
+        { "name": "Mensuration", "weight": "1-2", "priority": "Medium", "sub_topics": "Area" },
+        { "name": "DI", "weight": "2-3", "priority": "High", "sub_topics": "Charts" }
+      ]
+    },
+    {
+      "name": "General Intelligence & Reasoning",
+      "total_qs": "25",
+      "analysis": "Logical and analytical reasoning.",
+      "topics": [
+        { "name": "Analogy", "weight": "2-3", "priority": "High", "sub_topics": "Word" },
+        { "name": "Series", "weight": "3-4", "priority": "High", "sub_topics": "Number" },
+        { "name": "Coding", "weight": "2-3", "priority": "Medium", "sub_topics": "Letter" },
+        { "name": "Puzzle", "weight": "3-4", "priority": "High", "sub_topics": "Seating" },
+        { "name": "Direction", "weight": "1-2", "priority": "Medium", "sub_topics": "Distance" },
+        { "name": "Syllogism", "weight": "2-3", "priority": "High", "sub_topics": "Logic" }
+      ]
+    },
+    {
+      "name": "General Awareness",
+      "total_qs": "15",
+      "analysis": "Basic GK and current affairs.",
+      "topics": [
+        { "name": "Current Affairs", "weight": "5-6", "priority": "High", "sub_topics": "National" },
+        { "name": "History", "weight": "2-3", "priority": "Medium", "sub_topics": "Modern" },
+        { "name": "Polity", "weight": "2-3", "priority": "Medium", "sub_topics": "Constitution" },
+        { "name": "Science", "weight": "2-3", "priority": "Medium", "sub_topics": "Physics" }
+      ]
+    },
+    {
+      "name": "General Science",
+      "total_qs": "30",
+      "analysis": "Physics and chemistry fundamentals.",
+      "topics": [
+        { "name": "Physics", "weight": "10-12", "priority": "High", "sub_topics": "Motion" },
+        { "name": "Chemistry", "weight": "8-10", "priority": "Medium", "sub_topics": "Basic" },
+        { "name": "Biology", "weight": "5-6", "priority": "Low", "sub_topics": "Basic" }
+      ]
+    },
+    {
+      "name": "Civil Engineering (Technical Branch)",
+      "total_qs": "100",
+      "analysis": "Civil engineering technical section focuses on diploma level core subjects.",
+      "topics": [
+        { "name": "Engineering Mechanics", "weight": "8-10", "priority": "High", "sub_topics": "Force" },
+        { "name": "Strength of Materials", "weight": "10-12", "priority": "High", "sub_topics": "Stress" },
+        { "name": "Structural Analysis", "weight": "6-8", "priority": "High", "sub_topics": "Beam" },
+        { "name": "RCC", "weight": "5-7", "priority": "Medium", "sub_topics": "Design" },
+        { "name": "Geotechnical", "weight": "8-10", "priority": "High", "sub_topics": "Soil" },
+        { "name": "Environmental", "weight": "5-6", "priority": "Medium", "sub_topics": "Water" },
+        { "name": "Transportation", "weight": "4-5", "priority": "Medium", "sub_topics": "Highway" },
+        { "name": "Surveying", "weight": "4-5", "priority": "Medium", "sub_topics": "Levelling" }
+      ]
+    },
+    {
+      "name": "Mechanical Engineering (Technical Branch)",
+      "total_qs": "100",
+      "analysis": "Mechanical engineering section focuses on diploma level mechanical subjects.",
+      "topics": [
+        { "name": "Thermodynamics", "weight": "10-12", "priority": "High", "sub_topics": "Laws" },
+        { "name": "Theory of Machines", "weight": "8-10", "priority": "High", "sub_topics": "Mechanism" },
+        { "name": "Strength of Materials", "weight": "8-10", "priority": "High", "sub_topics": "Stress" },
+        { "name": "Production", "weight": "6-8", "priority": "Medium", "sub_topics": "Casting" },
+        { "name": "Fluid Mechanics", "weight": "6-8", "priority": "High", "sub_topics": "Flow" },
+        { "name": "Engineering Mechanics", "weight": "5-7", "priority": "Medium", "sub_topics": "Force" }
+      ]
+    },
+    {
+      "name": "Electrical Engineering (Technical Branch)",
+      "total_qs": "100",
+      "analysis": "Electrical engineering section includes circuits and machines.",
+      "topics": [
+        { "name": "Circuit Theory", "weight": "10-12", "priority": "High", "sub_topics": "Ohm" },
+        { "name": "Electrical Machines", "weight": "10-12", "priority": "High", "sub_topics": "Transformer" },
+        { "name": "Power Systems", "weight": "8-10", "priority": "High", "sub_topics": "Transmission" },
+        { "name": "Measurements", "weight": "5-6", "priority": "Medium", "sub_topics": "Instruments" },
+        { "name": "Basic Electronics", "weight": "5-6", "priority": "Medium", "sub_topics": "Diode" }
+      ]
+    },
+    {
+      "name": "Electronics Engineering (Technical Branch)",
+      "total_qs": "100",
+      "analysis": "Electronics engineering section includes communication and digital electronics.",
+      "topics": [
+        { "name": "Analog Electronics", "weight": "10-12", "priority": "High", "sub_topics": "Amplifier" },
+        { "name": "Digital Electronics", "weight": "10-12", "priority": "High", "sub_topics": "Logic gates" },
+        { "name": "Communication", "weight": "8-10", "priority": "High", "sub_topics": "Modulation" },
+        { "name": "Network Theory", "weight": "6-8", "priority": "Medium", "sub_topics": "KVL" },
+        { "name": "Control Systems", "weight": "5-6", "priority": "Medium", "sub_topics": "Feedback" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Technical Preparation Strategy",
+      "content": "Focus on branch specific core subjects first then revise non technical subjects.",
+      "stat_box": "Technical Weightage: 70%"
+    },
+    {
+      "title": "Mock Test Strategy",
+      "content": "Attempt 10 technical mocks before CBT-2.",
+      "stat_box": "Mocks Required: 10+"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is technical syllabus branch specific?", "a": "Yes" },
+    { "q": "Is CBT2 technical?", "a": "Yes technical questions dominate" },
+    { "q": "Negative marking?", "a": "1/3 negative marking" }
+  ]
+}

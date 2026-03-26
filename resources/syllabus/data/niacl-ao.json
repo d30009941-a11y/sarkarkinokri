@@ -1,0 +1,126 @@
+{
+  "exam_name": "NIACL AO (Administrative Officer - Generalist)",
+  "year": "2026",
+  "category_name": "Insurance Recruitment",
+  "nav_redirect_id": "insurance",
+  "master_id": "niacl-ao",
+
+  "redirect_buttons": {
+    "hub_label": "Insurance Hub",
+    "hub_url": "/insurance/index.html"
+  },
+
+  "description": "STRATEGIC NOTE: Unlike LIC AAO, the NIACL AO exam counts English marks for final merit. It also includes a mandatory 'Computer Knowledge' section in Mains and features 0.25 negative marking. Preparation must focus on General Insurance (Motor, Health, Fire) rather than Life Insurance. This guide is optimized for the 2026 Recruitment Cycle.",
+  "total_vacancy_projected": "350 - 450 (Expected)",
+  "exam_phases": [
+    {
+      "phase": "Phase I: Prelims (Objective)",
+      "duration": "60 Minutes (20m Sectional)",
+      "total_qs": "100",
+      "negative": "0.25",
+      "marks": "100 (English Marks are Added)"
+    },
+    {
+      "phase": "Phase II: Mains (Objective + Descriptive)",
+      "duration": "120 Minutes + 30 Minutes",
+      "total_qs": "200 + 2",
+      "negative": "0.25",
+      "marks": "200 + 30"
+    },
+    {
+      "phase": "Phase III: Personal Interview",
+      "duration": "20 Minutes",
+      "total_qs": "Professional Assessment",
+      "negative": "No",
+      "marks": "Weightage 20%"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "74-82 (Prelims)", "difficulty": "Moderate", "key_shift": "English section was scoring" },
+    { "year": "2024", "cutoff_avg": "72-80 (Prelims)", "difficulty": "Moderate", "key_shift": "Calculative Quant" },
+    { "year": "2023", "cutoff_avg": "70-78 (Prelims)", "difficulty": "Moderate", "key_shift": "New Insurance Pattern" },
+    { "year": "2022", "cutoff_avg": "73 (Prelims)", "difficulty": "Easy-Moderate", "key_shift": "High competition" },
+    { "year": "2021", "cutoff_avg": "71 (Prelims)", "difficulty": "Moderate", "key_shift": "Reasoning puzzles high" }
+  ],
+  "subjects": [
+    {
+      "name": "English Language (Prelims & Mains)",
+      "total_qs": "30 (Pre) / 40 (Mains)",
+      "analysis": "CRITICAL: Marks are added to final merit. Focus on grammar and vocabulary to boost your rank.",
+      "topics": [
+        { "name": "Reading Comprehension", "weight": "10-12", "priority": "High", "sub_topics": "Business & Insurance passages" },
+        { "name": "Cloze Test", "weight": "5-7", "priority": "High", "sub_topics": "Contextual Vocabulary" },
+        { "name": "Error Detection", "weight": "5", "priority": "High", "sub_topics": "Tenses, Subject-Verb Agreement" },
+        { "name": "Sentence Rearrangement", "weight": "5", "priority": "Medium", "sub_topics": "Para Jumbles" },
+        { "name": "Phrase Replacement", "weight": "3-5", "priority": "Medium", "sub_topics": "Idioms & Phrases" }
+      ]
+    },
+    {
+      "name": "Reasoning Ability",
+      "total_qs": "35 (Pre) / 40 (Mains)",
+      "analysis": "Puzzles are the weightage leaders. Mains requires higher-order analytical reasoning.",
+      "topics": [
+        { "name": "Puzzles", "weight": "15-20", "priority": "High", "sub_topics": "Floor, Box, Month-Date, Tabular" },
+        { "name": "Seating Arrangement", "weight": "10-12", "priority": "High", "sub_topics": "Linear, Circular, Square, Uncertain" },
+        { "name": "Syllogism", "weight": "3-5", "priority": "High", "sub_topics": "Only a Few, Reverse Syllogism" },
+        { "name": "Critical Reasoning", "weight": "5-8", "priority": "High", "sub_topics": "Statement-Action, Assumptions" },
+        { "name": "Coding-Decoding", "weight": "5", "priority": "Medium", "sub_topics": "New Pattern Coded" }
+      ]
+    },
+    {
+      "name": "Quantitative Aptitude",
+      "total_qs": "35 (Pre) / 40 (Mains)",
+      "analysis": "Data Interpretation is 40% of the paper. Proficiency in Speed Math is mandatory for Prelims.",
+      "topics": [
+        { "name": "Data Interpretation (DI)", "weight": "15-20", "priority": "High", "sub_topics": "Line, Bar, Pie, Radar Graph" },
+        { "name": "Arithmetic", "weight": "10-12", "priority": "High", "sub_topics": "Profit/Loss, SI-CI, Time/Distance" },
+        { "name": "Number Series", "weight": "5", "priority": "High", "sub_topics": "Missing & Wrong Pattern" },
+        { "name": "Simplification", "weight": "5", "priority": "High", "sub_topics": "Approximation" },
+        { "name": "Quadratic Equations", "weight": "5", "priority": "Medium", "sub_topics": "Comparison" }
+      ]
+    },
+    {
+      "name": "General Awareness & Insurance (Mains)",
+      "total_qs": "40",
+      "analysis": "Focus on General Insurance (Health, Motor, Marine) and current financial trends.",
+      "topics": [
+        { "name": "Current Affairs", "weight": "20-25", "priority": "High", "sub_topics": "Past 6 Months, MoUs, Summits" },
+        { "name": "General Insurance Awareness", "weight": "10-12", "priority": "High", "sub_topics": "Principles, History of GIC" },
+        { "name": "Financial Awareness", "weight": "5-8", "priority": "High", "sub_topics": "Stock Market, RBI Policies" }
+      ]
+    },
+    {
+      "name": "Computer Knowledge (Mains)",
+      "total_qs": "40",
+      "analysis": "Unique to NIACL/NICL. Focus on hardware, software, and basic networking logic.",
+      "topics": [
+        { "name": "MS Office Suite", "weight": "12-15", "priority": "High", "sub_topics": "Shortcut Keys, Excel Formulas" },
+        { "name": "Internet & Networking", "weight": "8-10", "priority": "High", "sub_topics": "OSI Model, Protocols" },
+        { "name": "Computer Security", "weight": "5", "priority": "Medium", "sub_topics": "Malware, Firewall" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "English: The Game Changer",
+      "content": "Unlike LIC, English marks are added here. Do not treat it as qualifying; treat it as your scoring weapon.",
+      "stat_box": "Full Merit Marks"
+    },
+    {
+      "title": "General Insurance Strategy",
+      "content": "Focus on motor and health insurance terms. Know the major public sector insurers and their headquarters.",
+      "stat_box": "NIACL Specific"
+    },
+    {
+      "title": "Negative Marking Alert",
+      "content": "A 0.25 penalty exists. High attempts with low accuracy will lead to failure in high-cutoff states.",
+      "stat_box": "Accuracy: 90%+"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Are English marks added to the final merit?", "a": "Yes, in NIACL AO, marks from all sections of Phase I and Phase II are considered for merit." },
+    { "q": "Is there a negative marking?", "a": "Yes, there is a penalty of 0.25 marks for every wrong answer." },
+    { "q": "What is the difference between LIC and NIACL?", "a": "LIC is Life Insurance (Life coverage); NIACL is General Insurance (Health, Motor, Fire, etc.)." },
+    { "q": "Is there a Descriptive Test?", "a": "Yes, Essay and Letter writing are conducted online immediately after the objective Mains exam." }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "exam_name": "SSC JE",
+  "year": "2026",
+  "category_name": "SSC Recruitment",
+  "nav_redirect_id": "ssc",
+  "master_id": "ssc-je",
+  "total_vacancy_projected": "1785+ (Expected)",
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF JE RECRUITMENT",
+    "hub_url": "/ssc/sscje.html"
+  },  
+  "exam_phases": [
+    {
+      "phase": "Paper 1",
+      "duration": "120 Minutes",
+      "total_qs": "200",
+      "negative": "0.25"
+    },
+    {
+      "phase": "Paper 2",
+      "duration": "120 Minutes",
+      "total_qs": "300",
+      "negative": "0.25"
+    },
+    {
+      "phase": "Document Verification",
+      "duration": "Final Stage",
+      "total_qs": "NA",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2024", "cutoff_avg": "132", "difficulty": "Moderate", "key_shift": "Technical conceptual" },
+    { "year": "2023", "cutoff_avg": "128", "difficulty": "Moderate", "key_shift": "Math easier" },
+    { "year": "2022", "cutoff_avg": "125", "difficulty": "Moderate", "key_shift": "GS static heavy" },
+    { "year": "2021", "cutoff_avg": "130", "difficulty": "Moderate-Hard", "key_shift": "Reasoning tricky" },
+    { "year": "2020", "cutoff_avg": "126", "difficulty": "Moderate", "key_shift": "Balanced" }
+  ],
+  "subjects": [
+    {
+      "name": "General Intelligence & Reasoning",
+      "total_qs": "50",
+      "analysis": "Reasoning section is moderate difficulty with non verbal focus.",
+      "topics": [
+        { "name": "Analogy", "weight": "4-5", "priority": "High", "sub_topics": "Word" },
+        { "name": "Series", "weight": "5-6", "priority": "High", "sub_topics": "Number" },
+        { "name": "Coding Decoding", "weight": "3-4", "priority": "Medium", "sub_topics": "Letter" },
+        { "name": "Puzzle", "weight": "4-5", "priority": "High", "sub_topics": "Seating" },
+        { "name": "Direction", "weight": "2-3", "priority": "Medium", "sub_topics": "Distance" },
+        { "name": "Syllogism", "weight": "3-4", "priority": "High", "sub_topics": "Logic" }
+      ]
+    },
+    {
+      "name": "General Awareness",
+      "total_qs": "50",
+      "analysis": "Static GK dominates this section.",
+      "topics": [
+        { "name": "History", "weight": "5-6", "priority": "Medium", "sub_topics": "Modern" },
+        { "name": "Geography", "weight": "4-5", "priority": "Medium", "sub_topics": "India" },
+        { "name": "Polity", "weight": "4-5", "priority": "High", "sub_topics": "Constitution" },
+        { "name": "Economy", "weight": "3-4", "priority": "Medium", "sub_topics": "Budget" },
+        { "name": "Science", "weight": "5-6", "priority": "High", "sub_topics": "Physics" },
+        { "name": "Current Affairs", "weight": "4-5", "priority": "Medium", "sub_topics": "National" }
+      ]
+    },
+    {
+      "name": "General Engineering Mathematics",
+      "total_qs": "50",
+      "analysis": "Basic diploma level mathematics.",
+      "topics": [
+        { "name": "Algebra", "weight": "5-6", "priority": "High", "sub_topics": "Equations" },
+        { "name": "Trigonometry", "weight": "4-5", "priority": "High", "sub_topics": "Identities" },
+        { "name": "Mensuration", "weight": "4-5", "priority": "Medium", "sub_topics": "Area" },
+        { "name": "Statistics", "weight": "3-4", "priority": "Medium", "sub_topics": "Mean" },
+        { "name": "Calculus Basics", "weight": "3-4", "priority": "Low", "sub_topics": "Limits" }
+      ]
+    },
+    {
+      "name": "Civil Engineering (Technical Branch)",
+      "total_qs": "300",
+      "analysis": "Civil engineering technical paper based on diploma syllabus.",
+      "topics": [
+        { "name": "Engineering Mechanics", "weight": "10-12", "priority": "High", "sub_topics": "Force" },
+        { "name": "Strength of Materials", "weight": "12-14", "priority": "High", "sub_topics": "Stress" },
+        { "name": "Structural Analysis", "weight": "8-10", "priority": "High", "sub_topics": "Beam" },
+        { "name": "RCC", "weight": "6-8", "priority": "Medium", "sub_topics": "Design" },
+        { "name": "Geotechnical", "weight": "8-10", "priority": "High", "sub_topics": "Soil" },
+        { "name": "Environmental", "weight": "6-7", "priority": "Medium", "sub_topics": "Water" },
+        { "name": "Transportation", "weight": "5-6", "priority": "Medium", "sub_topics": "Highway" },
+        { "name": "Surveying", "weight": "5-6", "priority": "Medium", "sub_topics": "Levelling" }
+      ]
+    },
+    {
+      "name": "Mechanical Engineering (Technical Branch)",
+      "total_qs": "300",
+      "analysis": "Mechanical branch technical section based on diploma level mechanical engineering syllabus.",
+      "topics": [
+        { "name": "Theory of Machines", "weight": "12-14", "priority": "High", "sub_topics": "Mechanisms" },
+        { "name": "Thermodynamics", "weight": "12-14", "priority": "High", "sub_topics": "Laws" },
+        { "name": "Strength of Materials", "weight": "10-12", "priority": "High", "sub_topics": "Stress" },
+        { "name": "Fluid Mechanics", "weight": "8-10", "priority": "High", "sub_topics": "Flow" },
+        { "name": "Production Engineering", "weight": "8-10", "priority": "Medium", "sub_topics": "Casting" },
+        { "name": "Engineering Mechanics", "weight": "6-8", "priority": "Medium", "sub_topics": "Force" }
+      ]
+    },
+    {
+      "name": "Electrical Engineering (Technical Branch)",
+      "total_qs": "300",
+      "analysis": "Electrical engineering branch includes circuits, machines and power systems.",
+      "topics": [
+        { "name": "Circuit Theory", "weight": "12-14", "priority": "High", "sub_topics": "Ohm" },
+        { "name": "Electrical Machines", "weight": "12-14", "priority": "High", "sub_topics": "Transformer" },
+        { "name": "Power Systems", "weight": "10-12", "priority": "High", "sub_topics": "Transmission" },
+        { "name": "Measurements", "weight": "6-8", "priority": "Medium", "sub_topics": "Instruments" },
+        { "name": "Basic Electronics", "weight": "6-8", "priority": "Medium", "sub_topics": "Diode" },
+        { "name": "Control Systems", "weight": "5-6", "priority": "Low", "sub_topics": "Feedback" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Paper 1 Strategy",
+      "content": "Attempt reasoning first then general awareness followed by mathematics. Maintain speed and accuracy.",
+      "stat_box": "Target Score: 140+"
+    },
+    {
+      "title": "Paper 2 Technical Strategy",
+      "content": "Focus on branch core subjects and practice numerical problems regularly.",
+      "stat_box": "Technical Weightage: 70%"
+    },
+    {
+      "title": "Mock Test Plan",
+      "content": "Attempt at least 12 full length mocks for Paper 1 and 8 for Paper 2.",
+      "stat_box": "Total Mocks: 20+"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is SSC JE technical paper branch specific?", "a": "Yes Paper 2 is branch specific." },
+    { "q": "Negative marking in SSC JE?", "a": "Yes 0.25 negative marking." },
+    { "q": "Is paper online?", "a": "Yes both papers are computer based." },
+    { "q": "Is diploma eligible?", "a": "Yes diploma candidates are eligible." },
+    { "q": "Is syllabus same every year?", "a": "Yes mostly unchanged." }
+  ]
+}

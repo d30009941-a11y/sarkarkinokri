@@ -1,0 +1,137 @@
+{
+  "exam_name": "IBPS RRB PO (Officer Scale-I) - CRP RRB XV",
+  "year": "2026",
+  "category_name": "Banking Recruitment",
+  "nav_redirect_id": "bank",
+  "master_id": "ibps-rrb-po",
+  "total_vacancy_projected": "3500 - 4500 (Expected across 43+ RRBs)",
+    
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF PO RECRUITMENT",
+    "hub_url": "/ibps/ibpsrrb.html"
+  },
+  "exam_phases": [
+    {
+      "phase": "Phase I: Preliminary Exam",
+      "duration": "45 Minutes (Sectional Timing: 25m Reasoning / 20m Quant)",
+      "total_qs": "80",
+      "negative": "0.25",
+      "marks": "80"
+    },
+    {
+      "phase": "Phase II: Main Examination",
+      "duration": "120 Minutes (Composite with Sectional Advice)",
+      "total_qs": "200",
+      "negative": "0.25",
+      "marks": "200"
+    },
+    {
+      "phase": "Phase III: Personal Interview",
+      "duration": "15-20 Minutes",
+      "total_qs": "Personal Assessment",
+      "negative": "No",
+      "marks": "100 (Weightage 20%)"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "52-64 (State-wise)", "difficulty": "Moderate", "key_shift": "New Sectional Timing introduced" },
+    { "year": "2024", "cutoff_avg": "50-62 (State-wise)", "difficulty": "Moderate", "key_shift": "High arithmetic weightage" },
+    { "year": "2023", "cutoff_avg": "48-60 (State-wise)", "difficulty": "Easy-Moderate", "key_shift": "Puzzles were time-consuming" },
+    { "year": "2022", "cutoff_avg": "45-58 (State-wise)", "difficulty": "Moderate", "key_shift": "Balanced reasoning" },
+    { "year": "2021", "cutoff_avg": "52-61 (State-wise)", "difficulty": "Moderate", "key_shift": "Number series tricky" }
+  ],
+  "subjects": [
+    {
+      "name": "Reasoning Ability (Prelims & Mains)",
+      "total_qs": "40 (Pre) / 40 (Mains)",
+      "analysis": "The backbone of RRB PO. Prelims focuses on speed puzzles, while Mains demands high-level logical reasoning and input-output skills.",
+      "topics": [
+        { "name": "Puzzles & Seating", "weight": "20-25", "priority": "High", "sub_topics": "Uncertain Linear, Box, Floor-Flat, Circular" },
+        { "name": "Syllogism", "weight": "3-5", "priority": "High", "sub_topics": "Only a Few, Possibility cases" },
+        { "name": "Inequality", "weight": "3-5", "priority": "High", "sub_topics": "Coded & Standard" },
+        { "name": "Blood Relation & Direction", "weight": "5-7", "priority": "Medium", "sub_topics": "Coded Family Tree, 3-Point Direction" },
+        { "name": "Logical Reasoning (Mains)", "weight": "8-10", "priority": "High", "sub_topics": "Statement-Assumption, Cause-Effect" },
+        { "name": "Input-Output (Mains)", "weight": "5", "priority": "Medium", "sub_topics": "Double-Shifting Pattern" },
+        { "name": "Data Sufficiency", "weight": "3-5", "priority": "Medium", "sub_topics": "2-Statement Logic" }
+      ]
+    },
+    {
+      "name": "Quantitative Aptitude / Numerical Ability",
+      "total_qs": "40 (Pre) / 40 (Mains)",
+      "analysis": "No English in Prelims makes Quant highly competitive. Accuracy in DI and Arithmetic determines the state-wise cutoff clearance.",
+      "topics": [
+        { "name": "Data Interpretation (DI)", "weight": "15-20", "priority": "High", "sub_topics": "Caselet, Tabular, Bar-Line Graph" },
+        { "name": "Arithmetic Word Problems", "weight": "10-12", "priority": "High", "sub_topics": "Profit & Loss, Partnership, Ages, SI-CI" },
+        { "name": "Number Series", "weight": "5", "priority": "High", "sub_topics": "Wrong Number, Missing Pattern" },
+        { "name": "Quadratic Equations", "weight": "5", "priority": "Medium", "sub_topics": "Factor Comparison" },
+        { "name": "Simplification/Approximation", "weight": "5", "priority": "High", "sub_topics": "BODMAS, Fractions" },
+        { "name": "Quantity Comparison", "weight": "3-5", "priority": "Medium", "sub_topics": "Arithmetic Application" },
+        { "name": "Probability & Mensuration", "weight": "2-3", "priority": "Low", "sub_topics": "Basic Area/Volume" }
+      ]
+    },
+    {
+      "name": "General Awareness (Financial Focus)",
+      "total_qs": "40 (Mains Only)",
+      "analysis": "Specifically targets Rural Banking, NABARD, and Government Schemes for the agricultural sector.",
+      "topics": [
+        { "name": "Current Affairs", "weight": "20-25", "priority": "High", "sub_topics": "Last 6 months, National/International" },
+        { "name": "Banking & Financial Awareness", "weight": "10-12", "priority": "High", "sub_topics": "RBI, NABARD, RRB History, PSL Norms" },
+        { "name": "Govt. Schemes", "weight": "5-8", "priority": "High", "sub_topics": "PMJDY, KCC, Rural Development" },
+        { "name": "Static Awareness", "weight": "5", "priority": "Medium", "sub_topics": "Capital-Currency, National Parks" }
+      ]
+    },
+    {
+      "name": "Language (English OR Hindi)",
+      "total_qs": "40 (Mains Only)",
+      "analysis": "Unique to RRB: Candidates can choose between English or Hindi. Both test grammar and comprehension.",
+      "topics": [
+        { "name": "Reading Comprehension (Eng/Hin)", "weight": "10-12", "priority": "High", "sub_topics": "Passage, Main Theme" },
+        { "name": "Error Detection / वाक्य त्रुटि", "weight": "5-7", "priority": "High", "sub_topics": "Grammar, शब्द त्रुटि" },
+        { "name": "Cloze Test / रिक्त स्थान", "weight": "5-7", "priority": "High", "sub_topics": "Vocabulary, सार्थक शब्द" },
+        { "name": "Para Jumbles / वाक्य क्रम", "weight": "5", "priority": "Medium", "sub_topics": "Rearrangement" },
+        { "name": "Idioms / मुहावरे", "weight": "3-5", "priority": "Low", "sub_topics": "Usage" }
+      ]
+    },
+    {
+      "name": "Computer Knowledge",
+      "total_qs": "40 (Mains Only)",
+      "analysis": "Low marks per question (0.5) but high impact on total score. Focus on practical office software and security.",
+      "topics": [
+        { "name": "MS Office Suite", "weight": "10-12", "priority": "High", "sub_topics": "Shortcuts, Excel Formulas" },
+        { "name": "Networking & Internet", "weight": "5-8", "priority": "High", "sub_topics": "Protocols, LAN/WAN" },
+        { "name": "Computer Hardware/OS", "weight": "5", "priority": "Medium", "sub_topics": "History, Memory Units" },
+        { "name": "Cyber Security", "weight": "5", "priority": "Medium", "sub_topics": "Malware, Viruses, Firewall" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Prelims: The 45-Minute Blitz",
+      "content": "Since there is no English in Prelims, the cutoff goes exceptionally high (up to 60+ out of 80). You must attempt 65+ with 100% accuracy. Focus on fast calculation.",
+      "stat_box": "Target: 65+ Attempts"
+    },
+    {
+      "title": "Mains: Composite Time Logic",
+      "content": "Even with sectional timing, you must manage the switch between Hindi/English and GA effectively. Computer and GA should be finished in 30 mins total.",
+      "stat_box": "Mains Marks: 200"
+    },
+    {
+      "title": "Regional Language Proficiency",
+      "content": "Crucial for RRBs. You must be proficient in the local language of the state you are applying for. Proficiency will be checked during DV/Interview.",
+      "stat_box": "LPT Mandatory"
+    },
+    {
+      "title": "Final Selection Ratio",
+      "content": "Final merit is calculated in an 80:20 ratio between Mains marks and Interview marks. Prelims is only a screening round.",
+      "stat_box": "Final Allotment"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is there a sectional cutoff in RRB PO?", "a": "Yes, you must clear both the sectional and the overall cutoff in both Prelims and Mains." },
+    { "q": "Can I choose Hindi instead of English?", "a": "Yes, RRB allows you to choose either English or Hindi for the language section in the Mains exam." },
+    { "q": "What is the age limit for Officer Scale I?", "a": "The general age limit is usually between 18 and 30 years (with age relaxation for reserved categories)." },
+    { "q": "Is there an interview for RRB Clerk?", "a": "No, there is no interview for RRB Clerk (Office Assistant), only for RRB PO (Officer Scale I, II, III)." },
+    { "q": "What is the negative marking?", "a": "Standard penalty of 0.25 (1/4th) of the marks assigned to that question is applied for every wrong answer." },
+    { "q": "What is the salary of an RRB PO?", "a": "The starting basic pay is approximately ₹48,480, with total in-hand salary ranging from ₹65,000 to ₹75,000 including allowances." }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "exam_name": "RRB Group D",
+  "year": "2026",
+  "category_name": "Railway Recruitment",
+  "nav_redirect_id": "railways",
+  "master_id": "rrb-group-d",
+  "total_vacancy_projected": "32000+ (Expected)",
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF GROUP D RECRUITMENT",
+    "hub_url": "/railways/groupd.html"
+  },
+  "exam_phases": [
+    {
+      "phase": "CBT",
+      "duration": "90 Minutes",
+      "total_qs": "100",
+      "negative": "0.33"
+    },
+    {
+      "phase": "PET",
+      "duration": "Physical Test",
+      "total_qs": "NA",
+      "negative": "NA"
+    },
+    {
+      "phase": "Document Verification",
+      "duration": "Final Stage",
+      "total_qs": "NA",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2024", "cutoff_avg": "72", "difficulty": "Moderate", "key_shift": "Math easy" },
+    { "year": "2023", "cutoff_avg": "70", "difficulty": "Moderate", "key_shift": "Reasoning heavy" },
+    { "year": "2022", "cutoff_avg": "68", "difficulty": "Easy-Moderate", "key_shift": "GS static" },
+    { "year": "2021", "cutoff_avg": "74", "difficulty": "Moderate", "key_shift": "Balanced" },
+    { "year": "2019", "cutoff_avg": "72", "difficulty": "Moderate", "key_shift": "Math calculative" }
+  ],
+  "subjects": [
+    {
+      "name": "Mathematics",
+      "total_qs": "25",
+      "analysis": "Basic arithmetic level questions dominate this section.",
+      "topics": [
+        { "name": "Percentage", "weight": "3-4", "priority": "High", "sub_topics": "Basics" },
+        { "name": "Ratio & Proportion", "weight": "2-3", "priority": "High", "sub_topics": "Direct" },
+        { "name": "Average", "weight": "2-3", "priority": "Medium", "sub_topics": "Mean" },
+        { "name": "Profit & Loss", "weight": "2-3", "priority": "High", "sub_topics": "Discount" },
+        { "name": "Time & Work", "weight": "2-3", "priority": "High", "sub_topics": "Efficiency" },
+        { "name": "SI & CI", "weight": "1-2", "priority": "Medium", "sub_topics": "Interest" },
+        { "name": "Mensuration", "weight": "2-3", "priority": "Medium", "sub_topics": "Area" }
+      ]
+    },
+    {
+      "name": "Reasoning",
+      "total_qs": "30",
+      "analysis": "Non-verbal reasoning and logical patterns are important.",
+      "topics": [
+        { "name": "Series", "weight": "4-5", "priority": "High", "sub_topics": "Number" },
+        { "name": "Analogy", "weight": "3-4", "priority": "Medium", "sub_topics": "Word" },
+        { "name": "Coding", "weight": "3-4", "priority": "Medium", "sub_topics": "Letter" },
+        { "name": "Puzzle", "weight": "4-5", "priority": "High", "sub_topics": "Seating" },
+        { "name": "Direction", "weight": "2-3", "priority": "Medium", "sub_topics": "Distance" },
+        { "name": "Syllogism", "weight": "3-4", "priority": "High", "sub_topics": "Logic" }
+      ]
+    },
+    {
+      "name": "General Science",
+      "total_qs": "25",
+      "analysis": "Class 10 level NCERT science questions.",
+      "topics": [
+        { "name": "Physics", "weight": "8-9", "priority": "High", "sub_topics": "Motion" },
+        { "name": "Chemistry", "weight": "8-9", "priority": "High", "sub_topics": "Reaction" },
+        { "name": "Biology", "weight": "7-8", "priority": "Medium", "sub_topics": "Human body" }
+      ]
+    },
+    {
+      "name": "General Awareness",
+      "total_qs": "20",
+      "analysis": "A mix of current affairs and static GK topics.",
+      "topics": [
+        { "name": "Current Affairs", "weight": "6-7", "priority": "High", "sub_topics": "National" },
+        { "name": "History", "weight": "3-4", "priority": "Medium", "sub_topics": "Modern" },
+        { "name": "Geography", "weight": "3-4", "priority": "Medium", "sub_topics": "India" },
+        { "name": "Polity", "weight": "2-3", "priority": "Medium", "sub_topics": "Constitution" },
+        { "name": "Sports", "weight": "1-2", "priority": "Low", "sub_topics": "Events" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "CBT Strategy",
+      "content": "Attempt mathematics and reasoning first to maximize score. Avoid guess work due to negative marking.",
+      "stat_box": "Safe Attempts: 80+"
+    },
+    {
+      "title": "General Science Preparation",
+      "content": "Focus on class 10 NCERT physics, chemistry and biology foundations.",
+      "stat_box": "Science Weightage: 25%"
+    },
+    {
+      "title": "PET Preparation",
+      "content": "Practice running and lifting as per official PET requirement levels.",
+      "stat_box": "PET Qualifying Only"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is PET qualifying?", "a": "Yes PET is qualifying in nature." },
+    { "q": "Negative marking in CBT?", "a": "Yes 1/3 negative marking." },
+    { "q": "Minimum qualification?", "a": "10th pass or ITI." },
+    { "q": "Is syllabus same for all posts?", "a": "Yes single syllabus." },
+    { "q": "Is CBT online?", "a": "Yes computer based test." }
+  ]
+}

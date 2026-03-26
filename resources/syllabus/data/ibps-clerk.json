@@ -1,0 +1,129 @@
+{
+  "exam_name": "IBPS Clerk (CRP Clerical)",
+  "year": "2026",
+  "category_name": "Banking Recruitment",
+  "nav_redirect_id": "bank",
+  "master_id": "ibps-clerk",
+  "total_vacancy_projected": "6000+ (Expected)",
+    
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF CLERK RECRUITMENT",
+    "hub_url": "/ibps/ibpsbank.html"
+  },
+  
+  "exam_phases": [
+    {
+      "phase": "Phase I: Prelims",
+      "duration": "60 Minutes",
+      "total_qs": "100",
+      "negative": "0.25",
+      "marks": "100"
+    },
+    {
+      "phase": "Phase II: Mains",
+      "duration": "160 Minutes",
+      "total_qs": "190",
+      "negative": "0.25",
+      "marks": "200"
+    },
+    {
+      "phase": "Language Proficiency Test (LPT)",
+      "duration": "Variable",
+      "total_qs": "Qualifying",
+      "negative": "NA",
+      "marks": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "72", "difficulty": "Moderate", "key_shift": "Reasoning tricky" },
+    { "year": "2024", "cutoff_avg": "70", "difficulty": "Moderate", "key_shift": "DI heavy" },
+    { "year": "2023", "cutoff_avg": "74", "difficulty": "Moderate", "key_shift": "English moderate" },
+    { "year": "2022", "cutoff_avg": "71", "difficulty": "Moderate", "key_shift": "Balanced" },
+    { "year": "2021", "cutoff_avg": "73", "difficulty": "Moderate", "key_shift": "Puzzle high" }
+  ],
+  "subjects": [
+    {
+      "name": "English Language (Prelims & Mains)",
+      "total_qs": "30 (Pre) / 40 (Mains)",
+      "analysis": "RC dominates. In Mains, focus shifts to inference-based questions and complex sentence connectors.",
+      "topics": [
+        { "name": "Reading Comprehension", "weight": "8-12", "priority": "High", "sub_topics": "Tone, Inference, Vocabulary" },
+        { "name": "Cloze Test", "weight": "5-7", "priority": "High", "sub_topics": "Contextual Grammar" },
+        { "name": "Error Detection", "weight": "5-6", "priority": "High", "sub_topics": "New Pattern/Multiple Errors" },
+        { "name": "Fillers", "weight": "3-5", "priority": "Medium", "sub_topics": "Double/Triple Fillers" },
+        { "name": "Para Jumble", "weight": "5", "priority": "Medium", "sub_topics": "Fixed First/Last Sentence" },
+        { "name": "Phrase Replacement", "weight": "3-4", "priority": "Medium", "sub_topics": "Idiomatic Expressions" },
+        { "name": "Match the Column", "weight": "3-5", "priority": "Low", "sub_topics": "Sentence Completion" }
+      ]
+    },
+    {
+      "name": "Numerical Ability / Quantitative Aptitude",
+      "total_qs": "35 (Pre) / 50 (Mains)",
+      "analysis": "Arithmetic heavy. Prelims requires speed in calculation; Mains requires deep data interpretation skills.",
+      "topics": [
+        { "name": "Data Interpretation (DI)", "weight": "10-15", "priority": "High", "sub_topics": "Caselet, Radar, Missing DI" },
+        { "name": "Number Series", "weight": "5", "priority": "High", "sub_topics": "Missing/Wrong Pattern" },
+        { "name": "Simplification/Approximation", "weight": "5-10", "priority": "High", "sub_topics": "BODMAS/Fraction to %" },
+        { "name": "Quadratic Equation", "weight": "5", "priority": "Medium", "sub_topics": "Comparison of Variables" },
+        { "name": "Arithmetic Word Problems", "weight": "10-12", "priority": "High", "sub_topics": "Partnership, SI-CI, Mixtures" },
+        { "name": "Data Sufficiency", "weight": "3-5", "priority": "Medium", "sub_topics": "2-3 Statements" },
+        { "name": "Quantity Comparison", "weight": "3-4", "priority": "Low", "sub_topics": "Q1 vs Q2 Logic" }
+      ]
+    },
+    {
+      "name": "Reasoning Ability & Computer Aptitude",
+      "total_qs": "35 (Pre) / 50 (Mains)",
+      "analysis": "Puzzle heavy. Accuracy in logical reasoning is the differentiator in the Mains merit list.",
+      "topics": [
+        { "name": "Puzzles", "weight": "12-18", "priority": "High", "sub_topics": "Flat-Floor, Month-Date, Box" },
+        { "name": "Seating Arrangement", "weight": "10-12", "priority": "High", "sub_topics": "Uncertain Number, Linear, Hybrid" },
+        { "name": "Syllogism", "weight": "3-5", "priority": "High", "sub_topics": "Only a Few, Reverse Syllogism" },
+        { "name": "Coding Decoding", "weight": "5", "priority": "Medium", "sub_topics": "Coded/Chinese Pattern" },
+        { "name": "Logical Reasoning", "weight": "6-10", "priority": "High", "sub_topics": "Assumptions, Course of Action" },
+        { "name": "Input-Output", "weight": "5", "priority": "Medium", "sub_topics": "Machine Rearrangement" },
+        { "name": "Computer Aptitude", "weight": "2-5", "priority": "Low", "sub_topics": "Binary, Logic Gates, Flowcharts" }
+      ]
+    },
+    {
+      "name": "General & Financial Awareness (Mains Only)",
+      "total_qs": "50",
+      "analysis": "Current affairs and banking awareness are heavy score boosters. Focus on last 6 months.",
+      "topics": [
+        { "name": "Current Affairs", "weight": "25-30", "priority": "High", "sub_topics": "Past 6 Months, MoUs, Summits" },
+        { "name": "Banking Awareness", "weight": "10-15", "priority": "High", "sub_topics": "RBI Circulars, PCA, Basel Norms" },
+        { "name": "Financial Awareness", "weight": "5-8", "priority": "High", "sub_topics": "Stock Market, Budget, SEBI" },
+        { "name": "Static GK", "weight": "5-7", "priority": "Medium", "sub_topics": "HQs, National Parks, Dams" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Prelims Strategy: The Speed Game",
+      "content": "Focus on high-speed topics like Simplification and Inequalities first. Accuracy must be above 95% to clear high state-wise cutoffs.",
+      "stat_box": "Target Score: 80+"
+    },
+    {
+      "title": "Mains Strategy: Accuracy & GA",
+      "content": "GA preparation is essential for the merit list. In Mains, solve puzzles selectively; avoid time-consuming complex arrangements until arithmetic is secured.",
+      "stat_box": "GA Marks: 50"
+    },
+    {
+      "title": "Sectional Timing Management",
+      "content": "Each section has a fixed time. Practice switching mindsets between calculation and logic rapidly during mock sessions.",
+      "stat_box": "Strict Sectional Time"
+    },
+    {
+      "title": "Final Selection Protocol",
+      "content": "Only Phase II (Mains) marks are counted for the final allotment. Since there is no interview, every single mark in Mains is crucial.",
+      "stat_box": "No Interview"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is there an interview in IBPS Clerk?", "a": "No, there is no interview for clerical posts in IBPS. Selection is based purely on Mains marks." },
+    { "q": "What is the negative marking policy?", "a": "A penalty of 0.25 (1/4th) marks is applicable for every wrong answer in both Prelims and Mains." },
+    { "q": "Are Prelims marks added to the final merit?", "a": "No, Prelims is a screening test. The final merit is calculated using Phase II (Mains) marks only." },
+    { "q": "Is General Awareness important?", "a": "Yes, GA carries 50 marks in Mains and is often the deciding factor because it takes less time to attempt." },
+    { "q": "Is there a descriptive test like PO?", "a": "No, IBPS Clerk does not have a descriptive (Essay/Letter) test." },
+    { "q": "Is LPT compulsory?", "a": "Yes, candidates must be proficient in the official language of the state they applied for; otherwise, they may be disqualified." }
+  ]
+}

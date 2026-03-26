@@ -1,0 +1,124 @@
+{
+  "exam_name": "SSC MTS & Havaldar",
+  "year": "2026",
+  "category_name": "SSC Recruitment",
+  "nav_redirect_id": "ssc",
+  "master_id": "ssc-mts",
+  "total_vacancy_projected": "12000+ (Expected)",
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF MTS RECRUITMENT",
+    "hub_url": "/ssc/sscmts.html"
+  },  
+  "exam_phases": [
+    {
+      "phase": "Session 1 (Qualifying)",
+      "duration": "45 Minutes",
+      "total_qs": "40",
+      "negative": "No Negative Marking"
+    },
+    {
+      "phase": "Session 2 (Merit)",
+      "duration": "45 Minutes",
+      "total_qs": "50",
+      "negative": "1 Mark per wrong answer"
+    },
+    {
+      "phase": "PET/PST (Havaldar Only)",
+      "duration": "Physical Test",
+      "total_qs": "Walking & Height Check",
+      "negative": "Qualifying Only"
+    },
+    {
+      "phase": "Document Verification",
+      "duration": "Final Stage",
+      "total_qs": "NA",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2024", "cutoff_avg": "132", "difficulty": "Easy-Moderate", "key_shift": "Reasoning easy" },
+    { "year": "2023", "cutoff_avg": "130", "difficulty": "Easy", "key_shift": "Math basic" },
+    { "year": "2022", "cutoff_avg": "125", "difficulty": "Moderate", "key_shift": "GS static" },
+    { "year": "2021", "cutoff_avg": "128", "difficulty": "Easy", "key_shift": "English removed" },
+    { "year": "2020", "cutoff_avg": "126", "difficulty": "Moderate", "key_shift": "Balanced" }
+  ],
+  "subjects": [
+    {
+      "name": "Numerical and Mathematical Ability (Session 1)",
+      "total_qs": "20",
+      "analysis": "Basic arithmetic questions focusing on speed. This section is qualifying only.",
+      "topics": [
+        { "name": "Percentage", "weight": "3-4", "priority": "High", "sub_topics": "Basics" },
+        { "name": "Ratio & Proportion", "weight": "2-3", "priority": "High", "sub_topics": "Direct" },
+        { "name": "Average", "weight": "2-3", "priority": "Medium", "sub_topics": "Mean" },
+        { "name": "Profit & Loss", "weight": "2-3", "priority": "High", "sub_topics": "Discount" },
+        { "name": "Time & Work", "weight": "2-3", "priority": "Medium", "sub_topics": "Efficiency" },
+        { "name": "Mensuration", "weight": "2-3", "priority": "Low", "sub_topics": "Area/Volume" },
+        { "name": "Number Systems", "weight": "2-3", "priority": "High", "sub_topics": "LCM/HCF" }
+      ]
+    },
+    {
+      "name": "Reasoning Ability (Session 1)",
+      "total_qs": "20",
+      "analysis": "Easy level reasoning. Scoring here helps clear the Session 1 threshold easily.",
+      "topics": [
+        { "name": "Series", "weight": "3-4", "priority": "High", "sub_topics": "Number/Alpha" },
+        { "name": "Analogy", "weight": "2-3", "priority": "Medium", "sub_topics": "Word/Image" },
+        { "name": "Coding Decoding", "weight": "2-3", "priority": "Medium", "sub_topics": "Letter" },
+        { "name": "Puzzle", "weight": "3-4", "priority": "High", "sub_topics": "Seating" },
+        { "name": "Direction Sense", "weight": "2-3", "priority": "Low", "sub_topics": "Distance" },
+        { "name": "Syllogism", "weight": "2-3", "priority": "High", "sub_topics": "Venn Diagram" }
+      ]
+    },
+    {
+      "name": "General Awareness (Session 2 - Merit)",
+      "total_qs": "25",
+      "analysis": "Crucial for merit. Static GK and Art & Culture are heavily tested.",
+      "topics": [
+        { "name": "History", "weight": "3-4", "priority": "Medium", "sub_topics": "Modern/Ancient" },
+        { "name": "Geography", "weight": "3-4", "priority": "Medium", "sub_topics": "Indian/Physical" },
+        { "name": "Polity", "weight": "3-4", "priority": "High", "sub_topics": "Articles/Constitution" },
+        { "name": "Economy", "weight": "2-3", "priority": "Low", "sub_topics": "Budget/Planning" },
+        { "name": "General Science", "weight": "4-5", "priority": "High", "sub_topics": "Physics/Biology" },
+        { "name": "Current Affairs", "weight": "3-4", "priority": "Medium", "sub_topics": "Awards/National" },
+        { "name": "Art & Culture", "weight": "4-5", "priority": "High", "sub_topics": "Dance/Festivals" }
+      ]
+    },
+    {
+      "name": "English Language (Session 2 - Merit)",
+      "total_qs": "25",
+      "analysis": "Basic grammar and comprehension. Accuracy is vital due to negative marking.",
+      "topics": [
+        { "name": "Error Detection", "weight": "3-4", "priority": "High", "sub_topics": "Grammar Rules" },
+        { "name": "Fill in blanks", "weight": "2-3", "priority": "Medium", "sub_topics": "Prepositions" },
+        { "name": "Synonym Antonym", "weight": "2-3", "priority": "Medium", "sub_topics": "One Word Sub" },
+        { "name": "Reading Comprehension", "weight": "3-4", "priority": "Medium", "sub_topics": "Short Passage" },
+        { "name": "Sentence Improvement", "weight": "3-4", "priority": "High", "sub_topics": "Phrasal Verbs" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Session 1 Strategy",
+      "content": "Attempt reasoning first then numerical ability. There is NO negative marking in this session, so attempt all 40 questions to ensure you cross the qualifying cutoff.",
+      "stat_box": "Attempt: 40/40"
+    },
+    {
+      "title": "Session 2 Strategy",
+      "content": "Final Merit is based ONLY on Session 2. Focus on accuracy because every wrong answer costs 1 mark. Target GA first followed by English.",
+      "stat_box": "Negative Marking: Yes"
+    },
+    {
+      "title": "Havaldar PET/PST",
+      "content": "Prepare for walking (1600m in 15 mins for males) and height/chest requirements as per official standards.",
+      "stat_box": "Qualifying Only"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Is there negative marking in all sessions?", "a": "No, negative marking is only present in Session 2 (General Awareness & English)." },
+    { "q": "Are marks from Session 1 added to the final merit?", "a": "No, Session 1 is qualifying only. Merit is decided solely on Session 2 marks." },
+    { "q": "Is English compulsory for all candidates?", "a": "Yes, English is a mandatory part of Session 2." },
+    { "q": "What is the minimum qualification for MTS?", "a": "Candidates must have passed 10th standard (Matriculation) from a recognized board." },
+    { "q": "Is the PET test required for MTS posts?", "a": "No, PET/PST is mandatory only for candidates applying for the Havaldar post." }
+  ]
+}
