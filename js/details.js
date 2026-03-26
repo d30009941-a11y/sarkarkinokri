@@ -7,7 +7,7 @@
     return;
   }
 
-  try { await Loader.init('/data/index.json'); } catch (e) { return; }
+  try { await Loader.init('data/index.json'); } catch (e) { return; }
 
   const params = new URLSearchParams(window.location.search);
   const masterId = params.get("id"); 
@@ -29,141 +29,79 @@
     core = { ...entry, ...core };
   }
 
-  // Final fallback for title
-  if (!core.title) {
-    const fb = eventsData?.events?.[0] || dailyPosts[0] || {};
-    core.title = fb.label || fb.title || "Official Notification";
+  // Final validation
+  if (!core.title && !core.job_title && !core.organization) {
+    loaderEl.innerHTML = `<p style="color:red; font-weight:bold;">No data found for: ${masterId}</p>`;
+    return;
   }
 
   /* ===============================
-     2. UI EXECUTION (Ordered)
+     2. HEADER & META PILLS
   =============================== */
-  loaderEl.style.display = "none";
-  mainEl.style.display = "block";
-  mainEl.innerHTML = "";
-
-  renderHeader(core);
-  
-  // High-Priority Summary
-  if (core.recruitment_summary) {
-      const sum = document.createElement("div");
-      sum.className = "section-box summary-box";
-      sum.innerHTML = `<div class="section-title">📢 Summary</div><p>${core.recruitment_summary}</p>`;
-      mainEl.appendChild(sum);
-  }
-
-  renderDynamic(core);
-
-  // BOTTOM PLACEMENT: Updates & Links
-  if (dailyPosts.length) renderDailyPosts(dailyPosts);
-  if (eventsData?.events) renderPhasedButtons(eventsData.events);
-
-  /* ===============================
-     3. RECURSIVE RENDERERS
-  =============================== */
-  function renderHeader(data) {
+  function renderHeader() {
+    const title = core.title || core.job_title || "Recruitment Details";
+    const org = core.organization || core.dept || "";
+    const advt = core.advt_no || "";
+    
     const div = document.createElement("div");
     div.className = "job-header";
-    const scope = (data.header_scope || ["Govt Job"]).map(s => `<span class="pill" style="background:rgba(255,255,255,0.2); color:white; border:1px solid rgba(255,255,255,0.3);">${s}</span>`).join("");
     div.innerHTML = `
-      <div class="meta-pills">${scope}</div>
-      <h1>${data.title || data.exam_name}</h1>
+      <div style="font-size:12px; font-weight:bold; opacity:0.8; text-transform:uppercase; letter-spacing:1px;">${org}</div>
+      <h1>${title}</h1>
       <div class="meta-pills">
-        <span class="pill" style="background:#fff; color:#1e3a8a;">${data.notice_type || "Notice"} ${data.notice_no || ""}</span>
-        ${data.status ? `<span class="pill" style="background:#22c55e; color:#fff;">● ${data.status}</span>` : ""}
+        ${advt ? `<span class="pill" style="background:rgba(255,255,255,0.2); border:1px solid rgba(255,255,255,0.3);">${advt}</span>` : ""}
+        <span class="pill" style="background:#10b981; color:white;">VERIFIED</span>
+        <span class="pill" style="background:#f59e0b; color:white;">LATEST</span>
       </div>`;
     mainEl.appendChild(div);
   }
 
-  function renderDynamic(data) {
-    const skip = ["overview", "title", "slug", "master_id", "header_scope", "notice_type", "notice_no", "events", "links", "status", "recruitment_summary"];
-    
-    if (data.overview) renderGrid(data.overview, "📊 Quick Highlights");
+  /* ===============================
+     3. INFO GRID (Job Summary)
+  =============================== */
+  function renderInfoGrid() {
+    const fields = [
+      { label: "Organization", val: core.organization || core.dept },
+      { label: "Post Name", val: core.post_name || core.job_title },
+      { label: "Total Vacancy", val: core.total_vacancy || core.vacancies },
+      { label: "Last Date", val: core.last_date || "As per Notification" },
+      { label: "Location", val: core.job_location || "India" },
+      { label: "Qualification", val: core.qualification || core.eligibility }
+    ].filter(f => f.val);
 
-    Object.entries(data).forEach(([key, value]) => {
-      if (skip.includes(key) || !value) return;
-      const title = key.replace(/_/g, ' ').toUpperCase();
+    if (!fields.length) return;
 
-      if (Array.isArray(value)) {
-        // FIX: Check if it's a list of strings (like How to Apply) or a table of objects (like Vacancies)
-        if (typeof value[0] === 'string') {
-          renderList(value, `📝 ${title}`);
-        } else {
-          renderTable(value, `📋 ${title}`);
-        }
-      } else if (typeof value === "object") {
-        renderGrid(value, `⚙️ ${title}`);
-      } else {
-        const sec = document.createElement("div");
-        sec.className = "section-box";
-        sec.innerHTML = `<div class="section-title">${title}</div><div>${value}</div>`;
-        mainEl.appendChild(sec);
-      }
+    const sec = document.createElement("div");
+    sec.className = "section-box";
+    sec.innerHTML = `<div class="section-title"><i class="fas fa-info-circle"></i> Job Summary</div><div class="generic-grid"></div>`;
+    const grid = sec.querySelector(".generic-grid");
+    fields.forEach(f => {
+      grid.innerHTML += `<div class="grid-card"><label>${f.label}</label><span>${f.val}</span></div>`;
     });
-  }
-
-  function renderList(arr, title) {
-    const sec = document.createElement("div");
-    sec.className = "section-box";
-    sec.innerHTML = `
-      <div class="section-title">${title}</div>
-      <ul class="clean-list">
-        ${arr.map(item => `<li>${item}</li>`).join("")}
-      </ul>`;
     mainEl.appendChild(sec);
   }
 
-  function renderGrid(obj, title) {
+  /* ===============================
+     4. IMPORTANT LINKS (TABLE STYLE)
+  =============================== */
+  function renderLinks() {
+    if (!core.events || !core.events.length) return;
+
+    const grouped = {};
+    core.events.forEach(ev => {
+      const p = ev.phase || "Official Links";
+      if (!grouped[p]) grouped[p] = [];
+      grouped[p].push(ev);
+    });
+
     const sec = document.createElement("div");
     sec.className = "section-box";
-    sec.innerHTML = `<div class="section-title">${title}</div><div class="generic-grid">
-      ${Object.entries(obj).map(([k,v]) => {
-        let val = typeof v === 'object' ? JSON.stringify(v) : v;
-        return `<div class="grid-card"><label>${k.replace(/_/g,' ')}</label><span>${val}</span></div>`
-      }).join("")}
-    </div>`;
-    mainEl.appendChild(sec);
-  }
-
-  function renderTable(data, title) {
-    const raw = Array.isArray(data) ? data : (data.table || data.rows || []);
-    if (!raw.length) return;
-    const cols = [...new Set(raw.flatMap(row => Object.keys(row)))];
-    
-    const sec = document.createElement("div");
-    sec.className = "section-box";
-    sec.innerHTML = `<div class="section-title">${title}</div><div class="table-wrapper"><table>
-      <thead><tr>${cols.map(c => `<th>${c.toUpperCase()}</th>`).join("")}</tr></thead>
-      <tbody>
-        ${raw.map(row => `<tr>${cols.map(c => {
-          let cell = row[c] ?? "-";
-          if (typeof cell === 'object' && cell !== null) {
-            cell = `<div class="nested-cell-card">${Object.entries(cell).map(([nk, nv]) => `<div><b>${nk}:</b> ${nv}</div>`).join("")}</div>`;
-          }
-          return `<td>${cell}</td>`;
-        }).join("")}</tr>`).join("")}
-      </tbody>
-    </table></div>`;
-    mainEl.appendChild(sec);
-  }
-
-  function renderPhasedButtons(events) {
-    const sec = document.createElement("div");
-    sec.className = "section-box";
-    sec.style.borderLeftColor = "#22c55e"; 
-    sec.innerHTML = `<div class="section-title">🔗 Important Links</div><div id="btn-root"></div>`;
-    const root = sec.querySelector("#btn-root");
-
-    const grouped = events.reduce((acc, ev) => {
-      const p = ev.phase || "Direct Links";
-      if (!acc[p]) acc[p] = [];
-      acc[p].push(ev);
-      return acc;
-    }, {});
+    sec.innerHTML = `<div class="section-title"><i class="fas fa-link"></i> Important Links & Portals</div>`;
+    const root = sec;
 
     Object.entries(grouped).forEach(([phase, items]) => {
       const g = document.createElement("div");
-      g.style.marginBottom = "20px";
+      g.style.marginBottom = "25px";
       g.innerHTML = `<div class="phase-label" style="font-size:12px; font-weight:bold; color:#64748b; margin-bottom:10px; text-transform:uppercase;">${phase}</div><div class="link-grid"></div>`;
       const grid = g.querySelector(".link-grid");
       
@@ -187,11 +125,23 @@
     sec.className = "section-box";
     sec.innerHTML = `<div class="section-title">📰 News & Updates</div>
       <ul style="list-style:none; padding:0;">${posts.map(p => `
-        <li style="padding:10px; border-bottom:1px solid #f1f5f9;">
-          <a href="${p.url}" target="_blank" style="font-weight:bold;">${p.title}</a>
-          <div style="font-size:11px; color:#64748b;">${p.date}</div>
-        </li>`).join("")}
-      </ul>`;
+        <li style="margin-bottom:15px; border-bottom:1px solid #f1f5f9; padding-bottom:10px;">
+          <div style="font-size:12px; font-weight:bold; color:#6366f1;">${p.posted_date}</div>
+          <div style="font-weight:600; color:#1e293b; margin:4px 0;">${p.title}</div>
+          <div style="font-size:13px; color:#64748b;">${p.content}</div>
+        </li>`).join("")}</ul>`;
     mainEl.appendChild(sec);
   }
+
+  /* ===============================
+     5. RENDER TRIGGER
+  =============================== */
+  loaderEl.style.display = 'none';
+  mainEl.style.display = 'block';
+
+  renderHeader();
+  renderInfoGrid();
+  renderLinks();
+  if (dailyPosts.length) renderDailyPosts(dailyPosts);
+
 })();
