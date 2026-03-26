@@ -9,7 +9,7 @@ window.MeshRouter = {
         const isInsideCluster = currentPath.includes(`/${shortName}/`) || currentPath.includes(`${shortName}.html`);
 
         if (window.Loader && !Loader.indexManifest) {
-            // Fix: Use relative path for manifest
+            // FIX: Removed leading slash
             try { await Loader.init("data/index.json"); } catch(e) {}
         }
 
@@ -21,7 +21,7 @@ window.MeshRouter = {
         }
 
         if (!isInsideCluster) {
-            // Fix: Remove leading slashes to keep paths relative to the repo folder
+            // FIX: Paths must be relative (removed leading slashes)
             const pathsToTry = [`${shortName}/index.html`, `${shortName}.html`, `${targetId}.html`];
             for (const path of pathsToTry) {
                 try {
@@ -31,14 +31,14 @@ window.MeshRouter = {
             }
         }
 
-        // Fix: Removed leading '/' to prevent jumping to the root domain
         if (validatedId) {
+            // FIX: Redirect to details.html relatively
             window.location.href = `details.html?id=${validatedId}${section ? '#' + section : ''}`;
             return;
         }
 
         try {
-            // Fix: Relative path for portals
+            // FIX: Relative path for portals
             const portalRes = await fetch('data/staticportals.json');
             const portals = await portalRes.json();
             const portalMatch = portals.find(p => p.name.toLowerCase().includes(shortName));
@@ -48,7 +48,6 @@ window.MeshRouter = {
             }
         } catch (e) {}
 
-        // Fix: Ensure fallback stays in the repo
         console.error("Route not found for:", targetId);
         window.location.href = "index.html?status=404&target=" + targetId;
     }
