@@ -3,110 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SarkarKinokri | Latest Govt Jobs</title>
+<title>SarkarKinokri</title>
 
-<!-- Link to CSS -->
+<link rel="stylesheet" href="css/ticker.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="header">
-  <h1>SarkarKinokri</h1>
+    <h1>SarkarKinokri</h1>
 </header>
 
-<!-- HERO SECTION -->
 <section class="hero-section">
-  <h2 class="hero-title">YOUR GATEWAY TO GOVERNMENT SUCCESS</h2>
-  <p class="hero-subtitle">Verified Alerts, Real-time Updates, Simplified</p>
+    <div class="hero-content">
+        <h1 class="hero-title">YOUR GATEWAY TO GOVERNMENT SUCCESS</h1>
+        <p class="hero-subtitle">Verified Alerts, Real-time Updates, Simplified</p>
 
-  <div class="hero-search">
-    <input type="text" id="searchInput" class="hero-input" placeholder="Search jobs or notifications...">
-    <button class="hero-btn" onclick="heroSearch()">Search</button>
-  </div>
+        <div class="hero-search">
+            <input type="text" placeholder="Search Jobs..." class="hero-input" id="hero-search-input">
+            <input type="text" placeholder="Location / Dept" class="hero-input">
+            <button class="hero-btn" id="search-btn">Search</button>
+        </div>
 
-  <div class="hero-trust">
-    <span>🛡️ 100% Verified Jobs</span>
-    <span>🚀 Instant Alerts</span>
-    <span>📱 Mobile Friendly</span>
-  </div>
+        <div class="hero-trust">
+            <div>🛡️ Verified Jobs</div>
+            <div>🚀 Fast Updates</div>
+        </div>
+    </div>
 </section>
 
-<!-- STICKY TABS -->
-<div class="sticky-tabs">
-  <a href="#list-latestjobs">Latest Jobs</a>
-  <a href="#table-jobsdata">Jobs Data</a>
-  <a href="#list-importantlinks">Important Links</a>
-  <a href="#grid-staticportals">All Portals</a>
-  <a href="#grid-dailyposts">Daily Posts</a>
+<div class="ad-box" id="ad-top"></div>
+
+<div class="news-ticker">
+    <div class="ticker-label">LATEST</div>
+    <div id="ticker-content"></div>
 </div>
 
-<!-- LATEST JOBS -->
-<section class="recruitment-section">
-  <h2>Latest Jobs</h2>
-  <ul class="list" id="list-latestjobs">
-    <li>Loading...</li>
-  </ul>
+<div class="sticky-tabs">
+    <a href="#">Home</a>
+    <a href="#recruitment">Recruitment</a>
+    <a href="#board">Latest</a>
+    <a href="#resources">Resources</a>
+    <a href="#allportals">All Portals</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<section id="recruitment" class="recruitment-section">
+    <h2>Recruitment Portal</h2>
+
+    <div id="list-top" class="recruit-grid"></div>
+
+    <div class="recruit-grid">
+        <div class="recruit-box">
+            <button class="recruit-btn-main dropdown-indicator">Police ▼</button>
+            <div class="dropdown-content" id="list-police"></div>
+        </div>
+
+        <div class="recruit-box">
+            <button class="recruit-btn-main dropdown-indicator">Teaching ▼</button>
+            <div class="dropdown-content" id="list-teaching"></div>
+        </div>
+
+        <div class="recruit-box">
+            <button class="recruit-btn-main dropdown-indicator">State ▼</button>
+            <div class="dropdown-content" id="list-state"></div>
+        </div>
+    </div>
 </section>
 
-<!-- JOBS DATA TABLE -->
-<section class="recruitment-section">
-  <h2>Jobs Data</h2>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Job</th>
-        <th>Apply</th>
-        <th>Admit</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody id="table-jobsdata">
-      <tr><td colspan="4">Loading...</td></tr>
-    </tbody>
-  </table>
+<main id="board" class="board">
+    <div class="card"><h3 class="red">Latest Jobs</h3><ul id="list-jobs" class="list"></ul></div>
+    <div class="card"><h3 class="yellow">Admit Card</h3><ul id="list-admit" class="list"></ul></div>
+    <div class="card"><h3 class="orange">Answer Key</h3><ul id="list-answer" class="list"></ul></div>
+    <div class="card"><h3 class="green">Results</h3><ul id="list-result" class="list"></ul></div>
+    <div class="card"><h3 class="blue">Interview</h3><ul id="list-interview" class="list"></ul></div>
+    <div class="card"><h3 class="purple">DV</h3><ul id="list-dv" class="list"></ul></div>
+</main>
+
+<div class="ad-box" id="ad-middle"></div>
+
+<section id="resources" class="resources">
+    <h2>Important Resources</h2>
+    <div id="resource-grid" class="resource-grid"></div>
 </section>
 
-<!-- IMPORTANT LINKS -->
-<section class="resources">
-  <h2>Important Links</h2>
-  <div class="resource-grid">
-    <ul class="list" id="list-importantlinks">
-      <li>Loading...</li>
-    </ul>
-  </div>
+<div class="ad-box" id="ad-bottom"></div>
+
+<section id="allportals" class="all-portals">
+    <h2>All Portals</h2>
+    <div id="all-portal-grid" class="portal-grid"></div>
 </section>
 
-<!-- STATIC PORTALS -->
-<section class="all-portals">
-  <h2>All Portals</h2>
-  <div class="portal-grid" id="grid-staticportals">
-    <div class="portal-item2">Loading...</div>
-  </div>
+<section id="about" class="info-section">
+    <h2>About SarkarKinokri</h2>
+    <p class="seo-quote">
+        “Empowering aspirants with fast, accurate and verified government job updates across India.”
+    </p>
+    <p>
+        SarkarKinokri is a dedicated platform designed to simplify your government job search. 
+        We provide real-time updates on recruitment, admit cards, results, and official notifications 
+        from trusted sources — all in one place.
+    </p>
 </section>
 
-<!-- DAILY POSTS -->
-<section class="resources">
-  <h2>Daily Posts</h2>
-  <div class="resource-grid" id="grid-dailyposts">
-    <!-- JS will populate here -->
-  </div>
+<section id="contact" class="info-section">
+    <h2>Contact Us</h2>
+    <p class="seo-quote">
+        “We are here to support your journey — reach out anytime.”
+    </p>
+
+    <p><strong>📞 Mobile:</strong> 7021188701</p>
+    <p><strong>📧 Email:</strong> sarkarkinokrilelo@gmail.com</p>
 </section>
 
-<!-- FOOTER / INFO -->
-<section class="info-section">
-  <p class="seo-quote">All information is sourced from official notifications and portals. Stay updated with daily posts.</p>
+<section class="info-section" style="background:#fff1f2;border-color:#fecaca;">
+    <h2>Disclaimer</h2>
+    <p>
+        SarkarKinokri is an independent informational platform and is not affiliated with any 
+        government organization. We collect and present information from official sources for 
+        educational purposes only. Users are advised to verify details from official websites 
+        before taking any action.
+    </p>
 </section>
 
-<!-- MAIN JS -->
+<div id="popup-ad" class="popup-ad">
+    <div class="popup-content">
+        <span id="ad-close">✖</span>
+        <p>Advertisement</p>
+    </div>
+</div>
+
+<script src="js/loader.js"></script>
+<script src="js/router.js"></script>
 <script src="js/main.js"></script>
-<script>
-function heroSearch(){
-    const value=document.getElementById("searchInput").value.toLowerCase();
-    if(value) location.href="#list-latestjobs";
-}
-</script>
+<script src="js/search.js"></script>
+<script src="js/ticker.js"></script>
 
 </body>
 </html>
