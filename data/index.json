@@ -32,33 +32,9 @@
     },
     {
       "master_id": "ssc-cgl-2026",
-      "type": "dailypost",
-      "file": "data/dailyposts/21-03-26.json",
-      "description": "Daily posts for SSC CGL 2026"
-    },
-    {
-      "master_id": "uppsc-psc-2026",
-      "type": "jobsdata",
-      "file": "data/jobsdata/uppsc-psc-2026.json",
-      "description": "UPPSC PSC 2026 full recruitment data"
-    },
-    {
-      "master_id": "uppsc-psc-2026",
-      "type": "events",
-      "file": "data/events/uppsc-psc-2026.json",
-      "description": "UPPSC PSC 2026 events timeline"
-    },
-    {
-      "master_id": "uppsc-psc-2026",
-      "type": "dailypost",
-      "file": "data/dailyposts/21-03-26.json",
-      "description": "Daily posts for UPPSC PSC 2026"
-    },
-    {
-      "master_id": "ssc-cgl-2026",
       "type": "jobsdata",
       "file": "data/jobsdata/ssc-cgl-2026.json",
-      "description": "The SSC CGL 2026 is conducted to recruit Group B and C officers across various Ministries and Departments."
+      "description": "SSC Combined Graduate Level 2026: Conducted by SSC to recruit Group B and C officers across various Ministries and Departments."
     },
     {
       "master_id": "ib-acio-2026",
@@ -89,23 +65,6 @@
       "type": "dailypost",
       "file": "data/dailyposts/21-03-26.json",
       "description": "Daily posts for RBI Assistant 2026"
-    },
-    {
-      "master_id": "bihar-police-asi-2026",
-      "type": "events",
-      "file": "data/events/bihar-police-asi-2026.json",
-      "description": "Bihar Police 2026 events timeline"
-    },
-    {
-      "master_id": "bihar-police-2026",
-      "type": "dailypost",
-      "file": "data/dailyposts/21-03-26.json",
-      "description": "Daily posts for Bihar Police 2026"
-    },
-    {
-      "type": "static",
-      "label": "Important Links",
-      "file": "data/importantlinks.json"
     }
   ]
 }
