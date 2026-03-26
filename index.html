@@ -44,13 +44,18 @@
     <a href="#">Home</a>
     <a href="#recruitment">Recruitment</a>
     <a href="#board">Latest</a>
+    <a href="#portals">Portals</a>
+    <a href="#resources">Resources</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
 </div>
 
 <div class="main-container">
-    <div class="content-grid">
+    <div class="ad-box"></div>
+    
+    <div class="content-grid" id="recruitment">
         <div class="column">
-            <h2 class="column-title" id="recruitment">Latest Jobs</h2>
+            <h2 class="column-title">Latest Jobs</h2>
             <ul class="list" id="list-jobs"></ul>
         </div>
         <div class="column">
@@ -63,7 +68,9 @@
         </div>
     </div>
 
-    <div class="content-grid">
+    <div class="ad-box"></div>
+
+    <div class="content-grid" id="board">
         <div class="column">
             <h2 class="column-title">Answer Key</h2>
             <ul class="list" id="list-answer"></ul>
@@ -73,46 +80,24 @@
             <ul class="list" id="list-interview"></ul>
         </div>
         <div class="column">
-            <h2 class="column-title">Document Verification</h2>
+            <h2 class="column-title">DV List</h2>
             <ul class="list" id="list-dv"></ul>
         </div>
     </div>
 </div>
 
-<div class="ad-box"></div>
-
-<section class="portal-section" id="board">
+<section id="portals" class="portal-section">
     <h2 class="section-main-title">Direct Recruitment Portals</h2>
-    <div class="recruit-grid" id="list-top"></div>
-
-    <div class="category-container">
-        <div class="cat-column">
-            <h3>Police & Defence</h3>
-            <div class="portal-list" id="list-police"></div>
-        </div>
-        <div class="cat-column">
-            <h3>Teaching & TET</h3>
-            <div class="portal-list" id="list-teaching"></div>
-        </div>
-        <div class="cat-column">
-            <h3>State Selection</h3>
-            <div class="portal-list" id="list-state"></div>
-        </div>
-    </div>
-
-    <h3 style="margin-top:40px; text-align:center; color:#1e3a8a;">All Portals</h3>
-    <div class="portal-grid-all" id="all-portal-grid"></div>
+    <div class="category-container" id="portal-container"></div>
 </section>
 
-<div class="ad-box"></div>
-
-<section class="resource-section">
+<section id="resources" class="resource-section">
     <h2 class="section-main-title">Important Resources</h2>
     <div class="resource-grid" id="resource-grid"></div>
 </section>
 
 <section id="about" class="info-section">
-    <h2>About SarkarKinokri</h2>
+    <h2>About Us</h2>
     <p class="seo-quote">
         “Empowering aspirants with fast, accurate and verified government job updates across India.”
     </p>
@@ -152,8 +137,9 @@
 
 <script src="js/loader.js"></script>
 <script src="js/router.js"></script>
+<script src="js/main.js"></script>
 <script src="js/ticker.js"></script>
 <script src="js/search.js"></script>
-<script src="js/main.js"></script>
+
 </body>
 </html>
