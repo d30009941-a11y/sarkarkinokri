@@ -1,15 +1,6 @@
-/**
- * Router.js — BASE SAFE VERSION (NO LOGIC CHANGE)
- */
-
-const BASE = window.location.pathname.includes("sarkarkinokri")
-  ? "/sarkarkinokri/"
-  : "/";
-
 window.MeshRouter = {
     async navigate(id, section = '') {
         if (!id) return;
-
         let targetId = id.toLowerCase().trim();
         const parts = targetId.split('-'); 
         const shortName = parts[0]; 
@@ -18,42 +9,37 @@ window.MeshRouter = {
         const isInsideCluster = currentPath.includes(`/${shortName}/`) || currentPath.includes(`${shortName}.html`);
 
         if (window.Loader && !Loader.indexManifest) {
-            try { await Loader.init(); } catch(e) {}
+            // Fix: Use relative path for manifest
+            try { await Loader.init("data/index.json"); } catch(e) {}
         }
 
         let validatedId = null;
         if (Loader.indexManifest) {
-            validatedId =
-                Loader.indexManifest.entries.find(e => e.master_id === targetId)?.master_id ||
-                (parts.length >= 2 && Loader.indexManifest.entries.find(e => e.master_id && e.master_id.startsWith(`${parts[0]}-${parts[1]}`))?.master_id) ||
-                Loader.indexManifest.entries.find(e => e.master_id && e.master_id.startsWith(shortName))?.master_id;
+            validatedId = Loader.indexManifest.entries.find(e => e.master_id === targetId)?.master_id ||
+                          (parts.length >= 2 && Loader.indexManifest.entries.find(e => e.master_id && e.master_id.startsWith(`${parts[0]}-${parts[1]}`))?.master_id) ||
+                          Loader.indexManifest.entries.find(e => e.master_id && e.master_id.startsWith(shortName))?.master_id;
         }
 
         if (!isInsideCluster) {
-            const pathsToTry = [
-                `${BASE}${shortName}/index.html`,
-                `${BASE}${shortName}.html`,
-                `${BASE}${targetId}.html`
-            ];
-
+            // Fix: Remove leading slashes to keep paths relative to the repo folder
+            const pathsToTry = [`${shortName}/index.html`, `${shortName}.html`, `${targetId}.html`];
             for (const path of pathsToTry) {
                 try {
                     const res = await fetch(path, { method: 'HEAD' });
-                    if (res.ok) {
-                        window.location.href = path;
-                        return;
-                    }
+                    if (res.ok) { window.location.href = path; return; }
                 } catch (e) {}
             }
         }
 
+        // Fix: Removed leading '/' to prevent jumping to the root domain
         if (validatedId) {
-            window.location.href = `${BASE}details.html?id=${validatedId}${section ? '#' + section : ''}`;
+            window.location.href = `details.html?id=${validatedId}${section ? '#' + section : ''}`;
             return;
         }
 
         try {
-            const portalRes = await fetch(BASE + 'data/staticportals.json');
+            // Fix: Relative path for portals
+            const portalRes = await fetch('data/staticportals.json');
             const portals = await portalRes.json();
             const portalMatch = portals.find(p => p.name.toLowerCase().includes(shortName));
             if (portalMatch) {
@@ -62,7 +48,8 @@ window.MeshRouter = {
             }
         } catch (e) {}
 
+        // Fix: Ensure fallback stays in the repo
         console.error("Route not found for:", targetId);
-        window.location.href = BASE + "index.html?status=404&target=" + targetId;
+        window.location.href = "index.html?status=404&target=" + targetId;
     }
 };
