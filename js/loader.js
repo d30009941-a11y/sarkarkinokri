@@ -1,13 +1,17 @@
 /**
- * Loader.js — ULTRA STABLE UNIVERSAL LOADER (with daily post filtering)
+ * Loader.js — ULTRA STABLE UNIVERSAL LOADER (BASE FIXED)
  */
+
+const BASE = window.location.pathname.includes("sarkarkinokri")
+  ? "/sarkarkinokri/"
+  : "/";
 
 window.Loader = {
     indexManifest: null,
 
-    async init(manifestPath) {
+    async init(manifestPath = "data/index.json") {
         try {
-            const res = await fetch(manifestPath);
+            const res = await fetch(BASE + manifestPath.replace(/^\/+/, ''));
             if (!res.ok) throw new Error("Manifest load failed");
             this.indexManifest = await res.json();
             console.log("✅ Loader initialized");
@@ -34,7 +38,6 @@ window.Loader = {
         );
 
         if (!entry) {
-            // Special case for daily posts: find any entries of type dailypost with matching master_id
             if(type === "dailypost") {
                 const postsEntries = this.indexManifest.entries.filter(e => e.type === "dailypost");
                 if(postsEntries.length) {
@@ -55,38 +58,32 @@ window.Loader = {
     },
 
     async _fetchJSON(path) {
+        const clean = path.replace(/^\/+/, '');
+
         const paths = [
-            path,
-            path.replace(/^\/+/, ''),
-            `/${path}`
+            BASE + clean,
+            clean,
+            "/" + clean
         ];
 
         for (const p of paths) {
             try {
                 const res = await fetch(p);
 
-                if (!res.ok) {
-                    console.warn(`❌ Fetch failed:`, p);
-                    continue;
-                }
+                if (!res.ok) continue;
 
                 const text = await res.text();
 
-                if (!text.trim().startsWith("{") && !text.trim().startsWith("[")) {
-                    console.warn("❌ Invalid JSON:", p);
-                    continue;
-                }
+                if (!text.trim().startsWith("{") && !text.trim().startsWith("[")) continue;
 
                 const json = JSON.parse(text);
-                console.log(`✅ Loaded JSON:`, p);
+                console.log("✅ Loaded JSON:", p);
                 return json;
 
-            } catch (err) {
-                console.warn(`⚠️ Error fetching JSON:`, p);
-            }
+            } catch (err) {}
         }
 
-        console.error(`❌ ALL FETCH FAILED → ${path}`);
+        console.error("❌ ALL FETCH FAILED →", path);
         return null;
     }
 };
