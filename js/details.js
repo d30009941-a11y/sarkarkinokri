@@ -1,152 +1,197 @@
-// =======================
-// DETAILS PAGE LOGIC
-// =======================
+(async () => {
+  const loaderEl = document.getElementById('loader');
+  const mainEl = document.getElementById('main-content');
 
-const urlParams = new URLSearchParams(window.location.search);
-const jobId = urlParams.get('id');
-const detailedInfoURL = `${jobId}.html`;
+  if (!window.Loader) {
+    loaderEl.innerHTML = `<p style="color:red;">Loader System Missing</p>`;
+    return;
+  }
 
-if(jobId){
-    fetch(detailedInfoURL, {method:'HEAD'})
-        .then(res => { if(res.ok) window.location.replace(detailedInfoURL); else loadJsonData(jobId); })
-        .catch(() => loadJsonData(jobId));
-} else {
-    showError("No Job ID provided.");
-}
+  try { await Loader.init('/data/index.json'); } catch (e) { return; }
 
-function loadJsonData(id){
-    fetch(`data/jobsdata/${id}.json`)
-        .then(res => { if(!res.ok) throw new Error("404"); return res.json(); })
-        .then(json => {
-            const dataKey = json[id] ? id : Object.keys(json)[0];
-            renderEngine(json[dataKey]);
-        })
-        .catch(() => loadFallback(id));
-}
+  const params = new URLSearchParams(window.location.search);
+  const masterId = params.get("id"); 
+  if (!masterId) return;
 
-async function loadFallback(id){
-    try{
-        const res = await fetch('data/events.json');
-        const master = await res.json();
-        const job = master.data.find(e => e.id === id);
-        if(job) renderFallbackPage(job);
-        else showError("Job not found.");
-    } catch(e){ showError("Error fetching data."); }
-}
+  /* ===============================
+     1. DATA FETCH & FALLBACK
+  =============================== */
+  let jobsData = await Loader.fetchByMaster(masterId, "jobsdata");
+  let eventsData = await Loader.fetchByMaster(masterId, "events");
+  let dailyPosts = (await Loader.fetchByMaster(masterId, "dailypost") || []).filter(p => p.master_id === masterId);
 
-function renderEngine(data){
-    document.getElementById('loader').style.display = 'none';
-    const content = document.getElementById('main-content');
-    content.style.display = 'block';
+  if (typeof jobsData === "string") { try { jobsData = JSON.parse(jobsData); } catch(e) { jobsData = null; } }
+  if (typeof eventsData === "string") { try { eventsData = JSON.parse(eventsData); } catch(e) { eventsData = null; } }
 
-    // Advertisement
-    let adHTML = data.advertisement?.enabled ? `<div id="ad-slot" style="display:block;">${data.advertisement.content}</div>` : "";
-    content.innerHTML = adHTML;
+  let core = eventsData || {};
+  if (jobsData) {
+    let entry = Array.isArray(jobsData) ? jobsData.find(j => j.master_id === masterId) : (jobsData[masterId] || Object.values(jobsData)[0]);
+    core = { ...entry, ...core };
+  }
 
-    // Header
-    const header = document.createElement('div');
-    header.className = 'job-header';
-    header.innerHTML = `<h1>${data.overview.post_name || data.overview.category}</h1>
-        <div class="meta-pills">
-            <span class="pill"><i class="fas fa-university"></i> ${data.overview.recruitment_body}</span>
-            <span class="pill"><i class="fas fa-file-alt"></i> ${data.overview.notification_number || data.overview.notification}</span>
-        </div>`;
-    content.appendChild(header);
+  // Final fallback for title
+  if (!core.title) {
+    const fb = eventsData?.events?.[0] || dailyPosts[0] || {};
+    core.title = fb.label || fb.title || "Official Notification";
+  }
 
-    const btnHTML = `<div class="detailed-btn-wrapper"><a href="#" class="btn-detailed detailed-info-btn">CLICK HERE FOR DETAILED INFORMATION</a></div>`;
-    content.insertAdjacentHTML('beforeend', btnHTML);
+  /* ===============================
+     2. UI EXECUTION (Ordered)
+  =============================== */
+  loaderEl.style.display = "none";
+  mainEl.style.display = "block";
+  mainEl.innerHTML = "";
 
-    // Dashboard
-    const dashboard = document.createElement('div');
-    dashboard.className = 'info-dashboard';
-    dashboard.innerHTML = `<div class="section-box">
-            <div class="section-title"><i class="fas fa-calendar-alt"></i> Important Dates</div>
-            <div class="generic-grid">
-                ${Object.entries(data.important_dates).map(([k,v])=>`<div class="grid-card"><label>${k}</label><span>${v}</span></div>`).join('')}
-            </div>
-        </div>
-        <div class="section-box">
-            <div class="section-title"><i class="fas fa-rupee-sign"></i> Application Fee</div>
-            <div class="generic-grid">
-                ${Object.entries(data.application_fee).map(([k,v])=>`<div class="grid-card"><label>${k}</label><span>${v}</span></div>`).join('')}
-            </div>
-        </div>`;
-    content.appendChild(dashboard);
+  renderHeader(core);
+  
+  // High-Priority Summary
+  if (core.recruitment_summary) {
+      const sum = document.createElement("div");
+      sum.className = "section-box summary-box";
+      sum.innerHTML = `<div class="section-title">📢 Summary</div><p>${core.recruitment_summary}</p>`;
+      mainEl.appendChild(sum);
+  }
 
-    // Render other sections dynamically
-    const skip = ['overview','important_dates','application_fee','important_links','vacancy_details','advertisement'];
-    Object.entries(data).forEach(([key,value])=>{
-        if(skip.includes(key)) return;
-        const sec = document.createElement('div');
-        sec.className = 'section-box';
-        sec.style.marginTop = '20px';
-        const title = key.replace(/_/g,' ').toUpperCase();
-        let secHTML = `<div class="section-title">${title}</div>`;
-        if(Array.isArray(value)) secHTML += `<ul>${value.map(i=>`<li>${i}</li>`).join('')}</ul>`;
-        else if(typeof value === 'object') secHTML += `<div class="generic-grid">${Object.entries(value).map(([k,v])=>`<div class="grid-card"><label>${k}</label><span>${v}</span></div>`).join('')}</div>`;
-        else secHTML += `<p>${value}</p>`;
-        sec.innerHTML = secHTML;
-        content.appendChild(sec);
+  renderDynamic(core);
+
+  // BOTTOM PLACEMENT: Updates & Links
+  if (dailyPosts.length) renderDailyPosts(dailyPosts);
+  if (eventsData?.events) renderPhasedButtons(eventsData.events);
+
+  /* ===============================
+     3. RECURSIVE RENDERERS
+  =============================== */
+  function renderHeader(data) {
+    const div = document.createElement("div");
+    div.className = "job-header";
+    const scope = (data.header_scope || ["Govt Job"]).map(s => `<span class="pill" style="background:rgba(255,255,255,0.2); color:white; border:1px solid rgba(255,255,255,0.3);">${s}</span>`).join("");
+    div.innerHTML = `
+      <div class="meta-pills">${scope}</div>
+      <h1>${data.title || data.exam_name}</h1>
+      <div class="meta-pills">
+        <span class="pill" style="background:#fff; color:#1e3a8a;">${data.notice_type || "Notice"} ${data.notice_no || ""}</span>
+        ${data.status ? `<span class="pill" style="background:#22c55e; color:#fff;">● ${data.status}</span>` : ""}
+      </div>`;
+    mainEl.appendChild(div);
+  }
+
+  function renderDynamic(data) {
+    const skip = ["overview", "title", "slug", "master_id", "header_scope", "notice_type", "notice_no", "events", "links", "status", "recruitment_summary"];
+    
+    if (data.overview) renderGrid(data.overview, "📊 Quick Highlights");
+
+    Object.entries(data).forEach(([key, value]) => {
+      if (skip.includes(key) || !value) return;
+      const title = key.replace(/_/g, ' ').toUpperCase();
+
+      if (Array.isArray(value)) {
+        // FIX: Check if it's a list of strings (like How to Apply) or a table of objects (like Vacancies)
+        if (typeof value[0] === 'string') {
+          renderList(value, `📝 ${title}`);
+        } else {
+          renderTable(value, `📋 ${title}`);
+        }
+      } else if (typeof value === "object") {
+        renderGrid(value, `⚙️ ${title}`);
+      } else {
+        const sec = document.createElement("div");
+        sec.className = "section-box";
+        sec.innerHTML = `<div class="section-title">${title}</div><div>${value}</div>`;
+        mainEl.appendChild(sec);
+      }
     });
+  }
 
-    if(data.vacancy_details) content.insertAdjacentHTML('beforeend', renderTable(data.vacancy_details,"📊 Vacancy Breakdown"));
+  function renderList(arr, title) {
+    const sec = document.createElement("div");
+    sec.className = "section-box";
+    sec.innerHTML = `
+      <div class="section-title">${title}</div>
+      <ul class="clean-list">
+        ${arr.map(item => `<li>${item}</li>`).join("")}
+      </ul>`;
+    mainEl.appendChild(sec);
+  }
 
-    if(data.important_links?.links){
-        const actionSec = document.createElement('div');
-        actionSec.className = 'section-box';
-        actionSec.style.marginTop = '20px';
-        let actionHTML = `<div class="section-title"><i class="fas fa-link"></i> Quick Actions</div><div class="link-grid">`;
-        Object.entries(data.important_links.links).forEach(([label,url])=>{
-            const isActive = url && url!=='#' && url!=='' && url!=='null';
-            let btnClass = isActive ? `btn btn-action-active` : 'btn btn-inactive';
-            if(label.toLowerCase().includes("download notification")) btnClass += ' btn-download-ref';
-            actionHTML += `<a href="${isActive?url:'#'}" target="_blank" class="${btnClass}">${label}</a>`;
-        });
-        actionHTML += `</div>`;
-        actionSec.innerHTML = actionHTML;
-        content.appendChild(actionSec);
-    }
-
-    // Detailed info button
-    const detailedBtnEls = document.querySelectorAll('.detailed-info-btn');
-    fetch(detailedInfoURL,{method:'HEAD'})
-        .then(res=>{
-            if(res.ok) detailedBtnEls.forEach(btn=>{ btn.classList.add('btn-flash'); btn.href=detailedInfoURL; });
-            else throw new Error("Not Available");
-        })
-        .catch(()=>{
-            detailedBtnEls.forEach(btn=>{
-                btn.addEventListener('click',(e)=>{
-                    e.preventDefault();
-                    const downBtn = document.querySelector('.btn-download-ref');
-                    if(downBtn) downBtn.click();
-                });
-            });
-        });
-}
-
-function renderTable(data,title){
-    const tableData = data.table||data.vacancy_table||data.rows||data;
-    if(!Array.isArray(tableData)||tableData.length===0) return '';
-    const headers = Object.keys(tableData[0]);
-    return `<div class="section-box" style="margin-top:20px;">
-        <div class="section-title"><i class="fas fa-users"></i> ${title}</div>
-        <div class="table-wrapper">
-            <table>
-                <thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead>
-                <tbody>${tableData.map(row=>`<tr>${headers.map(h=>`<td>${row[h]}</td>`).join('')}</tr>`).join('')}</tbody>
-            </table>
-        </div>
+  function renderGrid(obj, title) {
+    const sec = document.createElement("div");
+    sec.className = "section-box";
+    sec.innerHTML = `<div class="section-title">${title}</div><div class="generic-grid">
+      ${Object.entries(obj).map(([k,v]) => {
+        let val = typeof v === 'object' ? JSON.stringify(v) : v;
+        return `<div class="grid-card"><label>${k.replace(/_/g,' ')}</label><span>${val}</span></div>`
+      }).join("")}
     </div>`;
-}
+    mainEl.appendChild(sec);
+  }
 
-function renderFallbackPage(job){
-    document.getElementById('loader').style.display='none';
-    const content = document.getElementById('main-content');
-    content.style.display='block';
-    content.innerHTML = `<div class="job-header"><h1>${job.master.replace(/-/g,' ').toUpperCase()}</h1><div class="meta-pills"><span class="pill">Status: ${job.status}</span></div></div><div class="section-box"><a href="${job.url}" class="btn btn-action-active" target="_blank">Visit Official Website</a></div>`;
-}
+  function renderTable(data, title) {
+    const raw = Array.isArray(data) ? data : (data.table || data.rows || []);
+    if (!raw.length) return;
+    const cols = [...new Set(raw.flatMap(row => Object.keys(row)))];
+    
+    const sec = document.createElement("div");
+    sec.className = "section-box";
+    sec.innerHTML = `<div class="section-title">${title}</div><div class="table-wrapper"><table>
+      <thead><tr>${cols.map(c => `<th>${c.toUpperCase()}</th>`).join("")}</tr></thead>
+      <tbody>
+        ${raw.map(row => `<tr>${cols.map(c => {
+          let cell = row[c] ?? "-";
+          if (typeof cell === 'object' && cell !== null) {
+            cell = `<div class="nested-cell-card">${Object.entries(cell).map(([nk, nv]) => `<div><b>${nk}:</b> ${nv}</div>`).join("")}</div>`;
+          }
+          return `<td>${cell}</td>`;
+        }).join("")}</tr>`).join("")}
+      </tbody>
+    </table></div>`;
+    mainEl.appendChild(sec);
+  }
 
-function showError(msg){
-    document.getElementById('loader').innerHTML = `<p style="color:red;">${msg}</p>`;
-}
+  function renderPhasedButtons(events) {
+    const sec = document.createElement("div");
+    sec.className = "section-box";
+    sec.style.borderLeftColor = "#22c55e"; 
+    sec.innerHTML = `<div class="section-title">🔗 Important Links</div><div id="btn-root"></div>`;
+    const root = sec.querySelector("#btn-root");
+
+    const grouped = events.reduce((acc, ev) => {
+      const p = ev.phase || "Direct Links";
+      if (!acc[p]) acc[p] = [];
+      acc[p].push(ev);
+      return acc;
+    }, {});
+
+    Object.entries(grouped).forEach(([phase, items]) => {
+      const g = document.createElement("div");
+      g.style.marginBottom = "20px";
+      g.innerHTML = `<div class="phase-label" style="font-size:12px; font-weight:bold; color:#64748b; margin-bottom:10px; text-transform:uppercase;">${phase}</div><div class="link-grid"></div>`;
+      const grid = g.querySelector(".link-grid");
+      
+      items.forEach(ev => {
+        const url = ev.official_event_url || ev.url;
+        const active = ev.is_active && url;
+        grid.innerHTML += `
+          <div style="text-align:center">
+            <div class="badge ${active ? 'active' : 'expired'}" style="margin-bottom:5px;">${ev.badge_text || (active ? 'LIVE' : 'CLOSED')}</div>
+            <a href="${url || '#'}" class="btn ${active ? 'btn-active' : 'btn-inactive'}" ${url ? 'target="_blank"' : ''}>${ev.label}</a>
+            ${ev.status_label ? `<small style="display:block; margin-top:5px; color:#2563eb; font-weight:bold;">${ev.status_label}</small>` : ''}
+          </div>`;
+      });
+      root.appendChild(g);
+    });
+    mainEl.appendChild(sec);
+  }
+
+  function renderDailyPosts(posts) {
+    const sec = document.createElement("div");
+    sec.className = "section-box";
+    sec.innerHTML = `<div class="section-title">📰 News & Updates</div>
+      <ul style="list-style:none; padding:0;">${posts.map(p => `
+        <li style="padding:10px; border-bottom:1px solid #f1f5f9;">
+          <a href="${p.url}" target="_blank" style="font-weight:bold;">${p.title}</a>
+          <div style="font-size:11px; color:#64748b;">${p.date}</div>
+        </li>`).join("")}
+      </ul>`;
+    mainEl.appendChild(sec);
+  }
+})();
