@@ -1,22 +1,4 @@
-// ✅ GLOBAL FETCH PATH FIX (PLACE AT VERY TOP — BEFORE ANYTHING)
 
-// Detect base path
-const BASE = window.location.pathname.includes("sarkarkinokri")
-  ? "/sarkarkinokri/"
-  : "/";
-
-// Preserve original fetch
-const originalFetch = window.fetch;
-
-// Override fetch globally
-window.fetch = function(resource, options) {
-  if (typeof resource === "string") {
-    if (!resource.startsWith("http") && !resource.startsWith(BASE)) {
-      resource = BASE + resource.replace(/^\/+/, '');
-    }
-  }
-  return originalFetch(resource, options);
-};
 /**
  * main.js — THE FINAL SELF-CLEANING POWER ENGINE
  * (PATH FIXED — NO LOGIC CHANGED)
