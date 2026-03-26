@@ -44,60 +44,60 @@
     <a href="#">Home</a>
     <a href="#recruitment">Recruitment</a>
     <a href="#board">Latest</a>
+    <a href="#portals">Portals</a>
     <a href="#resources">Resources</a>
-    <a href="#allportals">All Portals</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
 </div>
 
-<section id="recruitment" class="recruitment-section">
-    <h2>Recruitment Portal</h2>
-
-    <div id="list-top" class="recruit-grid"></div>
-
-    <div class="recruit-grid">
-        <div class="recruit-box">
-            <button class="recruit-btn-main dropdown-indicator">Police ▼</button>
-            <div class="dropdown-content" id="list-police"></div>
+<div class="main-container">
+    <div class="ad-box"></div>
+    
+    <div class="content-grid" id="recruitment">
+        <div class="column">
+            <h2 class="column-title">Latest Jobs</h2>
+            <ul class="list" id="list-jobs"></ul>
         </div>
-
-        <div class="recruit-box">
-            <button class="recruit-btn-main dropdown-indicator">Teaching ▼</button>
-            <div class="dropdown-content" id="list-teaching"></div>
+        <div class="column">
+            <h2 class="column-title">Admit Card</h2>
+            <ul class="list" id="list-admit"></ul>
         </div>
-
-        <div class="recruit-box">
-            <button class="recruit-btn-main dropdown-indicator">State ▼</button>
-            <div class="dropdown-content" id="list-state"></div>
+        <div class="column">
+            <h2 class="column-title">Result</h2>
+            <ul class="list" id="list-result"></ul>
         </div>
     </div>
+
+    <div class="ad-box"></div>
+
+    <div class="content-grid" id="board">
+        <div class="column">
+            <h2 class="column-title">Answer Key</h2>
+            <ul class="list" id="list-answer"></ul>
+        </div>
+        <div class="column">
+            <h2 class="column-title">Interview</h2>
+            <ul class="list" id="list-interview"></ul>
+        </div>
+        <div class="column">
+            <h2 class="column-title">DV List</h2>
+            <ul class="list" id="list-dv"></ul>
+        </div>
+    </div>
+</div>
+
+<section id="portals" class="portal-section">
+    <h2 class="section-main-title">Direct Recruitment Portals</h2>
+    <div class="category-container" id="portal-container"></div>
 </section>
 
-<main id="board" class="board">
-    <div class="card"><h3 class="red">Latest Jobs</h3><ul id="list-jobs" class="list"></ul></div>
-    <div class="card"><h3 class="yellow">Admit Card</h3><ul id="list-admit" class="list"></ul></div>
-    <div class="card"><h3 class="orange">Answer Key</h3><ul id="list-answer" class="list"></ul></div>
-    <div class="card"><h3 class="green">Results</h3><ul id="list-result" class="list"></ul></div>
-    <div class="card"><h3 class="blue">Interview</h3><ul id="list-interview" class="list"></ul></div>
-    <div class="card"><h3 class="purple">DV</h3><ul id="list-dv" class="list"></ul></div>
-</main>
-
-<div class="ad-box" id="ad-middle"></div>
-
-<section id="resources" class="resources">
-    <h2>Important Resources</h2>
-    <div id="resource-grid" class="resource-grid"></div>
-</section>
-
-<div class="ad-box" id="ad-bottom"></div>
-
-<section id="allportals" class="all-portals">
-    <h2>All Portals</h2>
-    <div id="all-portal-grid" class="portal-grid"></div>
+<section id="resources" class="resource-section">
+    <h2 class="section-main-title">Important Resources</h2>
+    <div class="resource-grid" id="resource-grid"></div>
 </section>
 
 <section id="about" class="info-section">
-    <h2>About SarkarKinokri</h2>
+    <h2>About Us</h2>
     <p class="seo-quote">
         “Empowering aspirants with fast, accurate and verified government job updates across India.”
     </p>
@@ -138,8 +138,8 @@
 <script src="js/loader.js"></script>
 <script src="js/router.js"></script>
 <script src="js/main.js"></script>
-<script src="js/search.js"></script>
 <script src="js/ticker.js"></script>
+<script src="js/search.js"></script>
 
 </body>
 </html>
