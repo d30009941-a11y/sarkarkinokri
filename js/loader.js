@@ -7,8 +7,8 @@ window.Loader = {
 
     async init(manifestPath) {
         try {
-            // Fix: Ensure manifestPath is treated as relative
-            const cleanPath = manifestPath.startsWith('/') ? `.${manifestPath}` : manifestPath;
+            // FIX: Remove leading slash for GitHub Pages compatibility
+            const cleanPath = manifestPath.startsWith('/') ? manifestPath.substring(1) : manifestPath;
             const res = await fetch(cleanPath);
             if (!res.ok) throw new Error("Manifest load failed");
             this.indexManifest = await res.json();
@@ -56,13 +56,13 @@ window.Loader = {
     },
 
     async _fetchJSON(path) {
-        // Fix: Force relative pathing for GitHub Pages subdirectories
-        const cleanPath = path.startsWith('/') ? `.${path}` : `./${path}`;
+        // FIX: Ensure path is relative to the repository subfolder
+        const cleanPath = path.startsWith('/') ? path.substring(1) : path;
         
         const paths = [
-            cleanPath,
-            path.replace(/^\/+/, ''),
-            path
+            cleanPath,           // "data/..."
+            `./${cleanPath}`,    // "./data/..."
+            path                 // original fallback
         ];
 
         for (const p of paths) {
