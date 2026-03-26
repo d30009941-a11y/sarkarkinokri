@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SarkarKinokri: Official SSC Recruitment Hub 2026</title>
+    <meta name="description" content="Official recruitment portal for SSC CGL, CHSL, MTS, JE, Selection Posts, and Stenographer.">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Surgical-v2 Home Grid Styles */
+        .path-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+            margin-top: 30px; 
+        }
+        .path-card { 
+            background: #fff; 
+            padding: 25px; 
+            border-radius: 10px; 
+            border-top: 5px solid #004a8f; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .path-card:hover { transform: translateY(-5px); }
+        .hero-btn { 
+            display: inline-block; 
+            margin-top: 15px; 
+            padding: 10px 20px; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+        }
+    </style>
+</head>
+<body>
+    <div id="popup-ad-container"><div id="popup-content"></div></div>
+
+    <header class="header"><h1>SarkarKinokri</h1></header>
+
+    <nav class="sticky-tabs" id="main-nav"></nav>
+
+    <main class="container">
+        <h1 class="red-title">SSC Career Gateway: Official Entry Paths 2026</h1>
+        
+        <div class="ad-box" id="ad-hub-top"></div>
+        
+        <div class="path-grid">
+            <div class="path-card" style="border-top-color: #ff3e3e;">
+                <h3>Graduate Level (CGL)</h3>
+                <p><strong>Posts:</strong> Inspector, ASO, Auditor.</p>
+                <a href="ssccgl.html" class="hero-btn" style="background: #ff3e3e;">Full Details →</a>
+            </div>
+            
+            <div class="path-card" style="border-top-color: #3498db;">
+                <h3>10+2 Level (CHSL)</h3>
+                <p><strong>Posts:</strong> LDC, JSA, DEO.</p>
+                <a href="sscchsl.html" class="hero-btn" style="background: #3498db;">Full Details →</a>
+            </div>
+            
+            <div class="path-card" style="border-top-color: #f39c12;">
+                <h3>10th Level (MTS/GD)</h3>
+                <p><strong>Posts:</strong> Multi-Tasking Staff, Constable.</p>
+                <a href="sscmts.html" class="hero-btn" style="background: #f39c12;">Full Details →</a>
+            </div>
+
+            <div class="path-card" style="border-top-color: #2ecc71;">
+                <h3>Junior Engineer (JE)</h3>
+                <p><strong>Posts:</strong> Civil, Electrical, Mechanical.</p>
+                <a href="sscje.html" class="hero-btn" style="background: #2ecc71;">JE Details →</a>
+            </div>
+
+            <div class="path-card" style="border-top-color: #9b59b6;">
+                <h3>Selection Posts</h3>
+                <p><strong>Posts:</strong> Phase XIV Specialized Roles.</p>
+                <a href="sscselection.html" class="hero-btn" style="background: #9b59b6;">View Posts →</a>
+            </div>
+
+            <div class="path-card" style="border-top-color: #f1c40f;">
+                <h3>Stenographer</h3>
+                <p><strong>Posts:</strong> Grade C & D (No Math).</p>
+                <a href="sscsteno.html" class="hero-btn" style="background: #f1c40f; color: #333;">Steno Hub →</a>
+            </div>
+        </div>
+
+        <div class="ad-box" id="ad-hub-bottom"></div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div><h4>Support</h4><p>📧 sarkarkinokrilelo@gmail.com</p></div>
+            <div><h4>Explore</h4><p><a href="../blueprint.html" style="color:white; text-decoration:none;">90-Day Strategy</a></p></div>
+        </div>
+        <p style="text-align:center; margin-top:30px; border-top:1px solid #444; padding-top:20px;">
+            <strong>SarkarKinokri</strong> - Built by experts, trusted by aspirants.
+        </p>
+    </footer>
+
+    <div class="floating-actions">
+        <a href="blueprint.html" class="vibrant-btn btn-blueprint">📘 HOW TO PREPARE IN 3 MONTHS STRATEGY</a>
+        <a href="javascript:void(0)" onclick="MeshRouter.navigate('ssc-cgl')" class="vibrant-btn btn-ongoing">🔥 CLICK HERE TO SEE ONGOING RECRUITMENT</a>
+     </div>
+
+    <script>
+        const sscNavigation = {
+            init() {
+                const navContainer = document.getElementById('main-nav');
+                if (!navContainer) return;
+
+                // TO ADD A NEW JOB: Just add a new object to this array
+                const links = [
+                    { name: "Home", url: "index.html" },
+                    { name: "SSC CGL", url: "ssccgl.html" },
+                    { name: "SSC CHSL", url: "sscchsl.html" },
+                    { name: "SSC MTS", url: "sscmts.html" },
+                    { name: "SSC JE", url: "sscje.html" },
+                    { name: "Selection Posts", url: "sscselection.html" },
+                    { name: "Steno", url: "sscsteno.html" },
+                    { name: "Strategy", url: "blueprint.html" }
+                ];
+
+                const currentFile = window.location.pathname.split("/").pop() || "index.html";
+
+                navContainer.innerHTML = links.map(link => {
+                    const isActive = currentFile === link.url ? 'class="active-tab" style="background:#004a8f; color:white;"' : '';
+                    return `<a href="${link.url}" ${isActive}>${link.name}</a>`;
+                }).join('');
+            }
+        };
+
+        // Initialize Nav and Ad Cleanup
+        document.addEventListener("DOMContentLoaded", () => {
+            sscNavigation.init();
+            document.querySelectorAll('.ad-box').forEach(box => {
+                if (box.innerHTML.trim() === "") box.style.display = 'none';
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
