@@ -1,24 +1,18 @@
 /**
  * main.js — THE FINAL SELF-CLEANING POWER ENGINE
- * ---------------------------------------------------------
- * FEATURES:
- * 1. 15-Month Anchor Logic: Jobs stay in "Latest" even without active events.
- * 2. Self-Cleaning: New recruitment cycles automatically replace old ones.
- * 3. Power-Naming: Title + Phase + Label (Never shows "Update").
- * 4. Dual-Container Support: Max 2 locations (Anchor + Active Event).
- * 5. Integrated: Portals, Important Links, and Advertisement System.
  */
 
 document.addEventListener("DOMContentLoaded", async () => {
   console.log("=== ULTRA ENGINE START ===");
 
-  // 1. LOADER INITIALIZATION
   try {
     await Loader.init("data/index.json");
   } catch (e) {
     console.error("Loader Init Failed", e);
     return;
   }
+
+  const BASE = window.location.pathname.includes("sarkarkinokri") ? "/sarkarkinokri/" : "/";
 
   const containers = {
     jobs: document.getElementById("list-jobs"),
@@ -31,9 +25,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let allEvents = [];
 
-  // ===============================
-  // 2. DATA AGGREGATION
-  // ===============================
   const masterIds = Loader.getAllMasterIds();
   
   for (const mid of masterIds) {
@@ -55,9 +46,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   allEvents.sort((a, b) => new Date(b.start_date || 0) - new Date(a.start_date || 0));
 
-  // ===============================
-  // 3. LIFECYCLE & BUCKETING
-  // ===============================
   const today = new Date();
   const fifteenMonthsAgo = new Date();
   fifteenMonthsAgo.setMonth(today.getMonth() - 15);
@@ -100,9 +88,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // ===============================
-  // 4. POWERFUL RENDERING ENGINE
-  // ===============================
   async function render(el, data) {
     if (!el) return;
     if (!data.length) {
@@ -118,7 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       
       const liId = `li-${ev.master_id}-${labelStr.replace(/\s+/g, '')}`;
       return `<li id="${liId}">
-                <a href="${(window.location.pathname.includes("sarkarkinokri") ? "/sarkarkinokri/" : "/")}details.html?id=${ev.master_id}">${baseName} - ${phaseStr}${labelStr}</a>
+                <a href="${BASE}details.html?id=${ev.master_id}">${baseName} - ${phaseStr}${labelStr}</a>
               </li>`;
     }).join("");
 
@@ -138,7 +123,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
           }
         }
-      } catch (err) { }
+      } catch (err) {}
     });
   }
 
@@ -149,12 +134,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   render(containers.interview, buckets.interview);
   render(containers.dv, buckets.dv);
 
-  // ===============================
-  // 5. STATIC CONTENT: PORTALS
-  // ===============================
   async function safeFetch(p) {
     try {
-      const r = await fetch(p.startsWith("http") ? p : (window.location.pathname.includes("sarkarkinokri") ? "/sarkarkinokri/" : "/") + p);
+      const r = await fetch(p.startsWith("http") ? p : BASE + p);
       return r.ok ? await r.json() : null;
     } catch(e) { return null; }
   }
@@ -168,21 +150,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     const colors = ["#fef2f2","#fff7ed","#fffbeb","#ecfdf5","#eff6ff","#f5f3ff","#fdf2f8"];
 
     portals.forEach(p => {
-      const anchor = `<a href="${p.url}" target="_blank">${p.icon} ${p.name}</a>`;
+      const url = p.url.startsWith("http") ? p.url : BASE + p.url.replace(/^\/+/, '');
+      const anchor = `<a href="${url}" target="_blank">${p.icon} ${p.name}</a>`;
+
       if (p.priority === "top" && listTop) {
-        listTop.innerHTML += `<div class="recruit-box"><a href="${p.url}" target="_blank" class="recruit-btn-main">${p.icon} ${p.name}</a></div>`;
+        listTop.innerHTML += `<div class="recruit-box"><a href="${url}" target="_blank" class="recruit-btn-main">${p.icon} ${p.name}</a></div>`;
       }
       if (pCats[p.category]) pCats[p.category].innerHTML += anchor;
       if (gridAll) {
         const bg = colors[Math.floor(Math.random()*colors.length)];
-        gridAll.innerHTML += `<a href="${p.url}" target="_blank" class="portal-item2" style="background:${bg}">${p.icon} ${p.name}</a>`;
+        gridAll.innerHTML += `<a href="${url}" target="_blank" class="portal-item2" style="background:${bg}">${p.icon} ${p.name}</a>`;
       }
     });
   }
 
-  // ===============================
-  // 6. IMPORTANT LINKS
-  // ===============================
   const links = await safeFetch("data/importantlinks.json");
   if (links) {
     const grid = document.getElementById("resource-grid");
@@ -190,15 +171,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       links.forEach(cat => {
         const card = document.createElement("div");
         card.className = "resource-card";
-        card.innerHTML = `<h3>${cat.category}</h3><div class="resource-links">${cat.links.map(l => `<a href="${l.url}" target="_blank" class="resource-btn">${l.title}</a>`).join("")}</div>`;
+        card.innerHTML = `<h3>${cat.category}</h3><div class="resource-links">${cat.links.map(l => {
+          const url = l.url.startsWith("http") ? l.url : BASE + l.url.replace(/^\/+/, '');
+          return `<a href="${url}" target="_blank" class="resource-btn">${l.title}</a>`;
+        }).join("")}</div>`;
         grid.appendChild(card);
       });
     }
   }
 
-  // ===============================
-  // 7. ADVERTISEMENT SYSTEM
-  // ===============================
   function manageAds() {
     document.querySelectorAll(".ad-box").forEach(b => { if(!b.innerHTML.trim()) b.style.display="none"; });
 
@@ -221,5 +202,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   manageAds();
+
+  // ✅ GLOBAL LINK SAFETY (final protection)
+  document.addEventListener("click", function(e) {
+    const a = e.target.closest("a");
+    if (!a) return;
+
+    const href = a.getAttribute("href");
+    if (!href || href.startsWith("http") || href.startsWith("#")) return;
+
+    if (href.startsWith(BASE)) return;
+
+    e.preventDefault();
+    window.location.href = BASE + href.replace(/^\/+/, '');
+  });
+
   console.log("=== ENGINE FULLY OPERATIONAL (300+ LINES) ===");
 });
