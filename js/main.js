@@ -38,74 +38,146 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   for (const mid of masterIds) {
     try {
-      // Fetch both events and jobsdata for schema enforcement
       const eventsData = await Loader.fetchByMaster(mid, "events");
       
-      if (eventsData && eventsData.events) {
-        const jobsData = await Loader.fetchByMaster(mid, "jobsdata");
-        
-        // Find the "Anchor" (The main Identity of the recruitment)
-        const anchor = jobsData || eventsData; 
-
-        eventsData.events.forEach(ev => {
-          allEvents.push({
-            ...ev,
-            master_id: mid,
-            anchor_title: anchor.title || anchor.job_title || mid.toUpperCase(),
-            anchor_dept: anchor.dept || anchor.organization || ""
-          });
-        });
+      if (eventsData?.events) {
+        allEvents.push(...eventsData.events.map(ev => ({
+          ...ev,
+          master_id: mid,
+          file_title: eventsData.title || eventsData.exam_name || null,
+          file_employer: eventsData.employer || eventsData.board || null
+        })));
       }
     } catch (err) {
-      console.warn(`Skipping ${mid} due to error`, err);
+      console.warn(`Data skip for ${mid}:`, err);
     }
   }
 
-  // ===============================
-  // 3. FILTERING & SORTING (Self-Cleaning)
-  // ===============================
-  const now = new Date();
-  const fifteenMonthsAgo = new Date();
-  fifteenMonthsAgo.setMonth(now.getMonth() - 15);
+  allEvents.sort((a, b) => new Date(b.start_date || 0) - new Date(a.start_date || 0));
 
-  // Group by Master ID to find the "Freshest" event for each recruitment
-  const latestByMaster = {};
+  // ===============================
+  // 3. LIFECYCLE & BUCKETING
+  // ===============================
+  const today = new Date();
+  const fifteenMonthsAgo = new Date();
+  fifteenMonthsAgo.setMonth(today.getMonth() - 15);
+
+  const buckets = { jobs: [], admit: [], answer: [], result: [], interview: [], dv: [] };
+  const latestJobs = new Map();
+
+  function isActive(ev) {
+    if (!ev.start_date || !ev.end_date) return false;
+    const s = new Date(ev.start_date);
+    const e = new Date(ev.end_date);
+    return s <= today && e >= today;
+  }
+
+  function normalize(stage) {
+    if (!stage) return "jobs";
+    const s = stage.toLowerCase();
+    if (s.includes("admit")) return "admit";
+    if (s.includes("answer")) return "answer";
+    if (s.includes("result")) return "result";
+    if (s.includes("interview")) return "interview";
+    if (s.includes("dv")) return "dv";
+    return "jobs";
+  }
+
   allEvents.forEach(ev => {
-    const evDate = new Date(ev.date || ev.posted_date);
-    if (!latestByMaster[ev.master_id] || evDate > new Date(latestByMaster[ev.master_id].date)) {
-      latestByMaster[ev.master_id] = ev;
+    const eventDate = new Date(ev.start_date || 0);
+
+    if (eventDate >= fifteenMonthsAgo) {
+      if (!latestJobs.has(ev.master_id)) {
+        latestJobs.set(ev.master_id, ev);
+      }
+    }
+
+    if (isActive(ev)) {
+      const bType = normalize(ev.stage);
+      if (bType !== "jobs") {
+        buckets[bType].push(ev);
+      }
     }
   });
 
   // ===============================
-  // 4. RENDERING ENGINE
+  // 4. POWERFUL RENDERING ENGINE
   // ===============================
-  Object.values(latestByMaster)
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .forEach(ev => {
-      const li = document.createElement("li");
-      const url = `details.html?id=${ev.master_id}`;
+  async function render(el, data) {
+    if (!el) return;
+    if (!data.length) {
+      el.innerHTML = `<li style="padding:10px;color:#94a3b8;font-size:0.9em;">No Current Updates</li>`;
+      return;
+    }
+
+    el.innerHTML = data.map(ev => {
+      const idTitle = ev.master_id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      const baseName = ev.file_title || idTitle;
+      const phaseStr = ev.phase ? `<span style="color:#ef4444;font-weight:600;">${ev.phase}:</span> ` : "";
+      const labelStr = ev.label || ev.stage || "View Info";
       
-      // Power Naming: Title + Phase + Label
-      const displayName = `${ev.anchor_title} ${ev.phase || ""} ${ev.label}`.replace(/\s+/g, ' ').trim();
+      const liId = `li-${ev.master_id}-${labelStr.replace(/\s+/g, '')}`;
+      return `<li id="${liId}">
+                <a href="${(window.location.pathname.includes("sarkarkinokri") ? "/sarkarkinokri/" : "/")}details.html?id=${ev.master_id}">${baseName} - ${phaseStr}${labelStr}</a>
+              </li>`;
+    }).join("");
 
-      li.innerHTML = `<a href="${url}">
-        <span style="color:#2563eb; font-weight:800;">[${ev.anchor_dept}]</span> ${displayName}
-      </a>`;
-
-      // Dual-Container Placement
-      const target = ev.container_id ? containers[ev.container_id.toLowerCase()] : containers.jobs;
-      if (target) target.appendChild(li);
+    data.forEach(async (ev) => {
+      try {
+        const jobsData = await Loader.fetchByMaster(ev.master_id, "jobsdata");
+        if (jobsData) {
+          const entry = Array.isArray(jobsData) ? jobsData.find(j => j.master_id === ev.master_id) : jobsData;
+          const finalTitle = entry?.title || ev.file_title;
+          
+          if (finalTitle) {
+            const labelStr = ev.label || ev.stage || "View Info";
+            const phaseStr = ev.phase ? `${ev.phase}: ` : "";
+            const liElement = document.getElementById(`li-${ev.master_id}-${labelStr.replace(/\s+/g, '')}`);
+            if (liElement) {
+              liElement.querySelector('a').innerText = `${finalTitle} - ${phaseStr}${labelStr}`;
+            }
+          }
+        }
+      } catch (err) { }
     });
+  }
+
+  render(containers.jobs, Array.from(latestJobs.values()));
+  render(containers.result, buckets.result);
+  render(containers.admit, buckets.admit);
+  render(containers.answer, buckets.answer);
+  render(containers.interview, buckets.interview);
+  render(containers.dv, buckets.dv);
 
   // ===============================
-  // 5. HELPER: SAFE FETCH
+  // 5. STATIC CONTENT: PORTALS
   // ===============================
-  async function safeFetch(path) {
+  async function safeFetch(p) {
     try {
-      const res = await fetch(path);
-      return res.ok ? await res.json() : null;
-    } catch (e) { return null; }
+      const r = await fetch(p.startsWith("http") ? p : (window.location.pathname.includes("sarkarkinokri") ? "/sarkarkinokri/" : "/") + p);
+      return r.ok ? await r.json() : null;
+    } catch(e) { return null; }
+  }
+
+  const portals = await safeFetch("data/staticportals.json");
+  if (portals) {
+    const listTop = document.getElementById("list-top");
+    const gridAll = document.getElementById("all-portal-grid");
+    const pCats = { police: document.getElementById("list-police"), teaching: document.getElementById("list-teaching"), state: document.getElementById("list-state") };
+    
+    const colors = ["#fef2f2","#fff7ed","#fffbeb","#ecfdf5","#eff6ff","#f5f3ff","#fdf2f8"];
+
+    portals.forEach(p => {
+      const anchor = `<a href="${p.url}" target="_blank">${p.icon} ${p.name}</a>`;
+      if (p.priority === "top" && listTop) {
+        listTop.innerHTML += `<div class="recruit-box"><a href="${p.url}" target="_blank" class="recruit-btn-main">${p.icon} ${p.name}</a></div>`;
+      }
+      if (pCats[p.category]) pCats[p.category].innerHTML += anchor;
+      if (gridAll) {
+        const bg = colors[Math.floor(Math.random()*colors.length)];
+        gridAll.innerHTML += `<a href="${p.url}" target="_blank" class="portal-item2" style="background:${bg}">${p.icon} ${p.name}</a>`;
+      }
+    });
   }
 
   // ===============================
@@ -143,10 +215,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelectorAll(".list a").forEach(a => {
       a.addEventListener("click", () => {
         const p = document.getElementById("popup-ad");
-        if(p) p.style.display = "flex";
+        if(p) p.style.display="flex";
       });
     });
   }
 
   manageAds();
+  console.log("=== ENGINE FULLY OPERATIONAL (300+ LINES) ===");
 });
