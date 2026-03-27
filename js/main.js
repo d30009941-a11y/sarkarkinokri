@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log("=== ENGINE FULLY OPERATIONAL (300+ LINES) ===");
 });
 // ===============================
-// 8. GLOBAL ROUTER INTERCEPT (SAFE)
+// 8. GLOBAL ROUTER INTERCEPT (SAFE FIXED)
 // ===============================
 document.addEventListener("click", function(e) {
   const link = e.target.closest("a");
@@ -229,37 +229,24 @@ document.addEventListener("click", function(e) {
   const href = link.getAttribute("href");
   if (!href) return;
 
-  // Ignore external links
+  // ✅ Ignore external links
   if (href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel")) return;
 
-  // Ignore anchor links (#about etc.)
+  // ✅ Ignore anchor links (#about etc.)
   if (href.startsWith("#")) return;
 
-  // STOP normal navigation
-  e.preventDefault();
+  // ✅ Ignore same-page or root index navigation
+  if (href.includes("index.html") || href === "/" || href === "") return;
 
-  // Extract ID if exists
-  const idMatch = href.match(/id=([^&]+)/);
+  // ✅ Only intercept DETAILS or known patterns
+  if (href.includes("details.html") || href.includes("?id=")) {
+    e.preventDefault();
 
-  if (idMatch) {
-    // Route via master_id
-    return MeshRouter.navigate(idMatch[1]);
+    const idMatch = href.match(/id=([^&]+)/);
+    if (idMatch) {
+      return MeshRouter.navigate(idMatch[1]);
+    }
   }
 
-  // Extract file name (ssc.html → ssc)
-  const fileMatch = href.match(/([^\/]+)\.html/);
-
-  if (fileMatch) {
-    return MeshRouter.navigate(fileMatch[1]);
-  }
-
-  // Extract folder (ssc/index.html → ssc)
-  const folderMatch = href.split('/')[0];
-
-  if (folderMatch) {
-    return MeshRouter.navigate(folderMatch);
-  }
-
-  // fallback
-  window.location.href = href;
+  // ✅ Let browser handle normal HTML navigation
 });
