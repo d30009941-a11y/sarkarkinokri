@@ -1,13 +1,14 @@
-/* ===============================
+/* =========================
    SARKARKINOKRI SYLLABUS ENGINE
    FINAL PRODUCTION VERSION
-   STATIC + ROUTER + DETAILS + CTA
-=============================== */
+   STATIC + ROUTER + DETAILS HANDSHAKE
+========================= */
 
 const SyllabusEngine = {
   config: {},
   data: null,
   root: null,
+  basePath: window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/'),
 
   async init(config) {
     this.config = config;
@@ -17,15 +18,17 @@ const SyllabusEngine = {
     this.loader();
 
     try {
-      const res = await fetch(`./data/${config.masterId}.json`);
+      const res = await fetch(`${this.basePath}data/${config.masterId}.json`);
       if (!res.ok) throw new Error("JSON not found");
+
       this.data = await res.json();
 
       this.render();
       this.applySEO();
       this.cleanupAds();
       this.popup();
-      this.injectStickyCTA(); // <-- sticky CTA buttons at bottom
+      this.addStickyCTA();
+
     } catch (e) {
       console.error("Syllabus Engine Error:", e);
       this.error();
@@ -53,7 +56,7 @@ const SyllabusEngine = {
       <div class="ad-box ad-before-faq"></div>
       ${this.faq()}
       <div class="ad-box ad-bottom"></div>
-      <div id="cta-sticky-buttons"></div>
+      <div id="sticky-cta-container"></div>
     `;
 
     this.stickyFooterAd();
@@ -71,9 +74,9 @@ const SyllabusEngine = {
 
   redirectButtons() {
     const d = this.data;
-
-    const hubLabel = d.redirect_buttons?.hub_label || "Railway Hub";
-    const hubUrl = d.redirect_buttons?.hub_url || "/railways/index.html";
+    const hubLabel = d.redirect_buttons?.hub_label || "Official Hub";
+    const hubUrl = d.redirect_buttons?.hub_url || "railways/index.html";
+    const detailsSlug = d.master_id ? `details.html?slug=${d.master_id}` : "details.html";
 
     return `
       <div class="logic-card">
@@ -82,8 +85,8 @@ const SyllabusEngine = {
           <p>Check eligibility, vacancy and apply links</p>
         </div>
         <div class="logic-btn-group">
-          <a href="${hubUrl}" class="logic-btn btn-static">${hubLabel}</a>
-          <a href="/details.html?slug=${d.master_id}" class="logic-btn btn-dynamic">ONGOING RECRUITMENT</a>
+          <a href="${this.basePath}${hubUrl}" class="logic-btn btn-static">${hubLabel}</a>
+          <a href="${this.basePath}${detailsSlug}" class="logic-btn btn-dynamic">ONGOING RECRUITMENT</a>
         </div>
       </div>
     `;
@@ -114,12 +117,7 @@ const SyllabusEngine = {
         <div class="table-header"><span>5 Year Trend</span></div>
         <table class="syllabus-table">
           <thead>
-            <tr>
-              <th>Year</th>
-              <th>Cutoff</th>
-              <th>Difficulty</th>
-              <th>Key Shift</th>
-            </tr>
+            <tr><th>Year</th><th>Cutoff</th><th>Difficulty</th><th>Key Shift</th></tr>
           </thead>
           <tbody>
             ${t.map(r => `
@@ -147,12 +145,7 @@ const SyllabusEngine = {
         <div style="padding:15px;background:#f8fafc">${sub.analysis || ""}</div>
         <table class="syllabus-table">
           <thead>
-            <tr>
-              <th>Topic</th>
-              <th>Weight</th>
-              <th>Priority</th>
-              <th>Sub Topics</th>
-            </tr>
+            <tr><th>Topic</th><th>Weight</th><th>Priority</th><th>Sub Topics</th></tr>
           </thead>
           <tbody>
             ${sub.topics.map(t => `
@@ -209,48 +202,21 @@ const SyllabusEngine = {
     sticky.innerHTML = `<div class="sticky-ad">Advertisement</div>`;
   },
 
-  injectStickyCTA() {
+  addStickyCTA() {
     const d = this.data;
-    const container = document.getElementById("cta-sticky-buttons");
+    const container = document.getElementById("sticky-cta-container");
     if (!container) return;
 
-    const hubLabel = d.redirect_buttons?.hub_label || "Resource Page";
-    const hubUrl = d.redirect_buttons?.hub_url || "/railways/index.html";
-    const detailSlug = `/details.html?slug=${d.master_id}`;
+    const hubLabel = d.redirect_buttons?.hub_label || "Official Hub";
+    const hubUrl = d.redirect_buttons?.hub_url || "railways/index.html";
+    const detailsSlug = d.master_id ? `details.html?slug=${d.master_id}` : "details.html";
 
     container.innerHTML = `
       <div class="sticky-cta">
-        <a href="${hubUrl}" class="cta-btn cta-left" target="_blank">${hubLabel}</a>
-        <a href="${detailSlug}" class="cta-btn cta-right">Details Page</a>
+        <a href="${this.basePath}${hubUrl}" class="btn btn-secondary">Official Hub</a>
+        <a href="${this.basePath}${detailsSlug}" class="btn btn-primary">View Details</a>
       </div>
     `;
-
-    // Minimal CSS for sticky
-    const style = document.createElement("style");
-    style.innerHTML = `
-      .sticky-cta{
-        position:sticky;
-        bottom:0;
-        width:100%;
-        display:flex;
-        justify-content:space-around;
-        background:#1e3a8a;
-        padding:10px 0;
-        z-index:999;
-      }
-      .sticky-cta .cta-btn{
-        color:white;
-        background:#2563eb;
-        text-decoration:none;
-        padding:10px 15px;
-        border-radius:5px;
-        font-weight:bold;
-      }
-      .sticky-cta .cta-btn:hover{
-        background:#3b82f6;
-      }
-    `;
-    document.head.appendChild(style);
   },
 
   applySEO() {
@@ -283,7 +249,8 @@ const SyllabusEngine = {
             <button class="popup-close">×</button>
             <div class="popup-content">Advertisement</div>
           </div>
-        </div>`;
+        </div>
+      `;
       popup.style.display = "block";
       document.querySelector(".popup-close").onclick = () => popup.style.display = "none";
     }, 6000);
