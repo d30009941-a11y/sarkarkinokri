@@ -219,3 +219,47 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   console.log("=== ENGINE FULLY OPERATIONAL (300+ LINES) ===");
 });
+// ===============================
+// 8. GLOBAL ROUTER INTERCEPT (SAFE)
+// ===============================
+document.addEventListener("click", function(e) {
+  const link = e.target.closest("a");
+  if (!link) return;
+
+  const href = link.getAttribute("href");
+  if (!href) return;
+
+  // Ignore external links
+  if (href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel")) return;
+
+  // Ignore anchor links (#about etc.)
+  if (href.startsWith("#")) return;
+
+  // STOP normal navigation
+  e.preventDefault();
+
+  // Extract ID if exists
+  const idMatch = href.match(/id=([^&]+)/);
+
+  if (idMatch) {
+    // Route via master_id
+    return MeshRouter.navigate(idMatch[1]);
+  }
+
+  // Extract file name (ssc.html → ssc)
+  const fileMatch = href.match(/([^\/]+)\.html/);
+
+  if (fileMatch) {
+    return MeshRouter.navigate(fileMatch[1]);
+  }
+
+  // Extract folder (ssc/index.html → ssc)
+  const folderMatch = href.split('/')[0];
+
+  if (folderMatch) {
+    return MeshRouter.navigate(folderMatch);
+  }
+
+  // fallback
+  window.location.href = href;
+});
