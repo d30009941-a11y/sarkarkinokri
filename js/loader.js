@@ -7,15 +7,8 @@ window.Loader = {
 
     async init(manifestPath) {
         try {
-            // Sirf yahan manifest path ko handle karne ke liye fallback rakha hai
-            const paths = [manifestPath, manifestPath.replace(/^\/+/, '')];
-            let res;
-            for (const p of paths) {
-                res = await fetch(p);
-                if (res.ok) break;
-            }
-            
-            if (!res || !res.ok) throw new Error("Manifest load failed");
+            const res = await fetch(manifestPath);
+            if (!res.ok) throw new Error("Manifest load failed");
             this.indexManifest = await res.json();
             console.log("✅ Loader initialized");
         } catch (err) {
@@ -60,12 +53,14 @@ window.Loader = {
         return this._fetchJSON(entry.file);
     },
 
-    // AAPKA ORIGINAL LOOP LOGIC - NO CHANGES
     async _fetchJSON(path) {
+
+        const base = window.location.pathname.includes("sarkarkinokri") ? "/sarkarkinokri/" : "/";
+
         const paths = [
             path,
             path.replace(/^\/+/, ''),
-            `/${path}`
+            base + path.replace(/^\/+/, '')
         ];
 
         for (const p of paths) {
