@@ -219,34 +219,3 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   console.log("=== ENGINE FULLY OPERATIONAL (300+ LINES) ===");
 });
-// ===============================
-// 8. GLOBAL ROUTER INTERCEPT (SAFE FIXED)
-// ===============================
-document.addEventListener("click", function(e) {
-  const link = e.target.closest("a");
-  if (!link) return;
-
-  const href = link.getAttribute("href");
-  if (!href) return;
-
-  // ✅ Ignore external links
-  if (href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel")) return;
-
-  // ✅ Ignore anchor links (#about etc.)
-  if (href.startsWith("#")) return;
-
-  // ✅ Ignore same-page or root index navigation
-  if (href.includes("index.html") || href === "/" || href === "") return;
-
-  // ✅ Only intercept DETAILS or known patterns
-  if (href.includes("details.html") || href.includes("?id=")) {
-    e.preventDefault();
-
-    const idMatch = href.match(/id=([^&]+)/);
-    if (idMatch) {
-      return MeshRouter.navigate(idMatch[1]);
-    }
-  }
-
-  // ✅ Let browser handle normal HTML navigation
-});
