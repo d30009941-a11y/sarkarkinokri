@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <span id="close-sk-popup" style="position:absolute; top:-10px; right:0; cursor:pointer; font-size:20px;">&times;</span>
                     <h4 style="margin:0 0 10px 0; color:var(--sbi-blue);">🚀 Don't Miss Out!</h4>
                     <p style="font-size:13px; margin-bottom:15px;">Get our <strong>2026 SBI PO Question Bank PDF</strong></p>
-                    <a href="${build('/sbi/sbipo.html')}" style="display:block; background:var(--primary-red); color:white; text-align:center; padding:10px; text-decoration:none; border-radius:5px; font-weight:bold; font-size:12px;">DOWNLOAD FREE PDF</a>
+                    <a href="${build('sbi/sbipo.html')}" style="display:block; background:var(--primary-red); color:white; text-align:center; padding:10px; text-decoration:none; border-radius:5px; font-weight:bold; font-size:12px;">DOWNLOAD FREE PDF</a>
                 </div>
             `;
             
