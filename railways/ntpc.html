@@ -120,8 +120,8 @@
     </div>
 
     <div class="bottom-dock">
-        <a href="javascript:void(0)" onclick="MeshRouter.navigate('live-railway')" class="dock-tab flicker-red">🔥 ONGOING JOBS</a>
-        <a href="../syllabus/ntpc.html" class="dock-tab">📚 FULL SYLLABUS</a>
+        <a href="/details.html?slug=${d.master_id}"class="dock-tab">ONGOING RECRUITMENT</a>
+        <a href="../resources/syllabus/rrb-ntpc.html" class="dock-tab">📚 FULL SYLLABUS</a>
         <a href="strategy.html" class="dock-tab">⚡ 90-DAY STRATEGY</a>
     </div>
 
@@ -129,9 +129,17 @@
         document.addEventListener("DOMContentLoaded", () => {
             const nav = document.getElementById('main-nav');
             const links = [
-                {name: "Home", url: "index.html"}, {name: "NTPC", url: "ntpc.html"},
-                {name: "ALP", url: "alp.html"}, {name: "Technician", url: "technician.html"},
-                {name: "Group D", url: "groupd.html"}, {name: "JE", url: "je.html"}
+                { name: "Home", url: "index.html" },
+                { name: "NTPC", url: "ntpc.html" },
+                { name: "ALP", url: "alp.html" },
+                { name: "Tech", url: "Technician.html" }, // Matches your filename
+                { name: "Group D", url: "groupd.html" },
+                { name: "JE", url: "je.html" },
+                { name: "Syllabus", url: "syllabus.html" }, // Matches your spelling
+                { name: "Medical", url: "medical.html" },
+                { name: "Salary", url: "salary.html" },
+                { name: "Analysis", url: "analysis.html" },
+                { name: "Strategy", url: "blueprint.html" }
             ];
             const currentFile = "ntpc.html";
             nav.innerHTML = links.map(l => {
@@ -140,6 +148,7 @@
             }).join('');
         });
     </script>
+    <script src="/js/path-fix.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
