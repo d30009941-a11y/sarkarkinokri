@@ -1,0 +1,85 @@
+{
+  "meta_data": {
+    "title": "SBI SO Exam Pattern 2026: Detailed Selection Process & Syllabus",
+    "description": "Complete guide to SBI Specialist Officer (SO) Exam Pattern. Explore Tier-1, Tier-2, Professional Knowledge weightage, Interview criteria, and expert mentorship tips for SBI SO recruitment.",
+    "keywords": "SBI SO Exam Pattern, SBI Specialist Officer Syllabus, SBI SO Selection Process, Banking Professional Knowledge, SBI SO Interview Marks, SBI Recruitment 2026",
+    "canonical_url": "https://sarkarkinokri.com/resources/exampattern/sbi-so.html",
+    "og_image": "/assets/img/og/sbi-so-pattern.jpg"
+  },
+  "exam_name": "SBI Specialist Officer (SO)",
+  "introduction": "The State Bank of India (SBI) conducts the Specialist Officer (SO) recruitment to fill various specialized positions such as IT Officers, Data Analysts, Risk Managers, and Credit Officers. Unlike the generalist PO cadre, the SBI SO selection process is highly technical and focuses predominantly on Professional Knowledge (PK). Understanding the weightage between the qualifying aptitude test and the merit-listing professional paper is the first step toward success.",
+  "quick_highlights": [
+    { "key": "Mode of Exam", "value": "Online (CBT)" },
+    { "key": "Selection Stages", "value": "Online Test + Shortlisting + Interview" },
+    { "key": "Negative Marking", "value": "0.25 Marks for every wrong answer" },
+    { "key": "Paper Language", "value": "English & Hindi (except English Paper)" }
+  ],
+  "tiers": [
+    {
+      "title": "Tier I: Online Written Examination (Qualifying)",
+      "description": "The first phase is an objective test divided into two distinct parts. Note that the Aptitude section is usually qualifying; marks are not added to the final merit list, but you must clear the sectional cutoff.",
+      "subjects": [
+        { 
+            "name": "Test of Reasoning", 
+            "qs": "50", 
+            "marks": "50", 
+            "duration": "90 Minutes (Composite)",
+            "detailed_topics": "Syllogism, Blood Relations, Input-Output, Coding-Decoding, Puzzles (Floor, Box, Circular), Data Sufficiency, Logical Reasoning."
+        },
+        { 
+            "name": "Quantitative Aptitude", 
+            "qs": "35", 
+            "marks": "35", 
+            "duration": "Included",
+            "detailed_topics": "Data Interpretation (Pie, Bar, Line), Number Series, Quadratic Equations, Arithmetic (Profit/Loss, SI/CI, Time & Work, Probability)."
+        },
+        { 
+            "name": "English Language", 
+            "qs": "35", 
+            "marks": "35", 
+            "duration": "Included",
+            "detailed_topics": "Reading Comprehension, Cloze Test, Error Spotting, Sentence Improvement, Para Jumbles, Fillers."
+        }
+      ]
+    },
+    {
+      "title": "Tier II: Professional Knowledge (Merit Based)",
+      "description": "This is the most critical section. The questions are specifically designed based on the post you have applied for (e.g., IT, Finance, Law).",
+      "subjects": [
+        { 
+            "name": "Professional Knowledge (Role Based)", 
+            "qs": "50", 
+            "marks": "100", 
+            "duration": "45 Minutes",
+            "detailed_topics": "Post-specific: For IT (DBMS, Networking, OS, Data Structures, Software Engineering). For Finance (Accounting standards, GST, Auditing, Banking Laws)."
+        }
+      ]
+    }
+  ],
+  "selection_criteria": {
+    "shortlisting": "Candidates are shortlisted for interview based on marks scored in the Professional Knowledge section only, provided they qualify in the Aptitude sections.",
+    "interview_marks": "25 Marks",
+    "final_merit": "The final merit list is prepared by adding the marks of the Professional Knowledge test and the Interview (converted to a 70:30 or 75:25 weightage ratio as per SBI's discretion)."
+  },
+  "mentorship_tips": [
+    "Prioritize your core domain. Since Aptitude is qualifying, spend 70% of your prep time on Professional Knowledge.",
+    "Solve previous year SBI SO papers to understand the depth of technical questions—they are often tougher than IBPS SO.",
+    "For the Interview, focus on your work experience and how it aligns with SBI's current digital banking transformation.",
+    "Maintain a high accuracy rate in the PK section; since marks are doubled (50 Qs = 100 Marks), one wrong answer costs significantly more."
+  ],
+  "frequently_asked_questions": [
+    {
+      "q": "Is there sectional timing in SBI SO?",
+      "a": "Usually, the Aptitude test has composite timing, but the Professional Knowledge section is timed separately."
+    },
+    {
+      "q": "Are Paper 1 marks added to final selection?",
+      "a": "No, Paper 1 (Reasoning, Quant, English) is qualifying in nature for most SO posts."
+    },
+    {
+      "q": "Is there an interview for all SO posts?",
+      "a": "Yes, SBI follows an Interview or Group Discussion + Interview model for all Specialist cadre positions."
+    }
+  ],
+  "footer_note": "Candidates are advised to check the official SBI Career portal regularly for specific circulars regarding vacancy updates."
+}

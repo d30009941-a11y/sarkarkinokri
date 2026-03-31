@@ -1,0 +1,192 @@
+{
+  "exam_name": "SSC CGL (Combined Graduate Level) Master Framework",
+  "year": "2026",
+  "category_name": "Staff Selection Commission",
+  "nav_redirect_id": "ssc",
+  "master_id": "ssc-cgl",
+  "total_vacancy_projected": "15,000+ (Aggregated across Ministries)",
+  "redirect_buttons": {
+    "hub_label": "OFFICIAL SSC CGL KNOWLEDGE HUB",
+    "hub_url": "/ssc/ssc-cgl.html"
+  },
+  "exam_description": "The SSC CGL represents the pinnacle of administrative recruitment for Group B and C posts in India. This framework provides a deep-dive into the two-tier CBT architecture, the high-stakes Tier 2 merit system, and the qualifying technical modules required for final appointment.",
+  "exam_overview_table": {
+    "Post_Levels": "Pay Level 4 to Pay Level 8",
+    "Selection_Process": "Tier 1 (Screening) → Tier 2 (Merit) → DEST (Typing)",
+    "Marking_Tier_1": "+2.0 for Correct | -0.50 for Wrong",
+    "Marking_Tier_2": "+3.0 for Correct | -1.00 for Wrong",
+    "Normalization_Method": "Standard Deviation Based Percentile Mapping",
+    "Mandatory_Modules": "Computer Knowledge & Data Entry Speed Test"
+  },
+  "pay_level_hierarchy": [
+    {
+      "level": "Pay Level 8 (Rs 47,600 to 1,51,100)",
+      "posts": "Assistant Audit Officer, Assistant Accounts Officer"
+    },
+    {
+      "level": "Pay Level 7 (Rs 44,900 to 1,42,400)",
+      "posts": "ASO (CSS/MEA/IB), Income Tax Inspector, Excise Inspector, Preventive Officer"
+    },
+    {
+      "level": "Pay Level 6 (Rs 35,400 to 1,12,400)",
+      "posts": "Assistant/Sub-Inspector (CBI/NIA), Divisional Accountant, JSO"
+    },
+    {
+      "level": "Pay Level 5 & 4 (Rs 25,500 to 92,300)",
+      "posts": "Auditor, Accountant, Tax Assistant, Upper Division Clerk"
+    }
+  ],
+  "exam_phases": [
+    {
+      "phase": "Tier 1: Preliminary Screening",
+      "duration": "60 Minutes",
+      "total_qs": "100",
+      "marks": "200",
+      "negative": "0.50",
+      "nature": "Qualifying Only",
+      "description": "Tier 1 is a speed-accuracy test. Marks are NOT used for final merit but are critical for shortlisting. Historically, the UR cutoff stays between 148-155. It requires a balanced attempt across 4 sections."
+    },
+    {
+      "phase": "Tier 2: Merit Aggregator",
+      "duration": "150 Minutes (Total Session 1)",
+      "total_qs": "150 Questions (Paper 1)",
+      "marks": "390 (Merit Sections)",
+      "negative": "1.00",
+      "nature": "Final Ranking Decider",
+      "description": "The 'One Day, One Exam' merit model. Section I and II marks are added for the merit list. Section III (Computer) and DEST are qualifying. Failure in Section III disqualifies you even if you top Section I & II."
+    }
+  ],
+  "tier1_sectional_distribution": [
+    {
+      "section": "General Intelligence & Reasoning",
+      "questions": "25",
+      "marks": "50",
+      "time_target": "12-14 Mins",
+      "difficulty": "Easy to Moderate"
+    },
+    {
+      "section": "General Awareness",
+      "questions": "25",
+      "marks": "50",
+      "time_target": "5-7 Mins",
+      "difficulty": "Moderate to Difficult"
+    },
+    {
+      "section": "Quantitative Aptitude",
+      "questions": "25",
+      "marks": "50",
+      "time_target": "25-30 Mins",
+      "difficulty": "Moderate (Calculation Intensive)"
+    },
+    {
+      "section": "English Comprehension",
+      "questions": "25",
+      "marks": "50",
+      "time_target": "10-12 Mins",
+      "difficulty": "Easy (Scoring)"
+    }
+  ],
+  "tier2_merit_architecture": [
+    {
+      "section": "Section I: Mathematical Abilities",
+      "questions": "30",
+      "marks": "90",
+      "time": "60 Mins (Shared with Reasoning)",
+      "weight": "3 Marks per Q",
+      "penalty": "-1.00"
+    },
+    {
+      "section": "Section I: Reasoning & Intelligence",
+      "questions": "30",
+      "marks": "90",
+      "time": "60 Mins (Shared with Math)",
+      "weight": "3 Marks per Q",
+      "penalty": "-1.00"
+    },
+    {
+      "section": "Section II: English Language",
+      "questions": "45",
+      "marks": "135",
+      "time": "60 Mins (Shared with GA)",
+      "weight": "3 Marks per Q",
+      "penalty": "-1.00"
+    },
+    {
+      "section": "Section II: General Awareness",
+      "questions": "25",
+      "marks": "75",
+      "time": "60 Mins (Shared with English)",
+      "weight": "3 Marks per Q",
+      "penalty": "-1.00"
+    }
+  ],
+  "comprehensive_syllabus_master": {
+    "mathematics": [
+      { "topic": "Arithmetic", "sub_topics": "Percentage, Profit & Loss, Ratio, Time & Work, SI/CI, Average", "weight": "High" },
+      { "topic": "Algebra", "sub_topics": "Basic Identities, Linear Equations, Quadratic Equations", "weight": "Medium" },
+      { "topic": "Geometry", "sub_topics": "Triangles (Centers & Similarity), Circles (Tangents), Polygons", "weight": "High" },
+      { "topic": "Mensuration", "sub_topics": "3D Prism, Pyramid, Sphere, Cylinder, Cone", "weight": "Medium" },
+      { "topic": "Trigonometry", "sub_topics": "Heights & Distances, Standard Identities", "weight": "Medium" },
+      { "topic": "Stats & Probability", "sub_topics": "Mean/Mode/Median, Standard Deviation, Simple Probability", "weight": "Low-Moderate" }
+    ],
+    "reasoning": [
+      { "topic": "Verbal Reasoning", "sub_topics": "Syllogism, Blood Relations, Coding-Decoding, Seating Arrangement", "weight": "High" },
+      { "topic": "Logical Reasoning", "sub_topics": "Statement-Assumptions, Cause & Effect, Course of Action", "weight": "Medium" },
+      { "topic": "Non-Verbal", "sub_topics": "Mirror Images, Paper Folding, Embedded Figures, Dice", "weight": "Medium" }
+    ],
+    "english": [
+      { "topic": "Grammar", "sub_topics": "Active/Passive, Direct/Indirect, Error Spotting, Tenses", "weight": "High" },
+      { "topic": "Vocabulary", "sub_topics": "One Word, Idioms & Phrases, Synonyms, Antonyms, Spellings", "weight": "High" },
+      { "topic": "Reading", "sub_topics": "Cloze Test, Para Jumbles, Reading Comprehension", "weight": "High" }
+    ]
+  },
+  "normalization_formula_analysis": {
+    "method": "Standard Deviation Mapping",
+    "description": "Corrects the disparity in difficulty levels across different shifts. Marks can swing by 15+ based on shift difficulty.",
+    "strategy": "In easy shifts, aim for 100% accuracy as every single error is magnified by the normalization formula."
+  },
+  "mentorship_data": [
+    {
+      "title": "The 150+ Cutoff Shield",
+      "content": "To clear the Tier 1 UR cutoff, you cannot afford to skip General Awareness. Even with near-perfect scores in Math and English, you need at least 20 marks in GA to be safe from normalization volatility.",
+      "stat_box": "Min. Safe Raw: 145+"
+    },
+    {
+      "title": "Mains High-Stakes Penalty",
+      "content": "In Tier 2, the penalty is 1 mark for every 3-mark question. This is a 33% penalty (higher than Tier 1). Blind guessing in the General Awareness module can drop you from 'Inspector' to 'No Post' in 5 minutes.",
+      "stat_box": "Accuracy Goal: 95%"
+    },
+    {
+      "title": "Computer Section: Post-Selection Barrier",
+      "content": "Many candidates with 330+ marks in Tier 2 fail to secure a job because they fail the Computer module. Focus on MS-Excel formulas, Shortcuts, and Networking protocols. It is qualifying but high-level.",
+      "stat_box": "Pass Mark: 18/60"
+    },
+    {
+      "title": "English: The Ranking Engine",
+      "content": "With 45 questions (135 marks) in Tier 2, English is the most stable scoring section. Mastery of English often compensates for a tough Math paper. Focus on Inference-based Reading Comprehension.",
+      "stat_box": "English Weight: 35%"
+    }
+  ],
+  "rank_booster_tips": [
+    "Master 'Vedic Math' techniques for squares and cube roots.",
+    "Memorize all Trigonometric identities and Geometry theorems.",
+    "Revise 2,000+ One Word Substitutions and Idioms from PYQs.",
+    "Practice typing 30 WPM daily for the DEST qualifying round.",
+    "Use elimination methods for GA Current Affairs questions.",
+    "Analyze Tier 2 mocks for time management between Math and Reasoning."
+  ],
+  "frequently_asked_questions": [
+    {
+      "q": "Are Tier 1 marks included in the final merit?",
+      "a": "No. Tier 1 is qualifying. Your final rank is determined solely by your Tier 2 Paper-1 score."
+    },
+    {
+      "q": "Is the typing test mandatory for all posts?",
+      "a": "Yes. DEST (Data Entry Speed Test) is mandatory for every single post in the CGL cycle."
+    },
+    {
+      "q": "Is there sectional timing in Tier 2?",
+      "a": "Yes. Section I (Math/Reasoning) and Section II (English/GA) have separate 60-minute time blocks."
+    }
+  ]
+}

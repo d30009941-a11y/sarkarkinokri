@@ -1,641 +1,471 @@
-/* ===== UNIVERSAL ID DETECTION (STATIC + DYNAMIC) ===== */
-
-const params = new URLSearchParams(window.location.search);
-
-const examId =
-params.get("exam") ||          // /detail.html?exam=rrb-je
-params.get("id") ||            // /detail.html?id=rrb-je
-document.body?.dataset?.exam;  // static page <body data-exam="rrb-je">
-
-// if still no id, do nothing (prevents breaking static HTML)
-if (!examId) {
-  console.warn("No exam ID detected — static mode");
+{
+  "exam_name": "IBPS Clerk Exam Pattern",
+  "year": "2026",
+  "category_name": "Banking Recruitment",
+  "nav_redirect_id": "bank",
+  "master_id": "ibps-clerk",
+  "total_vacancy_projected": "6000+ (Expected)",
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF CLERK RECRUITMENT",
+    "hub_url": "/ibps/ibpsbank.html"
+  },
+  "exam_overview": {
+    "conducting_body": "Institute of Banking Personnel Selection",
+    "post_name": "Clerical Cadre",
+    "selection_process": "Prelims → Mains → Language Proficiency Test",
+    "mode_of_exam": "Online CBT",
+    "question_type": "Objective Multiple Choice",
+    "negative_marking": "0.25 marks",
+    "interview": "Not Conducted",
+    "final_selection": "Based on Mains marks only"
+  },
+  "exam_phases": [
+    {
+      "phase": "Preliminary Examination",
+      "duration": "60 Minutes",
+      "total_qs": "100",
+      "marks": "100",
+      "negative": "0.25",
+      "nature": "Qualifying",
+      "description": "The preliminary exam is designed to filter candidates for the mains stage. It focuses on speed and accuracy across three core subjects. Sectional timing is enforced, requiring candidates to switch rapidly between reasoning, quant, and English."
+    },
+    {
+      "phase": "Main Examination",
+      "duration": "160 Minutes",
+      "total_qs": "190",
+      "marks": "200",
+      "negative": "0.25",
+      "nature": "Merit Deciding",
+      "description": "The mains examination determines final selection. Questions are moderate to difficult. General Awareness and Data Interpretation play a decisive role. Sectional timing increases pressure and demands strategic attempt order."
+    },
+    {
+      "phase": "Language Proficiency Test",
+      "duration": "Variable",
+      "total_qs": "Qualifying",
+      "marks": "Qualifying",
+      "negative": "NA",
+      "nature": "Mandatory",
+      "description": "Candidates must demonstrate proficiency in the official language of the state applied for. Failure results in disqualification even after clearing mains."
+    }
+  ],
+  "sectional_pattern_prelims": [
+    {
+      "section": "English Language",
+      "questions": "30",
+      "marks": "30",
+      "time": "20 Minutes",
+      "difficulty": "Easy to Moderate",
+      "remarks": "Focus on reading comprehension and grammar accuracy. Speed is crucial."
+    },
+    {
+      "section": "Numerical Ability",
+      "questions": "35",
+      "marks": "35",
+      "time": "20 Minutes",
+      "difficulty": "Moderate",
+      "remarks": "Arithmetic and simplification dominate. Calculation speed is key."
+    },
+    {
+      "section": "Reasoning Ability",
+      "questions": "35",
+      "marks": "35",
+      "time": "20 Minutes",
+      "difficulty": "Moderate",
+      "remarks": "Puzzles and seating arrangements consume time."
+    }
+  ],
+  "sectional_pattern_mains": [
+    {
+      "section": "General / Financial Awareness",
+      "questions": "50",
+      "marks": "50",
+      "time": "35 Minutes",
+      "difficulty": "Moderate",
+      "remarks": "Scoring section. Covers current affairs and banking knowledge."
+    },
+    {
+      "section": "General English",
+      "questions": "40",
+      "marks": "40",
+      "time": "35 Minutes",
+      "difficulty": "Moderate",
+      "remarks": "Inference-based comprehension dominates."
+    },
+    {
+      "section": "Reasoning & Computer Aptitude",
+      "questions": "50",
+      "marks": "60",
+      "time": "45 Minutes",
+      "difficulty": "Moderate to Difficult",
+      "remarks": "Puzzle heavy. Includes logical reasoning and computer basics."
+    },
+    {
+      "section": "Quantitative Aptitude",
+      "questions": "50",
+      "marks": "50",
+      "time": "45 Minutes",
+      "difficulty": "Moderate to Difficult",
+      "remarks": "Data interpretation heavy. Arithmetic conceptual depth required."
+    }
+  ],
+  "negative_marking_policy": {
+    "rule": "0.25 marks deducted for each wrong answer",
+    "no_penalty": "Unattempted questions",
+    "impact": "Guessing strategy must be controlled",
+    "recommendation": "Avoid blind guessing, attempt only 70% confident questions"
+  },
+  "normalization_process": {
+    "method": "Equi-percentile normalization",
+    "reason": "Multiple shifts",
+    "impact": "Difficulty variation adjusted",
+    "candidate_strategy": "Focus on accuracy rather than shift speculation"
+  },
+  "cutoff_logic": {
+    "prelims": "Sectional + Overall cutoff",
+    "mains": "State wise merit cutoff",
+    "final": "Only mains marks considered",
+    "tie_breaker": "Age priority then alphabetical order"
+  },
+  "time_strategy": {
+    "prelims": "Attempt easy sections first mentally",
+    "mains": "Start with GA for quick scoring",
+    "recommendation": "Skip lengthy puzzles initially",
+    "target_attempt_prelims": "75-85 questions",
+    "target_attempt_mains": "140-160 questions"
+  },
+  "difficulty_analysis": [
+    {
+      "year": "2025",
+      "prelims": "Moderate",
+      "mains": "Moderate to Difficult",
+      "highlight": "Puzzle heavy reasoning"
+    },
+    {
+      "year": "2024",
+      "prelims": "Moderate",
+      "mains": "Moderate",
+      "highlight": "DI based quant"
+    },
+    {
+      "year": "2023",
+      "prelims": "Easy to Moderate",
+      "mains": "Moderate",
+      "highlight": "English inference heavy"
+    }
+  ],
+  "prelims_topic_distribution": {
+    "english_language": [
+      {
+        "topic": "Reading Comprehension",
+        "expected_qs": "8-12",
+        "difficulty": "Moderate",
+        "trend": "Inference based questions increasing",
+        "strategy": "Attempt after scanning vocabulary level"
+      },
+      {
+        "topic": "Cloze Test",
+        "expected_qs": "5-7",
+        "difficulty": "Moderate",
+        "trend": "Contextual grammar",
+        "strategy": "Focus on elimination method"
+      },
+      {
+        "topic": "Error Detection",
+        "expected_qs": "5-6",
+        "difficulty": "Easy to Moderate",
+        "trend": "Multiple error pattern",
+        "strategy": "Revise grammar rules"
+      },
+      {
+        "topic": "Para Jumbles",
+        "expected_qs": "3-5",
+        "difficulty": "Moderate",
+        "trend": "New pattern connectors",
+        "strategy": "Identify mandatory pairs"
+      }
+    ],
+    "numerical_ability": [
+      {
+        "topic": "Simplification",
+        "expected_qs": "10",
+        "difficulty": "Easy",
+        "trend": "Calculation based",
+        "strategy": "Attempt first"
+      },
+      {
+        "topic": "Number Series",
+        "expected_qs": "5",
+        "difficulty": "Moderate",
+        "trend": "Mixed pattern",
+        "strategy": "Skip if time consuming"
+      },
+      {
+        "topic": "Arithmetic",
+        "expected_qs": "10-12",
+        "difficulty": "Moderate",
+        "trend": "Partnership and mixture",
+        "strategy": "Use approximation"
+      },
+      {
+        "topic": "Quadratic Equation",
+        "expected_qs": "5",
+        "difficulty": "Easy",
+        "trend": "Direct comparison",
+        "strategy": "Attempt quickly"
+      }
+    ],
+    "reasoning_ability": [
+      {
+        "topic": "Puzzles",
+        "expected_qs": "15",
+        "difficulty": "Moderate",
+        "trend": "Floor based puzzles",
+        "strategy": "Pick easiest first"
+      },
+      {
+        "topic": "Seating Arrangement",
+        "expected_qs": "10",
+        "difficulty": "Moderate",
+        "trend": "Circular + linear mix",
+        "strategy": "Avoid long ones"
+      },
+      {
+        "topic": "Syllogism",
+        "expected_qs": "5",
+        "difficulty": "Easy",
+        "trend": "Only few pattern",
+        "strategy": "Attempt early"
+      },
+      {
+        "topic": "Coding Decoding",
+        "expected_qs": "5",
+        "difficulty": "Moderate",
+        "trend": "Chinese coding",
+        "strategy": "Check pattern quickly"
+      }
+    ]
+  },
+  "mains_topic_distribution": {
+    "general_awareness": [
+      {
+        "topic": "Current Affairs",
+        "expected_qs": "25-30",
+        "weight": "High",
+        "trend": "Last 6 months",
+        "strategy": "Revise monthly capsules"
+      },
+      {
+        "topic": "Banking Awareness",
+        "expected_qs": "10-12",
+        "weight": "High",
+        "trend": "RBI updates",
+        "strategy": "Study banking terms"
+      },
+      {
+        "topic": "Static GK",
+        "expected_qs": "5-7",
+        "weight": "Medium",
+        "trend": "Schemes and HQ",
+        "strategy": "Quick revision"
+      }
+    ],
+    "quantitative_aptitude": [
+      {
+        "topic": "Data Interpretation",
+        "expected_qs": "15-20",
+        "difficulty": "Moderate to Difficult",
+        "trend": "Caselet DI",
+        "strategy": "Select doable sets"
+      },
+      {
+        "topic": "Arithmetic",
+        "expected_qs": "10-12",
+        "difficulty": "Moderate",
+        "trend": "Time speed distance",
+        "strategy": "Use shortcuts"
+      },
+      {
+        "topic": "Data Sufficiency",
+        "expected_qs": "5",
+        "difficulty": "Moderate",
+        "trend": "Statement based",
+        "strategy": "Logical elimination"
+      }
+    ],
+    "reasoning_computer": [
+      {
+        "topic": "High Level Puzzles",
+        "expected_qs": "20",
+        "difficulty": "Difficult",
+        "trend": "Hybrid puzzles",
+        "strategy": "Skip hardest"
+      },
+      {
+        "topic": "Logical Reasoning",
+        "expected_qs": "10",
+        "difficulty": "Moderate",
+        "trend": "Assumptions",
+        "strategy": "Read carefully"
+      },
+      {
+        "topic": "Computer Aptitude",
+        "expected_qs": "5",
+        "difficulty": "Easy",
+        "trend": "Binary logic",
+        "strategy": "Quick scoring"
+      }
+    ]
+  },
+  "attempt_strategy": {
+    "prelims": {
+      "english": "Attempt after scanning RC",
+      "quant": "Start with simplification",
+      "reasoning": "Attempt syllogism first",
+      "safe_attempt": "78+",
+      "good_attempt": "82+"
+    },
+    "mains": {
+      "ga": "Attempt fully",
+      "english": "Moderate attempt",
+      "quant": "Selective DI",
+      "reasoning": "Avoid toughest puzzles",
+      "safe_attempt": "145+",
+      "good_attempt": "155+"
+    }
+  },
+  "scoring_logic": {
+    "prelims_cutoff_range": "70-80",
+    "mains_cutoff_range": "130-150",
+    "ga_importance": "High scoring",
+    "accuracy_required": "90%+",
+    "risk_management": "Avoid guessing"
+  },
+  "mentor_strategy": [
+    {
+      "title": "Prelims Golden Rule",
+      "content": "The IBPS Clerk prelims is purely a speed-based examination. Candidates who clear this stage are not necessarily the most knowledgeable but the fastest accurate solvers. The first 5 minutes should be used to identify low-hanging questions across sections. English fillers, syllogism, and simplification should be prioritized.",
+      "stat_box": "Target Accuracy: 95%"
+    },
+    {
+      "title": "Mains Game Changer Section",
+      "content": "General Awareness determines final selection. Since it consumes minimal time and offers maximum scoring potential, candidates must attempt this section fully. Candidates skipping GA often fail despite strong quant or reasoning.",
+      "stat_box": "GA Weight: 25%"
+    },
+    {
+      "title": "Puzzle Selection Strategy",
+      "content": "Do not attempt puzzles sequentially. Read all puzzle sets first, identify the simplest structure, and attempt only 2-3 solvable sets. Avoid hybrid puzzles unless clearly solvable within 3 minutes.",
+      "stat_box": "Puzzle Attempt: 2-3 sets"
+    },
+    {
+      "title": "Quantitative Aptitude Focus",
+      "content": "Arithmetic carries consistent marks. Candidates who master percentage, ratio, and time-speed-distance can secure 20+ marks easily without attempting high-level DI.",
+      "stat_box": "Arithmetic Target: 20 marks"
+    },
+    {
+      "title": "Final Merit Strategy",
+      "content": "Since IBPS Clerk has no interview, every single mark matters. A difference of 2 marks can shift rank by thousands. Accuracy must be prioritized over attempts.",
+      "stat_box": "No Interview Advantage"
+    }
+  ],
+  "rank_booster_tips": [
+    "Attempt GA section completely",
+    "Skip lengthy DI sets",
+    "Focus on arithmetic concepts",
+    "Avoid blind guessing",
+    "Maintain sectional time discipline",
+    "Practice puzzle elimination",
+    "Revise last 6 months current affairs",
+    "Use approximation in quant",
+    "Attempt English moderate level questions",
+    "Solve computer aptitude quickly"
+  ],
+  "last_week_strategy": {
+    "day_7_to_5": "Revise GA and formulas",
+    "day_4_to_3": "Mock tests and analysis",
+    "day_2": "Light revision",
+    "day_1": "No new topics",
+    "exam_day": "Attempt calm and accurate"
+  },
+  "time_management_model": {
+    "prelims": {
+      "english": "18 minutes",
+      "quant": "20 minutes",
+      "reasoning": "20 minutes",
+      "buffer": "2 minutes"
+    },
+    "mains": {
+      "ga": "20 minutes",
+      "english": "30 minutes",
+      "reasoning": "45 minutes",
+      "quant": "45 minutes",
+      "buffer": "20 minutes"
+    }
+  },
+  "state_wise_competition": {
+    "high_competition_states": [
+      "Uttar Pradesh",
+      "Bihar",
+      "Maharashtra",
+      "West Bengal"
+    ],
+    "moderate_competition_states": [
+      "Odisha",
+      "Punjab",
+      "Haryana",
+      "Gujarat"
+    ],
+    "low_competition_states": [
+      "North East",
+      "Goa",
+      "Chandigarh"
+    ]
+  },
+  "selection_probability": {
+    "80_plus_prelims": "Very High",
+    "75_to_80_prelims": "High",
+    "70_to_75_prelims": "Moderate",
+    "below_70": "Low"
+  },
+  "exam_day_do_and_dont": {
+    "do": [
+      "Read instructions carefully",
+      "Attempt GA first in mains",
+      "Mark doubtful questions for review",
+      "Keep accuracy above 90%"
+    ],
+    "dont": [
+      "Don't attempt all puzzles",
+      "Don't waste time on DI",
+      "Don't guess blindly",
+      "Don't panic if one section is tough"
+    ]
+  },
+  "final_selection_formula": {
+    "formula": "Final Merit = Normalized Mains Score",
+    "interview": "Not Applicable",
+    "document_verification": "Required",
+    "lpt": "Mandatory"
+  },
+  "frequently_asked_questions": [
+    {
+      "q": "Is IBPS Clerk exam bilingual?",
+      "a": "Yes, except English section, all questions available in Hindi and English."
+    },
+    {
+      "q": "Is sectional cutoff applicable?",
+      "a": "Yes, both sectional and overall cutoff applicable in prelims."
+    },
+    {
+      "q": "Does prelims marks count?",
+      "a": "No, only mains marks count for final selection."
+    },
+    {
+      "q": "Is GA important?",
+      "a": "Yes, it is highest scoring section in mains."
+    },
+    {
+      "q": "Is there interview?",
+      "a": "No, IBPS Clerk has no interview."
+    }
+  ]
 }
-/*
-SARKARKINOKRI SYLLABUS ENGINE
-FINAL PRODUCTION VERSION
-STATIC + ROUTER + DETAILS HANDSHAKE
-*/
-
-const SyllabusEngine = {
-
-config:{},
-data:null,
-root:null,
-
-async init(config){
-
-this.config=config;
-this.root=document.getElementById("syllabus-root");
-
-if(!this.root){
-console.error("Syllabus root not found");
-return;
-}
-
-console.log("Syllabus root detected");
-
-this.loader();
-
-try{
-
-const res=await fetch(`./data/${config.masterId}.json`);
-
-if(!res.ok) throw new Error("JSON not found");
-
-this.data=await res.json();
-
-this.render();
-
-this.applySEO();
-
-this.cleanupAds();
-
-this.popup();
-
-}catch(e){
-
-console.error("Syllabus Engine Error:",e);
-this.error();
-
-}
-
-},
-
-loader(){
-this.root.innerHTML=`<div class="loader-box">Loading syllabus...</div>`;
-},
-async render(){
-
-this.root.innerHTML = `
-
-${this.header()}
-
-<div class="ad-box ad-top"></div>
-
-${this.redirectButtons()}
-
-${this.examPhases()}
-
-${this.subjects()}
-
-${this.mentorship()}
-
-${this.trend()}
-
-${this.deepRender(this.data)}
-
-${this.faq()}
-
-<div class="ad-box ad-bottom"></div>
-
-`;
-
-this.root.innerHTML += await this.footer();
-
-this.stickyFooterAd();
-
-},
-
-/* ===============================
-   ROOT
-=============================== */
-deepRender(data){
-
-let html="";
-
-Object.entries(data).forEach(([key,val])=>{
-
-if([
-"exam_name",
-"year",
-"redirect_buttons",
-"master_id",
-"category_name",
-"frequently_asked_questions"
-].includes(key)) return;
-
-html+=`
-<section class="mentor-section">
-${this.renderSection(key,val)}
-</section>
-`;
-
-});
-
-return html;
-
-},
-
-/* ===============================
-   SECTION
-=============================== */
-renderSection(title,data){
-
-return `
-<div class="table-container">
-<div class="table-header">
-<span>${this.formatKey(title)}</span>
-</div>
-${this.renderAny(data)}
-</div>
-`;
-
-},
-
-/* ===============================
-   UNIVERSAL
-=============================== */
-renderAny(data){
-
-if(Array.isArray(data))
-return this.renderArray(data);
-
-if(typeof data==="object")
-return this.renderObject(data);
-
-return `<div class="mentor-box">${data}</div>`;
-
-},
-
-/* ===============================
-   ARRAY
-=============================== */
-renderArray(arr){
-
-// array of strings
-if(arr.every(x=>typeof x==="string")){
-return `
-<div class="mentor-box">
-<ul>
-${arr.map(i=>`<li>${i}</li>`).join("")}
-</ul>
-</div>
-`;
-}
-
-// array of objects
-return arr.map(item=>`
-<div class="mentor-box">
-${this.renderAny(item)}
-</div>
-`).join("");
-
-},
-
-/* ===============================
-   OBJECT
-=============================== */
-renderObject(obj){
-
-return `
-<table class="syllabus-table">
-
-<tbody>
-
-${Object.entries(obj).map(([k,v])=>`
-
-<tr>
-<td><strong>${this.formatKey(k)}</strong></td>
-<td>${this.renderCell(v)}</td>
-</tr>
-
-`).join("")}
-
-</tbody>
-
-</table>
-`;
-
-},
-
-/* ===============================
-   CELL
-=============================== */
-renderCell(val){
-
-if(Array.isArray(val))
-return this.renderArray(val);
-
-if(typeof val==="object")
-return this.renderObject(val);
-
-return val;
-
-},
-
-/* ===============================
-   FORMAT KEY
-=============================== */
-formatKey(txt){
-
-return txt
-.replace(/_/g," ")
-.replace(/\b\w/g,l=>l.toUpperCase());
-
-},
-header(){
-
-const d=this.data;
-
-return `
-<div class="syllabus-header">
-
-<div class="nav-top">
-<a href="../index.html" class="nav-btn back-btn">← Back</a>
-<a href="/" class="nav-btn home-btn">🏠 Home</a>
-</div>
-
-<h1>${d.exam_name} ${d.year}</h1>
-<p>${d.cen_number || ""}</p>
-
-</div>
-`;
-},
-
-redirectButtons(){
-
-const d=this.data;
-
-/* SAFE FALLBACKS (no breaking old JSON) */
-const hubLabel = d.redirect_buttons?.hub_label || "Railway Hub";
-const hubUrl   = d.redirect_buttons?.hub_url   || "/railways/index.html";
-
-return `
-<div class="logic-card">
-
-<div>
-<strong>Official Recruitment Details</strong>
-<p>Check eligibility, vacancy and apply links</p>
-</div>
-
-<div class="logic-btn-group">
-
-<a href="${hubUrl}"
-class="logic-btn btn-static">
-${hubLabel}
-</a>
-
-<a href="/details.html?slug=${d.master_id}"
-class="logic-btn btn-dynamic">
-ONGOING RECRUITMENT
-</a>
-
-</div>
-
-</div>
-`;
-},
-
-examPhases(){
-
-const phases=this.data.exam_phases||[];
-
-if(!phases.length) return "";
-
-return `
-<section class="selection-grid">
-${phases.map(p=>`
-<div class="step-card">
-<h3>${p.phase}</h3>
-<p>${p.duration}</p>
-<p>${p.total_qs} Questions</p>
-<p>Negative: ${p.negative}</p>
-</div>
-`).join("")}
-</section>
-`;
-},
-
-trend(){
-
-const t=this.data.five_year_trend||[];
-
-if(!t.length) return "";
-
-return `
-<div class="table-container">
-<div class="table-header">
-<span>5 Year Trend</span>
-</div>
-
-<table class="syllabus-table">
-<thead>
-<tr>
-<th>Year</th>
-<th>Cutoff</th>
-<th>Difficulty</th>
-<th>Key Shift</th>
-</tr>
-</thead>
-
-<tbody>
-${t.map(r=>`
-<tr>
-<td>${r.year}</td>
-<td>${r.cutoff_avg}</td>
-<td>${r.difficulty}</td>
-<td>${r.key_shift}</td>
-</tr>
-`).join("")}
-</tbody>
-</table>
-
-</div>
-`;
-},
-
-subjects(){
-
-const subs=this.data.subjects||[];
-
-return subs.map((sub,i)=>`
-
-<div class="table-container">
-
-<div class="table-header">
-<span>${sub.name}</span>
-<span class="count-tag">${sub.total_qs}</span>
-</div>
-
-<div style="padding:15px;background:#f8fafc">
-${sub.analysis || ""}
-</div>
-
-<table class="syllabus-table">
-
-<thead>
-<tr>
-<th>Topic</th>
-<th>Weight</th>
-<th>Priority</th>
-<th>Sub Topics</th>
-</tr>
-</thead>
-
-<tbody>
-
-${sub.topics.map(t=>`
-<tr>
-<td>${t.name}</td>
-<td>${t.weight}</td>
-<td class="prio-${t.priority.toLowerCase()}">
-${t.priority}
-</td>
-<td>${t.sub_topics || ""}</td>
-</tr>
-`).join("")}
-
-</tbody>
-
-</table>
-
-</div>
-
-${(i+1)%2===0 ? `<div class="ad-box ad-inline-subject"></div>` : ""}
-
-`).join("");
-
-},
-
-mentorship(){
-
-const m=this.data.mentorship_data||[];
-
-if(!m.length) return "";
-
-return `
-<section class="mentor-section">
-
-<h2 class="section-title">
-Mentor Strategy
-</h2>
-
-${m.map(x=>`
-<div class="mentor-box">
-<h3>${x.title}</h3>
-<p>${x.content}</p>
-<div class="stat-box">
-${x.stat_box || ""}
-</div>
-</div>
-`).join("")}
-
-</section>
-`;
-},
-
-faq(){
-
-const f=this.data.frequently_asked_questions||[];
-
-if(!f.length) return "";
-
-return `
-<section class="mentor-section">
-
-<h2 class="section-title">
-Frequently Asked Questions
-</h2>
-
-${f.map(q=>`
-<div class="mentor-box">
-<h3>${q.q}</h3>
-<p>${q.a}</p>
-</div>
-`).join("")}
-
-</section>
-`;
-},
-async footer(){
-
-try{
-
-const [mapRes, portalRes] = await Promise.all([
-fetch("/data/importantlinks.json"),
-fetch("/data/staticportals.json")
-]);
-
-const sitemap = await mapRes.json();
-const portals = await portalRes.json();
-
-/* normalize both json structures */
-const normalized = [];
-
-/* importantlinks.json (grouped) */
-sitemap.forEach(section=>{
-(section.links || []).forEach(link=>{
-normalized.push({
-name: link.title || link.name,
-url: link.url,
-category: section.category || "General",
-icon: ""
-});
-});
-});
-
-/* staticportals.json (flat) */
-portals.forEach(item=>{
-normalized.push({
-name: item.name || item.title,
-url: item.url,
-category: item.category || "General",
-icon: item.icon || ""
-});
-});
-/* keep only internal html pages */
-const filtered = normalized.filter(item =>
-item.url &&
-item.url.endsWith(".html") &&
-!item.url.startsWith("http")
-);
-const groups = {};
-
-filtered.forEach(item=>{
-if(!groups[item.category]) groups[item.category]=[];
-groups[item.category].push(item);
-});
-
-let html = `<footer class="site-footer">
-<div class="footer-grid">`;
-
-Object.keys(groups).forEach(cat=>{
-
-html+=`
-<div class="footer-col">
-<h4>${this.formatKey(cat)}</h4>
-`;
-
-groups[cat].forEach(link=>{
-html+=`
-<a href="${link.url}">
-${link.icon || ""} ${link.name}
-</a>
-`;
-});
-
-html+=`</div>`;
-
-});
-
-html+=`
-</div>
-
-<div class="footer-bottom">
-© 2026 SarkariNokriEngine • All Rights Reserved
-</div>
-
-<div id="sticky-footer-ad"></div>
-
-</footer>
-`;
-
-return html;
-
-}catch(e){
-
-return `
-<footer class="site-footer">
-<div class="footer-bottom">
-© 2026 SarkariNokriEngine
-</div>
-</footer>
-`;
-
-}
-
-},
-stickyFooterAd(){
-
-const sticky=document.getElementById("sticky-footer-ad");
-
-if(!sticky) return;
-
-sticky.innerHTML=`
-<div class="sticky-ad">
-Advertisement
-</div>
-`;
-
-},
-
-applySEO(){
-
-const d=this.data;
-
-document.title =
-`${d.exam_name} Syllabus ${d.year}`;
-
-let meta =
-document.querySelector('meta[name="description"]');
-
-if(!meta){
-
-meta=document.createElement("meta");
-meta.name="description";
-document.head.appendChild(meta);
-
-}
-
-meta.content =
-`${d.exam_name} syllabus with topic weightage and preparation strategy.`;
-
-},
-
-cleanupAds(){
-
-setTimeout(()=>{
-
-document.querySelectorAll(".ad-box")
-.forEach(box=>{
-
-if(box.innerHTML.trim()==="")
-box.style.display="none";
-
-});
-
-},2000);
-
-},
-
-popup(){
-
-setTimeout(()=>{
-
-const popup=
-document.getElementById("popup-ad-container");
-
-if(!popup) return;
-
-popup.innerHTML=`
-<div class="popup-overlay">
-<div class="popup-box">
-<button class="popup-close">×</button>
-<div class="popup-content">
-Advertisement
-</div>
-</div>
-</div>`;
-
-popup.style.display="block";
-
-document.querySelector(".popup-close")
-.onclick=()=>{
-popup.style.display="none";
-};
-
-},6000);
-
-},
-
-error(){
-
-this.root.innerHTML=`
-<div class="error-box">
-Unable to load syllabus
-</div>`;
-
-}
-
-};
