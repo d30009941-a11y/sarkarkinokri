@@ -276,7 +276,7 @@ class="logic-btn btn-static">
 ${hubLabel}
 </a>
 
-<a href="/details.html?slug=${d.master_id}"
+<a href="details.html?slug=${d.master_id}"
 class="logic-btn btn-dynamic">
 ONGOING RECRUITMENT
 </a>
