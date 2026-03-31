@@ -1,178 +1,58 @@
 [
-  {
-    "name": "RRB Railway",
-    "icon": "🚆",
-    "url": "/railways/index.html",
-    "category": "recruitment",
-    "priority": "top",
-    "isCluster": true
-  },
-  {
-    "name": "SSC Official",
-    "icon": "📝",
-    "url": "/ssc/index.html",
-    "category": "recruitment",
-    "priority": "top",
-    "isCluster": true
-  },
-  {
-    "name": "IBPS Official",
-    "icon": "🏢",
-    "url": "/ibps/index.html",
-    "category": "recruitment",
-    "priority": "top",
-    "isCluster": true
-  },
-  {
-    "name": "SBI Careers",
-    "icon": "🏦",
-    "url": "/sbi/index.html",
-    "category": "recruitment",
-    "priority": "top",
-    "isCluster": true
-  },
-  {
-    "name": "UPSC",
-    "icon": "⚖️",
-    "url": "https://www.upsc.gov.in/",
-    "category": "recruitment"
-  },
-  {
-    "name": "UPPSC",
-    "icon": "📜",
-    "url": "http://uppsc.up.nic.in/",
-    "category": "state"
-  },
-  {
-    "name": "NTA",
-    "icon": "🖋️",
-    "url": "https://www.nta.ac.in/",
-    "category": "recruitment"
-  },
-  {
-    "name": "Delhi Police",
-    "icon": "🚓",
-    "url": "https://delhipolice.gov.in/",
-    "category": "police"
-  },
-  {
-    "name": "UP Police",
-    "icon": "👮",
-    "url": "https://uppbpb.gov.in/",
-    "category": "police"
-  },
-  {
-    "name": "MP Police",
-    "icon": "👮",
-    "url": "https://mppolice.gov.in/",
-    "category": "police"
-  },
-  {
-    "name": "Maharashtra Police",
-    "icon": "👮",
-    "url": "https://www.mahapolice.gov.in/",
-    "category": "police"
-  },
-  {
-    "name": "CRPF",
-    "icon": "🛡️",
-    "url": "https://crpf.gov.in/",
-    "category": "police"
-  },
-  {
-    "name": "CISF",
-    "icon": "🛡️",
-    "url": "https://cisfrectt.cisf.gov.in/",
-    "category": "police"
-  },
-  {
-    "name": "Ministry of Education",
-    "icon": "📚",
-    "url": "https://www.education.gov.in/",
-    "category": "teaching"
-  },
-  {
-    "name": "AICTE",
-    "icon": "🎓",
-    "url": "https://www.aicte-india.org/",
-    "category": "teaching"
-  },
-  {
-    "name": "UIDAI",
-    "icon": "🆔",
-    "url": "https://uidai.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "DigiLocker",
-    "icon": "📂",
-    "url": "https://www.digilocker.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "UMANG Services",
-    "icon": "📱",
-    "url": "https://web.umang.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "EPFO",
-    "icon": "💼",
-    "url": "https://www.epfindia.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "Income Tax / PAN",
-    "icon": "💰",
-    "url": "https://www.incometax.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "Passport Seva",
-    "icon": "🛂",
-    "url": "https://passportindia.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "PM-Kisan",
-    "icon": "🌾",
-    "url": "https://pmkisan.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "e-Shram Card",
-    "icon": "👷",
-    "url": "https://eshram.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "Parivahan",
-    "icon": "🚗",
-    "url": "https://parivahan.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "National Portal",
-    "icon": "🏛",
-    "url": "https://india.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "RBI",
-    "icon": "🏦",
-    "url": "https://www.rbi.org.in/",
-    "category": "government"
-  },
-  {
-    "name": "SEBI",
-    "icon": "📈",
-    "url": "https://www.sebi.gov.in/",
-    "category": "government"
-  },
-  {
-    "name": "Indian Railways Official",
-    "icon": "🚆",
-    "url": "https://indianrailways.gov.in/",
-    "category": "government"
-  }
+  { "name":"Railway Home","icon":"🚆","url":"/railways/index.html","slug":"rrb-home","category":"rrb" },
+  { "name":"RRB NTPC","icon":"🚄","url":"/railways/ntpc.html","slug":"rrb-ntpc","category":"rrb" },
+  { "name":"RRB ALP","icon":"🚉","url":"/railways/alp.html","slug":"rrb-alp","category":"rrb" },
+  { "name":"RRB Group D","icon":"👷","url":"/railways/groupd.html","slug":"rrb-group-d","category":"rrb" },
+  { "name":"RRB JE","icon":"🛠️","url":"/railways/je.html","slug":"rrb-je","category":"rrb" },
+  { "name":"RRB Technician","icon":"⚙️","url":"/railways/technician.html","slug":"rrb-technician","category":"rrb" },
+  { "name":"RRB Salary","icon":"💰","url":"/railways/salary.html","slug":"rrb-salary","category":"rrb" },
+  { "name":"RRB Syllabus","icon":"📚","url":"/railways/syllabus.html","slug":"rrb-syllabus","category":"rrb" },
+  { "name":"RRB Medical","icon":"🩺","url":"/railways/medical.html","slug":"rrb-medical","category":"rrb" },
+  { "name":"RRB Strategy","icon":"🎯","url":"/railways/strategy.html","slug":"rrb-strategy","category":"rrb" },
+  { "name":"RRB Analysis","icon":"📊","url":"/railways/analysis.html","slug":"rrb-analysis","category":"rrb" },
+
+  { "name":"SSC Home","icon":"📝","url":"/ssc/index.html","slug":"ssc-home","category":"ssc" },
+  { "name":"SSC CGL","icon":"📄","url":"/ssc/ssc-cgl.html","slug":"ssc-cgl","category":"ssc" },
+  { "name":"SSC CHSL","icon":"📄","url":"/ssc/ssc-chsl.html","slug":"ssc-chsl","category":"ssc" },
+  { "name":"SSC JE","icon":"📄","url":"/ssc/ssc-je.html","slug":"ssc-je","category":"ssc" },
+  { "name":"SSC MTS","icon":"📄","url":"/ssc/ssc-mts.html","slug":"ssc-mts","category":"ssc" },
+  { "name":"SSC Selection","icon":"📄","url":"/ssc/sscselection.html","slug":"ssc-selectionppst","category":"ssc" },
+  { "name":"SSC Steno","icon":"📄","url":"/ssc/ssc-steno.html","slug":"ssc-steno","category":"ssc" },
+
+  { "name":"IBPS Home","icon":"🏢","url":"/ibps/index.html","slug":"ibps-home","category":"ibps" },
+  { "name":"IBPS Bank","icon":"🏦","url":"/ibps/ibpsbank.html","slug":"ibps-bank","category":"ibps" },
+  { "name":"IBPS RRB","icon":"🏛️","url":"/ibps/ibpsrrb.html","slug":"ibps-rrb","category":"ibps" },
+  { "name":"IBPS Insurance","icon":"🛡️","url":"/ibps/insurance.html","slug":"ibps-insurance","category":"ibps" },
+  { "name":"IBPS Regulatory","icon":"📊","url":"/ibps/regulatory.html","slug":"ibps-regulatory","category":"ibps" },
+
+  { "name":"SBI Home","icon":"🏦","url":"/sbi/index.html","slug":"sbi-home","category":"sbi" },
+  { "name":"SBI Clerk","icon":"💼","url":"/sbi/sbiclerk.html","slug":"sbi-clerk","category":"sbi" },
+  { "name":"SBI PO","icon":"📊","url":"/sbi/sbipo.html","slug":"sbi-po","category":"sbi" },
+  { "name":"SBI SO","icon":"🛠️","url":"/sbi/sbiso.html","slug":"sbi-so","category":"sbi" },
+
+  { "name":"Delhi Police","icon":"🚓","url":"https://delhipolice.gov.in/","category":"police" },
+  { "name":"UP Police","icon":"👮","url":"https://uppbpb.gov.in/","category":"police" },
+  { "name":"MP Police","icon":"👮","url":"https://mppolice.gov.in/","category":"police" },
+  { "name":"Maharashtra Police","icon":"👮","url":"https://www.mahapolice.gov.in/","category":"police" },
+  { "name":"CRPF","icon":"🛡️","url":"https://crpf.gov.in/","category":"police" },
+  { "name":"CISF","icon":"🛡️","url":"https://cisfrectt.cisf.gov.in/","category":"police" },
+
+  { "name":"Ministry of Education","icon":"📚","url":"https://www.education.gov.in/","category":"teaching" },
+  { "name":"AICTE","icon":"🎓","url":"https://www.aicte-india.org/","category":"teaching" },
+
+  { "name":"UPPSC","icon":"📜","url":"http://uppsc.up.nic.in/","category":"state" },
+
+  { "name":"UIDAI","icon":"🆔","url":"https://uidai.gov.in/","category":"government" },
+  { "name":"DigiLocker","icon":"📂","url":"https://www.digilocker.gov.in/","category":"government" },
+  { "name":"UMANG Services","icon":"📱","url":"https://web.umang.gov.in/","category":"government" },
+  { "name":"EPFO","icon":"💼","url":"https://www.epfindia.gov.in/","category":"government" },
+  { "name":"Income Tax / PAN","icon":"💰","url":"https://www.incometax.gov.in/","category":"government" },
+  { "name":"Passport Seva","icon":"🛂","url":"https://passportindia.gov.in/","category":"government" },
+  { "name":"PM-Kisan","icon":"🌾","url":"https://pmkisan.gov.in/","category":"government" },
+  { "name":"e-Shram Card","icon":"👷","url":"https://eshram.gov.in/","category":"government" },
+  { "name":"Parivahan","icon":"🚗","url":"https://parivahan.gov.in/","category":"government" },
+  { "name":"National Portal","icon":"🏛","url":"https://india.gov.in/","category":"government" },
+  { "name":"RBI","icon":"🏦","url":"https://www.rbi.org.in/","category":"government" },
+  { "name":"SEBI","icon":"📈","url":"https://www.sebi.gov.in/","category":"government" },
+  { "name":"Indian Railways Official","icon":"🚆","url":"https://indianrailways.gov.in/","category":"government" }
 ]

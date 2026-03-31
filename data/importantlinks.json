@@ -1,120 +1,122 @@
 [
-{
-"category": "Syllabus",
-"type": "education",
-"priority": "high",
-"links": [
-
-{"title": "SSC CGL Syllabus", "url": "/resources/syllabus/ssc-cgl.html"},
-{"title": "SSC CHSL Syllabus", "url": "/resources/syllabus/ssc-chsl.html"},
-{"title": "SSC MTS Syllabus", "url": "/resources/syllabus/ssc-mts.html"},
-{"title": "SSC JE Syllabus", "url": "/resources/syllabus/ssc-je.html"},
-{"title": "SSC Selection Post Syllabus", "url": "/resources/syllabus/ssc-selection-post.html"},
-
-{"title": "RRB NTPC Syllabus", "url": "/resources/syllabus/rrb-ntpc.html"},
-{"title": "RRB Group D Syllabus", "url": "/resources/syllabus/rrb-groupd.html"},
-{"title": "RRB ALP Syllabus", "url": "/resources/syllabus/rrb-alp.html"},
-{"title": "RRB JE Syllabus", "url": "/resources/syllabus/rrb-je.html"},
-
-{"title": "SBI Clerk Syllabus", "url": "/resources/syllabus/sbi-clerk.html"},
-{"title": "SBI PO Syllabus", "url": "/resources/syllabus/sbi-po.html"},
-{"title": "IBPS Clerk Syllabus", "url": "/resources/syllabus/ibps-clerk.html"},
-{"title": "IBPS PO Syllabus", "url": "/resources/syllabus/ibps-po.html"},
-{"title": "IBPS SO Syllabus", "url": "/resources/syllabus/ibps-so.html"},
-{"title": "RRB Clerk Syllabus", "url": "/resources/syllabus/rrb-clerk.html"},
-{"title": "RRB PO Syllabus", "url": "/resources/syllabus/rrb-po.html"},
-
-{"title": "Insurance AO Syllabus", "url": "/resources/syllabus/insurance-ao.html"},
-{"title": "Insurance Assistant Syllabus", "url": "/resources/syllabus/insurance-assistant.html"},
-
-{"title": "CTET Syllabus", "url": "/resources/syllabus/ctet.html"},
-{"title": "NDA Syllabus", "url": "/resources/syllabus/nda.html"},
-
-{"title": "NEET UG Syllabus (Official)", "url": "https://exams.nta.ac.in/NEET/"},
-{"title": "GATE Syllabus (Official)", "url": "https://gate2026.iitg.ac.in/exam-papers-and-syllabus.html"}
-
-]
-},
-
-{
-"category": "Exam Pattern",
-"type": "education",
-"priority": "high",
-"links": [
-{"title": "SSC Exam Pattern", "url": "#"},
-{"title": "RRB Exam Pattern", "url": "#"},
-{"title": "Bank Exam Pattern", "url": "#"},
-{"title": "Insurance Exam Pattern", "url": "#"},
-{"title": "Defense Exam Pattern", "url": "#"},
-{"title": "Teaching Exam Pattern", "url": "#"}
-]
-},
-
-{
-"category": "How To Apply",
-"type": "education",
-"priority": "high",
-"links": [
-{"title": "SSC Application Process", "url": "#"},
-{"title": "RRB Application Process", "url": "#"},
-{"title": "Bank Application Process", "url": "#"},
-{"title": "Insurance Application Process", "url": "#"},
-{"title": "Defense Application Process", "url": "#"},
-{"title": "Teaching Application Process", "url": "#"}
-]
-},
-
-{
-"category": "Previous Papers",
-"type": "education",
-"links": [
-{"title": "SSC Previous Papers", "url": "#"},
-{"title": "RRB Previous Papers", "url": "#"},
-{"title": "Bank Previous Papers", "url": "#"},
-{"title": "Insurance Previous Papers", "url": "#"},
-{"title": "Defense Previous Papers", "url": "#"}
-]
-},
-
-{
-"category": "Admit Card",
-"type": "education",
-"links": [
-{"title": "SSC Admit Card", "url": "#"},
-{"title": "RRB Admit Card", "url": "#"},
-{"title": "Bank Admit Card", "url": "#"},
-{"title": "Insurance Admit Card", "url": "#"}
-]
-},
-
-{
-"category": "Result",
-"type": "education",
-"links": [
-{"title": "SSC Result", "url": "#"},
-{"title": "RRB Result", "url": "#"},
-{"title": "Bank Result", "url": "#"},
-{"title": "Insurance Result", "url": "#"}
-]
-},
-
-{
-"category": "Cutoff",
-"type": "education",
-"links": [
-{"title": "SSC Cutoff", "url": "#"},
-{"title": "RRB Cutoff", "url": "#"},
-{"title": "Bank Cutoff", "url": "#"}
-]
-},
-
-{
-"category": "Answer Key",
-"type": "education",
-"links": [
-{"title": "SSC Answer Key", "url": "#"},
-{"title": "RRB Answer Key", "url": "#"},
-{"title": "Bank Answer Key", "url": "#"}
-]
-}
+  {
+    "category": "Syllabus",
+    "type": "education",
+    "priority": "high",
+    "links": [
+      {"title": "SSC CGL Syllabus", "url": "/resources/syllabus/ssc-cgl.html"},
+      {"title": "SSC CHSL Syllabus", "url": "/resources/syllabus/ssc-chsl.html"},
+      {"title": "DETAILED SYLLABUS FOR ALL EXAMS AT ONE PLACE", "url": "/resources/syllabus/index.html"},
+      {"title": "SSC CHSL Syllabus", "url": "/resources/syllabus/ssc-chsl.html"},
+      {"title": "SSC MTS Syllabus", "url": "/resources/syllabus/ssc-mts.html"},
+      {"title": "SSC JE Syllabus", "url": "/resources/syllabus/ssc-je.html"},
+      {"title": "SSC Selection Post Syllabus", "url": "/resources/syllabus/ssc-selection-post.html"},
+      {"title": "RRB NTPC Syllabus", "url": "/resources/syllabus/rrb-ntpc.html"},
+      {"title": "RRB Group D Syllabus", "url": "/resources/syllabus/rrb-group-d.html"},
+      {"title": "RRB ALP Syllabus", "url": "/resources/syllabus/rrb-alp.html"},
+      {"title": "RRB JE Syllabus", "url": "/resources/syllabus/rrb-je.html"},
+      {"title": "SBI Clerk Syllabus", "url": "/resources/syllabus/sbi-clerk.html"},
+      {"title": "SBI PO Syllabus", "url": "/resources/syllabus/sbi-po.html"},
+      {"title": "IBPS Clerk Syllabus", "url": "/resources/syllabus/ibps-clerk.html"},
+      {"title": "IBPS PO Syllabus", "url": "/resources/syllabus/ibps-po.html"},
+      {"title": "IBPS SO Syllabus", "url": "/resources/syllabus/ibps-so.html"},
+      {"title": "RRB Clerk Syllabus", "url": "/resources/syllabus/ibps-rrb-clerk.html"},
+      {"title": "RRB PO Syllabus", "url": "/resources/syllabus/ibps-rrb-po.html"},
+      {"title": "Insurance AO Syllabus", "url": "/resources/syllabus/insurance-ao.html"},
+      {"title": "Insurance Assistant Syllabus", "url": "/resources/syllabus/insurance-assistant.html"},
+      {"title": "CTET Syllabus", "url": "/resources/syllabus/ctet.html"},
+      {"title": "NDA Syllabus", "url": "/resources/syllabus/nda.html"},
+      {"title": "NEET UG Syllabus (Official)", "url": "https://exams.nta.ac.in/NEET/"},
+      {"title": "GATE Syllabus (Official)", "url": "https://gate2026.iitg.ac.in/exam-papers-and-syllabus.html"}
+    ]
+  },
+  {
+    "category": "Exam Pattern",
+    "type": "education",
+    "priority": "high",
+    "links": [
+      {"title": "SSC CGL Pattern", "url": "/resources/exampattern/ssc-cgl.html"},
+      {"title": "SSC Selection Post Pattern", "url": "/resources/exampattern/ssc-selection-post.html"},
+      {"title": "RRB NTPC Pattern", "url": "/resources/exampattern/rrb-ntpc.html"},
+      {"title": "SBI SO Pattern", "url": "/resources/exampattern/sbi-so.html"},
+      {"title": "IBPS RRB PO Pattern", "url": "/resources/exampattern/ibps-rrb-po.html"},
+      {"title": "IBPS Clerk Exam Pattern", "url": "/resources/exampattern/ibps-clerk.html"},
+      {"title": "Insurance Exam Pattern", "url": "/resources/exampattern/insurance.html"},
+      {"title": "Defense Exam Pattern", "url": "/resources/exampattern/defense.html"},
+      {"title": "Teaching Exam Pattern", "url": "/resources/exampattern/teaching.html"}
+    ]
+  },
+  {
+    "category": "How To Apply",
+    "type": "education",
+    "priority": "high",
+    "links": [
+      {"title": "SSC Application Process", "url": "/resources/apply/ssc.html"},
+      {"title": "RRB Application Process", "url": "/resources/apply/rrb.html"},
+      {"title": "Bank Application Process", "url": "/resources/apply/bank.html"},
+      {"title": "Insurance Application Process", "url": "/resources/apply/insurance.html"},
+      {"title": "Defense Application Process", "url": "/resources/apply/defense.html"},
+      {"title": "Teaching Application Process", "url": "/resources/apply/teaching.html"}
+    ]
+  },
+  {
+    "category": "Previous Papers",
+    "type": "education",
+    "links": [
+      {"title": "SSC Previous Papers", "url": "/resources/papers/ssc.html"},
+      {"title": "RRB Previous Papers", "url": "/resources/papers/rrb.html"},
+      {"title": "Bank Previous Papers", "url": "/resources/papers/bank.html"},
+      {"title": "Insurance Previous Papers", "url": "/resources/papers/insurance.html"},
+      {"title": "Defense Previous Papers", "url": "/resources/papers/defense.html"}
+    ]
+  },
+  {
+    "category": "Admit Card",
+    "type": "education",
+    "links": [
+      {"title": "SSC Admit Card", "url": "/admit-card/ssc.html"},
+      {"title": "RRB Admit Card", "url": "/admit-card/rrb.html"},
+      {"title": "Bank Admit Card", "url": "/admit-card/bank.html"},
+      {"title": "Insurance Admit Card", "url": "/admit-card/insurance.html"}
+    ]
+  },
+  {
+    "category": "Result",
+    "type": "education",
+    "links": [
+      {"title": "SSC Result", "url": "/result/ssc.html"},
+      {"title": "RRB Result", "url": "/result/rrb.html"},
+      {"title": "Bank Result", "url": "/result/bank.html"},
+      {"title": "Insurance Result", "url": "/result/insurance.html"}
+    ]
+  },
+  {
+    "category": "Cutoff",
+    "type": "education",
+    "links": [
+      {"title": "SSC Cutoff", "url": "/cutoff/ssc.html"},
+      {"title": "RRB Cutoff", "url": "/cutoff/rrb.html"},
+      {"title": "Bank Cutoff", "url": "/cutoff/bank.html"}
+    ]
+  },
+  {
+    "category": "Answer Key",
+    "type": "education",
+    "links": [
+      {"title": "SSC Answer Key", "url": "/answer-key/ssc.html"},
+      {"title": "RRB Answer Key", "url": "/answer-key/rrb.html"},
+      {"title": "Bank Answer Key", "url": "/answer-key/bank.html"}
+    ]
+  },
+  {
+    "category": "Site",
+    "type": "internal",
+    "priority": "low",
+    "links": [
+      {"title": "About", "url": "/about.html"},
+      {"title": "Contact", "url": "/contact.html"},
+      {"title": "Disclaimer", "url": "/disclaimer.html"},
+      {"title": "Sitemap", "url": "/sitemap.html"}
+    ]
+  }
 ]
