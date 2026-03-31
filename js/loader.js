@@ -5,22 +5,11 @@
 window.Loader = {
     indexManifest: null,
 
-    getBase() {
-        // Universal detection: finds the root whether on GitHub Pages or local
-        const path = window.location.pathname;
-        const rootName = '/SarkarKinokri/';
-        const idx = path.indexOf(rootName);
-        if (idx !== -1) {
-            return path.substring(0, idx + rootName.length);
-        }
-        return '/';
-    },
-
     async init(manifestPath) {
         try {
-            const json = await this._fetchJSON(manifestPath);
-            if (!json) throw new Error("Manifest load failed");
-            this.indexManifest = json;
+            const res = await fetch(manifestPath);
+            if (!res.ok) throw new Error("Manifest load failed");
+            this.indexManifest = await res.json();
             console.log("✅ Loader initialized");
         } catch (err) {
             console.error("❌ Loader init failed", err);
@@ -66,16 +55,10 @@ window.Loader = {
     },
 
     async _fetchJSON(path) {
-
-        const base = this.getBase();
-        // Clean the path to prevent double-slashes during concatenation
-        const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-
         const paths = [
             path,
-            `${base}${cleanPath}`,
-            `../${cleanPath}`,
-            `../../${cleanPath}`
+            path.replace(/^\/+/, ''),
+            `/${path}`
         ];
 
         for (const p of paths) {
