@@ -1,0 +1,30 @@
+{
+  "ssc": [
+    { "title": "SSC CGL", "url": "/resources/syllabus/ssc-cgl.html" },
+    { "title": "SSC CHSL", "url": "/resources/syllabus/ssc-chsl.html" },
+    { "title": "SSC JE", "url": "/resources/syllabus/ssc-je.html" },
+    { "title": "SSC MTS", "url": "/resources/syllabus/ssc-mts.html" },
+    { "title": "SSC Selection Post", "url": "/resources/syllabus/ssc-selection-post.html" }
+  ],
+  "rrb": [
+    { "title": "RRB ALP", "url": "/resources/syllabus/rrb-alp.html" },
+    { "title": "RRB Group D", "url": "/resources/syllabus/rrb-group-d.html" },
+    { "title": "RRB JE", "url": "/resources/syllabus/rrb-je.html" },
+    { "title": "RRB NTPC", "url": "/resources/syllabus/rrb-ntpc.html" },
+    { "title": "RRB Technician", "url": "/resources/syllabus/rrb-technician.html" }
+  ],
+  "ibps": [
+    { "title": "IBPS Clerk", "url": "/resources/syllabus/ibps-clerk.html" },
+    { "title": "IBPS PO", "url": "/resources/syllabus/ibps-po.html" },
+    { "title": "IBPS RRB PO", "url": "/resources/syllabus/ibps-rrb-po.html" }
+  ],
+  "bank": [
+    { "title": "SBI Clerk", "url": "/resources/syllabus/sbi-clerk.html" },
+    { "title": "SBI PO", "url": "/resources/syllabus/sbi-po.html" },
+    { "title": "SBI SO", "url": "/resources/syllabus/sbi-so.html" }
+  ],
+  "insurance": [
+    { "title": "LIC AAO", "url": "/resources/syllabus/lic-aao.html" },
+    { "title": "NIACL AO", "url": "/resources/syllabus/niacl-ao.html" }
+  ]
+}
