@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 { name: "Tech", url: "Technician.html" }, // Matches your filename
                 { name: "Group D", url: "groupd.html" },
                 { name: "JE", url: "je.html" },
-                { name: "Syllabus", url: "syllabas.html" }, // Matches your spelling
+                { name: "Syllabus", url: "syllabus.html" }, // Matches your spelling
                 { name: "Medical", url: "medical.html" },
                 { name: "Salary", url: "salary.html" },
                 { name: "Analysis", url: "analysis.html" },
