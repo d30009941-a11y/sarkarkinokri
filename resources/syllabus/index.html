@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Well researched Syllabus for All Exams</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f7fb;
+    margin:0;
+    padding:15px;
+}
+
+h2{
+    margin-top:30px;
+    color:#222;
+    border-left:5px solid #007bff;
+    padding-left:10px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:12px;
+    margin-top:10px;
+}
+
+.card{
+    background:#fff;
+    padding:12px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,.05);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.card a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+}
+
+.signal{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+/* traffic signal colors */
+.green{ background:#28a745;}
+.yellow{ background:#ffc107;}
+.red{ background:#dc3545;}
+</style>
+
+</head>
+<body>
+
+<h1>Syllabus Index</h1>
+
+<div id="container"></div>
+
+<script>
+fetch('/resources/syllabus/data/index.json')
+.then(res => res.json())
+.then(data => {
+
+    const container = document.getElementById('container');
+
+    Object.keys(data).forEach(category => {
+
+        const title = document.createElement('h2');
+        title.textContent = category.toUpperCase();
+        container.appendChild(title);
+
+        const grid = document.createElement('div');
+        grid.className = 'grid';
+
+        data[category].forEach(item => {
+
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            /* traffic signal logic (default green) */
+            const status = item.status || "green";
+
+            card.innerHTML = `
+                <a href="${item.url}">${item.title}</a>
+                <span class="signal ${status}"></span>
+            `;
+
+            grid.appendChild(card);
+        });
+
+        container.appendChild(grid);
+    });
+
+});
+</script>
+
+</body>
+</html>
