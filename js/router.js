@@ -1,7 +1,3 @@
-/**
- * router.js — UNIVERSAL NAVIGATION ENGINE
- */
-
 window.MeshRouter = {
     async navigate(id, section = '') {
         if (!id) return;
@@ -9,27 +5,12 @@ window.MeshRouter = {
         const parts = targetId.split('-'); 
         const shortName = parts[0]; 
 
-        // ===============================
-        // UNIVERSAL PATH BUILDER
-        // ===============================
-        const BASE = window.Loader ? Loader.getBase() : '/';
-        const build = (p) => {
-            if (!p || p === "#" || p.startsWith("http")) return p;
-            const clean = p.startsWith('/') ? p.slice(1) : p;
-            return BASE + clean;
-        };
-
         // DETECT CONTEXT: Are we already in the cluster?
         const currentPath = window.location.pathname;
         const isInsideCluster = currentPath.includes(`/${shortName}/`) || currentPath.includes(`${shortName}.html`);
 
         if (window.Loader && !Loader.indexManifest) {
-            try { 
-                // Ensure manifest is loaded before routing
-                await Loader.init(build("data/index.json")); 
-            } catch(e) {
-                console.warn("Router: Loader init failed during navigation.");
-            }
+            try { await Loader.init("/data/index.json"); } catch(e) {}
         }
 
         // LAYER 1: VALIDATE (3-2-1)
@@ -42,12 +23,7 @@ window.MeshRouter = {
 
         // LAYER 2: HTML PRIORITY (Only if NOT already inside the cluster)
         if (!isInsideCluster) {
-            const pathsToTry = [
-                build(`${shortName}/index.html`),
-                build(`${shortName}.html`),
-                build(`${targetId}.html`)
-            ];
-
+            const pathsToTry = [`/${shortName}/index.html`, `/${shortName}.html`, `/${targetId}.html`];
             for (const path of pathsToTry) {
                 try {
                     const res = await fetch(path, { method: 'HEAD' });
@@ -58,23 +34,23 @@ window.MeshRouter = {
 
         // LAYER 3: DYNAMIC DETAILS
         if (validatedId) {
-            window.location.href = build(`details.html?id=${validatedId}${section ? '#' + section : ''}`);
+            window.location.href = `/details.html?id=${validatedId}${section ? '#' + section : ''}`;
             return;
         }
 
         // LAYER 4: STATIC PORTAL & 404 SAFETY NET
         try {
-            const portalRes = await fetch(build('data/staticportals.json'));
+            const portalRes = await fetch('/data/staticportals.json');
             const portals = await portalRes.json();
             const portalMatch = portals.find(p => p.name.toLowerCase().includes(shortName));
             if (portalMatch) {
-                window.location.href = build(portalMatch.url);
+                window.location.href = portalMatch.url;
                 return;
             }
         } catch (e) {}
 
-        // FINAL 404
+        // FINAL 404: Redirect home instead of staying on broken page
         console.error("Route not found for:", targetId);
-        window.location.href = build(`index.html?status=404&target=${targetId}`);
+        window.location.href = "/index.html?status=404&target=" + targetId;
     }
 };
