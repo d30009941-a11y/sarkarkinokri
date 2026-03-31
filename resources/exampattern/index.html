@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SarkarKinokri | 2026 Recruitment Hub</title>
+    
+    <link rel="stylesheet" href="resources/exampattern/css/style.css">
+    
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --accent-blue: #3b82f6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .hero-section {
+            background: var(--primary-dark);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .nav-controller-preview {
+            max-width: 900px;
+            margin: -50px auto 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .dummy-link {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--accent-blue);
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .dummy-link:hover {
+            background: #f1f5f9;
+            border-color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="brand-bar" style="background: var(--primary-dark); padding: 15px 20px; color: white; display: flex; align-items: center;">
+        <div class="brand-logo" style="font-weight: bold; font-size: 20px;">SarkarKinokri</div>
+    </header>
+
+    <section class="hero-section">
+        <h1>2026 Master Recruitment Controller</h1>
+        <p>Central Traffic Hub for Exam Patterns, Syllabi, and Strategies.</p>
+    </section>
+
+    <main class="nav-controller-preview">
+        <span class="status-badge">System: Online</span>
+        <h2>Active Clusters</h2>
+        <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">
+            The Navigation Traffic Controller logic will eventually live here to route users based on search slugs.
+        </p>
+
+        <div id="traffic-hub">
+            <a href="resources/exampattern/sbi-so.html" class="dummy-link">
+                📄 View SBI SO Exam Pattern (JSON Driven)
+            </a>
+            <a href="#" class="dummy-link" style="opacity: 0.5; cursor: not-allowed;">
+                📄 SSC CGL Guide (Coming Soon)
+            </a>
+        </div>
+    </main>
+
+    <div class="ad-box" style="text-align:center; margin: 20px;">
+        <ins class="adsbygoogle" style="display:block" data-ad-status="unfilled"></ins>
+    </div>
+
+    <script src="resources/exampattern/js/main.js"></script>
+
+    <script>
+        // Check if PatternEngine is loaded from the subfolder
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Traffic Controller Initialized...");
+            
+            // Testing the Ad Cleanup logic from main.js
+            if(typeof adCleanup === "function") {
+                console.log("Ad Engine Active");
+            }
+        });
+    </script>
+
+</body>
+</html>
