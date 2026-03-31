@@ -5,6 +5,10 @@
   "nav_redirect_id": "ssc",
   "master_id": "ssc-cgl",
   "total_vacancy_projected": "7500+ (Expected)",
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO ON SSC EXAMS",
+    "hub_url": "/ssc/index.html"
+  },
   "exam_phases": [
     {
       "phase": "Tier 1",

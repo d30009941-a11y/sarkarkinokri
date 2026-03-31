@@ -1,0 +1,109 @@
+{
+  "exam_name": "SBI SO (Specialist Officer)",
+  "year": "2026",
+  "category_name": "Banking Recruitment",
+  "nav_redirect_id": "bank",
+  "master_id": "sbi-so",
+  "total_vacancy_projected": "450+ (IT, Law, Finance, HR)",
+    
+  "redirect_buttons": {
+    "hub_label": "DETAILED INFO OF SO RECRUITMENT",
+    "hub_url": "/sbi/sb-iso.html"
+  },
+  "exam_phases": [
+    {
+      "phase": "Phase I: Online Written Test",
+      "duration": "135 - 165 Minutes",
+      "total_qs": "120 + 50",
+      "negative": "0.25"
+    },
+    {
+      "phase": "Phase II: Shortlisting & Scrutiny",
+      "duration": "Variable",
+      "total_qs": "Profile Match",
+      "negative": "NA"
+    },
+    {
+      "phase": "Phase III: Personal Interview",
+      "duration": "20-30 Minutes",
+      "total_qs": "100 Marks",
+      "negative": "NA"
+    }
+  ],
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "68% (PK)", "difficulty": "Tough", "key_shift": "Cybersecurity focus" },
+    { "year": "2024", "cutoff_avg": "65% (PK)", "difficulty": "Moderate", "key_shift": "Law case studies" },
+    { "year": "2023", "cutoff_avg": "62% (PK)", "difficulty": "Moderate", "key_shift": "Direct Interview roles" },
+    { "year": "2022", "cutoff_avg": "64% (PK)", "difficulty": "Moderate", "key_shift": "Balanced Tech" },
+    { "year": "2021", "cutoff_avg": "60% (PK)", "difficulty": "Moderate", "key_shift": "Finance heavy" }
+  ],
+  "subjects": [
+    {
+      "name": "General Aptitude (Qualifying)",
+      "total_qs": "120",
+      "analysis": "Qualifying nature only. Marks not added to merit. Reasoning, Quant, and English must clear sectional cutoffs.",
+      "topics": [
+        { "name": "Reasoning Ability", "weight": "50", "priority": "High", "sub_topics": "Puzzles & Syllogism" },
+        { "name": "Quantitative Aptitude", "weight": "35", "priority": "Medium", "sub_topics": "DI & Data Sufficiency" },
+        { "name": "English Language", "weight": "35", "priority": "Medium", "sub_topics": "RC & Error Spotting" }
+      ]
+    },
+    {
+      "name": "Professional Knowledge - IT",
+      "total_qs": "50",
+      "analysis": "Core merit section. Focus on systems architecture, security, and data management.",
+      "topics": [
+        { "name": "Database Management", "weight": "10-12", "priority": "High", "sub_topics": "SQL/NoSQL/Normalisation" },
+        { "name": "Networking & Security", "weight": "12-15", "priority": "High", "sub_topics": "TCP-IP/Cyber Attacks" },
+        { "name": "Software Engineering", "weight": "8-10", "priority": "High", "sub_topics": "Agile & SDLC" },
+        { "name": "Data Structures", "weight": "5-8", "priority": "Medium", "sub_topics": "Arrays/Trees/Stacks" },
+        { "name": "Web Technologies", "weight": "5-8", "priority": "Medium", "sub_topics": "JSON/APIs/Java" }
+      ]
+    },
+    {
+      "name": "Professional Knowledge - Law",
+      "total_qs": "50",
+      "analysis": "Legal merit section. Deep focus on Banking Acts and Recovery proceedings.",
+      "topics": [
+        { "name": "Banking Regulation", "weight": "15-20", "priority": "High", "sub_topics": "RBI Act/BR Act" },
+        { "name": "Recovery Laws", "weight": "10-15", "priority": "High", "sub_topics": "SARFAESI/IBC/DRT" },
+        { "name": "Commercial Law", "weight": "10-15", "priority": "High", "sub_topics": "Contract/Companies Act" },
+        { "name": "Legal Drafting", "weight": "5-10", "priority": "Medium", "sub_topics": "Notices/Affidavits" }
+      ]
+    },
+    {
+      "name": "Professional Knowledge - Finance",
+      "total_qs": "50",
+      "analysis": "Finance merit section. Focus on Auditing, Accounting Standards, and Credit.",
+      "topics": [
+        { "name": "Accounting Standards", "weight": "15-20", "priority": "High", "sub_topics": "Ind AS/GAAP" },
+        { "name": "Auditing & Tax", "weight": "10-15", "priority": "High", "sub_topics": "Statutory/GST/Direct Tax" },
+        { "name": "Financial Management", "weight": "10-15", "priority": "High", "sub_topics": "Ratio/Cash Flow/Project" }
+      ]
+    }
+  ],
+  "mentorship_data": [
+    {
+      "title": "Written Exam Strategy",
+      "content": "Aptitude is only a gateway. Since it is qualifying, reach safe marks and spend 90% time on Professional Knowledge.",
+      "stat_box": "PK Weight: 100%"
+    },
+    {
+      "title": "Document & PQE Logic",
+      "content": "SBI calculates experience from the date of final result. Ensure your certificates match the exact niche of the post code.",
+      "stat_box": "PQE is Critical"
+    },
+    {
+      "title": "Interview Prep",
+      "content": "The panel consists of domain experts. Be ready for technical cross-questioning on your past projects and industry trends.",
+      "stat_box": "30% Merit Weight"
+    }
+  ],
+  "frequently_asked_questions": [
+    { "q": "Are Aptitude marks added to merit?", "a": "No, Phase I Aptitude (Quant/Reasoning/English) is only for qualifying; merit is based on PK and Interview." },
+    { "q": "Is work experience mandatory?", "a": "Yes, for most Specialist Officer roles, 2 to 8 years of post-qualification experience is required." },
+    { "q": "What is the 12th Bipartite impact?", "a": "Salary is revised; JMGS-I Gross is ~85k and MMGS-III can exceed 1.4 Lakhs." },
+    { "q": "Can I apply for multiple posts?", "a": "No, a candidate can only apply for one post code per recruitment project." },
+    { "q": "What is the probation period?", "a": "For permanent roles, the probation is typically 6 months to 2 years." }
+  ]
+}

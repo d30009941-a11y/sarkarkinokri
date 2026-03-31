@@ -1,0 +1,126 @@
+{
+  "exam_name": "RRB Technician (CEN 02/2024 & 2026)",
+  "year": "2026",
+  "category_name": "Railway Recruitment",
+  "nav_redirect_id": "railway",
+  "master_id": "rrb-technician",
+  "total_vacancy_projected": "9,144 (Grade I & III Combined)",
+      
+  "redirect_buttons": {
+    "hub_label": "OFFICIAL RAILWAY TECHNICIAN PORTAL",
+    "hub_url": "/railway/technician-hub.html"
+  },
+
+  "exam_phases": [
+    {
+      "phase": "Phase I: Computer Based Test (CBT)",
+      "duration": "90 Minutes",
+      "total_qs": "100 Questions",
+      "negative": "0.33 (1/3rd Mark)",
+      "merit_status": "Primary Merit Selection"
+    },
+    {
+      "phase": "Phase II: Document Verification (DV)",
+      "duration": "Profile Audit",
+      "total_qs": "Certificates",
+      "negative": "NA",
+      "merit_status": "Final Appointment"
+    },
+    {
+      "phase": "Phase III: Medical Examination",
+      "duration": "A3/B1/B2 Standards",
+      "total_qs": "Fitness Check",
+      "negative": "NA",
+      "merit_status": "Mandatory Qualification"
+    }
+  ],
+
+  "five_year_trend": [
+    { "year": "2025", "cutoff_avg": "72-78", "difficulty": "Moderate", "key_shift": "Increased Basic Science & Eng weightage" },
+    { "year": "2024", "cutoff_avg": "68-74", "difficulty": "Moderate", "key_shift": "Introduction of Grade I Signal specific syllabus" },
+    { "year": "2018-19", "cutoff_avg": "65-70", "difficulty": "Easy-Moderate", "key_shift": "Combined ALP/Technician recruitment pattern" },
+    { "year": "2015", "cutoff_avg": "60-65", "difficulty": "Easy", "key_shift": "Traditional offline to online transition phase" }
+  ],
+
+  "subjects": [
+    {
+      "name": "General Awareness & Current Affairs",
+      "total_qs": "10-15 (Varies by Grade)",
+      "analysis": "Focus on the intersection of Science and Policy. Railway-specific budget and technology updates are high-yield areas.",
+      "topics": [
+        { "name": "Current Events", "weight": "4-5", "priority": "High", "sub_topics": "National & International Importance, Sports Awards (Khel Ratna, Arjuna), Summits (G20, BRICS), Military Exercises, New Appointments, Obituary" },
+        { "name": "Science & Tech", "weight": "3-4", "priority": "High", "sub_topics": "ISRO Missions (Gaganyaan, Chandrayaan), DRDO Tests, Cyber Security, AI/ML basics, Digital India, Semiconductor Mission" },
+        { "name": "Economy & Banking", "weight": "2-3", "priority": "Medium", "sub_topics": "Union Budget Highlights, Railway Budget integration, GDP Projections, GST Collections, Inflation (WPI/CPI), RBI Repo Rates" },
+        { "name": "Culture & History", "weight": "2-3", "priority": "Medium", "sub_topics": "Indian Freedom Struggle (1857-1947), Classical Dances, UNESCO Heritage Sites in India, Famous Personalities, Tribal Festivals" }
+      ]
+    },
+    {
+      "name": "Mathematics (Comprehensive)",
+      "total_qs": "20-25",
+      "analysis": "Accuracy in calculations is the differentiator. Grade I requires higher-level Algebra while Grade III focuses on pure Arithmetic.",
+      "topics": [
+        { "name": "Number System", "weight": "2-3", "priority": "Extreme", "sub_topics": "BODMAS, Decimals, Fractions, LCM & HCF, Ratio and Proportion, Rational & Irrational numbers, Divisibility Rules, Surds and Indices" },
+        { "name": "Arithmetic Operations", "weight": "5-7", "priority": "Extreme", "sub_topics": "Percentages, Profit and Loss, Simple and Compound Interest, Time and Work (Pipes & Cisterns), Time and Distance (Trains, Boats & Streams), Average, Partnership" },
+        { "name": "Algebra & Geometry", "weight": "4-5", "priority": "High", "sub_topics": "Elementary Algebra, Linear Equations, Quadratic Equations, Polynomials, Lines and Angles, Triangles, Circles, Coordinate Geometry" },
+        { "name": "Mensuration", "weight": "3-4", "priority": "High", "sub_topics": "Area and Perimeter of 2D shapes, Volume and Surface Area of 3D shapes (Cylinder, Cone, Sphere, Cube), Frustum" },
+        { "name": "Trigonometry & Statistics", "weight": "2-3", "priority": "Medium", "sub_topics": "Trigonometric Ratios, Heights and Distances, Mean, Median, Mode, Standard Deviation, Frequency Distribution, Pie Charts" }
+      ]
+    },
+    {
+      "name": "General Intelligence & Reasoning",
+      "total_qs": "20-25",
+      "analysis": "Non-verbal reasoning and logical deductions carry maximum weight. Practice speed-reading of complex puzzles.",
+      "topics": [
+        { "name": "Logical Reasoning", "weight": "6-8", "priority": "High", "sub_topics": "Analogies, Alphabetical and Number Series, Coding and Decoding, Mathematical Operations, Relationships (Blood Relations), Syllogism" },
+        { "name": "Analytical Reasoning", "weight": "5-7", "priority": "High", "sub_topics": "Jumbling, Venn Diagram, Data Interpretation and Sufficiency, Conclusions and Decision Making, Similarities and Differences" },
+        { "name": "Spatial Reasoning", "weight": "4-5", "priority": "Medium", "sub_topics": "Classification, Directions, Statement-Arguments and Assumptions, Paper Folding & Cutting, Mirror Images, Embedded Figures" }
+      ]
+    },
+    {
+      "name": "Basic Science and Engineering (Grade III)",
+      "total_qs": "40",
+      "analysis": "This is the 'Selection Section'. It covers the ITI/Trade level concepts and core Physics. High depth required.",
+      "topics": [
+        { "name": "Engineering Drawing", "weight": "5-6", "priority": "High", "sub_topics": "Projections, Views, Drawing Instruments, Lines, Geometric Figures, Symbolic Representation" },
+        { "name": "Units and Measurements", "weight": "4-5", "priority": "Extreme", "sub_topics": "SI Units, Derived Units, Dimensions, Mass, Weight and Density, Speed and Velocity, Work, Power and Energy" },
+        { "name": "Thermal & Electrical", "weight": "8-10", "priority": "High", "sub_topics": "Heat and Temperature, Pressure, Basic Electricity (Ohm's Law, Kirchoff's Law), Resistance in Series/Parallel, Magnetic effect of current" },
+        { "name": "Occupational Safety", "weight": "3-4", "priority": "Medium", "sub_topics": "Health and Safety, Environment Education, IT Literacy (Hardware, OS, Networking, MS Office), First Aid, Fire Safety" }
+      ]
+    },
+    {
+      "name": "Advanced Physics & Math (Grade I Signal)",
+      "total_qs": "35-40",
+      "analysis": "Highly technical. Requires 12th Std/Diploma level understanding of Electronics and Applied Mathematics.",
+      "topics": [
+        { "name": "Electronics & Magnetism", "weight": "12-15", "priority": "Extreme", "sub_topics": "Semiconductors (Diodes, Transistors), Digital Electronics (Logic Gates, Number Systems), Electromagnetic Induction, Capacitance, AC Circuits" },
+        { "name": "Computer & IT", "weight": "8-10", "priority": "High", "sub_topics": "Computer Architecture, Programming Basics, Networking Protocols (TCP/IP, OSI Layers), Data Structures, Storage Devices" }
+      ]
+    }
+  ],
+
+  "mentorship_data": [
+    {
+      "title": "Trade-Specific Focus",
+      "content": "For Grade III, your merit is tied to Basic Science. Do not ignore Engineering Drawing; 5 marks here often decide the final cutoff.",
+      "stat_box": "BSE Weight: 40%"
+    },
+    {
+      "title": "The 1/3 Negative Rule",
+      "content": "Railway marking is harsher than Banking. Avoid 'blind guessing'. Attempt only if 75% sure of the logic.",
+      "stat_box": "Penalty: High"
+    },
+    {
+      "title": "Medical Standards",
+      "content": "Technician B1/B2 standards are strict regarding color blindness and LASIK. Get a pre-check done before Phase I.",
+      "stat_box": "Standard: A3-B2"
+    }
+  ],
+
+  "frequently_asked_questions": [
+    { "q": "Can I apply for both Grade I and Grade III?", "a": "Yes, if you meet the eligibility criteria for both, you must submit separate applications and pay separate fees." },
+    { "q": "Is the syllabus same for all Technician trades?", "a": "The CBT pattern is common, but technical weightage varies between Grade I (Signal) and Grade III (Workshop/Other Trades)." },
+    { "q": "What is the qualifying mark for RRB Technician?", "a": "UR/EWS: 40%, OBC/SC: 30%, ST: 25%. However, actual cutoffs are much higher based on competition." },
+    { "q": "Is there a Skill Test or Trade Test?", "a": "Unlike previous years, the current notification focuses on a single-stage CBT followed by DV and Medical." },
+    { "q": "Does RRB use Normalization?", "a": "Yes, Percentile-based normalization is used if the exam is conducted in multiple shifts to ensure fairness." }
+  ]
+}
