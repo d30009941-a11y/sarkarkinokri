@@ -1,5 +1,9 @@
 (async () => {
-  if (!Loader.indexManifest) await Loader.init("data/index.json");
+  const BASE = window.location.pathname.includes('/') 
+    ? window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1)
+    : './';
+
+  if (!Loader.indexManifest) await Loader.init(BASE + "data/index.json");
   const el = document.getElementById("ticker-content");
   if (!el) return;
 
@@ -9,7 +13,7 @@
   // 1. SCAN ALL ENTRIES BY DATE
   for (const entry of Loader.indexManifest.entries) {
     
-    // --- PART A: SCAN DAILYPOSTS (e.g., 21-03-26.json) ---
+    // --- PART A: SCAN DAILYPOSTS ---
     if (entry.type === "dailypost") {
       const dailyData = await Loader._fetchJSON(entry.file);
       if (Array.isArray(dailyData)) {
@@ -17,7 +21,7 @@
           if (isRecent(post)) {
             tickerItems.push({
               display: post.title,
-              link: post.url || `details.html?id=${post.master_id}`,
+              link: post.url || `${BASE}details.html?id=${post.master_id}`,
               date: new Date(post.date),
               type: "dailypost"
             });
@@ -26,7 +30,7 @@
       }
     }
 
-    // --- PART B: SCAN EVENTS (Lifecycle Child Events) ---
+    // --- PART B: SCAN EVENTS ---
     if (entry.type === "events") {
       const eventData = await Loader._fetchJSON(entry.file);
       if (eventData?.events) {
@@ -35,7 +39,7 @@
           if (isRecent(ev)) {
             tickerItems.push({
               display: `${parentName}: ${ev.label}`,
-              link: `details.html?id=${entry.master_id}`,
+              link: `${BASE}details.html?id=${entry.master_id}`,
               date: new Date(ev.start_date),
               type: ev.stage
             });
@@ -45,7 +49,6 @@
     }
   }
 
-  // 2. RECENCY LOGIC (5 days for apply/notification, 48h for others)
   function isRecent(item) {
     const start = new Date(item.start_date || item.date);
     if (isNaN(start) || today < start) return false;
@@ -56,7 +59,6 @@
     return (stage === "apply" || stage === "notification") ? diffHours <= 120 : diffHours <= 48;
   }
 
-  // 3. SORT & RENDER
   tickerItems.sort((a, b) => b.date - a.date);
   const finalItems = tickerItems.slice(0, 15);
 
@@ -77,6 +79,5 @@
             </span>`;
   }).join("");
 
-  // CRITICAL: Double the content for a seamless infinite loop
   el.innerHTML = html + html; 
 })();

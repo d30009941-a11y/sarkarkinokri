@@ -7,7 +7,18 @@
     return;
   }
 
-  try { await Loader.init('data/index.json'); } catch (e) { return; }
+  // ===============================
+  // UNIVERSAL PATH BUILDER
+  // ===============================
+  const BASE = Loader.getBase();
+  const build = (p) => {
+    if (!p || p === "#" || p.startsWith("http")) return p;
+    const clean = p.startsWith('/') ? p.slice(1) : p;
+    return BASE + clean;
+  };
+
+  // FIXED: Initializing with a build-protected path
+  try { await Loader.init(build('data/index.json')); } catch (e) { return; }
 
   const params = new URLSearchParams(window.location.search);
   const masterId = params.get("id"); 

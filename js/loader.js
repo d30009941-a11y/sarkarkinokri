@@ -5,11 +5,22 @@
 window.Loader = {
     indexManifest: null,
 
+    getBase() {
+        // Universal detection: finds the root whether on GitHub Pages or local
+        const path = window.location.pathname;
+        const rootName = '/SarkarKinokri/';
+        const idx = path.indexOf(rootName);
+        if (idx !== -1) {
+            return path.substring(0, idx + rootName.length);
+        }
+        return '/';
+    },
+
     async init(manifestPath) {
         try {
-            const res = await fetch(manifestPath);
-            if (!res.ok) throw new Error("Manifest load failed");
-            this.indexManifest = await res.json();
+            const json = await this._fetchJSON(manifestPath);
+            if (!json) throw new Error("Manifest load failed");
+            this.indexManifest = json;
             console.log("✅ Loader initialized");
         } catch (err) {
             console.error("❌ Loader init failed", err);
@@ -34,6 +45,7 @@ window.Loader = {
         );
 
         if (!entry) {
+            // Special case for daily posts: find any entries of type dailypost with matching master_id
             if(type === "dailypost") {
                 const postsEntries = this.indexManifest.entries.filter(e => e.type === "dailypost");
                 if(postsEntries.length) {
@@ -55,12 +67,15 @@ window.Loader = {
 
     async _fetchJSON(path) {
 
-        const base = window.location.pathname.includes("sarkarkinokri") ? "/sarkarkinokri/" : "/";
+        const base = this.getBase();
+        // Clean the path to prevent double-slashes during concatenation
+        const cleanPath = path.startsWith('/') ? path.slice(1) : path;
 
         const paths = [
             path,
-            path.replace(/^\/+/, ''),
-            base + path.replace(/^\/+/, '')
+            `${base}${cleanPath}`,
+            `../${cleanPath}`,
+            `../../${cleanPath}`
         ];
 
         for (const p of paths) {
