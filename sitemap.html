@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sitemap | SarkarKinokri</title>
+
+<style>
+*{box-sizing:border-box;}
+body{font-family:Arial;margin:0;background:#eef1f5;color:#222;}
+
+.site-header{
+background:#1a202c;
+color:#fff;
+padding:12px 20px;
+font-size:18px;
+font-weight:600;
+}
+
+.container{
+max-width:1300px;
+margin:30px auto;
+padding:20px;
+background:#fff;
+border-radius:8px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+h1{
+margin-top:0;
+border-bottom:2px solid #e2e8f0;
+padding-bottom:8px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+gap:20px;
+}
+
+.section h3{
+font-size:15px;
+margin-bottom:8px;
+border-bottom:2px solid #e53e3e;
+padding-bottom:4px;
+}
+
+.section a{
+display:block;
+font-size:13px;
+color:#444;
+text-decoration:none;
+margin:3px 0;
+}
+
+.section a:hover{color:#000;}
+
+.site-footer{
+margin-top:30px;
+background:#1a202c;
+color:#cbd5e0;
+text-align:center;
+padding:12px;
+font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">SarkarKinokri</header>
+
+<main class="container">
+<h1>Complete Sitemap</h1>
+<div class="grid" id="sitemap"></div>
+</main>
+
+<footer class="site-footer">
+© 2026 SarkarKinokri • All Rights Reserved
+</footer>
+
+<script>
+const container = document.getElementById("sitemap");
+
+function formatKey(txt){
+return txt
+.replace(/_/g," ")
+.replace(/\b\w/g,l=>l.toUpperCase());
+}
+
+Promise.all([
+fetch("/data/importantlinks.json").then(r=>r.json()),
+fetch("/data/staticportals.json").then(r=>r.json())
+])
+.then(([sitemap, portals])=>{
+
+const normalized=[];
+
+/* importantlinks */
+sitemap.forEach(section=>{
+(section.links || []).forEach(link=>{
+normalized.push({
+name: link.title || link.name,
+url: link.url,
+category: section.category || "General"
+});
+});
+});
+
+/* staticportals */
+portals.forEach(item=>{
+normalized.push({
+name: item.name || item.title,
+url: item.url,
+category: item.category || "General"
+});
+});
+
+/* filter html internal */
+const filtered = normalized.filter(item =>
+item.url &&
+item.url.endsWith(".html") &&
+!item.url.startsWith("http")
+);
+
+/* group */
+const groups={};
+
+filtered.forEach(item=>{
+if(!groups[item.category]) groups[item.category]=[];
+groups[item.category].push(item);
+});
+
+/* render */
+Object.keys(groups).forEach(cat=>{
+
+const div=document.createElement("div");
+div.className="section";
+
+let html=`<h3>${formatKey(cat)}</h3>`;
+
+groups[cat].forEach(link=>{
+html+=`<a href="${link.url}">${link.name}</a>`;
+});
+
+div.innerHTML=html;
+container.appendChild(div);
+
+});
+
+});
+</script>
+
+</body>
+</html>
