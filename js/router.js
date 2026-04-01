@@ -1,80 +1,76 @@
 /**
- * router.js — UNIVERSAL NAVIGATION ENGINE
+ * router.js — UNIVERSAL NAVIGATION & SEARCH ENGINE
+ * Priority: Specific Category HTML > Folder HTML > Dynamic Details > Sitemap
  */
 
 window.MeshRouter = {
-    async navigate(id, section = '') {
+    // 1. DYNAMIC SEARCH MATCHER (For Search Layer Suggestions)
+    getSearchMatches(query, manifest) {
+        const term = query.toLowerCase().trim();
+        const termSquashed = term.replace(/-/g, '');
+        
+        return manifest.filter(entry => {
+            const mid = entry.master_id?.toLowerCase() || "";
+            const midSquashed = mid.replace(/-/g, '');
+            const label = (entry.label || "").toLowerCase();
+            
+            return mid.includes(term) || midSquashed.includes(termSquashed) || label.includes(term);
+        }).slice(0, 8);
+    },
+
+    // 2. SMART INTERNAL ROUTING (The Waterfall)
+    async navigate(id, category = '', section = '') {
         if (!id) return;
-        let targetId = id.toLowerCase().trim();
-        const parts = targetId.split('-'); 
-        const shortName = parts[0]; 
+        
+        const rawId = id.toLowerCase().trim();
+        const cleanId = rawId.replace(/-\d{4}$/, ''); // ssc-cgl-2026 -> ssc-cgl
+        const squashedId = rawId.replace(/-/g, '');  // ssc-cgl -> ssccgl
+        
+        // Auto-detect folder based on ID prefix
+        const folder = category || (rawId.startsWith('ssc') ? 'ssc' : (rawId.startsWith('rrb') ? 'railways' : ''));
 
-        // ===============================
-        // UNIVERSAL PATH BUILDER
-        // ===============================
-        const BASE = window.Loader ? Loader.getBase() : '/';
-        const build = (p) => {
-            if (!p || p === "#" || p.startsWith("http")) return p;
-            const clean = p.startsWith('/') ? p.slice(1) : p;
-            return BASE + clean;
-        };
-
-        // DETECT CONTEXT: Are we already in the cluster?
-        const currentPath = window.location.pathname;
-        const isInsideCluster = currentPath.includes(`/${shortName}/`) || currentPath.includes(`${shortName}.html`);
-
-        if (window.Loader && !Loader.indexManifest) {
-            try { 
-                // Ensure manifest is loaded before routing
-                await Loader.init(build("data/index.json")); 
-            } catch(e) {
-                console.warn("Router: Loader init failed during navigation.");
-            }
-        }
-
-        // LAYER 1: VALIDATE (3-2-1)
-        let validatedId = null;
-        if (Loader.indexManifest) {
-            validatedId = Loader.indexManifest.entries.find(e => e.master_id === targetId)?.master_id ||
-                          (parts.length >= 2 && Loader.indexManifest.entries.find(e => e.master_id && e.master_id.startsWith(`${parts[0]}-${parts[1]}`))?.master_id) ||
-                          Loader.indexManifest.entries.find(e => e.master_id && e.master_id.startsWith(shortName))?.master_id;
-        }
-
-        // LAYER 2: HTML PRIORITY (Only if NOT already inside the cluster)
-        if (!isInsideCluster) {
-            const pathsToTry = [
-                build(`${shortName}/index.html`),
-                build(`${shortName}.html`),
-                build(`${targetId}.html`)
+        // --- LAYER 1: CATEGORY/FOLDER CHECK (railways/ntpc.html etc.) ---
+        if (folder) {
+            const folderPaths = [
+                window.rel(`${folder}/${rawId}.html`),      // ssc/ssc-cgl-2026.html
+                window.rel(`${folder}/${cleanId}.html`),    // ssc/ssc-cgl.html
+                window.rel(`${folder}/${squashedId}.html`)  // ssc/ssccgl.html
             ];
 
-            for (const path of pathsToTry) {
+            for (const path of folderPaths) {
                 try {
                     const res = await fetch(path, { method: 'HEAD' });
-                    if (res.ok) { window.location.href = path; return; }
+                    if (res.ok) { window.location.href = path + (section ? '#' + section : ''); return; }
                 } catch (e) {}
             }
         }
 
-        // LAYER 3: DYNAMIC DETAILS
-        if (validatedId) {
-            window.location.href = build(`details.html?id=${validatedId}${section ? '#' + section : ''}`);
-            return;
+        // --- LAYER 2: RESOURCES CHECK (Syllabus/Pattern/Apply) ---
+        // Using paths from importantlinks.json structure
+        const resourceCats = ['syllabus', 'exampattern', 'apply'];
+        for (const cat of resourceCats) {
+            const resPath = window.rel(`resources/${cat}/${cleanId}.html`);
+            try {
+                const res = await fetch(resPath, { method: 'HEAD' });
+                if (res.ok) { window.location.href = resPath; return; }
+            } catch (e) {}
         }
 
-        // LAYER 4: STATIC PORTAL & 404 SAFETY NET
-        try {
-            const portalRes = await fetch(build('data/staticportals.json'));
-            const portals = await portalRes.json();
-            const portalMatch = portals.find(p => p.name.toLowerCase().includes(shortName));
-            if (portalMatch) {
-                window.location.href = build(portalMatch.url);
+        // --- LAYER 3: DYNAMIC DETAILS (The Source of Truth) ---
+        if (window.Loader) {
+            if (!Loader.indexManifest) await Loader.init(window.rel("data/index.json"));
+            
+            const match = Loader.indexManifest.entries.find(e => 
+                e.master_id === rawId || e.master_id.includes(cleanId) || e.master_id.replace(/-/g, '') === squashedId
+            );
+
+            if (match) {
+                window.location.href = window.rel(`details.html?id=${match.master_id}${section ? '#' + section : ''}`);
                 return;
             }
-        } catch (e) {}
+        }
 
-        // FINAL 404
-        console.error("Route not found for:", targetId);
-        window.location.href = build(`index.html?status=404&target=${targetId}`);
+        // --- LAYER 4: FINAL FALLBACK (Sitemap) ---
+        window.location.href = window.rel(`sitemap.html?target=${rawId}`);
     }
 };

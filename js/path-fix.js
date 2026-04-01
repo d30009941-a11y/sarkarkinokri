@@ -1,36 +1,18 @@
-/* =====================================
-   FORCE ROOT = /sarkarkinokri/
-   (GitHub + Acode unified)
-===================================== */
-
-(function () {
-
-    if (window.__ROOT_LOCK__) return;
-    window.__ROOT_LOCK__ = true;
-
-    const TARGET = "/sarkarkinokri/";
-
-    const { pathname, search, hash } = window.location;
-
-    // If already correct → do nothing
-    if (pathname.startsWith(TARGET)) {
-        console.log("✅ Root OK:", TARGET);
-        return;
+window.SarkarPath = {
+    // MATCHING YOUR GITHUB ROOT: /sarkarkinokri/
+    base: window.location.hostname.includes('github.io') ? '/sarkarkinokri/' : '/',
+    
+    rel: function(path) {
+        if (!path || path.startsWith('http') || path.startsWith('#')) return path;
+        
+        // Remove any existing leading slashes to prevent "sarkarkinokri//data"
+        const clean = path.replace(/^\/+/, '');
+        
+        // Returns: /sarkarkinokri/data/index.json on GitHub
+        // Returns: /data/index.json on Localhost
+        return this.base + clean;
     }
+};
 
-    // Detect GitHub repo structure
-    const parts = pathname.split("/").filter(Boolean);
-
-    // Example:
-    // /repo-name/sarkarkinokri/page.html
-    if (parts.length >= 2 && parts[1].toLowerCase() === "sarkarkinokri") {
-
-        const newPath = TARGET + parts.slice(2).join("/");
-
-        console.log("🔁 Fixing root:", pathname, "→", newPath);
-
-        // rewrite URL WITHOUT reload
-        window.history.replaceState({}, "", newPath + search + hash);
-    }
-
-})();
+window.rel = window.SarkarPath.rel.bind(window.SarkarPath);
+console.log(`%c[Commander] Root set to: ${window.SarkarPath.base}`, "color: #8b5cf6; font-weight: bold;");

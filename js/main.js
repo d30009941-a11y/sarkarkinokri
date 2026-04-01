@@ -10,48 +10,48 @@
  */
 
 document.addEventListener("DOMContentLoaded", async () => {
+  // 1. COMMANDER CHECK: Stop immediately if path-fix.js didn't load
+  if (typeof window.rel !== 'function') {
+    console.error("❌ Commander (path-fix.js) missing! Engine Aborted.");
+    return;
+  }
+
   console.log("=== ULTRA ENGINE START ===");
 
   // ===============================
-  // UNIVERSAL PATH BUILDER (FIXED)
+  // UNIVERSAL PATH BUILDER (COMMANDER POWERED)
   // ===============================
-  const BASE = window.Loader ? Loader.getBase() : '/';
-  const build = (p) => {
-    if (!p || p === "#" || p.startsWith("http")) return p;
-    // Strip leading slash to ensure it appends to the subfolder base correctly
-    const clean = p.startsWith('/') ? p.slice(1) : p;
-    return BASE + clean;
-  };
+  // We no longer calculate BASE here; we let the Commander do it globally.
+  const build = (p) => window.rel(p);
 
   // ===============================
-  // SAFE FILTERS (NEW)
+  // SAFE FILTERS (UNCHANGED)
   // ===============================
-
-  // UI display (allow placeholders)
-  const isDisplayItem = (obj) => {
-    if (!obj) return false;
-    if (!obj.name && !obj.title) return false;
-    return true;
-  };
-
-  // footer strict (internal only)
+  const isDisplayItem = (obj) => obj && (obj.name || obj.title);
   const isFooterLink = (obj) => {
     if (!obj || !obj.url) return false;
     const u = obj.url.trim();
-    if (!u) return false;
-    if (u === "#") return false;
-    if (u.startsWith("http")) return false;
-    return true;
+    return u && u !== "#" && !u.startsWith("http");
   };
 
   // ===============================
-  // LOADER INIT (UNCHANGED LOGIC - FIXED PATH)
+  // LOADER INIT (HANDSHAKE FIX)
   // ===============================
   try {
-    await Loader.init(build("data/index.json"));
+    console.log("⏳ Engine: Handshaking with Loader...");
+    
+    // We 'await' the actual returned data from the Loader.
+    // If the Loader isn't finished, the engine PAUSES here.
+    const manifest = await Loader.init("data/index.json");
+
+    if (!manifest) {
+      throw new Error("Manifest returned null. Check network or path-fix.");
+    }
+    
+    console.log("✅ Engine: Connection Stable. Data verified.");
   } catch (e) {
-    console.error("Loader Init Failed", e);
-    return;
+    console.error("❌ Critical: Engine Aborted.", e.message);
+    return; // This prevents the rest of the script from running with no data
   }
 
   const containers = {
@@ -66,15 +66,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   let allEvents = [];
 
   // ===============================
-  // DATA AGGREGATION (UNCHANGED)
+  // DATA AGGREGATION (HYBRID SUPPORT)
   // ===============================
   const masterIds = Loader.getAllMasterIds();
-  
+  console.log(`🔍 Master IDs found: ${masterIds.length}`);
+
   for (const mid of masterIds) {
     try {
+      // 1. Fetch Events (This populates Admit Card, Result, etc.)
       const eventsData = await Loader.fetchByMaster(mid, "events");
       
-      if (eventsData?.events) {
+      if (eventsData && eventsData.events) {
         allEvents.push(...eventsData.events.map(ev => ({
           ...ev,
           master_id: mid,
@@ -82,12 +84,34 @@ document.addEventListener("DOMContentLoaded", async () => {
           file_employer: eventsData.employer || eventsData.board || null
         })));
       }
+
+      // 2. Fetch JobsData (This ensures the "Latest Jobs" table is populated)
+      // We only do this if we haven't already created a 'jobs' entry for this ID
+      const jobsData = await Loader.fetchByMaster(mid, "jobsdata");
+      
+      if (jobsData) {
+        // If jobsData is an array, we take the first valid object to get the title
+        const jobInfo = Array.isArray(jobsData) ? jobsData[0] : jobsData;
+        
+        // Push a synthetic "Notification" event so it shows up in the 'Jobs' box
+        allEvents.push({
+          master_id: mid,
+          stage: "jobs",
+          label: "Full Details & Apply",
+          start_date: jobInfo.date || jobInfo.last_updated || new Date().toISOString(),
+          end_date: "2099-12-31", // Keep it active
+          file_title: jobInfo.title || jobInfo.exam_name || mid,
+          file_employer: jobInfo.employer || jobInfo.board || ""
+        });
+      }
     } catch (err) {
       console.warn(`Data skip for ${mid}:`, err);
     }
   }
 
+  console.log(`📊 Total Aggregated items: ${allEvents.length}`);
   allEvents.sort((a, b) => new Date(b.start_date || 0) - new Date(a.start_date || 0));
+
 
   // ===============================
   // LIFECYCLE (UNCHANGED)

@@ -49,8 +49,14 @@
   mainEl.style.display = "block";
   mainEl.innerHTML = "";
 
+  /* ===============================
+     2. EXECUTION ORDER (CHANGED TO BOTTOM)
+  =============================== */
+
+  // A. Header (Hamesha top par)
   renderHeader(core);
   
+  // B. Summary (Header ke turant baad)
   if (core.recruitment_summary) {
       const sum = document.createElement("div");
       sum.className = "section-box summary-box";
@@ -58,11 +64,22 @@
       mainEl.appendChild(sum);
   }
 
+  // C. Daily Posts (News)
+  if (dailyPosts.length) renderDailyPosts(dailyPosts);
+  
+  // D. Heavy dynamic rendering (Syllabus, Pattern, Tables)
+  // Yeh saare content ko middle mein fill kar dega
   renderDynamic(core);
 
-  if (dailyPosts.length) renderDailyPosts(dailyPosts);
-  if (eventsData?.events) renderPhasedButtons(eventsData.events);
+  // E. FINAL STEP: Render Buttons at the BOTTOM
+  // Sab kuch render hone ke baad Important Links aayenge
+  if (eventsData?.events) {
+      renderPhasedButtons(eventsData.events);
+  }
 
+  /* ===============================
+     3. RENDERING FUNCTIONS (UNCHANGED)
+  =============================== */
   function renderHeader(data) {
     const div = document.createElement("div");
     div.className = "job-header";
@@ -148,7 +165,7 @@
     mainEl.appendChild(sec);
   }
 
-  function renderPhasedButtons(events) {
+  function renderPhasedButtons(events, target) {
     const sec = document.createElement("div");
     sec.className = "section-box";
     sec.style.borderLeftColor = "#22c55e"; 
@@ -180,7 +197,13 @@
       });
       root.appendChild(g);
     });
-    mainEl.appendChild(sec);
+    
+    // Yahan target parameter ko support karte hue mainEl mein append karega
+    if (target) {
+        target.appendChild(sec);
+    } else {
+        mainEl.appendChild(sec);
+    }
   }
 
   function renderDailyPosts(posts) {
