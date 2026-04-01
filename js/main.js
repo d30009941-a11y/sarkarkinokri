@@ -1,5 +1,5 @@
 /**
- * main.js — THE FINAL SELF-CLEANING POWER ENGINE
+ * main.js â€” THE FINAL SELF-CLEANING POWER ENGINE
  * ---------------------------------------------------------
  * FEATURES:
  * 1. 15-Month Anchor Logic
@@ -11,10 +11,9 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
   // 1. COMMANDER CHECK: Stop immediately if path-fix.js didn't load
-  if (typeof window.rel !== 'function') {
-    console.error("❌ Commander (path-fix.js) missing! Engine Aborted.");
-    return;
-  }
+while (typeof window.rel !== "function") {
+  await new Promise(r => setTimeout(r, 10));
+}
 
   console.log("=== ULTRA ENGINE START ===");
 
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // LOADER INIT (HANDSHAKE FIX)
   // ===============================
   try {
-    console.log("⏳ Engine: Handshaking with Loader...");
+    console.log("â³ Engine: Handshaking with Loader...");
     
     // We 'await' the actual returned data from the Loader.
     // If the Loader isn't finished, the engine PAUSES here.
@@ -48,9 +47,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       throw new Error("Manifest returned null. Check network or path-fix.");
     }
     
-    console.log("✅ Engine: Connection Stable. Data verified.");
+    console.log("âœ… Engine: Connection Stable. Data verified.");
   } catch (e) {
-    console.error("❌ Critical: Engine Aborted.", e.message);
+    console.error("âŒ Critical: Engine Aborted.", e.message);
     return; // This prevents the rest of the script from running with no data
   }
 
@@ -69,7 +68,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // DATA AGGREGATION (HYBRID SUPPORT)
   // ===============================
   const masterIds = Loader.getAllMasterIds();
-  console.log(`🔍 Master IDs found: ${masterIds.length}`);
+  console.log(`ðŸ” Master IDs found: ${masterIds.length}`);
 
   for (const mid of masterIds) {
     try {
@@ -109,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  console.log(`📊 Total Aggregated items: ${allEvents.length}`);
+  console.log(`ðŸ“Š Total Aggregated items: ${allEvents.length}`);
   allEvents.sort((a, b) => new Date(b.start_date || 0) - new Date(a.start_date || 0));
 
 
@@ -365,7 +364,7 @@ footer.innerHTML = `
   </div>
 
   <div class="footer-disclaimer">
-    © 2026 SarkarKinokri
+    Â© 2026 SarkarKinokri
   </div>
 `;
 
@@ -464,7 +463,7 @@ const renderRecruitment = async () => {
             html += `
                 <div class="recruit-box">
                     <button class="recruit-btn-main dropdown-indicator">
-                        ${label} ▼
+                        ${label} â–¼
                     </button>
 
                     <div class="dropdown-content">
