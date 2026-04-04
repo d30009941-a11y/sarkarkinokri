@@ -167,5 +167,91 @@
 <script src="js/search.js" defer></script>
 <script src="js/ticker.js" defer></script>
 
+
+
+
+    <script>
+(function () {
+    // Create floating button
+    const btn = document.createElement("div");
+    btn.innerText = "⚙️ Console";
+    btn.style.position = "fixed";
+    btn.style.bottom = "20px";
+    btn.style.right = "20px";
+    btn.style.zIndex = "99999";
+    btn.style.padding = "10px 14px";
+    btn.style.background = "#000";
+    btn.style.color = "#0f0";
+    btn.style.fontSize = "14px";
+    btn.style.borderRadius = "8px";
+    btn.style.boxShadow = "0 0 10px rgba(0,0,0,0.5)";
+    btn.style.cursor = "pointer";
+
+    document.body.appendChild(btn);
+
+    let erudaLoaded = false;
+
+    btn.onclick = function () {
+        if (erudaLoaded) {
+            eruda.show();
+            return;
+        }
+
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/eruda";
+        document.body.appendChild(script);
+
+        script.onload = function () {
+            eruda.init();
+            eruda.show();
+            erudaLoaded = true;
+
+            console.log("🚀 ERUDA CONSOLE READY");
+
+            // 🔥 Auto debug for your loader
+            console.log("🌐 HOST:", location.hostname);
+            console.log("📍 PATH:", location.pathname);
+
+            const repo = location.pathname.split("/")[1];
+            const base = location.hostname.includes("github.io")
+                ? `/${repo}/`
+                : "/";
+
+            console.log("📦 BASE PATH:", base);
+
+            const testPaths = [
+                "index.json",
+                "/index.json",
+                base + "index.json"
+            ];
+
+            testPaths.forEach(p => {
+                fetch(p)
+                    .then(r => {
+                        console.log(`🔗 ${p} → STATUS:`, r.status);
+                        return r.text();
+                    })
+                    .then(t => {
+                        console.log(`📄 ${p} →`, t.slice(0, 100));
+                    })
+                    .catch(e => {
+                        console.error(`❌ ${p} ERROR:`, e);
+                    });
+            });
+
+            if (window.Loader) {
+                console.log("✅ Loader detected");
+            } else {
+                console.error("❌ Loader NOT FOUND");
+            }
+        };
+    };
+})();
+        </script>
+
+
+
+
+    
 </body>
 </html>
