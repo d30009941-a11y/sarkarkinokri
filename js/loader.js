@@ -27,22 +27,48 @@ const PATH_RESOLVER = (() => {
 window.Loader = {
     indexManifest: null,
 
+    // 🔥 UPDATED INIT (now robust + returns manifest)
     async init(manifestPath) {
         try {
-            const resolvedPath = PATH_RESOLVER.resolve(manifestPath);
+            const cleanPath = manifestPath.replace(/^\/+/, '');
 
-            const res = await fetch(resolvedPath);
-            if (!res.ok) throw new Error("Manifest load failed");
+            const attempts = [
+                PATH_RESOLVER.resolve(cleanPath), // ✅ GitHub correct
+                cleanPath,                        // ✅ relative fallback
+                "/" + cleanPath                  // ✅ absolute fallback
+            ];
 
-            const text = await res.text();
+            let lastError = null;
 
-            if (!text.trim().startsWith("{")) {
-                throw new Error("Invalid manifest JSON");
+            for (const p of attempts) {
+                try {
+                    const res = await fetch(p);
+
+                    if (!res.ok) {
+                        console.warn("❌ Manifest fetch failed:", p);
+                        continue;
+                    }
+
+                    const text = await res.text();
+
+                    if (!text.trim().startsWith("{")) {
+                        console.warn("❌ Invalid manifest JSON:", p);
+                        continue;
+                    }
+
+                    this.indexManifest = JSON.parse(text);
+
+                    console.log("✅ Loader initialized:", p);
+
+                    return this.indexManifest; // 🔥 CRITICAL FIX
+
+                } catch (err) {
+                    console.warn("⚠️ Manifest error:", p);
+                    lastError = err;
+                }
             }
 
-            this.indexManifest = JSON.parse(text);
-
-            console.log("✅ Loader initialized", resolvedPath);
+            throw new Error("All manifest load attempts failed");
 
         } catch (err) {
             console.error("❌ Loader init failed", err);
@@ -69,7 +95,7 @@ window.Loader = {
             e => e.master_id === masterId && e.type === type
         );
 
-        // 🔥 Special case: dailypost aggregation (UNCHANGED logic, improved path handling)
+        // 🔥 Special case: dailypost aggregation
         if (!entry) {
             if (type === "dailypost") {
                 const postsEntries = this.indexManifest.entries.filter(e => e.type === "dailypost");
@@ -117,7 +143,7 @@ window.Loader = {
 
                 const text = await res.text();
 
-                // 🔒 Strict JSON validation (kept strong)
+                // 🔒 Strict JSON validation
                 if (!text.trim().startsWith("{") && !text.trim().startsWith("[")) {
                     console.warn("❌ Invalid JSON:", p);
                     continue;
