@@ -1,76 +1,90 @@
-/**
- * router.js — UNIVERSAL NAVIGATION & SEARCH ENGINE
- * Priority: Specific Category HTML > Folder HTML > Dynamic Details > Sitemap
- */
+(function () {
+  "use strict";
 
-window.MeshRouter = {
-    // 1. DYNAMIC SEARCH MATCHER (For Search Layer Suggestions)
-    getSearchMatches(query, manifest) {
-        const term = query.toLowerCase().trim();
-        const termSquashed = term.replace(/-/g, '');
-        
-        return manifest.filter(entry => {
-            const mid = entry.master_id?.toLowerCase() || "";
-            const midSquashed = mid.replace(/-/g, '');
-            const label = (entry.label || "").toLowerCase();
-            
-            return mid.includes(term) || midSquashed.includes(termSquashed) || label.includes(term);
-        }).slice(0, 8);
-    },
+  // 1. THE PATH FIX: Instead of calculating depth with ../
+  // we use the actual repository name as the base.
+  window.rel = function (path = "") {
+    const isGitHub = window.location.hostname.includes('github.io');
+    const base = isGitHub ? '/sarkarkinokri/' : '/';
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    return (base + cleanPath).replace(/\/+/g, '/');
+  };
 
-    // 2. SMART INTERNAL ROUTING (The Waterfall)
-    async navigate(id, category = '', section = '') {
-        if (!id) return;
-        
-        const rawId = id.toLowerCase().trim();
-        const cleanId = rawId.replace(/-\d{4}$/, ''); // ssc-cgl-2026 -> ssc-cgl
-        const squashedId = rawId.replace(/-/g, '');  // ssc-cgl -> ssccgl
-        
-        // Auto-detect folder based on ID prefix
-        const folder = category || (rawId.startsWith('ssc') ? 'ssc' : (rawId.startsWith('rrb') ? 'railways' : ''));
+  function normalize(str) {
+    return (str || "").replace(/-\d{4}$/, "").toLowerCase();
+  }
 
-        // --- LAYER 1: CATEGORY/FOLDER CHECK (railways/ntpc.html etc.) ---
-        if (folder) {
-            const folderPaths = [
-                window.rel(`${folder}/${rawId}.html`),      // ssc/ssc-cgl-2026.html
-                window.rel(`${folder}/${cleanId}.html`),    // ssc/ssc-cgl.html
-                window.rel(`${folder}/${squashedId}.html`)  // ssc/ssccgl.html
-            ];
+  function getSlug() {
+    const file = location.pathname.split("/").pop() || "";
+    return file.replace(".html", "").toLowerCase();
+  }
 
-            for (const path of folderPaths) {
-                try {
-                    const res = await fetch(path, { method: 'HEAD' });
-                    if (res.ok) { window.location.href = path + (section ? '#' + section : ''); return; }
-                } catch (e) {}
-            }
-        }
-
-        // --- LAYER 2: RESOURCES CHECK (Syllabus/Pattern/Apply) ---
-        // Using paths from importantlinks.json structure
-        const resourceCats = ['syllabus', 'exampattern', 'apply'];
-        for (const cat of resourceCats) {
-            const resPath = window.rel(`resources/${cat}/${cleanId}.html`);
-            try {
-                const res = await fetch(resPath, { method: 'HEAD' });
-                if (res.ok) { window.location.href = resPath; return; }
-            } catch (e) {}
-        }
-
-        // --- LAYER 3: DYNAMIC DETAILS (The Source of Truth) ---
-        if (window.Loader) {
-            if (!Loader.indexManifest) await Loader.init(window.rel("data/index.json"));
-            
-            const match = Loader.indexManifest.entries.find(e => 
-                e.master_id === rawId || e.master_id.includes(cleanId) || e.master_id.replace(/-/g, '') === squashedId
-            );
-
-            if (match) {
-                window.location.href = window.rel(`details.html?id=${match.master_id}${section ? '#' + section : ''}`);
-                return;
-            }
-        }
-
-        // --- LAYER 4: FINAL FALLBACK (Sitemap) ---
-        window.location.href = window.rel(`sitemap.html?target=${rawId}`);
+  // 2. INTEGRATED FETCH: This talks to your Loader
+  async function fetchJSON(path) {
+    // If the Loader exists, use its manifest to save time/speed
+    if (window.Loader && window.Loader.indexManifest) {
+       if (path.includes('index.json')) return window.Loader.indexManifest;
     }
-};
+    
+    try {
+      const res = await fetch(window.rel(path));
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) {
+      console.warn("fetch failed:", path);
+      return null;
+    }
+  }
+
+  async function route() {
+    const isDetails = location.pathname.includes("details.html");
+    const slug = normalize(getSlug());
+
+    // =====================================================
+    // CASE 1 : DETAILS PAGE → ENSURE MASTER ID
+    // =====================================================
+    if (isDetails) {
+      const params = new URLSearchParams(location.search);
+      const id = params.get("id");
+      if (!id) return;
+
+      const normalized = normalize(id);
+      if (normalized !== id) return; // Already has the year/master format
+
+      const index = await fetchJSON("data/index.json");
+      if (!index) return;
+
+      // Find the full master_id in the Array
+      const match = index.find(item => normalize(item.master_id || item.id) === normalized);
+
+      if (match && match.master_id !== id) {
+        location.replace(window.rel(`details.html?id=${match.master_id}`));
+      }
+      return;
+    }
+
+    // =====================================================
+    // CASE 2 : SLUG ROUTING (Home to Details)
+    // =====================================================
+    if (slug === "index" || slug === "") return;
+
+    const staticMap = await fetchJSON("data/staticportals.json");
+    if (staticMap && staticMap[slug]) {
+      location.replace(window.rel(staticMap[slug]));
+      return;
+    }
+
+    const index = await fetchJSON("data/index.json");
+    if (!index) return;
+
+    // Search the Array for the slug
+    const match = index.find(item => normalize(item.master_id || item.id) === slug);
+
+    if (match) {
+      console.log("Routing to:", match.master_id);
+      location.replace(window.rel(`details.html?id=${match.master_id}`));
+    }
+  }
+
+  route();
+})();
